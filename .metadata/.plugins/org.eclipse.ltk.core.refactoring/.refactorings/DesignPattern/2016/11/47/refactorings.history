@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;EasyFactoryMethod.Operator&apos; to &apos;Operation&apos;&#x0D;&#x0A;- Original project: &apos;DesignPattern&apos;&#x0D;&#x0A;- Original element: &apos;EasyFactoryMethod.Operator&apos;&#x0D;&#x0A;- Renamed element: &apos;EasyFactoryMethod.Operation&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Operator&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;EasyFactoryMethod{Operator.java[Operator" matchStrategy="1" name="Operation" qualified="false" references="true" similarDeclarations="false" stamp="1479112723870" textual="false" version="1.0"/>
+</session>

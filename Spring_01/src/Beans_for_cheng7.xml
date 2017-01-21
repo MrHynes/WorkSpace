@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 使用bean的scop属性配置bean的作用域，默认值为singleton 容器初始时，创建bean实例，在容器
+	的生命周期内只创建一个对象。如果设置为prototype则创建多个对象 -->
+	<bean id="demo" class="com.qqcheng.demo">
+		<property name="name" value="lihua"></property>
+	</bean>
+
+</beans>

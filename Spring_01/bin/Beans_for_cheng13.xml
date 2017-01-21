@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 指定Spring IOC容器扫描的包 可以通过resource-pattern来指定扫描的资源 <context:component-scan 
+		base-package="com.qqcheng13" resource-pattern="respository/*.class" ></context:component-scan> -->
+
+
+	<context:component-scan base-package="com.qqcheng13"
+		use-default-filters="true">
+		<!-- type="annotation" -->
+		<!-- context:exclude-filte子节点指定排除哪些表达式的组件 
+			<context:exclude-filter type="annotation" 
+			expression="org.springframework.stereotype.Repository"/> 
+			-->
+		<!-- context:include-filter指定包含哪些表达式的组件， 该子节点需要use-default-filters="false"配合使用 
+			<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/> 
+			-->
+		<!-- type="assignable" -->
+		<!-- 需要将use-default-filters改为true 
+		<context:exclude-filter type="assignable" expression="com.qqcheng13.respository.UserRespository" />
+			-->
+		<!-- 需要将use-default-filters改为false 
+		<context:include-filter type="assignable" expression="com.qqcheng13.respository.UserRespository"/>
+			--> 
+	</context:component-scan>
+
+</beans>

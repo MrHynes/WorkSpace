@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.8.1.201607290748-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/Beans_for_cheng3.xml</config>
+		<config>src/Beans_for_cheng4.xml</config>
+		<config>src/Beans_for_cheng5.xml</config>
+		<config>src/Beans_for_cheng6.xml</config>
+		<config>src/Beans_for_cheng7.xml</config>
+		<config>src/Beans_for_cheng8.xml</config>
+		<config>src/Beans_for_cheng9.xml</config>
+		<config>src/Beans_for_cheng10.xml</config>
+		<config>src/Beans_for_cheng11.xml</config>
+		<config>src/Beans_for_cheng12.xml</config>
+		<config>src/Beans_for_cheng13.xml</config>
+		<config>src/Beans_for_cheng14.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

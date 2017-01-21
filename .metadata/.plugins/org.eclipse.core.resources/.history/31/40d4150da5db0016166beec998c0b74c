@@ -1,0 +1,7 @@
+package com.ch03.Session;
+
+public class DBConnection {
+	public static String DBDRIVER="org.gjt.mm.mysql.Driver";
+	public static String DBURL="jdbc:mysql://localhost:3306/xe"
+
+}

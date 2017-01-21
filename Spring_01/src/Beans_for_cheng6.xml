@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 抽象bean：abstract属性为true。这样的bean不能被IoC容器实例化，只用来被继承配置， 
+	如果某一个bean的class没有指定，则该bean必须是抽象bean -->
+	<bean id="Address" p:city="fuzhou" p:street="daxuecheng" abstract="true"></bean>
+	
+	<!-- Bean配置的继承 使用bean的parent属性指定继承Bean的配置 -->
+	<bean id="Address2" class="com.qqcheng5.Address" p:street="fjnu_qishan" 
+	parent="Address"></bean>
+	
+	<!-- 要求配置person这个bean时，必须有一个关联的car。换而言之就是person这个bean依赖于car这个bean。
+	要如何限制呢？  用属性depends-on ="car"  如果需要依赖多个bean 可以使用空格或者逗号分隔开。-->
+	<bean id="car" class="com.qqcheng5.Car" p:name="baoma" p:price="3000000"></bean>
+	<bean id="person" class="com.qqcheng5.Person" p:name="liming" p:age="19" 
+	p:address-ref="Address2" depends-on="car"></bean>
+</beans>

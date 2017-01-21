@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!--  注释start1
+	<bean id="car" class="com.qqcheng3.car">
+	<constructor-arg value="Baoma"></constructor-arg>
+	<constructor-arg value="200000"></constructor-arg>
+	<constructor-arg value="200"></constructor-arg>
+	</bean>
+	注释end1-->
+	<!-- 注释start2
+	<bean id="person" class="com.qqcheng3.person">
+	<constructor-arg value="lihua"></constructor-arg>
+	<constructor-arg value="19"></constructor-arg>
+	注释end2-->
+	<!-- 可以使用 ref 属性建立bean之间的引用关系（引用的是外部bean） -->  
+	<!-- 注释start3
+	<constructor-arg ref="car"></constructor-arg>
+	</bean>
+	 注释end3-->
+	
+	<bean id="car" class="com.qqcheng3.car">
+		<property name="carOfName" value="Baoma"></property>
+		<property name="carOfPrice" value="2500000"></property>
+		<property name="carOfSpeed" value="240"></property>
+	</bean>
+	
+	<bean id="person" class="com.qqcheng3.person">
+		<property name="nameOfPerson" value="liming"></property>
+		<property name="ageOfPerson" value="19"></property>
+		<!-- 
+		<property name="carOfPerson" ref="car"></property>
+		 -->
+		<!-- 内部bean -->
+		<property name="carOfPerson">
+			<bean class="com.qqcheng3.car">
+				<property name="carOfName" value="Baoma2"></property>
+				<property name="carOfPrice" value="3500000"></property>
+				<property name="carOfSpeed" value="250"></property>
+			</bean>
+		</property>
+	</bean>
+
+</beans>

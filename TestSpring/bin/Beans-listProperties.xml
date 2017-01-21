@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<bean id="car" class="spring.listProperties.Car">
+		<property name="brand" value="BMW"></property>
+		<property name="price" value="600000"></property>
+	</bean>
+	<bean id="car2" class="spring.listProperties.Car">
+		<property name="brand" value="Ford"></property>
+		<property name="price" value="300000"></property>
+	</bean>
+	<bean id="person" class="spring.listProperties.person">
+		<property name="name" value="lihua"></property>
+		<property name="car">
+			<list>
+				<ref bean="car" />
+				<ref bean="car2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="person_map" class="spring.listProperties.person_map">
+		<property name="name" value="xiaoming"></property>
+		<property name="car">
+			<map>
+				<entry key="BMW" value-ref="car"></entry>
+				<entry key="Ford" value-ref="car2"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="person_properties" class="spring.listProperties.person_properties">
+		<property name="properties">
+			<props>
+				<prop key="user">root</prop>
+				<prop key="password">123456</prop>
+				<prop key="driverClass">com.mysql.jdbc.driver</prop>
+				<prop key="jdbcUrl">jdbc:mysql:///test</prop>
+			</props>
+		</property>
+	</bean>
+
+	<util:list id="cars">
+		<ref bean="car" />
+		<ref bean="car2" />
+	</util:list>
+	
+	<bean id="person2" class="spring.listProperties.person">
+		<property name="name" value="xiaohua"></property>
+		<property name="car" ref="cars"></property>
+	</bean>
+	
+	<bean id="car3" class="spring.listProperties.Car" p:brand="aa" p:price="120000"></bean>
+</beans>

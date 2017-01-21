@@ -1,0 +1,5 @@
+StagingView_CompareMode=false
+StagingView_SyncWithSelection=false
+always_use_staging_view=false
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>1</message>\r\n<message>3</message>\r\n<message>\u6D4B\u8BD5&\#x0A;&\#x0A;&\#x0A;&\#x0A;&\#x0A;Change-Id\: Ica38319fbdb2480368a83c567d181f15268f6477&\#x0A;Signed-off-by\: Buer &lt;Buer@DESKTOP-0KO5FC2&gt;&\#x0A;</message>\r\n<message>t22</message>\r\n<message>11</message>\r\n<message>\u6D4B\u8BD5&\#x0A;&\#x0A;&\#x0A;&\#x0A;&\#x0A;Change-Id\: I0000000000000000000000000000000000000000&\#x0A;Signed-off-by\: Buer &lt;Buer@DESKTOP-0KO5FC2&gt;&\#x0A;</message>\r\n</messages>
+eclipse.preferences.version=1

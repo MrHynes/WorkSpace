@@ -1,0 +1,20 @@
+1.applicationContex.xml
+2.Beans_for_cheng2.xml
+  依赖注入方式（属性注入、构造器注入）
+3.Beans_for_cheng3.xml
+  使用ref属性建立bean之间的关系（引用的是外部bean）
+  内部bean的引用方式
+4.Beans_for_cheng4.xml
+  配置集合属性包括（Map、 List、 Properties）
+  配置独立的集合bean，以供多个bean进行引用 ，需要导入util命名空间
+  通过p命名空间为bean属性赋值 ，需要先导入p命名空间
+5.Beans_for_cheng5.xml
+  使用autowire属性指定自动装配方式
+6.Beans_for_cheng6.xml
+  bean抽象、继承
+7.Beans_for_cheng7.xml
+  bean的作用域（scop属性配置作用域，默认是singleton）
+8.Beans_for_cheng8.xml
+  使用外部属性文件
+9.Beans_for_cheng9.xml
+  SpEL

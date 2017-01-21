@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- IOC容器中bean的生命周期 -->
+	<bean id="car" class="com.qqcheng10.Car" init-method="init"
+		destroy-method="destroy">
+		<property name="brand" value="audi"></property>
+	</bean>
+	<!-- 实现BeanPostProcessor接口，并具体实现两个方法的实现 -->
+	<!-- 配置bean的后置处理器  -->
+	<bean class="com.qqcheng10.MyBeanPostProcessor"> </bean>
+</beans>

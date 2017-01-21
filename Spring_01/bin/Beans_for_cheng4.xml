@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<bean id="car" class="com.qqcheng4.Car">
+		<constructor-arg value="baoma"></constructor-arg>
+		<constructor-arg value="250"></constructor-arg>
+	</bean>
+	<bean id="car2" class="com.qqcheng4.Car">
+		<constructor-arg value="baoma2"></constructor-arg>
+		<constructor-arg value="260"></constructor-arg>
+	</bean>
+
+	<!-- 配置集合属性包括（Map、 List、 Properties）-->
+	
+	<!-- 1.使用list结点为List类型的属性赋值 -->
+	
+	<bean id="person" class="com.qqcheng4.Person">
+		<property name="personOfName" value=""></property>
+		<property name="ageOfPerson" value="18"></property>
+	
+		<property name="car">
+			<!-- 使用list结点为List类型的属性赋值 -->
+			<list>
+				<ref bean="car" />
+				<ref bean="car2" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 2.配置Map属性值 -->
+	
+	<bean id="newPerson" class="com.qqcheng4.newPerson">
+		<property name="personOfName" value="xiaohua"></property>
+		<property name="ageOfPerson" value="22"></property>
+		<property name="car">
+			<!-- 使用Map节点以及Map的entry子节点配置Map类型的成员变量 -->
+			<map>
+				<entry key="AA" value-ref="car"></entry>
+				<entry key="BB" value-ref="car2"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- 3.配置Properties的属性值 -->
+	
+	<bean id="dataSource" class="com.qqcheng4.dataSource">
+		<property name="properties">
+		<!-- 使用props和prop子节点为properties 属性赋值 -->
+			<props>
+				<prop key="user">root</prop>
+				<prop key="password">123456</prop>
+				<prop key="jdbcUrl">jdbc:mysql:///test</prop>
+				<prop key="driverClass">com.mysql.jdbc.driver</prop>		
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 4.配置独立的集合bean，以供多个bean进行引用 ，需要导入util命名空间-->
+	
+	<util:list id="cars">
+		<ref bean="car"/>
+		<ref bean="car2"/>
+	</util:list>
+	
+	<bean id="person2" class="com.qqcheng4.Person">
+		<property name="personOfName" value="chengqi"></property>
+		<property name="ageOfPerson" value="19"></property>
+		<property name="car" ref="cars"></property>
+	</bean>
+	
+	<!-- 5.通过p命名空间为bean属性赋值 ，需要先导入p命名空间-->
+	
+	<bean id="person3" class="com.qqcheng4.Person" p:personOfName="xiaoming" p:ageOfPerson="26"
+	 p:car-ref="cars"></bean>
+</beans>

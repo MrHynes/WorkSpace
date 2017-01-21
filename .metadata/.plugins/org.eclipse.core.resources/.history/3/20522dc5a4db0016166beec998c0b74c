@@ -1,0 +1,6 @@
+package com.ch03.Session;
+
+public class DBConnection {
+	public static final String DBDRIVER="org.gjt.mm.mysql"
+
+}

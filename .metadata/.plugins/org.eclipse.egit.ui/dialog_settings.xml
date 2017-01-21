@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="CommitDialog.showUntracked"/>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="github.com"/>
+		<item value="bitbucket.org"/>
+	</list>
+	<list key="CommitDialog.authorValues">
+		<item value="qiqcheng &lt;1016772696@qq.com&gt;"/>
+		<item value="Buer &lt;Buer@DESKTOP-0KO5FC2&gt;"/>
+	</list>
+	<list key="CommitDialog.committerValues">
+		<item value="qiqcheng &lt;1016772696@qq.com&gt;"/>
+		<item value="Buer &lt;Buer@DESKTOP-0KO5FC2&gt;"/>
+	</list>
+	<section name="PushToGerritPage">
+		<item value="https://github.com/qiqcheng/test.git" key="Repository[F:\WorkSpace\HelloJava\.git].lastUri"/>
+		<item value="1" key="Repository[F:\WorkSpace\HelloJava\.git].lastBranch"/>
+	</section>
+	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
+		<item value="642" key="DIALOG_WIDTH"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="650" key="DIALOG_HEIGHT"/>
+		<item value="370" key="DIALOG_X_ORIGIN"/>
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="GitCommitMessageComponent">
+		<list key="F:\WorkSpace\HelloJava\.git">
+			<item value="empty"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item value="500,500" key="STAGING_SASH_FORM_WEIGHT"/>
+		<item value="true" key="sortItemState"/>
+		<item value="500,500" key="HORIZONTAL_SASH_FORM_WEIGHT"/>
+	</section>
+</section>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	1.访问Servlet的方式有三种。<br>
+	1.1直接在浏览器输入访问路径来访问。<br>
+	<a href="firstServ"> 1.2通过超链接来访问Servlet(firstServlet)</a>
+	1.3通过表单来访问Servlet<br>
+	<form action="firstServ" method="post">
+		输入帐号：<input type="text" name="loginname"><br>
+		输入密码：<input type="text" name="password"><br>
+		<input type="submit" value="提交"> 	
+	</form>
+	<a href="getParam">1.3getInitParamServlet</a><br>
+	<a href="Register.html">1.4注册</a><br>
+	<a href="input.html">2.1Cookie</a><br>
+	<a href="sessionLogin.html">2.2Session</a><br>
+</body>
+</html>

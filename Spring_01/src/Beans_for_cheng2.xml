@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="helloWorld" class="com.qqcheng2.HelloWorld">
+		<!-- 依赖注入方式1 属性注入 
+		<property name="name" value="lihua"></property>
+		-->
+
+		<!-- 依赖注入方式2 构造器注入 -->
+			<!-- 构造方法1 
+			<constructor-arg value="lihua" type="java.lang.String"></constructor-arg> 
+			<constructor-arg value="FJNU_MCS" type="java.lang.String"></constructor-arg> 
+			<constructor-arg value="2500" type="double"></constructor-arg> 
+			-->
+		<!-- 构造方法2 -->
+		<constructor-arg value="lihua" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="FJNU_MCS" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="18" type="int"></constructor-arg>
+		<!-- value还有一种写法
+		<constructor-arg type="int"><value> 18</value></constructor-arg>
+		 -->
+		<!-- 如果value含有特殊字符（如：'<'、'>'）就可以使用[DATA[]]
+		如果18行的value="<fjnu_mcs>" 那么可以这样写
+		<constructor-arg type="java.lang.String"> <value><![CDATA["<FJNU_MCS^2>"]]></value></constructor-arg>
+		 -->
+	</bean>
+
+</beans>
