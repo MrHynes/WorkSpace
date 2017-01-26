@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>1.Servlet</h3>
+	1.1访问Servlet的方式有三种。<br>
+	1.1.1直接在浏览器输入访问路径来访问。<br>
+	<a href="firstServ"> 1.1.2通过超链接来访问Servlet(firstServlet)</a><br>
+	1.1.3通过表单来访问Servlet<br>
+	<form action="firstServ" method="post">
+		输入帐号：<input type="text" name="loginname"><br>
+		输入密码：<input type="text" name="password"><br>
+		<input type="submit" value="提交"> 	
+	</form><br>
+	<a href="lifeServlet">1.2Servleta生命周期(观察控制台输出窗口)</a><br>
+	<a href="getParam">1.3getInitParamServlet</a><br>
+	<a href="Register.html">1.4注册</a><br>
+	<h3>2.状态管理Cookie&Session</h3>
+	<a href="input.html">2.1Cookie</a><br>
+	<a href="sessionLogin.html">2.2Session</a><br>
+	<h3>3.JSP</h3>
+	<a href="JSP/FirstJsp.jsp">3.1JSP脚本元素(a.申明<%! %> b.脚本 <% %> c.表达式<%= %>)</a><br>
+	3.2JSP指令元素<br>
+	<a href="JSP/page.jsp">3.2.1page指令(import、language、contentType属性)</a>
+</body>
+</html>
