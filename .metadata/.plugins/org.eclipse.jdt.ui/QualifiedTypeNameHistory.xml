@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.sun.java.util.jar.pack.ConstantPool.Utf8Entry"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
-<fullyQualifiedTypeName name="com.sun.xml.internal.ws.api.server.EndpointReferenceExtensionContributor"/>
-<fullyQualifiedTypeName name="FactoryMethod.Sub"/>
-<fullyQualifiedTypeName name="FactoryMethod.Mult"/>
-<fullyQualifiedTypeName name="FactoryMethod.OperatorFactory"/>
 <fullyQualifiedTypeName name="FactoryMethod.Add"/>
 <fullyQualifiedTypeName name="FactoryMethod.AddFactory"/>
 <fullyQualifiedTypeName name="FactoryMethod.COperator"/>
@@ -50,14 +44,20 @@
 <fullyQualifiedTypeName name="java.net.CookieStore"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="jdk.management.resource.ResourceRequest"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="com.ch02.p59.ConnectionFactory"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="com.ch02.p59.ResourceClose"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.ws.transport.http.client.HttpClientTransport"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="com.ch02.p59.ConnectionFactory"/>
+<fullyQualifiedTypeName name="com.sun.scenario.effect.impl.prism.ps.PPSBrightpassPeer"/>
+<fullyQualifiedTypeName name="com.ch02.p59.ResourceClose"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.dom.Filter"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="jdk.nashorn.internal.ir.RuntimeNode.Request"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
