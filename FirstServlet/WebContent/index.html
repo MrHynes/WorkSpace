@@ -42,5 +42,17 @@
 	<a href="JSP/path.jsp">4.1路径相关函数</a>
 	<h3>5.过滤器</h3>
 	<a href="JSP/filter0501/login.jsp">5.1过滤器</a>
+	<h3>6.监听器</h3>
+	监听器是一个实现了某一接口的普通类;<br>
+	用于监听某一特定java对象<font color="red">(ServletContex,HttpSession,ServletRequest的对象)</font>的方法调用和属性改变<br>
+	当被监听的对象发生方法调用或者属性修改时,监听器的某个方法将立即被执行而做出反应<br>
+	a.ServletContex监听器接口：ServletContexListener、ServletContexAttributeListener<br>
+	b.HttpSession监听器接口：HttpSessionListener、HttpSessionAttributeListener、HttpSessionBindingListener、HttpSessionActivationListener<br>
+	c.ServletRequest监听器接口:ServletRequestListener、ServletRequestAttributeListener<br>
+	<br>
+	监听器开发步骤：(1)创建类实现相应的监听器接口并覆写其中的抽象方法。(2)web.xml中使用&#60;listener&#62;元素配置监听器<br>
+	<a>6.1监听web应用的初始化和销毁</a><br>
+	<a href="JSP/listener0502/countOnline.jsp">6.2统计系统在线人数功能</a><br>
+	<a href="JSP/listener0502/user.jsp">6.1监听HttpSession对象的创建和销毁</a><br>
 </body>
 </html>

@@ -1,0 +1,7 @@
+package com.ch05.Listener;
+
+import javax.servlet.ServletContextListener;
+
+public class MyServletContexListener implements ServletContextListener {
+
+}

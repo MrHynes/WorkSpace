@@ -179,7 +179,18 @@
 		<servlet-name>filter</servlet-name>
 		<url-pattern>/filter</url-pattern>
 	</servlet-mapping>
-
-
+	
+	<!-- 10.监听器-->
+	<listener>
+		<listener-class>
+			com.ch05.Listener.MyServletContexListener
+		</listener-class>
+	</listener>
+	 
+	<listener>
+		<listener-class>
+			com.ch05.Listener.CountOnlineListener
+		</listener-class>
+	</listener>
 
 </web-app>

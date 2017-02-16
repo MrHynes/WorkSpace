@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="FactoryMethod.Add"/>
-<fullyQualifiedTypeName name="FactoryMethod.AddFactory"/>
-<fullyQualifiedTypeName name="FactoryMethod.COperator"/>
-<fullyQualifiedTypeName name="FactoryMethod.IFactoryMethod"/>
-<fullyQualifiedTypeName name="FactoryMethod.MultFactory"/>
 <fullyQualifiedTypeName name="FactoryMethod.Div"/>
 <fullyQualifiedTypeName name="FactoryMethod.DivFactory"/>
 <fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
@@ -57,7 +52,12 @@
 <fullyQualifiedTypeName name="javax.servlet.Filter"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="jdk.nashorn.internal.ir.RuntimeNode.Request"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSessionListener"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContextListener"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSessionBindingListener"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

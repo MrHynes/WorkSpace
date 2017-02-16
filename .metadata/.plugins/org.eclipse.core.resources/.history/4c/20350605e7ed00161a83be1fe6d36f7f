@@ -1,7 +1,0 @@
-package com.ch05.Filter;
-
-import javax.servlet.Filter;
-
-public class LoginFilter implements Filter {
-
-}
