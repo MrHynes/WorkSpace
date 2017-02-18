@@ -1,0 +1,7 @@
+package com.ch06.JavaBean;
+
+public class Book {
+	private String isbn;
+	private String name;
+
+}

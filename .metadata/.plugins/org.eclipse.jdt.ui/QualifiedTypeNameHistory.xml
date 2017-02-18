@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="FactoryMethod.Div"/>
 <fullyQualifiedTypeName name="FactoryMethod.DivFactory"/>
 <fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
 <fullyQualifiedTypeName name="TemplateMethod.AbstractClass"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionBindingListener"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="com.ch06.JavaBean.Book"/>
 </qualifiedTypeNameHistroy>
