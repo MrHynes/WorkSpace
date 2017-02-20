@@ -1,0 +1,21 @@
+package com.ch07.MVC;
+
+import java.sql.Connection;
+
+public class DBMySQL {
+	private String driver;
+	private String url;
+	private String username;
+	private String password;
+	public DBMySQL(){
+		this.driver = driver;
+		this.url = url;
+		this.username = username;
+		this.password = password;
+	}
+	public Connection getConnection(){
+		Class.forName(driver);
+	}
+
+	
+}

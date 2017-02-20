@@ -193,4 +193,13 @@
 		</listener-class>
 	</listener>
 
+	<!-- 11.mvc -->
+	<servlet>
+	<servlet-name>mvclogin</servlet-name>
+	<servlet-class>com.ch07.MVC.loginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>mvclogin</servlet-name>
+	<url-pattern>/mvcLogin</url-pattern>
+	</servlet-mapping>
 </web-app>
