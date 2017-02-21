@@ -202,4 +202,13 @@
 	<servlet-name>mvclogin</servlet-name>
 	<url-pattern>/mvcLogin</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>encode</servlet-name>
+	<servlet-class>com.encode.code</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>encode</servlet-name>
+	<url-pattern>/code</url-pattern>
+	</servlet-mapping>
 </web-app>
