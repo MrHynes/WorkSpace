@@ -6,6 +6,13 @@ public class Book {
 	public Book(){
 		
 	}
+	
+	public Book(String isbn, String name) {
+		super();
+		this.isbn = isbn;
+		this.name = name;
+	}
+
 	public String getIsbn() {
 		return isbn;
 	}

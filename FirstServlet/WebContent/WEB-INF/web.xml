@@ -170,7 +170,7 @@
 	</servlet-mapping>
 
 	<!-- 9.过滤器 -->
-	
+
 	<servlet>
 		<servlet-name>filter</servlet-name>
 		<servlet-class>com.ch05.Filter.LoginServlet</servlet-class>
@@ -179,36 +179,52 @@
 		<servlet-name>filter</servlet-name>
 		<url-pattern>/filter</url-pattern>
 	</servlet-mapping>
-	
-	<!-- 10.监听器-->
+
+	<!-- 10.监听器 -->
 	<listener>
-		<listener-class>
-			com.ch05.Listener.MyServletContexListener
-		</listener-class>
+		<listener-class>com.ch05.Listener.MyServletContexListener</listener-class>
 	</listener>
-	 
+
 	<listener>
-		<listener-class>
-			com.ch05.Listener.CountOnlineListener
-		</listener-class>
+		<listener-class>com.ch05.Listener.CountOnlineListener</listener-class>
 	</listener>
 
 	<!-- 11.mvc -->
 	<servlet>
-	<servlet-name>mvclogin</servlet-name>
-	<servlet-class>com.ch07.MVC.loginServlet</servlet-class>
+		<servlet-name>mvclogin</servlet-name>
+		<servlet-class>com.ch07.MVC.loginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name>mvclogin</servlet-name>
-	<url-pattern>/mvcLogin</url-pattern>
+		<servlet-name>mvclogin</servlet-name>
+		<url-pattern>/mvcLogin</url-pattern>
+	</servlet-mapping>
+
+	<!-- 12.中文编码 -->
+	<servlet>
+		<servlet-name>encode</servlet-name>
+		<servlet-class>com.encode.code</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>encode</servlet-name>
+		<url-pattern>/code</url-pattern>
+	</servlet-mapping>
+
+	<!-- 13.EL表达式 -->
+	<servlet>
+		<servlet-name>elattribute</servlet-name>
+		<servlet-class>com.ch08.EL.ScopeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>elattribute</servlet-name>
+		<url-pattern>/scopeServlet</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
-	<servlet-name>encode</servlet-name>
-	<servlet-class>com.encode.code</servlet-class>
+		<servlet-name>elbean</servlet-name>
+		<servlet-class>com.ch08.EL.BookBean</servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name>encode</servlet-name>
-	<url-pattern>/code</url-pattern>
+		<servlet-name>elbean</servlet-name>
+		<url-pattern>/bookServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

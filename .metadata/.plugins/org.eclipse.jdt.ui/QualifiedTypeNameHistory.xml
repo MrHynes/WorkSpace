@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="Observer.Observer"/>
-<fullyQualifiedTypeName name="Observer.Subject"/>
-<fullyQualifiedTypeName name="Observer.Agent"/>
-<fullyQualifiedTypeName name="Observer.ClientA"/>
-<fullyQualifiedTypeName name="Observer.ClientB"/>
-<fullyQualifiedTypeName name="org.w3c.dom.UserDataHandler"/>
 <fullyQualifiedTypeName name="AbstractFactory.IUser"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="StudentInfoManage.DBOper"/>
@@ -40,7 +34,6 @@
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSessionBindingListener"/>
-<fullyQualifiedTypeName name="com.ch06.JavaBean.Book"/>
 <fullyQualifiedTypeName name="com.ch06.JavaBean.CountBean"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
@@ -53,11 +46,18 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="com.ch07.MVC.DBMySQL"/>
 <fullyQualifiedTypeName name="com.ch07.MVC.User"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="jdk.nashorn.internal.ir.RuntimeNode.Request"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.awt.image.BandedSampleModel"/>
 <fullyQualifiedTypeName name="java.net.URLEncoder"/>
 <fullyQualifiedTypeName name="java.net.URLDecoder"/>
+<fullyQualifiedTypeName name="java.time.chrono.JapaneseChronology"/>
+<fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
+<fullyQualifiedTypeName name="Chapter01.Search"/>
+<fullyQualifiedTypeName name="Chapter01.Sort"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="com.ch06.JavaBean.Book"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
 </qualifiedTypeNameHistroy>
