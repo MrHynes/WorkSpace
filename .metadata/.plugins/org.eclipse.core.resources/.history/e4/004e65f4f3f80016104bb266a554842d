@@ -1,0 +1,34 @@
+package Chapter01;
+
+public class Sort {
+	public int[] Merge(int a[],int b[]){
+		int i=0,j=0,k=0;
+		int c[]=new int[a.length+b.length];
+		while(i<a.length&&j<b.length){
+			if(a[i]<b[j]){
+				c[k]=a[i];
+				i++;
+				k++;
+			}
+			else{
+				c[k]=b[j];
+				k++;
+				j++;
+			}
+		}
+		if(i==a.length){
+			for(;j<b.length;j++){
+				System.out.println("a"+b[j]);
+				c[k]=b[j];
+				k++;
+			}
+		}else{
+			for(;i<a.length;i++){
+				System.out.println("b"+a[i]);
+				c[k]=a[i];
+				k++;
+			}
+		}
+		return c;
+	}
+}

@@ -1,0 +1,13 @@
+package Chapter01;
+
+public class main {
+	public static void main(String[] args) {
+		Search search=new Search();
+		int a[]={1,2,3,4,5,6};
+		int i=search.linearSearch(a, 3);
+		System.out.println(i);
+		int j=search.binarySearch(a, 3);
+		System.out.println(j);
+
+	}
+}

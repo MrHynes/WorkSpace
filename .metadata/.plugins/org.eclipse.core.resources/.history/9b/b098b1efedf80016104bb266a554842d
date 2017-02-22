@@ -1,0 +1,15 @@
+package Chapter01;
+
+public class LinearSearch {
+	public static void linearSearch(int a[],int x){
+		int j=0;
+		while(x!=a[j]&&j<a.length){
+			j=j+1;
+		}
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

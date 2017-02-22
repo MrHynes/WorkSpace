@@ -1,0 +1,10 @@
+package Chapter01;
+
+public class Sort {
+	public int[] Merge(int a[],int b[]){
+		int i=0,j=0;
+		int c[]=new int[a.length+b.length];
+		
+	}
+
+}
