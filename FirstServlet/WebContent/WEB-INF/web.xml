@@ -227,4 +227,33 @@
 		<servlet-name>elbean</servlet-name>
 		<url-pattern>/bookServlet</url-pattern>
 	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>elarray</servlet-name>
+		<servlet-class>com.ch08.EL.ArrayServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>elarray</servlet-name>
+		<url-pattern>/arrayServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ellist</servlet-name>
+		<servlet-class>com.ch08.EL.ListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ellist</servlet-name>
+		<url-pattern>/listServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>elmap</servlet-name>
+		<servlet-class>com.ch08.EL.MapServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>elmap</servlet-name>
+		<url-pattern>/mapServlet</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
