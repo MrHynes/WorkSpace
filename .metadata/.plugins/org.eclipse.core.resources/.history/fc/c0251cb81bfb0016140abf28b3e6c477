@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>param</title>
+</head>
+<body>
+<form action="getParam.jsp" method="get">
+
+</form>
+</body>
+</html>

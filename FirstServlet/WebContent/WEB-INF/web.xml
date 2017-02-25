@@ -256,4 +256,12 @@
 		<url-pattern>/mapServlet</url-pattern>
 	</servlet-mapping>
 	
+	<context-param>
+	<param-name>username</param-name>
+	<param-value>system</param-value>
+	</context-param>
+	<context-param>
+	<param-name>password</param-name>
+	<param-value>123456</param-value>
+	</context-param>
 </web-app>
