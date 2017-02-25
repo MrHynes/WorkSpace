@@ -22,7 +22,7 @@ public class ListServlet extends HttpServlet{
 		department.add("外语系");
 		department.add("数学系");
 		department.add("中文系");
-		req.setAttribute("department", department);
+		req.setAttribute("departments", department);
 		RequestDispatcher dispatcher;
 		dispatcher=req.getRequestDispatcher("/JSP/el/getList.jsp");
 		dispatcher.forward(req, resp);

@@ -23,7 +23,7 @@ public class MapServlet extends HttpServlet {
 		phone.put("home", "0599-5271110");
 		phone.put("school", "0591-8234567");
 		phone.put("office", "0599-6543210");
-		req.setAttribute("phone", phone);
+		req.setAttribute("phones", phone);
 		RequestDispatcher dispatcher;
 		dispatcher=req.getRequestDispatcher("/JSP/el/getMap.jsp");
 		dispatcher.forward(req, resp);

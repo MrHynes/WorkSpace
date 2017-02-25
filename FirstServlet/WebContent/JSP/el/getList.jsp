@@ -12,16 +12,16 @@
 		<th>系别</th>
 	</tr>
 	<tr>
-		<td>${department[0]}</td>
+		<td>${departments["0"]}</td>
 	</tr>
 	<tr>
-		<td>${department[1]}</td>
+		<td>${departments["1"]}</td>
 	</tr>
 	<tr>
-		<td>${department[2]}</td>
+		<td>${departments["2"]}</td>
 	</tr>
 	<tr>
-		<td>${department[3]}</td>
+		<td>${departments["3"]}</td>
 	</tr>
 
 </table>
