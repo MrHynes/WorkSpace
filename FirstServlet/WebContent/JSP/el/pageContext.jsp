@@ -7,6 +7,6 @@
 <title>EL内置对象pageContext</title>
 </head>
 <body>
-请求方式：${pageContext.request.method}
+请求方式：${page.request.method}
 </body>
 </html>
