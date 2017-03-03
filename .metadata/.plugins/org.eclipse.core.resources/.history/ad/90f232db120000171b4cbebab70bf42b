@@ -1,0 +1,11 @@
+package com.dao.dao;
+
+import com.dao.vo.Emp;
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
+public interface IEmpDao {
+	public boolean doCreate(Emp emp)throws Exception;
+	public List<Emp> findAll(String keyWord)throws Exception;
+	}
+
+}

@@ -1,7 +1,0 @@
-package com.ch07.MVC;
-
-import javax.servlet.http.HttpServlet;
-
-public class loginServlet extends HttpServlet {
-
-}

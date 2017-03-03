@@ -1,0 +1,13 @@
+package com.dao.test;
+
+import java.util.List;
+
+import com.dao.factory.DAOFactory;
+import com.dao.vo.Emp;
+
+public class TestDAOSelect {
+	public static void main(String[] args) {
+		List<Emp> all=DAOFactory.getIEmpDAOInstance().findAll("");
+	}
+
+}

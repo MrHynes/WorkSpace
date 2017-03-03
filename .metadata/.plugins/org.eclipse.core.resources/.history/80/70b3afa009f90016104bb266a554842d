@@ -1,7 +1,0 @@
-package com.ch08.EL;
-
-import javax.servlet.http.HttpServlet;
-
-public class BookBean extends HttpServlet{
-
-}

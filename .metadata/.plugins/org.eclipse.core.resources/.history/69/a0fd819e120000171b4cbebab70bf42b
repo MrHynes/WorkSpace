@@ -1,0 +1,5 @@
+package com.dao.dao;
+
+public interface IEmpDao {
+
+}

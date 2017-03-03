@@ -1,0 +1,9 @@
+package com.dao.dbc;
+
+public class DBconnection {
+
+	private String DBDRIVER="org.gjt.mm.mysql.Driver";
+	private String DBURL="jdbc:mysql;..localhost:3306/xe";
+	private String DBUSER="root";
+	private String DBPASSWORD="chengqi";
+}

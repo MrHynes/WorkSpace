@@ -1,0 +1,13 @@
+package com.dao.test;
+
+import com.dao.vo.Emp;
+
+public class TestDAOInsert {
+	public static void main(String[] args) {
+		Emp emp=null;
+		for(int i=0;i<5;i++){
+			
+		}
+	}
+
+}

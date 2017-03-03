@@ -1,5 +1,0 @@
-package com.ch08.EL;
-import com.ch06.JavaBean.Book;
-public class ArrayServlet {
-
-}

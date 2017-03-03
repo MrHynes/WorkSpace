@@ -1,8 +1,0 @@
-package Chapter01;
-
-public class Sort {
-	public int[] Merge(int a[]){
-		
-	}
-
-}

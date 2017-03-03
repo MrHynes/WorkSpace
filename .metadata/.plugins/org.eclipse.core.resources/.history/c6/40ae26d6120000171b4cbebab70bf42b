@@ -1,0 +1,10 @@
+package com.dao.dao;
+
+import com.dao.vo.Emp;
+
+public interface IEmpDao {
+	public boolean doCreate(Emp emp)throws Exception{
+		
+	}
+
+}
