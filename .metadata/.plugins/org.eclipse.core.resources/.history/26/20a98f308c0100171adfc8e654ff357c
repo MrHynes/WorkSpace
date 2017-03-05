@@ -1,0 +1,25 @@
+drop database if exists yootk;
+
+create database yootk character set utf8;
+
+use yootk;
+
+drop table if exists member;
+
+create table member(
+mid  varchar(50),
+password varchar(32)  not null,
+constraint pk_mid primary key(mid)
+);
+
+insert into member(mid,password) values ('yootk','hello');
+
+select * from member;
+
+/*
+更新密码，存入数据库中的密码是  用户输入的密码{用户名}  形式转换成md5码后的形式。
+008DA5E74B1C656C60CC10841FE60536 为  hello{yootk}转化成md5码后的形式
+*/
+update member set password='008DA5E74B1C656C60CC10841FE60536' where mid='yootk';
+
+select * from member;

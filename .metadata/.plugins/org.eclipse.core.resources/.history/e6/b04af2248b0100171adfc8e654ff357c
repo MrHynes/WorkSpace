@@ -1,0 +1,54 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="com.yootk.util.*" %>
+<html>
+<head>
+    <title>《Bootstrap + JSP开发案例》</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,inital-scale=1">
+    <%-- 由于Bootstrap要基于jQuery完成，所以需要先导入jQuery的开发包 --%>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<%  // 已经可以正常接收输入参数了
+    String mid = request.getParameter("mid") ;
+    String password = new MD5Code().getMD5ofStr(request.getParameter("password")+"{"+mid+"}") ;
+%>
+<%!
+    public static final String DBDRIVER = "org.gjt.mm.mysql.Driver" ;
+    public static final String DBURL = "jdbc:mysql://localhost:3306/yootk" ;
+    public static final String DBUSER = "root" ;
+    public static final String PASSWORD = "mysqladmin" ;
+%>
+<%
+    boolean flag = false ;
+    Class.forName(DBDRIVER) ;   // 加载数据库的驱动程序
+    Connection conn = DriverManager.getConnection(DBURL,DBUSER,PASSWORD) ;
+    String sql = "SELECT COUNT(*) FROM member WHERE mid=? AND password=?" ;
+    PreparedStatement stmt = conn.prepareStatement(sql) ;   // 本次使用就是为了进行问题的分析
+    stmt.setString(1,mid);
+    stmt.setString(2,password);
+    ResultSet rs = stmt.executeQuery() ;
+    if (rs.next()) {
+        if (rs.getInt(1) > 0) {
+            flag = true ;
+        }
+    }
+    conn.close();
+%>
+<%
+    if (flag) {
+%>
+        <h1>用户登录成功，欢迎光临！</h1>
+<%
+    } else {
+%>
+        <h1>用户登录失败，重新<a href="login.jsp">登录</a>！</h1>
+<%
+    }
+%>
+</body>
+</html>
