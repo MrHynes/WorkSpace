@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>编码问题</title>
+</head>
+<body>
+关于编码问题：<br>
+1.http请求参数中包含汉字，通过req.getParameter("xx")获取得到的会显示乱码！！待解决)<br>
+2.通过html控件的名字获取中文信息会显示乱码！
+(已经解决，req.setCharacterEncoding("utf-8");<br>
+resp.setCharacterEncoding("utf-8");<br>
+String name=req.getParameter("name");)<br>
+<form action="code" method="post">
+<input type="text" name="name">
+<input type="submit" value="提交">
+</form>
+</body>
+</html>
