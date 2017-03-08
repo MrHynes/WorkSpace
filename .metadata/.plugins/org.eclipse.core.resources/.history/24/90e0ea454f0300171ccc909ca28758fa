@@ -1,0 +1,6 @@
+package com.dbop.dbc;
+
+public class DBConnection {
+	public static final String DBDRIVER="org.gjt.mm.mysql.Driver";
+
+}

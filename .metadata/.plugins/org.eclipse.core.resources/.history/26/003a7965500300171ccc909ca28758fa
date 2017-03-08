@@ -1,0 +1,8 @@
+package com.dbop.dao;
+
+import com.dbop.vo.Info;
+
+public interface IDbopDao {
+	public int addData(Info info);
+
+}

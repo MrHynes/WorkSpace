@@ -1,0 +1,23 @@
+package com.dbop.dbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnection {
+	public static final String DBDRIVER="org.gjt.mm.mysql.Driver";
+	public static final String DBURL="jdbc:mysql://localhost:3306/stuinfo";
+	public static final String DBUSER="root";
+	public static final String DBPASSWORD="chengqi";
+	Connection conn=null;
+	public Connection getConnection() throws Exception{
+		Class.forName(DBDRIVER);
+		this.conn=DriverManager.getConnection(DBURL,DBUSER,DBPASSWORD);
+		return this.conn;
+	}
+	public void close(){
+		if(this.conn!=null){
+			this.conn.close();
+		}
+	}
+
+}

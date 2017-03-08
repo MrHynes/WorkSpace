@@ -1,0 +1,12 @@
+package com.dbop.dao.impl;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import com.dbop.dao.IDbopDao;
+import com.dbop.dbc.DBConnection;
+
+public class DbopDaoImp implements IDbopDao{
+
+
+}

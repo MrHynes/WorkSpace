@@ -1,0 +1,8 @@
+package com.dbop.dao;
+
+import java.sql.ResultSet;
+
+public interface IDbopDao {
+	public ResultSet doQuery(String sql);
+	public int doUpdate(String sql);
+}

@@ -1,0 +1,31 @@
+package com.dbop.dao.proxy;
+
+import java.util.List;
+
+import com.dbop.dao.IDbopDao;
+import com.dbop.dao.impl.DbopDaoImp;
+import com.dbop.dbc.DBConnection;
+import com.dbop.vo.Info;
+
+public class DbopDaoProxy implements IDbopDao {
+
+	private DBConnection conn=null;
+	private IDbopDao dao=null;
+	public DbopDaoProxy() throws Exception {
+		this.conn=new DBConnection();
+		this.dao=new DbopDaoImp(this.conn.getConnection());
+	}
+	@Override
+	public boolean doInsert(Info info) throws Exception {
+		boolean flag=false;
+		if(this.dao.doSelectByKey(info.getId())!=null)
+		return false;
+	}
+
+	@Override
+	public List<Info> doSelect() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
