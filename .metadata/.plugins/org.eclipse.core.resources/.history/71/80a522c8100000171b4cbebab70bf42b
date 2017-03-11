@@ -1,5 +1,0 @@
-package com.dao.dbc;
-
-public class DBconnection {
-
-}

@@ -1,8 +1,0 @@
-package com.dao.test;
-
-public class TestDAOInsert {
-	public static void main(String[] args) {
-		
-	}
-
-}

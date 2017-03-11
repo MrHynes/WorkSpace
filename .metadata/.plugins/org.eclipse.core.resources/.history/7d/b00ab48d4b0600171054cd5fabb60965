@@ -1,0 +1,11 @@
+package Chapter05;
+
+public class Exprec {
+	/**
+	 * 求x的n次方
+	 */
+	public int getPower(int x,int n){
+		int p=0;
+		return p;
+	}
+}

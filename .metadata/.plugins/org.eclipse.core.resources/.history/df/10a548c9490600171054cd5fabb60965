@@ -1,0 +1,9 @@
+package Chapter05;
+
+public class Horner {
+
+	public int GetValues(int x,int n,int a[]){
+		int p=a[a.length];
+		return 0;
+	}
+}

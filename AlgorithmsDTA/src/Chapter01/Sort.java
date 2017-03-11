@@ -47,9 +47,19 @@ public class Sort {
 		}
 		return a;
 	}
-	//≤Â»Î≈≈–Ú
+	//≤Â»Î≈≈–Ú5,3£¨1,7
 	public int[] insertionSort(int a[]){
-		return null;
+		int x,j;
+		for(int i=1;i<a.length;i++){
+			x=a[i];
+			j=i-1;
+			while(j>=0&&a[j]>x){
+				a[j+1]=a[j];
+				j=j-1;
+			}
+			a[j+1]=x;
+		}
+		return a;
 	}
 	
 }

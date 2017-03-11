@@ -1,7 +1,0 @@
-package com.dao.dao.imp;
-
-import com.dao.dao.IEmpDao;
-
-public class EmpDAOImpl implements IEmpDao {
-
-}
