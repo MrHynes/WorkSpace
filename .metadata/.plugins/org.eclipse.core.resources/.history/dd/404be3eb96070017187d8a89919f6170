@@ -1,0 +1,5 @@
+package com.j2ee.vo;
+
+public class Info {
+
+}

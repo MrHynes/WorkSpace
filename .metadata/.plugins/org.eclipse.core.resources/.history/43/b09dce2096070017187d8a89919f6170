@@ -1,0 +1,12 @@
+package com.j2ee.query;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class QueryData {
+	private Connection conn=null;
+	private PreparedStatement pstm=null;
+	private ResultSet rs=null;
+
+}

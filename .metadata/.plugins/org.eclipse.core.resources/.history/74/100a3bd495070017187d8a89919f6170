@@ -1,0 +1,5 @@
+package com.j2eeclass.dbConnection;
+
+public class DBConnection {
+
+}
