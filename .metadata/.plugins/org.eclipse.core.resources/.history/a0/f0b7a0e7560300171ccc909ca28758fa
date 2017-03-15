@@ -1,6 +1,0 @@
-package com.dbop.dao.factory;
-
-public class DaoFactory {
-	public static void IDbopDao 
-
-}

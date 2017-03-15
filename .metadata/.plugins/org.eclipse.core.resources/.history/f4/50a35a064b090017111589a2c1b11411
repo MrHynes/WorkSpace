@@ -1,0 +1,7 @@
+package pers.qiqcheng.onlinevote.vo;
+
+public class UserInfo {
+	private String userName;
+	private String passWord;
+
+}

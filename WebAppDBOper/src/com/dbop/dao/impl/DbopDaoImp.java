@@ -31,22 +31,13 @@ public class DbopDaoImp implements IDbopDao{
 		return flag;
 	}
 	@Override
-	public List<Info> doSelect() throws Exception {
+	public ResultSet doSelect(String sql) throws Exception {
 		Info info=null;
 		List<Info> list=new ArrayList<Info>();
-		String sql="select * from info order by id";
+		//String sql="select * from info order by id";
 		PreparedStatement pstm=this.conn.prepareStatement(sql);
 		ResultSet rs=pstm.executeQuery();
-		while(rs.next()){
-			info=new Info();
-			info.setId(rs.getString(1));
-			info.setName(rs.getString(2));
-			info.setAge(rs.getInt(3));
-			info.setScore(rs.getFloat(4));
-			list.add(info);
-		}
-		pstm.close();
-		return list;
+		return rs;
 	}
 	@Override
 	public Info doSelectByKey(String key) throws Exception {

@@ -1,0 +1,9 @@
+package pers.qiqcheng.onlinevote.dao;
+
+import java.sql.ResultSet;
+
+public interface IVoteDao {
+	public ResultSet doSelect(String sql);
+	public doUpdate(String sql);
+
+}

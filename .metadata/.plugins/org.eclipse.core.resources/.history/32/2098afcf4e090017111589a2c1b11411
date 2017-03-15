@@ -1,0 +1,5 @@
+package pers.qiqcheng.onlinevote.proxy;
+
+public class VoteDaoProxy {
+
+}

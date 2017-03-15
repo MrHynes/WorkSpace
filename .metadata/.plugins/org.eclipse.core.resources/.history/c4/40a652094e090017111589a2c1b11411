@@ -1,0 +1,62 @@
+package pers.qiqcheng.onlinevote.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import pers.qiqcheng.onlinevote.dao.IVoteDao;
+import pers.qiqcheng.onlinevote.vo.Votes;
+
+public class VoteDaoImp implements IVoteDao {
+
+	private Connection conn=null;
+	private PreparedStatement pstm=null;
+	public VoteDaoImp(Connection conn) {
+		this.conn=conn;
+	}
+	@Override
+	public ResultSet doSelect(String sql,Object[] params) {
+		ResultSet rs=null;
+		try {
+			this.pstm=conn.prepareStatement(sql);
+			for(int i=0;i<params.length;i++){
+				pstm.setObject(i+1, params[i]);
+			}
+			rs=pstm.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rs;
+	}
+
+	@Override
+	public boolean doUpdate(String sql,Object[] params) {
+		boolean flag=false;
+		try {
+			this.pstm=conn.prepareStatement(sql);
+			for(int i=0;i<params.length;i++){
+				pstm.setObject(i+1, params[i]);
+			}
+			while(pstm.executeUpdate()>0){
+				flag=true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return flag;
+	}
+	@Override
+	public List<Votes> getVotes(String sql, Object[] params) {
+		List <Votes> list=new ArrayList<Votes>();
+		ResultSet rs=this.doSelect(sql, params);
+		while(rs.next()){
+			
+		}
+		return null;
+	}
+
+}

@@ -1,0 +1,28 @@
+package pers.qiqcheng.onlinevote.servlet;
+import pers.qiqcheng.onlinevote.util.MD5Code;;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.login.MD5Code;
+
+public class LogingProcess extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String username=req.getParameter("username");
+		String password = new MD5Code().getMD5ofStr(req.getParameter("password")+"{"+username+"}") ;
+		
+	}
+	
+
+}

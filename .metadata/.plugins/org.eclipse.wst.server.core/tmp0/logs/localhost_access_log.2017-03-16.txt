@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:01:57 +0800] "POST /OnlineVote/loginProcess HTTP/1.1" 200 7329
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:01:57 +0800] "GET /OnlineVote/css/head.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:01:57 +0800] "GET /OnlineVote/img/pro.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:02:00 +0800] "GET /OnlineVote/doVoters?id=201701&num=16 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:02:00 +0800] "GET /OnlineVote/getVoters HTTP/1.1" 200 7329
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:02:01 +0800] "GET /OnlineVote/error.jsp HTTP/1.1" 200 1377
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:02:01 +0800] "GET /OnlineVote/img/error.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:02:02 +0800] "GET /OnlineVote/login.jsp HTTP/1.1" 200 2120
+0:0:0:0:0:0:0:1 - - [16/Mar/2017:00:02:02 +0800] "GET /OnlineVote/js/my.js HTTP/1.1" 304 -

@@ -1,0 +1,11 @@
+package pers.qiqcheng.onlinevote.test;
+
+import pers.qiqcheng.onlinevotes.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		String sql="insert into userinfo values(?,?);"
+		DaoFactory.getVoteDaoInstance().doInsert(sql, params);
+	}
+
+}

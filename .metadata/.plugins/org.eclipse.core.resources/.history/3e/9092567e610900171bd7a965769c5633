@@ -1,0 +1,46 @@
+package pers.qiqcheng.onlinevote.servlet;
+import pers.qiqcheng.onlinevote.factory.DaoFactory;
+import pers.qiqcheng.onlinevote.util.MD5Code;
+
+import java.io.IOException;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+public class LoginProcess extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/html;charset=utf-8");
+		String username=req.getParameter("username");
+		String password = new MD5Code().getMD5ofStr(req.getParameter("password")+"{"+username+"}") ;
+		String sql="select * from userinfo where username=? and password=?";
+		String params[]={username,password};
+		ResultSet rs;
+		try {
+			rs = DaoFactory.getVoteDaoInstance().doSelect(sql, params);
+			if(rs.next()){
+				req.getRequestDispatcher("showVotes.jsp").forward(req, resp);
+			}else {
+				resp.sendRedirect("http://localhost:8080/OnlineVote/login.jsp");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+}

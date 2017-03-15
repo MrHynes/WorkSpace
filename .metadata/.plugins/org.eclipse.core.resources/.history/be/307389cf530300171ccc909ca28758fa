@@ -1,7 +1,0 @@
-package com.dbop.dao.proxy;
-
-import com.dbop.dao.IDbopDao;
-
-public class DbopDaoProxy implements IDbopDao {
-
-}

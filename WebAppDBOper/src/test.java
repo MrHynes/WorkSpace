@@ -1,3 +1,5 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.dbop.dao.factory.DaoFactory;
@@ -5,15 +7,22 @@ import com.dbop.vo.Info;
 
 public class test {
 	public static void select(){
-		List<Info> list=null;
+		ResultSet rs=null;
+		//String sql="select * from info order by id";
+		String sql="select * from info limit 0,10";
 		try {
-			list = DaoFactory.getIDbopDaoInstance().doSelect();
+			rs = DaoFactory.getIDbopDaoInstance().doSelect(sql);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		for (Info info : list) {
-			System.out.println(info.getId()+" "+info.getName()+" "+info.getAge()+" "+info.getScore());
+		try {
+			while(rs.next()){
+				System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getInt(3)+" "+rs.getFloat(4));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	public static void delete(){
@@ -46,7 +55,7 @@ public class test {
 	public static void main(String[] args) {
 		
 		
-		update();
+		select();
 	}
 
 }

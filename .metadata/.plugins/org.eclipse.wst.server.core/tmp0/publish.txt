@@ -1,6 +1,0 @@
-#Tomcat publish data
-#Mon Mar 13 13:37:12 CST 2017
-org.eclipse.jst.jee.server\:WebAppDBOper=D\:\\tomcat\\webapps\\WebAppDBOper
-org.eclipse.jst.jee.server\:Login=D\:\\tomcat\\webapps\\Login
-org.eclipse.jst.jee.server\:FirstServlet=D\:\\tomcat\\webapps\\FirstServlet
-org.eclipse.jst.jee.server\:OnlineVote=D\:\\tomcat\\webapps\\OnlineVote

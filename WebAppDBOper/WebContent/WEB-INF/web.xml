@@ -36,4 +36,12 @@
 		<servlet-name>updateServlet</servlet-name>
 		<url-pattern>/update</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>showServlet</servlet-name>
+		<servlet-class>com.dbop.servlet.show</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>showServlet</servlet-name>
+		<url-pattern>/show</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -1,0 +1,14 @@
+package pers.qiqcheng.onlinevote.test;
+
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
+import pers.qiqcheng.onlinevotes.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		String sql="insert into userinfo values(?,?)";
+		Object params=new Object(){"chengqi","123456"};
+		DaoFactory.getVoteDaoInstance().doInsert(sql, params);
+	}
+
+}

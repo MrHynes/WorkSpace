@@ -1,0 +1,22 @@
+package pers.qiqcheng.onlinevote.test;
+
+
+import pers.qiqcheng.onlinevotes.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		String sql="insert into userinfo values(?,?)";
+		String sql2="insert into voters values(?,?,?)";
+		String[] params={"2017002","lisi","9"};
+		boolean f=false;
+		try {
+			f=DaoFactory.getVoteDaoInstance().doInsert(sql, params);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(f){
+			System.out.println("≤Â»Î≥…π¶");
+		}
+	}
+}

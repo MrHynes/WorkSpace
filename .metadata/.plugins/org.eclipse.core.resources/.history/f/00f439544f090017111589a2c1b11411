@@ -1,0 +1,43 @@
+package pers.qiqcheng.onlinevote.proxy;
+
+import java.sql.ResultSet;
+import java.util.List;
+
+import pers.qiqcheng.onlinevote.dao.IVoteDao;
+import pers.qiqcheng.onlinevote.dao.impl.VoteDaoImp;
+import pers.qiqcheng.onlinevote.dbc.DBConnection;
+import pers.qiqcheng.onlinevote.vo.Votes;
+
+public class VoteDaoProxy implements IVoteDao{
+	private DBConnection conn=null;
+	private IVoteDao dao=null;
+	public VoteDaoProxy() throws Exception {
+		this.conn=new DBConnection();
+		this.dao=new VoteDaoImp(this.conn.getConnection());
+	}
+
+	@Override
+	public ResultSet doSelect(String sql, Object[] params) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean doUpdate(String sql, Object[] params) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean doInsert(String sql, Object[] params) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Votes> getVotes(String sql, Object[] params) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

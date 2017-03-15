@@ -1,0 +1,5 @@
+package pers.qiqcheng.onlinevote.servlet;
+
+public class GetVoters {
+
+}

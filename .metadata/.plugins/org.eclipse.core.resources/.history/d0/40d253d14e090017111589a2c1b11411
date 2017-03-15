@@ -1,0 +1,7 @@
+package pers.qiqcheng.onlinevote.proxy;
+
+import pers.qiqcheng.onlinevote.dao.IVoteDao;
+
+public class VoteDaoProxy implements IVoteDao{
+
+}
