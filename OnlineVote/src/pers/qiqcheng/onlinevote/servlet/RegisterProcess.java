@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.org.apache.regexp.internal.recompile;
+
 import pers.qiqcheng.onlinevote.factory.DaoFactory;
 import pers.qiqcheng.onlinevote.util.MD5Code;
 
@@ -31,8 +33,8 @@ public class RegisterProcess extends HttpServlet {
 		boolean flag=false;
 		//判断 username==null,pass==null,pass2==null,pass==pass2,pass=" ".pass2==" ",username==" "
 		if(username!=""&&pass!=""&&pass.equals(pass2)){//判断如果两次密码相同或者密码/用户名不为空的时候
-			String password = new MD5Code().getMD5ofStr(req.getParameter("pass")+"{"+username+"}") ;
-			String[]params={username,password};
+			//String password = new MD5Code().getMD5ofStr(req.getParameter("pass")+"{"+username+"}") ;
+			String[]params={username,pass};
 			try {
 				flag=DaoFactory.getVoteDaoInstance().doInsert(sql, params);
 			} catch (Exception e) {
@@ -46,7 +48,8 @@ public class RegisterProcess extends HttpServlet {
 		 * 错误原因:把下面的if语句块放到了上面一个if语句块内，导致当输入有误的时候，无法正确重定向到原注册页面。
 		 */
 		if(flag){
-			req.getRequestDispatcher("login.jsp").forward(req, resp);
+			req.setAttribute("name", username);
+			req.getRequestDispatcher("regSuccess.jsp").forward(req, resp);
 		}else{
 			resp.sendRedirect("http://localhost:8080/OnlineVote/register.jsp");
 		}

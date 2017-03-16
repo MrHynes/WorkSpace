@@ -26,7 +26,8 @@ public class LoginProcess extends HttpServlet {
 		resp.setContentType("text/html;charset=utf-8");
 		String username=req.getParameter("username");
 		//将密码转化为MD5码
-		String pass = new MD5Code().getMD5ofStr(req.getParameter("password")+"{"+username+"}") ;
+		//String pass = new MD5Code().getMD5ofStr(req.getParameter("password")+"{"+username+"}") ;
+		String pass=req.getParameter("password");
 		String sql="select * from userinfo where username=? and password=?";
 		String params[]={username,pass};
 		ResultSet rs;
