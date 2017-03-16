@@ -102,5 +102,4 @@ public class VoteDaoImp implements IVoteDao {
 		
 		return flag;
 	}
-
 }

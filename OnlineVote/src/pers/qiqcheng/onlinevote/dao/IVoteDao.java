@@ -10,5 +10,4 @@ public interface IVoteDao {
 	public boolean doUpdate(String sql,Object[] params);
 	public boolean doInsert(String sql,Object[] params);
 	public List<Votes> getVoters(String sql,Object[] params);
-	
 }

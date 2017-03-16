@@ -45,7 +45,8 @@ public class RegisterProcess extends HttpServlet {
 		/**
 		 * 在这里曾经出过错，
 		 * 错误描述：当两次密码不一样时，或者都不输入的时候，点击注册，网页跳转不正常。
-		 * 错误原因:把下面的if语句块放到了上面一个if语句块内，导致当输入有误的时候，无法正确重定向到原注册页面。
+		 * 错误原因:把下面的if语句块放到了上面一个if语句块内，导致当输入有误的时候，
+		 * 无法正确重定向到原注册页面。
 		 */
 		if(flag){
 			req.setAttribute("name", username);

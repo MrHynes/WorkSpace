@@ -29,7 +29,7 @@ if(users!=null){
 					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Online Votes is a
 						supportive and active community for people in contests requiring
 						online voting.</p>
-					<br>
+						<p>在线投票系统是一个为需要投票的比赛提供支持的社区。</p>
 					<p>
 						<button class="btn btn-primary">开始使用>></button>
 					</p>

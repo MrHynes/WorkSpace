@@ -33,8 +33,8 @@ public class DoVote extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(flag){
-			resp.sendRedirect("http://localhost:8080/OnlineVote/getVoters");
-			//req.getRequestDispatcher("getVoters").forward(req, resp);
+			//resp.sendRedirect("http://localhost:8080/OnlineVote/getVoters");
+			req.getRequestDispatcher("getVoters").forward(req, resp);
 		}else {
 			resp.sendRedirect("http://localhost:8080/OnlineVote/error.jsp");
 		}
