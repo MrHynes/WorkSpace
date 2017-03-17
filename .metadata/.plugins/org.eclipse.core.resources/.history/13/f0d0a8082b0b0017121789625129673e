@@ -1,0 +1,17 @@
+package Chapter05;
+
+public class Candidate {
+	public void candidate(int a[],int m){
+		int j=m;
+		int c=a[j];
+		int count=1;
+		while(count>0&&j<a.length){
+			j=j+1;
+			if(a[j]==c){
+				count++;
+			}
+		}
+		
+	}
+
+}

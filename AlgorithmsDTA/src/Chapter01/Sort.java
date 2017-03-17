@@ -31,8 +31,39 @@ public class Sort {
 		}
 		return c;
 	}
+	/**
+	 * 合并两个有序数组A[p..q] A[p+1..r]
+	 * @param a
+	 */
+	public void Merge(int a[],int low,int mid,int high){
+		int b[]=new int[a.length];
+		int s=low,t=mid+1,k=low;
+		while(s<=mid&&t<=high){
+			if(a[s]<=a[t]){
+				b[k]=a[s];
+				s++;
+			}else {
+				b[k]=a[t];
+				t++;
+			}
+			k++;
+		}
+		if(s==mid+1){
+			for(int i=t;i<a.length;i++){
+				b[k]=a[i];
+				k++;
+			}
+		}else {
+			for(int i=s;i<mid+1;i++){
+				b[k]=a[i];
+				k++;
+			}
+		}
+		for(int i=0;i<a.length;i++)
+			a[i]=b[i];
+	}
 	//选择排序
-	public int[] selectionSort(int a[]){
+	public void selectionSort(int a[]){
 		int k,temp,i;
 		for(i=0;i<a.length-1;i++){
 			k=i;
@@ -45,10 +76,9 @@ public class Sort {
 				a[k]=temp;
 			}
 		}
-		return a;
 	}
-	//插入排序5,3，1,7
-	public int[] insertionSort(int a[]){
+	//插入排序5,3,1,7
+	public void insertionSort(int a[]){
 		int x,j;
 		for(int i=1;i<a.length;i++){
 			x=a[i];
@@ -59,7 +89,56 @@ public class Sort {
 			}
 			a[j+1]=x;
 		}
-		return a;
 	}
 	
+	/*
+	 * 冒泡排序
+	 */
+	public void bubbleSort(int a[]){
+		int temp;
+		for(int i=1;i<a.length;i++){//总共需要给n-1个元素排序
+			for(int j=0;j<a.length-i;j++){//比较次数是a.length-i
+				if(a[j]>a[j+1]){
+					temp=a[j];
+					a[j]=a[j+1];
+					a[j+1]=temp;
+				}
+			}
+		}
+	}
+	/**
+	 * 快速排序
+	 */
+	public void quickSort(int a[],int left,int right){
+		if(left>right) return;
+		int i=left,j=right;
+		int temp=a[left];
+		int t;
+		/**
+		 * //哨兵j在右边，哨兵i在左边，j先向前走，若找到一个小于a[left]的元素就，停止
+		 * 然后哨兵i向右走，如果找到一个大于a[left]的元素，就停止，然后互换a[i] a[j].
+		 * 直到i和j相遇，将相遇的元素和a[left]互换。
+		 */
+		while(i!=j){			
+			while(i<j&&a[j]>=temp)
+				j--;
+			while(i<j&&a[i]<=temp)
+				i++;
+			if(i<j){
+				t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+		}
+		a[left]=a[i];
+		a[i]=temp;
+		quickSort(a, left, i-1);
+		quickSort(a, i+1, right);
+	}
+	/**
+	 * 自底向上合并排序
+	 */
+	public void bottomupSort(){
+		
+	}
 }

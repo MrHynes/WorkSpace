@@ -1,0 +1,8 @@
+package Chapter05;
+
+public class Candidate {
+	public void candidate(int a[],int m){
+		
+	}
+
+}

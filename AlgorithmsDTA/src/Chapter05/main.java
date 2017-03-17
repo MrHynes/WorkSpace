@@ -13,5 +13,17 @@ public static void main(String[] args) {
 	int y=exprec.getPower(2, 9);
 	System.out.println("2^10="+y);
 	
+	int count=0;
+	int b[]={5,5,1,5,3,5};
+	int c=new Candidate().candidate(b, 0);
+	for(int i=0;i<b.length;i++){
+		if(c==b[i]) count++;
+	}
+	if(count>b.length/2){
+		System.out.println("多数元素是"+c);
+	}else {
+		System.out.println("不存在多数元素"+c);
+	}
+	
 }
 }
