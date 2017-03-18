@@ -1,0 +1,50 @@
+package pers.qiqcheng.exp01_01;
+
+import java.util.Scanner;
+
+public class main {
+	
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		int n=scanner.nextInt();
+		int m;
+		for(int i=0;i<n;i++){
+			m=scanner.nextInt();
+			int a[]=new int[m];
+			for(int j=0;j<m;j++){
+				a[j]=scanner.nextInt();
+			}
+			QuickSort(a, 0, a.length-1);
+			for (int j : a) {
+				System.err.println(j);
+			}
+		}
+	}
+	/*
+	 * ¿ìËÙÅÅÐò
+	 */
+	public static void QuickSort(int a[],int left,int right){
+		if(left>right) return;
+		int i,j,temp,t;
+		i=left;
+		j=right;
+		temp=a[left];
+		while(i!=j){
+			while(i<j&&a[j]>=temp){
+				j--;
+			}
+			while(i<j&&a[i]<=temp){
+				i++;
+			}
+			if(i<j){
+				t=a[i];
+				a[i]=a[j];
+				a[j]=t;
+			}
+		}
+		a[left]=a[i];
+		a[i]=temp;
+		QuickSort(a, left, i-1);
+		QuickSort(a, i+1, right);	
+	}
+}

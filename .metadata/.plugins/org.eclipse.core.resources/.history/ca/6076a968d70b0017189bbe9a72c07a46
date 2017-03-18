@@ -1,0 +1,7 @@
+package pers.qiqcheng.exp01_01;
+
+public class main {
+	public void QuickSort(int a[],int m){
+		
+	}
+}

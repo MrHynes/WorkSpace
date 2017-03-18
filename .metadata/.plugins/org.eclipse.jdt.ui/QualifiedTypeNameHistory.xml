@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.dao.factory.DAOFactory"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
-<fullyQualifiedTypeName name="com.dao.dao.proxy.EmpDAOProxy"/>
-<fullyQualifiedTypeName name="com.dao.vo.Emp"/>
 <fullyQualifiedTypeName name="com.sun.webkit.event.WCMouseWheelEvent"/>
 <fullyQualifiedTypeName name="com.login.DBConnection"/>
 <fullyQualifiedTypeName name="com.login.MD5Code"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="com.sun.org.apache.regexp.internal.recompile"/>
 <fullyQualifiedTypeName name="javax.swing.text.GapContent"/>
 <fullyQualifiedTypeName name="Chapter05.Candidate"/>
+<fullyQualifiedTypeName name="java.awt.image.AreaAveragingScaleFilter"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.exp01_01.Sort"/>
 </qualifiedTypeNameHistroy>

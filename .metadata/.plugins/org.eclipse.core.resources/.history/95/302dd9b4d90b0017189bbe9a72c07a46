@@ -1,0 +1,14 @@
+package pers.qiqcheng.exp01_01;
+
+import java.util.Scanner;
+
+public class main {
+	
+	public static void main(String[] args) {
+		Scanner scanner=null;
+		int n=scanner.nextInt();
+		while(n){
+			
+		}
+	}
+}
