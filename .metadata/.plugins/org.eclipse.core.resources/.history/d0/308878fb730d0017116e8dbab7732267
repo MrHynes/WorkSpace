@@ -1,0 +1,15 @@
+package Chapter05.execise;
+
+public class Average5_4 {
+
+	public static float Average(int a[],int n){
+		if(a.length==1)
+			return a[0];
+		else {
+			return (Average(a)*(a.length-1)+a[])
+		}
+	}
+	public static void main(String[] args) {
+		
+	}
+}

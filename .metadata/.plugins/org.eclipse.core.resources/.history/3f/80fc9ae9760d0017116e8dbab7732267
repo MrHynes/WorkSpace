@@ -1,0 +1,30 @@
+package Chapter05.execise;
+
+public class FinfTwoNumberEqualsX5_33 {
+
+	public  static boolean findTwoNumber(int a[],int low,int high,int x){
+		boolean flag=false;
+		if(low<high&&!flag){
+			if(a[low]+a[high]>x){
+				high--;
+			}
+			if(a[low]+a[high]<x){
+				low++;
+			}
+			else {
+				flag=true;
+			}
+		}
+		if(flag){
+			System.out.println(a[low]+"+"+a[high]+"="+x);
+		}else {
+			System.out.println("NO");
+		}
+		
+		
+	}
+	public static void main(String[] args) {
+		int a[]={1,4,7,9,10,11,14,16,20};
+		findTwoNumber(a, 0, a.length-1,21);
+	}
+}
