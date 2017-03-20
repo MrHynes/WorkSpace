@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="pers.qiqcheng.onlinevote.vo.*,java.util.*"%>
+	pageEncoding="UTF-8" import="pers.qiqcheng.onlinevote.vo.*,java.util.*" errorPage="error.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,6 +11,7 @@
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 </head>
+<!-- 登录之前验证 还可以使用Filter -->
 <%
 	String name = (String) session.getAttribute("users");
 	if (name == null) {
@@ -32,7 +33,7 @@
 		<div class="collapse navbar-collapse">
 			<div class="nav navbar-nav navbar-right">
 				<li><a>欢迎您：<%=name %></a></li>
-				<li><a href="login.jsp">退出</a></li>
+				<li><a href="exit.jsp">退出</a></li>
 				<li><a href="error.jsp">帮助</a></li>
 			</div>
 		</div>
@@ -64,7 +65,7 @@
 									width="<%=votes.getNum() * 5%>" height="20px"> <%=votes.getNum()%>
 								</td>
 								<td width="150px"><a
-									href="doVoters?id=<%=votes.getId()%>&num=<%=votes.getNum()%>">投票</a></td>
+									href="voteProcess.jsp?id=<%=votes.getId()%>&num=<%=votes.getNum()%>">投票</a></td>
 							</tr>
 							<%
 								}
@@ -72,7 +73,7 @@
 						</table>
 					</div>
 					<div class="panel-heading">
-						<p class="text-center">Copyright ©2017 程祺004 All rights
+						<p class="text-center">Copyright ©2017, 程祺004 All rights
 							reserved.</p>
 					</div>
 				</div>

@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import pers.qiqcheng.onlinevote.factory.DaoFactory;
 
@@ -34,7 +35,8 @@ public class DoVote extends HttpServlet {
 		}
 		if(flag){
 			//resp.sendRedirect("http://localhost:8080/OnlineVote/getVoters");
-			req.getRequestDispatcher("getVoters").forward(req, resp);
+			//req.getRequestDispatcher("getVoters").forward(req, resp);
+			req.getRequestDispatcher("voteSuccess.jsp").forward(req, resp);
 		}else {
 			resp.sendRedirect("http://localhost:8080/OnlineVote/error.jsp");
 		}

@@ -1,7 +1,0 @@
-package pers.qiqcheng.onlinevote.servlet;
-
-import javax.servlet.http.HttpServlet;
-
-public class LogingProcess extends HttpServlet {
-
-}

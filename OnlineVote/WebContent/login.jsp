@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" errorPage="error.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,13 +13,18 @@
 </head>
 
 <body style="background: url(img/bgimg.jpg) center">
-<%
-//作用域对象不为空，说明有用户登录未登录成功
-String users=(String)session.getAttribute("users");
-if(users!=null){
-	session.removeAttribute("users");
-}
-%>
+	<%
+		String users = (String) session.getAttribute("users");
+		//实现自动登录
+		Cookie[] cookies = request.getCookies();
+		for (Cookie cookie : cookies) {
+			if (cookie.getName().equals(users)) {
+				if (users != null) {
+					request.getRequestDispatcher("getVoters").forward(request, response);
+				}
+			}
+		}
+	%>
 	<div class="container">
 		<div class="row">
 			<div class="login_y"></div>
@@ -29,7 +34,7 @@ if(users!=null){
 					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Online Votes is a
 						supportive and active community for people in contests requiring
 						online voting.</p>
-						<p>在线投票系统是一个为需要投票的比赛提供支持的社区。</p>
+					<p>在线投票系统是一个为需要投票的比赛提供支持的社区。</p>
 					<p>
 						<button class="btn btn-primary">开始使用>></button>
 					</p>
@@ -45,15 +50,16 @@ if(users!=null){
 						</div>
 						<div class="panel-body">
 							<br> <input type="text" class="form-control input_H"
-								name="username" placeholder="输入用户名" id="username"> 
-								<div class="col-md-4"></div>
-								<input type="password" class="form-control input_H" name="password"
-								placeholder="输入密码" id="password">
-								<div class="col-md-4"></div>
-								 <br> <input type="checkbox">下次自动登录
+								name="username" placeholder="输入用户名" id="username">
+							<div class="col-md-4"></div>
+							<input type="password" class="form-control input_H"
+								name="password" placeholder="输入密码" id="password">
+							<div class="col-md-4"></div>
+							<br> <input type="checkbox" name="free" value="1">下次自动登录
 							<br> <br> <input type="submit"
-								class="btn btn-primary btn-block input_H" value="登录" onclick="checkform()"> <br>
-							<a href="error.jsp" class="col-lg-offset-0">登录遇到问题</a> <a href="register.jsp"
+								class="btn btn-primary btn-block input_H" value="登录"
+								onclick="checkform()"> <br> <a href="error.jsp"
+								class="col-lg-offset-0">登录遇到问题</a> <a href="register.jsp"
 								class="col-lg-offset-6">立即注册</a>
 						</div>
 					</div>

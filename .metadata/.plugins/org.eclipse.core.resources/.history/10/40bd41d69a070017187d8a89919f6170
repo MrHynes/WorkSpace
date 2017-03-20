@@ -1,7 +1,0 @@
-package com.j2ee.update;
-
-import javax.servlet.http.HttpServlet;
-
-public class UpdateData extends HttpServlet{
-
-}
