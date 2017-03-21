@@ -1,6 +1,5 @@
 package com.dbop.dao.proxy;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 import com.dbop.dao.IDbopDao;
@@ -27,11 +26,11 @@ public class DbopDaoProxy implements IDbopDao {
 	}
 
 	@Override
-	public ResultSet doSelect(String sql) throws Exception {
-		ResultSet rs=null;
-		rs=this.dao.doSelect(sql);
-		//this.conn.close();
-		return rs;
+	public List<Info> doSelect() throws Exception {
+		List<Info> list=null;
+		list=this.dao.doSelect();
+		this.conn.close();
+		return list;
 	}
 	@Override
 	public Info doSelectByKey(String key) throws Exception {

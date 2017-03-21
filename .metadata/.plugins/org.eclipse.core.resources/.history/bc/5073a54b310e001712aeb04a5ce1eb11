@@ -1,0 +1,10 @@
+package pers.qiqcheng.pagesplit.factory;
+
+import pers.qiqcheng.pagesplit.dao.IPageSplitDao;
+
+public class DaoFactory {
+	public static IPageSplitDao getPageSplitDaoInstance(){
+		
+	}
+
+}

@@ -58,7 +58,7 @@
 						</div>
 						<div class="col-lg-4"></div>
 					</div>
-					<div class="panel panel-footer" align="center">Copyright ©2017 qiqcheng</div>
+					<div class="panel panel-footer">Copyright ©2017 qiqcheng</div>
 				</div>
 			</div>
 		</div>

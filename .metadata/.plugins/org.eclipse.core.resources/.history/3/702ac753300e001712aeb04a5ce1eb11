@@ -1,0 +1,24 @@
+package pers.qiqcheng.pagesplit.proxy;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import pers.qiqcheng.pagesplit.dao.IPageSplitDao;
+import pers.qiqcheng.pagesplit.dbc.DBConnection;
+
+
+public class PageSplitDaoProxy implements IPageSplitDao{
+	private Connection conn=null;
+	private IPageSplitDao dao=null;
+	public  PageSplitDaoProxy() {
+		this.conn=(Connection) new DBConnection();
+		this.dao=new PageSplitDaoProxy(this..conn.getConnection());
+	}
+
+	@Override
+	public ResultSet getAll(String sql, Object[] param) {
+		
+	}
+	
+
+}

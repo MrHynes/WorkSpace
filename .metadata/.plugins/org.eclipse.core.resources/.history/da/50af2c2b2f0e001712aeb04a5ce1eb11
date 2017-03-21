@@ -1,0 +1,20 @@
+package pers.qiqcheng.pagesplit.dao.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import pers.qiqcheng.pagesplit.dao.IPageSplitDao;
+import pers.qiqcheng.pagesplit.dbc.DBConnection;
+
+public class PageSplitDaoImp implements IPageSplitDao {
+
+	@Override
+	public ResultSet getAll(String sql, Object[] param) {
+		ResultSet rs=null;
+		PreparedStatement pstm=null;
+		Connection connection=new DBConnection().getConnection();
+		return rs;
+	}
+
+}

@@ -1,0 +1,11 @@
+
+public class main {
+	public static void binarysearch(int a[],int low ,int high,int x){
+		int mid=(low+high)/2;
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

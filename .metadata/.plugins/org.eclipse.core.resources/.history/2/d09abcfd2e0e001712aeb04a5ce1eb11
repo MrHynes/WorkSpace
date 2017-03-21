@@ -1,0 +1,7 @@
+package pers.qiqcheng.pagesplit.dao.impl;
+
+import pers.qiqcheng.pagesplit.dao.IPageSplitDao;
+
+public class PageSplitDaoImp implements IPageSplitDao {
+
+}

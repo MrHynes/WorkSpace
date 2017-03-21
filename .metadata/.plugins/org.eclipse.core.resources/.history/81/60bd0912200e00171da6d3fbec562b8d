@@ -1,0 +1,21 @@
+
+public class main {
+	public static void binarysearch(int a[],int low ,int high,int x){
+		int mid=(low+high)/2;
+		while(k<0){
+			if(a[mid]==x){
+				k=mid;
+			}
+			else if(a[mid]>x){
+				high=mid-1;
+			}else {
+				low=mid+1;
+			}
+		}
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

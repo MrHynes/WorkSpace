@@ -1,0 +1,10 @@
+
+public class main {
+	public static binarysearch(int a[],int low ,int high){
+		
+	}
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package pers.qiqcheng.pagesplit.proxy;
+
+import java.sql.Connection;
+
+import pers.qiqcheng.pagesplit.dao.impl.PageSplitDaoImp;
+
+public class PageSplitDaoProxy extends PageSplitDaoImp {
+	private Connection conn=null;
+	
+
+}

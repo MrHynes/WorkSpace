@@ -1,0 +1,5 @@
+package pers.qiqcheng.pagesplit.factory;
+
+public class DaoFactory {
+
+}

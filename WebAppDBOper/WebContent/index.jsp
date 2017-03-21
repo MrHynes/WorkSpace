@@ -1,4 +1,3 @@
-<%@page import="com.dbop.util.PageBean"%>
 <%@page import="java.util.List,com.dbop.vo.*,com.dbop.dao.factory.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -46,30 +45,23 @@
 								</tr>
 							</thead>
 							<%
-							PageBean pg = (PageBean) session.getAttribute("pg");
-							List<Info> list =pg.getList();
-								for (Info info : list) {
+								List<Info> list = null;
+								list = DaoFactory.getIDbopDaoInstance().doSelect();
+								for (int i = 0; i < list.size(); i++) {
 							%>
 							<tr>
-								<td><%=info.getId()%></td>
-								<td><%=info.getName()%></td>
-								<td><%=info.getAge()%></td>
-								<td><%=info.getScore()%></td>
-								<td><a href="delete?id=<%=info.getId()%>%>">刪除</a></td>
+								<td><%=list.get(i).getId()%></td>
+								<td><%=list.get(i).getName()%></td>
+								<td><%=list.get(i).getAge()%></td>
+								<td><%=list.get(i).getScore()%></td>
+								<td><a href="delete?id=<%=list.get(i).getId()%>">刪除</a></td>
 								<td><a
-									href="update.jsp?id=<%=info.getId()%>&name=<%=info.getName()%>&age=<%=info.getAge()%>&score=<%=info.getScore()%>">更新</a></td>
+									href="update.jsp?id=<%=list.get(i).getId()%>&name=<%=list.get(i).getName()%>&age=<%=list.get(i).getAge()%>&score=<%=list.get(i).getScore()%>">更新</a></td>
 							</tr>
 							<%
 								}
 							%>
 						</table>
-						共<%=pg.getTotalPages()%>页，当前第<%=pg.getPageNo()%>页 &nbsp;
-						<ul class="pagination">
-							<li><a aria-checked="show?action=pager&pageNo=<%=pg.getTopPage() %>">首页</a></li>
-							<li><a aria-checked="show?action=pager&pageNo=<%=pg.getPreviousPage()%>">上一页</a></li>
-							<li><a aria-checked="show?action=pager&pageNo=<%=pg.getNextPage()%>">下一页</a></li>
-							<li><a aria-checked="show?action=pager&pageNo=<%=pg.getBottomPage() %>">尾页</a></li>
-						</ul>
 					</div>
 					<div class="panel-footer" align="center">Copyright ©2017
 						qiqcheng</div>

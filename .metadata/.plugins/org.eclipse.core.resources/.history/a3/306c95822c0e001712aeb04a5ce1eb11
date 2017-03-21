@@ -1,0 +1,5 @@
+package pers.qiqcheng.pagesplit.dbc;
+
+public class DBConnection {
+
+}
