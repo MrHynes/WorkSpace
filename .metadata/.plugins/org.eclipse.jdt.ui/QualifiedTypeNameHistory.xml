@@ -56,8 +56,8 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.pagesplit.bean.Student"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.pagesplit.bean.PageBean"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.pagesplit.factory.DaoFactory"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.pagesplit.bean.PageBean"/>
 </qualifiedTypeNameHistroy>
