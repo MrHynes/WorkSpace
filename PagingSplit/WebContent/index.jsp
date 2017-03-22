@@ -1,3 +1,4 @@
+<%@page import="pers.qiqcheng.pagesplit.bean.PageBean"%>
 <%@page import="java.util.List,pers.qiqcheng.pagesplit.bean.Student"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -23,7 +24,8 @@
 					</thead>
 
 					<%
-						List<Student> list = (List) request.getAttribute("students");
+						PageBean pageBean=(PageBean)request.getAttribute("pageBean");
+						List<Student> list = pageBean.getList();
 						for (int i = 0; i < list.size(); i++) {
 					%>
 					<tr>
@@ -36,14 +38,13 @@
 						}
 					%>
 				</table>
-				<ul class="pagination pagination-sm">
-					<li><a href="getAll?low=0&high=3">首页</a></li>
-					<li><a href="getAll?low=0&high=3">上一页</a></li>
-					<li><a href="getAll?low=3&high=3">2</a></li>
-					<li><a href="getAll?low=6&high=3">3</a></li>
-					<li><a href="getAll?low=6&high=3">....</a></li>
-					<li><a href="getAll?low=0&high=3">下一页</a></li>
-					<li><a href="getAll?low=9&high=3">尾页</a></li>
+				<ul class="pagination pull-right">
+					<li><a>共<%=pageBean.getTotalPages() %>页</a></li>
+					<li><a>当前第<%=pageBean.getPageNo() %>页</a></li>
+					<li><a href="getAll?pageNo=<%=pageBean.getTopPage()%>">首页</a></li>
+					<li><a href="getAll?pageNo=<%=pageBean.getPreviousPage()%>">上一页</a></li>
+					<li><a href="getAll?pageNo=<%=pageBean.getNextPage() %>">下一页</a></li>
+					<li><a href="getAll?pageNo=<%=pageBean.getButtonPage()%>">尾页</a></li>
 				</ul>
 			</div>
 		</div>

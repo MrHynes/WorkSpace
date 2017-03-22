@@ -51,11 +51,11 @@
 		<servlet-class>com.ch02.GetInitParamServlet</servlet-class>
 		<init-param>
 			<param-name>name</param-name>
-			<param-value>chengqi</param-value>
+			<param-value>程祺</param-value>
 		</init-param>
 		<init-param>
 			<param-name>password</param-name>
-			<param-value>cheng321</param-value>
+			<param-value>程祺321</param-value>
 		</init-param>
 	</servlet>
 

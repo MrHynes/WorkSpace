@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="getAll?low=0&high=3">点击</a>
+<a href="getAll?pageNo=1">点击</a>
 </body>
 </html>

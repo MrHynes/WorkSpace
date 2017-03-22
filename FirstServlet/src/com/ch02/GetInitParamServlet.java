@@ -18,6 +18,7 @@ public class GetInitParamServlet extends HttpServlet {
 		String password=this.getInitParameter("password");
 		//获得配置文件中设置Servlet的名字
 		String servletName=this.getServletName();
+		//如果下面一行注释了，那么读取的参数，会显示乱码
 		resp.setContentType("text/html;charset=UTF-8");
 		PrintWriter out=resp.getWriter();
 		out.println("<html><head><title>getInitParmaServlet</title></head><body>ServletNmae="+servletName+"<br>name="+name+"<br>password="+password+"</body></html>");

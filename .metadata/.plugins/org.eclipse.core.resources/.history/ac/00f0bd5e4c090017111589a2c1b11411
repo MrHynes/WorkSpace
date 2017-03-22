@@ -1,7 +1,0 @@
-package pers.qiqcheng.onlinevote.dao.impl;
-
-import pers.qiqcheng.onlinevote.dao.IVoteDao;
-
-public class VoteDaoImp implements IVoteDao {
-
-}
