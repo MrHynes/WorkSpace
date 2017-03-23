@@ -18,7 +18,7 @@ public class main {
 			System.out.print(k+" ");
 		}
 		int h[]={1,5,7,8,2,3,6,9};
-		sort.Merge(h, 0, 3, 7);
+		sort.Merge(h, 0, 3, h.length-1);
 		System.out.println();
 		System.out.println("合并2后的数组");
 		for (int k : h) {
@@ -54,6 +54,19 @@ public class main {
 			System.out.print(k+" ");
 		}
 		
+		int m[]={1,4,2,5,0,3,7,6};
+		sort.mergeSort(m, 0, m.length-1);
+		System.out.println("\n自顶向下合并排序后的数组");
+		for (int k : m) {
+			System.out.print(k+" ");
+		}
+		
+		int n[]={1,0,6,5,11,3,7,4};
+		sort.bottomupSort(n);
+		System.out.println("\n自底向上合并排序后的数组");
+		for (int k : n) {
+			System.out.print(k+" ");
+		}
 	
 	}
 }
