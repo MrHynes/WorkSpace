@@ -1,0 +1,17 @@
+1490614704463	Rename package 'pers.qiqcheng.onlinevote.dao'
+1490614715678	Rename package 'pers.qiqcheng.onlinevote.dao.impl'
+1490614724179	Rename package 'pers.qiqcheng.onlinevote.dbc'
+1490614734545	Rename package 'pers.qiqcheng.onlinevote.factory'
+1490614744855	Rename package 'pers.qiqcheng.onlinevote.proxy'
+1490614767864	Rename type 'IVoteDao'
+1490614779418	Rename type 'VoteDaoImp'
+1490614794759	Rename type 'VoteDaoProxy'
+1490614849766	Rename package 'pers.qiqcheng.onlinevote.servlet'
+1490614858117	Rename package 'pers.qiqcheng.onlinevote.test'
+1490614866680	Rename package 'pers.qiqcheng.onlinevote.util'
+1490614874187	Rename package 'pers.qiqcheng.onlinevote.vo'
+1490615095802	Delete element
+1490615108244	Delete element
+1490615519328	Delete element
+1490618052221	Rename package 'pers.qiqcheng.onlinechat.vo'
+1490632670950	Delete element

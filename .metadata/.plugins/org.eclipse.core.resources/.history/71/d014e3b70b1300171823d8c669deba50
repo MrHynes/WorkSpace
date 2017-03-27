@@ -1,0 +1,29 @@
+package pers.qiqcheng.onlinechat.test;
+
+
+import java.sql.ResultSet;
+import java.util.List;
+
+import jdk.nashorn.internal.objects.annotations.Where;
+import pers.qiqcheng.onlinechat.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		String sql="insert into userinfo values(?,?)";
+		String sql2="insert into voters values(?,?,?)";
+		String sql3="select * from voters where id=?";
+		String[] params={"201701"};
+		boolean f=false;
+		try {
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(f){
+			System.out.println("≤Â»Î≥…π¶");
+		}
+		
+	}
+}
