@@ -1,7 +1,0 @@
-package pers.qiqcheng.pagesplit.proxy;
-
-import pers.qiqcheng.pagesplit.dao.impl.PageSplitDaoImp;
-
-public class PageSplitDaoProxy extends PageSplitDaoImp {
-
-}

@@ -14,6 +14,7 @@
 <jsp:include page="head.jsp"></jsp:include>
 <div class="container">
     <div class="col-lg-12" align="center">
+    	<br><br><br><br>
         <div><img src="img/error.png" class="img"></div>
     </div>
 </div>

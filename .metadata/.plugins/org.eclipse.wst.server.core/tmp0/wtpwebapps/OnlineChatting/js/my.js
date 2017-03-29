@@ -40,3 +40,4 @@ $(function () {
     });
 });
 
+$("#sendbtn").focus();

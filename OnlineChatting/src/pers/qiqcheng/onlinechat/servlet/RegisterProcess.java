@@ -33,8 +33,9 @@ public class RegisterProcess extends HttpServlet {
 		boolean flag=false;
 		//判断 username==null,pass==null,pass2==null,pass==pass2,pass=" ".pass2==" ",username==" "
 		if(username!=""&&pass!=""&&pass.equals(pass2)){//判断如果两次密码相同或者密码/用户名不为空的时候
-			//String password = new MD5Code().getMD5ofStr(req.getParameter("pass")+"{"+username+"}") ;
-			String[]params={username,pass};
+			String password = new MD5Code().getMD5ofStr(pass) ;
+			//String[]params={username,pass};
+			String[]params={username,password};
 			try {
 				flag=DaoFactory.getChatDaoInstance().doInsert(sql, params);
 			} catch (Exception e) {

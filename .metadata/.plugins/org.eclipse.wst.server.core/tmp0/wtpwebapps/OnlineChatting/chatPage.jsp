@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="java.util.*,pers.qiqcheng.onlinechat.bean.Message"%>
+	import="java.util.*,pers.qiqcheng.onlinechat.bean.Message" errorPage="error.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>T聊天界面</title>
+<title>EnjoyChat</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/head.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
@@ -29,10 +29,11 @@
 				<div class="panel panel-primary chatWindowH">
 					<div class="panel-heading">
 						<span class="glyphicon glyphicon-earphone"></span> &nbsp;聊天内容
+				
 					</div>
-					<div class="panel-body">
+					<div class="panel-body  ">
 						<!--显示聊天内容-->
-						<iframe src="msg.jsp" frameborder="1" width="100%" height="390px" ></iframe>
+						<iframe src="msg.jsp" frameborder="0" width="100%" height="390px" ></iframe>
 						<!-- 
 						<%
 							List<Message> msgList = (List<Message>) application.getAttribute("msgList");
@@ -60,7 +61,6 @@
 						 -->
 					</div>
 				</div>
-
 				<!-- 输入框 -->
 				<form action="getMsg" method="post">
 					<div class="input-group input-group-lg">
@@ -71,11 +71,8 @@
 									style="width: 24px; height: 24px;">
 							</button>
 						</span> <input type="text" class="form-control" placeholder="请输入聊天内容"
-							name="msg"> <span class="input-group-btn"> <!-- <button class="btn btn-default" type="button">	
-							发送<span class="glyphicon glyphicon-send"></span>
-						</button>
-						 -->
-						</span> <input type="submit" class="form-control" value="发送">
+							name="msg" id="sendbtn"> <span class="input-group-btn">
+						</span> <input type="submit" class="form-control btn btn-warning" value="发送">
 					</div>
 				</form>
 			</div>
@@ -106,7 +103,7 @@
 						<span class="glyphicon glyphicon-list"></span> &nbsp;在线名单
 					</div>
 					<div class="panel-body  chatUserListH pre-scrollable">
-						<table class="table table-hover list-table">
+						<table class="table table-hover table-responsive table-bordered list-table">
 						<% 
 						Set<String> onlineNum=(HashSet)application.getAttribute("onlineNum");
 						Iterator it = onlineNum.iterator();
@@ -114,14 +111,15 @@
 							
 						%>
 							<tr>
-								<td><%=it.next() %></td>
+								<td>
+								<span class="glyphicon glyphicon-user"></span>&nbsp;<%=it.next() %>
+								</td>
 							</tr>
 						<%
 						}
 						%>
 						</table>
 					</div>
-					
 					<div class="panel-footer" id="list-count">当前在线：<%=onlineNum.size() %>人</div>
 				</div>
 			</div>

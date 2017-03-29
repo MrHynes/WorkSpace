@@ -1,7 +1,0 @@
-package pers.qiqcheng.pagesplit.action;
-
-import javax.servlet.http.HttpServlet;
-
-public class GetStudentServlet extends HttpServlet{
-
-}

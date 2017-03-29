@@ -15,7 +15,7 @@
 	<jsp:include page="head.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
-			<div class="register_y"></div>
+			<br><br><br><br><br>
 			<div class="col-lg-3"></div>
 			<div class="col-lg-6">
 				<form action="registerProcess" method="post">

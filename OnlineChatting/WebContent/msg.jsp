@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="java.util.*,pers.qiqcheng.onlinechat.bean.Message"%>
+	import="java.util.*,pers.qiqcheng.onlinechat.bean.Message" errorPage="error.jsp"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,7 +13,8 @@
 </head>
 <body>
 	<%
-		response.setHeader("Refresh", "1");
+		//1秒刷新一次
+		//response.setHeader("Refresh", "2");
 		List<Message> msgList = (List<Message>) application.getAttribute("msgList");
 		if (msgList != null) {
 			for (int i = 0; i < msgList.size(); i++) {

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.dbc.DBConnection"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.dao.impl.VoteDaoImp"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.dao.IVoteDao"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.proxy.VoteDaoProxy"/>
@@ -41,8 +40,6 @@
 <fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.HttpserverMessages"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="org.w3c.dom.html.HTMLAnchorElement"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.onlinechat.factory.DaoFactory"/>
@@ -55,9 +52,12 @@
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>
