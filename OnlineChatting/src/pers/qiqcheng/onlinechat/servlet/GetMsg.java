@@ -31,11 +31,13 @@ public class GetMsg extends HttpServlet{
 		HttpSession session=req.getSession();
 		String name=(String)session.getAttribute("users");
 		ServletContext application=this.getServletContext();
+		//获取用户发送的信息，保存在message对象中
 		Message message=new Message();
 		message.setSenderName(name);
 		message.setSendMsg(msg);
 		message.setSendTime(new Date());
 		List<Message> msgList=(List<Message>)application.getAttribute("msgList");
+		//将message对象保存到集合msgList，然后msgList保存在application
 		if(msgList==null){
 			List<Message> list=new ArrayList<Message>();
 			list.add(message);
