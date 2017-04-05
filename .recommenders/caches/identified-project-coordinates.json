@@ -1,1 +1,1 @@
-[[{"location":"F:\\WorkSpace\\OnlineChatting\\WebContent\\WEB-INF\\lib\\servlet-api.jar","type":"JAR","hints":{}},"ABSENT"]]
+[[{"location":"D:\\JDK","type":"JRE","hints":{"EXECUTION_ENVIRONMENT":"JavaSE-1.8"}},"jre:jre:1.8.0"],[{"location":"F:\\WorkSpace\\Zxing2\\lib\\core-3.0.0.jar","type":"JAR","hints":{}},"com.google.zxing:core:3.0.0"],[{"location":"F:\\WorkSpace\\Zxing2","type":"PROJECT","hints":{"PROJECT_NAME":"Zxing2"}},"ABSENT"],[{"location":"F:\\WorkSpace\\OnlineChatting\\WebContent\\WEB-INF\\lib\\servlet-api.jar","type":"JAR","hints":{}},"ABSENT"]]

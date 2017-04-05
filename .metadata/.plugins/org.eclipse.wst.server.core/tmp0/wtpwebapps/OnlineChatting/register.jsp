@@ -47,7 +47,7 @@
 								</button>
 							</div>
 							<div class="col-lg-5">
-								<input type="reset" class="btn btn-warning btn-block" value="重置" onclick="reset()">
+								<input type="reset" class="btn btn-warning btn-block" value="重置">
 								</button>
 							</div>
 						</div>

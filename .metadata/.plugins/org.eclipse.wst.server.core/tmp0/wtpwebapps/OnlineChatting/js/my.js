@@ -40,9 +40,21 @@ $(function () {
     });
 });
 
+/*
+$(function() {
+	$("#resetInfo").click(function() {
+		$("#txtUserName2").val='';
+		$("#txtPassWord2").val='';
+		$("#txtPassWord3").val='';
+	});
+});
+*/
 
+//dom方式
+/*
 function reset() {
 	document.getElememtById("txtUserName2").value='';
 	document.getElememtById("txtPassWord2").value='';
 	document.getElememtById("txtPassWord3").value='';
 }
+*/

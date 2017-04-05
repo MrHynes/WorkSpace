@@ -1,9 +1,0 @@
-package pers.qiqcheng.exp02;
-
-public class GreenCode {
-	public static String [] getGreenCode(int m){
-		String greenCode[]=new String[(int)Math.pow(2, m)];
-		
-	}
-
-}

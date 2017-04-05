@@ -1,0 +1,10 @@
+package pers.qiqcheng.qrcode;
+import java.io.IOException;
+import com.google.zxing.WriterException;
+public class main {
+public static void main(String[] args) {
+	RecognitionQRCode recognitionQRCode=new RecognitionQRCode();
+	recognitionQRCode.QREncode();
+	recognitionQRCode.QRDecode();
+}
+}

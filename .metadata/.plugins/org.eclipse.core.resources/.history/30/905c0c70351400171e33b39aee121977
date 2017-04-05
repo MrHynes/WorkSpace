@@ -1,8 +1,0 @@
-package pers.qiqcheng.exp02;
-
-public class GreenCode {
-	public static String [] getGreenCode(int m){
-		
-	}
-
-}

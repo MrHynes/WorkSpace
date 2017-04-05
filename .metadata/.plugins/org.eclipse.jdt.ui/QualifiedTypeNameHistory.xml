@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.dao.impl.VoteDaoImp"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.dao.IVoteDao"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.proxy.VoteDaoProxy"/>
 <fullyQualifiedTypeName name="sun.applet.Main"/>
 <fullyQualifiedTypeName name="jdk.nashorn.internal.objects.annotations.Where"/>
@@ -55,9 +53,11 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.qrcode.RecognitionQRCode"/>
+<fullyQualifiedTypeName name="java.lang.ReflectiveOperationException"/>
 </qualifiedTypeNameHistroy>
