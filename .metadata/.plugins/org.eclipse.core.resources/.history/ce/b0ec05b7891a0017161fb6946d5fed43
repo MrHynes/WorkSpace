@@ -1,0 +1,11 @@
+package pers.qiqcheng.facedetection.factory;
+
+import pers.qiqcheng.facedetection.dao.IFaceDetectionDao;
+import pers.qiqcheng.facedetection.proxy.ChatDaoProxy;
+
+public class DaoFactory {
+	public static IFaceDetectionDao getChatDaoInstance() throws Exception{
+		return new ChatDaoProxy();
+	}
+
+}

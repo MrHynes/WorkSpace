@@ -2,15 +2,24 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="userSex" key="selection"/>
+		<item value="collapse" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="userAge"/>
+			<item value="collapse"/>
+			<item value="nav"/>
+			<item value="navbar"/>
+			<item value="img"/>
+			<item value="col-lg-12"/>
+			<item value="container"/>
+			<item value="btn"/>
+			<item value="userName"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
+			<item value="ID"/>
 			<item value="userSex"/>
 		</list>
 	</section>
@@ -18,7 +27,7 @@
 		<item value="300" key="DIALOG_WIDTH"/>
 		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 		<item value="410" key="DIALOG_HEIGHT"/>
-		<item value="685" key="DIALOG_X_ORIGIN"/>
-		<item value="144" key="DIALOG_Y_ORIGIN"/>
+		<item value="860" key="DIALOG_X_ORIGIN"/>
+		<item value="154" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,0 +1,20 @@
+package pers.qiqcheng.facedetection.factory;
+
+import pers.qiqcheng.facedetection.dao.IFaceDetectionDao;
+import pers.qiqcheng.facedetection.proxy.FaceDetectionDaoProxy;
+/**
+ * π§≥ß¿‡
+ * @author Buer
+ *
+ */
+public class DaoFactory {
+	public static IFaceDetectionDao getFaceDetectionDaoInstance(){
+		try {
+			return new FaceDetectionDaoProxy();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

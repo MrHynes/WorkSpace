@@ -1,0 +1,36 @@
+package pers.qiqcheng.facedetection.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pers.qiqcheng.facedetection.factory.DaoFactory;
+
+public class LoginServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html;charset=utf-8");
+		String username=req.getParameter("username");
+		String password=req.getParameter("password");
+		String sql="select * from userinfo where username=? and password=?";
+		String[] params={username,password};
+		boolean flag=false;
+		try {
+			flag=DaoFactory.getFaceDetectionDaoInstance().doSelect(sql, params);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

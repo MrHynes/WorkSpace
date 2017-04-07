@@ -1,0 +1,8 @@
+package pers.qiqcheng.facedetection.dao;
+
+import java.sql.ResultSet;
+import java.util.List;
+
+public interface IFaceDetectionDao {
+	public ResultSet doSelect(String sql,Object[] params);
+}

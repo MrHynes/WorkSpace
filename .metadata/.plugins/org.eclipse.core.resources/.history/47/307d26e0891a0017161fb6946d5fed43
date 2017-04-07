@@ -1,0 +1,5 @@
+package pers.qiqcheng.facedetection.servlet;
+
+public class LoginServlet {
+
+}

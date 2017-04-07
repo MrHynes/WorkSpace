@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\Buer\Desktop\OFRS"/>
+		<item value="C:\Users\Buer\Desktop\FaceDetection2.0"/>
 		<item value="F:\WorkSpace\WebAppDBOper"/>
 		<item value="F:\WorkSpace\blog"/>
 		<item value="F:\WorkSpace\Gossip"/>
@@ -58,7 +60,7 @@
 		<item value="168" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.jst.servlet.ui.project.facet.WebProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.wst.web.ui"/>
 		</list>

@@ -1,0 +1,17 @@
+1491456200882	Rename package 'pers.qiqcheng.onlinechat.bean'
+1491456209033	Rename package 'pers.qiqcheng.onlinechat.dao'
+1491456217404	Rename package 'pers.qiqcheng.onlinechat.dao.impl'
+1491456224612	Rename package 'pers.qiqcheng.onlinechat.dbc'
+1491456232184	Rename package 'pers.qiqcheng.onlinechat.factory'
+1491456240583	Rename package 'pers.qiqcheng.onlinechat.proxy'
+1491456251491	Rename package 'pers.qiqcheng.onlinechat.servlet'
+1491456260221	Rename package 'pers.qiqcheng.onlinechat.util'
+1491456269168	Delete element
+1491456359042	Rename type 'IChatDao'
+1491456371019	Rename type 'ChatDaoImp'
+1491456444226	Rename type 'ChatDaoProxy'
+1491456457654	Delete element
+1491456462922	Delete element
+1491456468041	Delete element
+1491456477045	Delete element
+1491456491312	Delete element
