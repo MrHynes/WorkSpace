@@ -3,8 +3,6 @@ package pers.qiqcheng.qrcode;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
@@ -14,7 +12,6 @@ import javax.imageio.ImageIO;
 
 import org.junit.Test;
 
-import com.alibaba.fastjson.JSONObject;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Binarizer;
 import com.google.zxing.BinaryBitmap;
@@ -61,7 +58,7 @@ public class RecognitionQRCode {
 	 */
 	@Test
 	public void QRDecode() {
-		String filePath = "F://WorkSpace//Zxing2//zxing.png";
+		String filePath = "F://WorkSpace//Zxing2//test.jpg";//test.jpg,zxing.png
 		// F:\WorkSpace\Zxing2
 		BufferedImage image;
 		try {

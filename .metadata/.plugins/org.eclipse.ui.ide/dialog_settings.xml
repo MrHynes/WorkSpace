@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="F:\WorkSpace\android"/>
 		<item value="C:\Users\Buer\Desktop\OFRS"/>
 		<item value="C:\Users\Buer\Desktop\FaceDetection2.0"/>
 		<item value="F:\WorkSpace\WebAppDBOper"/>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="sun.applet.Main"/>
 <fullyQualifiedTypeName name="jdk.nashorn.internal.objects.annotations.Where"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.onlinevotes.factory.DaoFactory"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.onlinevote.util.MD5Code"/>
@@ -57,7 +56,8 @@
 <fullyQualifiedTypeName name="pers.qiqcheng.qrcode.RecognitionQRCode"/>
 <fullyQualifiedTypeName name="java.lang.ReflectiveOperationException"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.facedetection.factory.DaoFactory"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="sun.security.x509.AuthorityInfoAccessExtension"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

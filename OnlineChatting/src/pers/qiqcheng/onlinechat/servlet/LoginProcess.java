@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 public class LoginProcess extends HttpServlet {
 
 	@Override
@@ -57,14 +56,19 @@ public class LoginProcess extends HttpServlet {
 				 * 本来是想用userNum记录登录系统的人数 后来发现，同一个用户刷新一次浏览器，总人数就加1，该方法不可行.
 				 * 所以需要使用一个不允许存放相同元素的set集合存放用户名
 				 */
+
 				/*
-				 * ServletContext application=this.getServletContext(); String
-				 * userNum=(String)application.getAttribute("userNum");
-				 * if(userNum==null){ String user="1";
-				 * application.setAttribute("userNum", user); }else { int
-				 * num=Integer.parseInt(userNum)+1;
-				 * application.setAttribute("userNum", Integer.toString(num)); }
-				 */
+				ServletContext application = this.getServletContext();
+				String userNum = (String) application.getAttribute("userNum");
+				if (userNum == null) {
+					String user = "1";
+					application.setAttribute("userNum", user);
+				} else {
+					int num = Integer.parseInt(userNum) + 1;
+					application.setAttribute("userNum", Integer.toString(num));
+				}
+				*/
+
 				/**
 				 * 将用户名存到HashSet集合，并把集合保存到application，这样通过集合的size()方法就可以获得当前在线人数。
 				 * 若有用户退出系统，在exit.jsp页面，将该用户从集合中删除。

@@ -1,0 +1,5 @@
+package com.qiqcheng.bookstore.bean;
+
+public class UserBean {
+
+}

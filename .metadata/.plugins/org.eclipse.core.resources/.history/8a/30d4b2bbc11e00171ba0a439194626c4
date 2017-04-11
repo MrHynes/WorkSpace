@@ -1,0 +1,12 @@
+package pers.qiqcheng.bookstore.bean;
+
+public class BookBean {
+	private String bookName;
+	private float price;
+	private String press;
+	private String author;
+	private String isbn;
+	private int inventory;
+	
+
+}

@@ -13,8 +13,8 @@
 </head>
 <body>
 	<%
-		//1秒刷新一次
-		response.setHeader("Refresh", "100");
+		//10秒刷新一次
+		response.setHeader("Refresh", "10");
 		List<Message> msgList = (List<Message>) application.getAttribute("msgList");
 		if (msgList != null) {
 			for (int i = 0; i < msgList.size(); i++) {
