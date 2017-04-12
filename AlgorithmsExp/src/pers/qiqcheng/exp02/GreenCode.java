@@ -27,7 +27,6 @@ public class GreenCode {
 			code=getGreenCode(m);
 			n--;
 			for (String string : code) {
-				string.trim();
 				System.out.println(string);
 			}
 		}

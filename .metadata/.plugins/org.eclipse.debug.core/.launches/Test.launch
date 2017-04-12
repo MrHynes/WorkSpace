@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/OnlineVote/src/pers/qiqcheng/onlinevote/test/test.java"/>
+<listEntry value="/AlgorithmsExp/src/pers/qiqcheng/exp03_01/test.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="pers.qiqcheng.onlinevote.test.test"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="OnlineVote"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="pers.qiqcheng.exp03_01.test"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="AlgorithmsExp"/>
 </launchConfiguration>

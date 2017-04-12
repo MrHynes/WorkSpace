@@ -1,0 +1,8 @@
+package pers.qiqcheng.exp03_01;
+
+public class test {
+public static void main(String[] args) {
+	int a[]=new int[100];
+	System.out.println(a.length);
+}
+}
