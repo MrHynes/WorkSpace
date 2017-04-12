@@ -1,0 +1,5 @@
+package pers.qiqcheng.bookstore.dao;
+
+public class IBookDao {
+
+}

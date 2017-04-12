@@ -1,0 +1,7 @@
+package pers.qiqcheng.bookstore.proxy;
+
+import pers.qiqcheng.bookstore.dao.IBookDao;
+
+public class BookDaoProxy implements IBookDao {
+
+}

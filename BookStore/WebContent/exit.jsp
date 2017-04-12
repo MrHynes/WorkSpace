@@ -9,15 +9,7 @@
 </head>
 <body>
 <%	
-	/*
-	String onlineNum=(String)application.getAttribute("userNum");
-	application.setAttribute("userNum", Integer.parseInt(onlineNum)-1+"");
-	*/
-	Set<String> onlineUserList=(HashSet)application.getAttribute("onlineUserList");
-	String name = (String)session.getAttribute("users");
-	//用户退出系统时，将该用户从application的onlineNum列表中删除。
-	//但是还是会有bug，当用户直接关闭浏览器，集合中的依然会存在。
-	onlineUserList.remove(name);
+	String name = (String)session.getAttribute("username");
 	session.invalidate() ;
 	response.sendRedirect("login.jsp");
 %>

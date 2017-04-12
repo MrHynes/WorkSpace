@@ -1,0 +1,20 @@
+package pers.qiqheng.bookstore.test;
+
+import java.sql.ResultSet;
+
+import pers.qiqcheng.bookstore.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		String sql="select * from userinfo where username=?";
+		String []params={"chengqi"};
+		try {
+			ResultSet resultSet=DaoFactory.getBookDaoInstances().doSelect(sql, params);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

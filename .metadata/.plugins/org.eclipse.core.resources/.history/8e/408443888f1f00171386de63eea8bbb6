@@ -1,0 +1,17 @@
+package pers.qiqheng.bookstore.filter;
+
+import java.io.IOException;
+
+import com.sun.org.apache.xalan.internal.xsltc.dom.Filter;
+
+
+public class showBookFilter implements Filter{
+
+	@Override
+	public boolean test(int node) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+}

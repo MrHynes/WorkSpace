@@ -13,5 +13,29 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+	<filter>
+		<filter-name>show_book</filter-name>
+		<filter-class>pers.qiqheng.bookstore.filter.showBookFilter</filter-class>
+	</filter>
+	<filter-mapping>
+			<filter-name>show_book</filter-name>
+			<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>loginProcess</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.LoginProcess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginProcess</servlet-name>
+		<url-pattern>/loginProcess</url-pattern>
+	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>RegisterProcess</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.RegisterProcess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterProcess</servlet-name>
+		<url-pattern>/registerProcess</url-pattern>
+	</servlet-mapping>
 </web-app>

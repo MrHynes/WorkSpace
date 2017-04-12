@@ -1,0 +1,7 @@
+package pers.qiqcheng.bookstore.dao;
+
+import java.sql.ResultSet;
+
+public interface IBookDao {
+	public ResultSet doSelect(String sql,Object []params);
+}

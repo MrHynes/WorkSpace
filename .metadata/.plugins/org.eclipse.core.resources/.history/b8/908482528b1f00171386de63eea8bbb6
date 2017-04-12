@@ -1,0 +1,46 @@
+package pers.qiqheng.bookstore.listener;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+import pers.qiqcheng.bookstore.bean.BookBean;
+import pers.qiqcheng.bookstore.factory.DaoFactory;
+
+public class IndexListener implements ServletContextListener {
+
+	@Override
+	public void contextDestroyed(ServletContextEvent sce) {
+		ServletContext application=sce.getServletContext();
+		List<BookBean> books=new ArrayList<BookBean>();
+		String sql="select * from bootinfo";
+		String []params={};
+		ResultSet rs=null;
+		BookBean book=null;
+		try {
+			rs=DaoFactory.getBookDaoInstances().doSelect(sql, params);
+			while(rs.next()){
+				book=new BookBean(rs.getString(1),rs.getFloat(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6));
+				books.add(book);
+			}
+			application.setAttribute("books", books);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void contextInitialized(ServletContextEvent sce) {
+		// TODO Auto-generated method stub
+		ServletContextListener.super.contextInitialized(sce);
+	}
+
+
+}

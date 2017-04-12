@@ -1,0 +1,23 @@
+package pers.qiqheng.bookstore.test;
+
+import java.sql.ResultSet;
+
+import pers.qiqcheng.bookstore.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		//String sql="select * from userinfo where username=?";
+		String sql="insert into userinfo values(?,?)";
+		String []params={"xx","123456"};
+		try {
+			if(DaoFactory.getBookDaoInstances().doInsert(sql, params)){
+				System.out.println("success");
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

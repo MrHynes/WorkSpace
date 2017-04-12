@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"
+	import="java.util.*,pers.qiqcheng.bookstore.bean.BookBean"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,220 +12,132 @@
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body style="background-color: #f4f4f4">
-<!--导航栏 -->
-<div class="navbar navbar-inverse"><!--#2ea3fd-->
-    <!--
-    <div class="navbar-header">
-        <a class="navbar-brand brand-img" href="#">
-            <img alt="Brand" src="../img/head.png">
-        </a>
-    </div>
-    -->
-    <ul class="nav navbar-nav">
-        <li><a href="#">主页<span class="label label-danger">New</span></a></li>
-        <li><a href="#">商城<span class="label label-default">New</span></a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">分类
-                <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a href="#">儿童</a></li>
-                <li><a href="#">教材</a></li>
-                <li><a href="#">文学</a></li>
-                <li><a href="#">名著</a></li>
-                <li><a href="#">生活</a></li>
-            </ul>
-        </li>
+	<!--导航栏 -->
+	<jsp:include page="head.jsp"></jsp:include>
+	<!--搜索框-->
+	<!-- 
+	<div class="col-lg-12">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-6" style="height: 70px;">
+			<div class="input-group">
+				<div class="input-group-btn">
+					<button class="btn btn-default dropdown-toggle"
+						data-toggle="dropdown" type="button" style="height: 45px;">
+						请选择<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">宝贝</a></li>
+						<li><a href="#">店铺</a></li>
+					</ul>
+				</div>
 
-        <li><a href="#">店铺<span class="label"></span></a></li>
-        <li><a href="#">活动<span class="label"></span></a></li>
-        <li><a href="#">折扣<span class="label"></span></a></li>
-    </ul>
-    <div class="collapse navbar-collapse">
-        <div class="nav navbar-nav navbar-right">
+				<input type="text" class="form-control" placeholder="输入关键字"
+					style="height: 45px;" name="key" /> <span class="input-group-btn">
+					<button class="btn btn-primary" type="button" style="height: 45px;">搜索</button>
+				</span>
+			</div>
+		</div>
+		<div class="col-lg-3"></div>
+	</div>
+ 	-->
+	<!--轮播图-->
+	<div class="col-lg-12" align="center">
+		<div class="row">
+			<div class="col-lg-1"></div>
+			<div class="col-lg-10">
+				<div class="carousel" id="carouselcontainer" data-ride="carousel"
+					style="width: 100%; height: 390px;">
+					<ol class="carousel-indicators">
+						<li class="active" data-target="#carouselcontainer"
+							data-slide-to="0">0</li>
+						<li data-target="#carouselcontainer" data-slide-to="1">1</li>
+						<li data-target="#carouselcontainer" data-slide-to="2">2</li>
+						<li data-target="#carouselcontainer" data-slide-to="3">3</li>
+					</ol>
+					<div class="carousel-inner" style="width: 100%; height: 380px;">
+						<div class="item active">
+							<a href="#"><img src="img/headImg.jpg" alt=""></a>
+							<div class="carousel-caption fontcolor">
+								<h3>BookStore</h3>
+							</div>
+						</div>
+						<div class="item">
+							<a href="#"><img src="img/headImg2.jpg" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="img/headImg.jpg" alt=""></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="img/headImg2.jpg" alt=""></a>
+						</div>
+					</div>
+					<a class="left carousel-control" href="#carouselcontainer"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left"></span>
+					</a> <a class="right carousel-control" href="#carouselcontainer"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-1"></div>
+		</div>
+	</div>
 
-            <li><a>欢迎您：</a></li>
-            <li><a href="#">购物车</a></li>
-            <li><a href="#">我的帐户</a></li>
-            <li><a href="#">退出</a></li>
-            <li><a href="#">帮助</a></li>
-            <!--
-            <li><a href="#">登录</a></li>
-            <li><a href="#">购物车</a></li>
-            <li><a href="#">帮助</a></li>
-            -->
-        </div>
-    </div>
-</div>
+	<!--商品显示-->
+	<div class="col-lg-12">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">&nbsp;</div>
+				<!--商品-->
+				<div class="col-lg-12">
+					<!--  style="color: white" -->
+					<%
+						if (session.getAttribute("books") == null) {
+					%>
+					<h3>
+						没有商品，敬请期待
+						<h3>
+							<%
+								} else {
+									List<BookBean> books = (List<BookBean>) session.getAttribute("books");
+									BookBean book = null;
+									for (int i = 0; i < books.size(); i++) {
+										book = books.get(i);
+							%>
+							<div class="col-lg-3">
+								<a href="#" class="thumbnail"> <img
+									src="img/<%=book.getIsbn()%>.jpg" alt="">
+								</a>
+								<div class="fontcolor">
+									<h3><%=book.getBookName()%></h3>
+									<p>
+										定价: ￥<%=book.getPrice()%>元 | 库存：<%=book.getInventory()%></p>
+									<p>
+										出版社名称:
+										<%=book.getPress()%>
+										| 作者:
+										<%=book.getAuthor()%></p>
+									<p>
+										<button type="button" class="btn btn-xs btn-primary">购买</button>
+										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
+									</p>
+								</div>
+							</div>
+							<%
+								}
+								}
+							%>
+						
+				</div>
+			</div>
+		</div>
+		<div>&nbsp;</div>
+	</div>
 
-<!--搜索框-->
-<div class="col-lg-12">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6" style="height: 70px;">
-        <div class="input-group">
-            <div class="input-group-btn">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" style="height: 45px;">
-                    请选择<span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">宝贝</a></li>
-                    <li><a href="#">店铺</a></li>
-                </ul>
-            </div>
-            <input type="text" class="form-control" placeholder="输入关键字" style="height: 45px;"/>
-            <span class="input-group-btn">
-                    <button class="btn btn-primary" type="button" style="height: 45px;">搜索</button>
-                </span>
-        </div>
-    </div>
-    <div class="col-lg-3"></div>
-</div>
-
-<!--轮播图-->
-<div class="col-lg-12" align="center">
-    <div class="row">
-        <div class="col-lg-1"></div>
-        <div class="col-lg-10">
-            <div class="carousel" id="carouselcontainer" data-ride="carousel" style="width: 100%;height: 390px;">
-            <ol class="carousel-indicators">
-                <li class="active" data-target="#carouselcontainer" data-slide-to="0">0</li>
-                <li data-target="#carouselcontainer" data-slide-to="1">1</li>
-                <li data-target="#carouselcontainer" data-slide-to="2">2</li>
-                <li data-target="#carouselcontainer" data-slide-to="3">3</li>
-            </ol>
-            <div class="carousel-inner" style="width: 100%;height: 380px;">
-                <div class="item active">
-                    <a href="#"><img src="img/headImg.jpg" alt=""></a>
-                    <div class="carousel-caption fontcolor">
-                        <h3>BookStore</h3>
-                    </div>
-                </div>
-                <div class="item"><a href="#"><img src="img/headImg.jpg" alt=""></a> </div>
-                <div class="item"><a href="#"><img src="img/headImg.jpg" alt=""></a> </div>
-                <div class="item"><a href="#"><img src="img/headImg.jpg" alt=""></a> </div>
-            </div>
-            <a class="left carousel-control" href="#carouselcontainer" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carouselcontainer" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
-        </div>
-        <div class="col-lg-1"></div>
-    </div>
-</div>
-
-<!--商品显示-->
-<div class="col-lg-12">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">&nbsp;</div>
-            <!--商品-->
-            <div class="col-lg-12" style="color:white">
-                <div class="col-lg-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/1.jpg" alt="">
-                    </a>
-                    <div class="fontcolor">
-                        <h3>伊索寓言</h3>
-                        <p>定价: 55.00元 | 库存：100</p>
-                        <p>
-                            出版社名称: 知识出版社 | 作者: 伊索</p>
-                        <p>
-                            <button type="button" class="btn btn-xs btn-primary">购买</button>
-                            <button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/1.jpg" alt="">
-                    </a>
-                    <div class="fontcolor">
-                        <h3>伊索寓言</h3>
-                        <p>定价: 55.00元 | 库存：100</p>
-                        <p>
-                            出版社名称: 知识出版社 | 作者: 伊索</p>
-                        <p>
-                            <button type="button" class="btn btn-xs btn-primary">购买</button>
-                            <button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-                        </p>
-                    </div>
-                </div>
-            	<div class="col-lg-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/1.jpg" alt="">
-                    </a>
-                    <div class="fontcolor">
-                        <h3>伊索寓言</h3>
-                        <p>定价: 55.00元 | 库存：100</p>
-                        <p>
-                            出版社名称: 知识出版社 | 作者: 伊索</p>
-                        <p>
-                            <button type="button" class="btn btn-xs btn-primary">购买</button>
-                            <button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/1.jpg" alt="">
-                    </a>
-                    <div class="fontcolor">
-                        <h3>伊索寓言</h3>
-                        <p>定价: 55.00元 | 库存：100</p>
-                        <p>
-                            出版社名称: 知识出版社 | 作者: 伊索</p>
-                        <p>
-                            <button type="button" class="btn btn-xs btn-primary">购买</button>
-                            <button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/1.jpg" alt="">
-                    </a>
-                    <div class="fontcolor">
-                        <h3>伊索寓言</h3>
-                        <p>定价: 55.00元 | 库存：100</p>
-                        <p>
-                            出版社名称: 知识出版社 | 作者: 伊索</p>
-                        <p>
-                            <button type="button" class="btn btn-xs btn-primary">购买</button>
-                            <button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#" class="thumbnail">
-                        <img src="img/1.jpg" alt="">
-                    </a>
-                    <div class="fontcolor">
-                        <h3>伊索寓言</h3>
-                        <p>定价: 55.00元 | 库存：100</p>
-                        <p>
-                            出版社名称: 知识出版社 | 作者: 伊索</p>
-                        <p>
-                            <button type="button" class="btn btn-xs btn-primary">购买</button>
-                            <button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-                        </p>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-    <div>&nbsp;</div>
-
-</div>
-
-<div class="col-lg-12">
-    <!--foot-->
-    <div class="foot">
-        Copyright ©2017, 程祺004 All rights reserved.
-    </div>
-</div>
+	<div class="col-lg-12">
+		<!--foot-->
+		<div class="foot">Copyright ©2017, 程祺004 All rights reserved.</div>
+	</div>
 </body>
 </html>

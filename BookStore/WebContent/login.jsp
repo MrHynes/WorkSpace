@@ -10,16 +10,17 @@
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/my.js" type="text/javascript"></script>
+<script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
 </head>
 <body style="background:url(img/bgpic.jpg) center">
 	<%
-		String users = (String) session.getAttribute("users");
+		String users = (String) session.getAttribute("username");
 		//实现自动登录
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
 			if (cookie.getName().equals(users)) {
 				if (users != null) {
-					request.getRequestDispatcher("chatPage.jsp").forward(request, response);
+					request.getRequestDispatcher("index.jsp").forward(request, response);
 				}
 			}
 		}

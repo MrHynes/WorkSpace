@@ -1,9 +1,0 @@
-package pers.qiqcheng.qrcode;
-
-public class main {
-public static void main(String[] args) {
-	RecognitionQRCode recognitionQRCode=new RecognitionQRCode();
-	recognitionQRCode.QREncode();
-	recognitionQRCode.QRDecode();
-}
-}

@@ -1,0 +1,11 @@
+package pers.qiqheng.bookstore.test;
+
+import pers.qiqcheng.bookstore.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		String sql="select * from userinfo;"
+		DaoFactory.getBookDaoInstances().doSelect(sql, params);
+	}
+
+}

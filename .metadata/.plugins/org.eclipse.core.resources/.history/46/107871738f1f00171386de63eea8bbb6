@@ -1,0 +1,11 @@
+package pers.qiqheng.bookstore.filter;
+
+import java.io.IOException;
+
+import com.sun.net.httpserver.Filter;
+import com.sun.net.httpserver.HttpExchange;
+
+public class showBookFilter implements Filter{
+
+
+}

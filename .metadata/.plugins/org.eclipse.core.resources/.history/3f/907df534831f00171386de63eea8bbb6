@@ -1,0 +1,7 @@
+package pers.qiqheng.bookstore.listener;
+
+import javax.servlet.http.HttpSessionListener;
+
+public class IndexListener implements HttpSessionListener {
+
+}

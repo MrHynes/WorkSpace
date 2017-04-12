@@ -1,0 +1,5 @@
+package pers.qiqcheng.bookstore.proxy;
+
+public class BookDaoProxy {
+
+}
