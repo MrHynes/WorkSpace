@@ -93,6 +93,9 @@ bootstore
     text-align: center;
     line-height: 60px;
     overflow:hidden;
+   	position: fixed;
+    bottom: 0px;
+    
 }
 .fontcolor{
     color: #0f0f0f;

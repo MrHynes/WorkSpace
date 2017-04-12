@@ -14,11 +14,10 @@
 <body style="background-color: #f4f4f4">
 	<!--导航栏 -->
 	<jsp:include page="head.jsp"></jsp:include>
-	<!--搜索框-->
-	<!-- 
-	<div class="col-lg-12">
-		<div class="col-lg-3"></div>
-		<div class="col-lg-6" style="height: 70px;">
+	<!-- 搜索框 -->
+	<div class="col-lg-3"></div>
+	<div class="col-lg-5">
+		<form action="searchBook">
 			<div class="input-group">
 				<div class="input-group-btn">
 					<button class="btn btn-default dropdown-toggle"
@@ -30,16 +29,16 @@
 						<li><a href="#">店铺</a></li>
 					</ul>
 				</div>
-
-				<input type="text" class="form-control" placeholder="输入关键字"
-					style="height: 45px;" name="key" /> <span class="input-group-btn">
-					<button class="btn btn-primary" type="button" style="height: 45px;">搜索</button>
+				<input type="text" class="form-control" placeholder="输入关键字|书名或者作者名"
+					style="height: 45px; width: 450px;" name="key" /> <span
+					class="input-group-btn"> <input type="submit" value="查询"
+					class="btn btn-primary" style="height: 45px; width: 70px;">
 				</span>
 			</div>
-		</div>
-		<div class="col-lg-3"></div>
+		</form>
 	</div>
- 	-->
+	<div class="col-lg-3"></div>
+	<div class="col-lg-12">&nbsp;</div>
 	<!--轮播图-->
 	<div class="col-lg-12" align="center">
 		<div class="row">
@@ -93,17 +92,19 @@
 				<div class="col-lg-12">
 					<!--  style="color: white" -->
 					<%
-						if (session.getAttribute("books") == null) {
+						String flag = request.getParameter("flag");
+						if (flag == null) {
+							if (session.getAttribute("books") == null) {
 					%>
 					<h3>
 						没有商品，敬请期待
 						<h3>
 							<%
 								} else {
-									List<BookBean> books = (List<BookBean>) session.getAttribute("books");
-									BookBean book = null;
-									for (int i = 0; i < books.size(); i++) {
-										book = books.get(i);
+										List<BookBean> books = (List<BookBean>) session.getAttribute("books");
+										BookBean book = null;
+										for (int i = 0; i < books.size(); i++) {
+											book = books.get(i);
 							%>
 							<div class="col-lg-3">
 								<a href="#" class="thumbnail"> <img
@@ -126,6 +127,35 @@
 							</div>
 							<%
 								}
+									}
+								} else {
+									List<BookBean> searchBooks = (List<BookBean>) session.getAttribute("searchBooks");
+									BookBean searchBook = null;
+									for (int i = 0; i < searchBooks.size(); i++) {
+										searchBook = searchBooks.get(i);
+							%>
+							<div class="col-lg-3">
+								<a href="#" class="thumbnail"> <img
+									src="img/<%=searchBook.getIsbn()%>.jpg" alt="">
+								</a>
+								<div class="fontcolor">
+									<h3><%=searchBook.getBookName()%></h3>
+									<p>
+										定价: ￥<%=searchBook.getPrice()%>元 | 库存：<%=searchBook.getInventory()%></p>
+									<p>
+										出版社名称:
+										<%=searchBook.getPress()%>
+										| 作者:
+										<%=searchBook.getAuthor()%></p>
+									<p>
+										<button type="button" class="btn btn-xs btn-primary">购买</button>
+										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
+									</p>
+								</div>
+							</div>
+
+							<%
+								}
 								}
 							%>
 						
@@ -135,9 +165,8 @@
 		<div>&nbsp;</div>
 	</div>
 
-	<div class="col-lg-12">
-		<!--foot-->
-		<div class="foot">Copyright ©2017, 程祺004 All rights reserved.</div>
-	</div>
+<div class="foot col-lg-12" >
+    Copyright ©2017, 程祺004 All rights reserved.
+</div>
 </body>
 </html>

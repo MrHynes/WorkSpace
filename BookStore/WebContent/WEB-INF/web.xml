@@ -38,4 +38,13 @@
 		<servlet-name>RegisterProcess</servlet-name>
 		<url-pattern>/registerProcess</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchBook</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.SearchBookByKey</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchBook</servlet-name>
+		<url-pattern>/searchBook</url-pattern>
+	</servlet-mapping>
 </web-app>

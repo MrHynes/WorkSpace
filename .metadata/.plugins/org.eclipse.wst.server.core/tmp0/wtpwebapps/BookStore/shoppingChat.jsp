@@ -12,6 +12,13 @@
 <script src="js/my.js" type="text/javascript"></script>
 </head>
 <body  style="background-color: #f4f4f4">
+<%
+String name=(String)session.getAttribute("username");
+if(name==null){
+	request.getRequestDispatcher("login.jsp").forward(request, response);
+}
+
+%>
 <!--导航栏 2-->
 <jsp:include page="head.jsp"></jsp:include>
 <div class="container">
@@ -30,7 +37,7 @@
     </div>
 </div>
 <!--foot-->
-<div class="foot">
+<div class="foot col-lg-12" style="position: fixed; bottom: 0px;">
     Copyright ©2017, 程祺004 All rights reserved.
 </div>
 </body>
