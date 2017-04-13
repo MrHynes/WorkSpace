@@ -30,10 +30,9 @@
 			<div class="login_y"></div>
 			<div class="col-lg-8">
 				<div class="jumbotron jumbot">
-					<h1>OnlineChatting</h1>
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An online chat system is
-						a place where people can chat and chat with each other through
-						words and symbols.</p>
+					<h1>BookStore</h1>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online BookStore is a place where you can 
+					browser books and buy book on the Internet.</p>
 					<p>天涯海角，相隔仅是弹指之间。</p>
 					<p>
 						<button class="btn btn-primary">开始使用>></button>

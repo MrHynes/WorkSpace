@@ -9,6 +9,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;F:\WorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;D:\tomcat&quot; -Dwtp.deploy=&quot;F:\WorkSpace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps&quot; -Djava.endorsed.dirs=&quot;D:\tomcat\endorsed&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;D:\tomcat&quot; -Dcatalina.home=&quot;D:\tomcat&quot; -Dwtp.deploy=&quot;D:\tomcat\webapps&quot; -Djava.endorsed.dirs=&quot;D:\tomcat\endorsed&quot;"/>
 <stringAttribute key="server-id" value="Tomcat v9.0 Server at localhost"/>
 </launchConfiguration>

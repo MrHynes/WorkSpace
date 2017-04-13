@@ -164,9 +164,11 @@
 		</div>
 		<div>&nbsp;</div>
 	</div>
-
-<div class="foot col-lg-12" >
+<!-- 
+<div class="col-lg-12" style=" background-color:#3b414f; height: 60px;text-align: center;color: white; line-height: 60px;  ">
     Copyright ©2017, 程祺004 All rights reserved.
 </div>
+ -->
+ <jsp:include page="foot.jsp"></jsp:include>
 </body>
 </html>

@@ -33,6 +33,8 @@ public class SearchBookByKey extends HttpServlet {
 		BookBean searchBook = null;
 		String sql = "select * from bookinfo where bookname like ? or author like ?";
 		String[] params = { "%" + key + "%", "%" + key + "%" };
+		PrintWriter out=resp.getWriter();
+		//out.print(params[0]+" "+params[1]);
 		try {
 			ResultSet rs = DaoFactory.getBookDaoInstances().doSelect(sql, params);
 			while (rs.next()) {
@@ -45,5 +47,4 @@ public class SearchBookByKey extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 }

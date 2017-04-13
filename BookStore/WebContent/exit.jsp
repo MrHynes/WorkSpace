@@ -9,7 +9,6 @@
 </head>
 <body>
 <%	
-	String name = (String)session.getAttribute("username");
 	session.invalidate() ;
 	response.sendRedirect("login.jsp");
 %>

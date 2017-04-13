@@ -36,7 +36,7 @@
 					if (name != null) {
 				%>
 				<li><a>欢迎您：<%=name %></a></li>
-				<li><a href="shoppingChat.jsp">购物车</a></li>
+				<li><a href="shoppingCart.jsp">购物车</a></li>
 				<li><a href="#">我的帐户</a></li>
 				<li><a href="exit.jsp">退出</a></li>
 				<li><a href="error.jsp">帮助</a></li>
