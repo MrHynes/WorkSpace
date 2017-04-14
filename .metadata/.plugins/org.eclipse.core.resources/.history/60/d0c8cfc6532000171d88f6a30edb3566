@@ -1,7 +1,0 @@
-package pers.qiqheng.bookstore.filter;
-
-import javax.servlet.http.HttpServlet;
-
-public class ShopCart extends HttpServlet {
-
-}

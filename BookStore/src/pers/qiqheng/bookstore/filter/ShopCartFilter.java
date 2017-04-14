@@ -16,9 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.sun.org.apache.bcel.internal.generic.Select;
 
-import pers.qiqcheng.bookstore.bean.BookBean;
+import pers.qiqcheng.bookstore.bean.BookCartBean;
 import pers.qiqcheng.bookstore.factory.DaoFactory;
 
 public class ShopCartFilter implements Filter{
@@ -30,16 +29,17 @@ public class ShopCartFilter implements Filter{
 		HttpServletResponse response=(HttpServletResponse)resp;
 		HttpSession session=request.getSession();
 		String username=(String)session.getAttribute("username");
-		String sql="select * from bookinfo,shopcart where bookinfo.isbn=shopcart.isbn and username=?";
+		String sql="select * from bookinfo natural join shopcart where username=?";
 		String params[]={username};
-		BookBean book=null;
-		List<BookBean> cartBooks=new ArrayList<BookBean>();
+		BookCartBean cartbook=null;
+		List<BookCartBean> cartBooks=new ArrayList<BookCartBean>();
 		try {
 			ResultSet  rs=DaoFactory.getBookDaoInstances().doSelect(sql, params);
 			while(rs.next())
 			{
-				book=new BookBean(rs.getString(1),rs.getFloat(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6));
-				cartBooks.add(book);
+				
+				cartbook=new BookCartBean(rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(1), rs.getInt(8));
+				cartBooks.add(cartbook);
 				//System.out.println(book.getBookName());
 			}
 			session.setAttribute("cartBooks", cartBooks);

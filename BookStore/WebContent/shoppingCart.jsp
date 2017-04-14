@@ -1,3 +1,4 @@
+<%@page import="pers.qiqcheng.bookstore.bean.BookCartBean"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="pers.qiqcheng.bookstore.bean.BookBean"%>
 <%@page import="java.awt.print.Book"%>
@@ -34,21 +35,34 @@ if(name==null){
                    <form action="error.jsp" method="post">
                     <div class="panel-body">
                         <table class="table table-hover">
+                        <thead>
+                       		<td>&nbsp;</td>
+                        	<td>&nbsp;</td>
+                            <td>名称</td>
+                            <td>单价</td>
+                            <td>数量</td>
+                            <td>总价</td>
+                            <td>操作</td>
+                        </thead>
                         <%
-                        	BookBean book=null;
-                        	List<BookBean> cartbooks=(ArrayList)session.getAttribute("cartBooks");
+                        	BookCartBean book=null;
+                        	List<BookCartBean> cartbooks=(ArrayList)session.getAttribute("cartBooks");
                         	if(cartbooks!=null){
                         	for(int i=0;i<cartbooks.size();i++){
                         		book=cartbooks.get(i);
                         %>
                     		<tr>
-                    			<td><input type="checkbox" name="confirm"></td>
+                    			<td><input type="checkbox" name="confirm" value="0"></td>
                         		<td><img src="simg/<%=book.getIsbn()%>.jpg"></td>
                         		<td><%=book.getBookName() %></td>
-                       			<td><%=book.getPrice() %></td>
-                        		<td>数量</td>
-                        		<td>总金额</td>
-                       			<td>删除</td>
+                       			<td>￥<%=book.getPrice() %></td>
+                        		<td><%=book.getNum() %></td>
+                        		<td>￥<%=book.getPrice()*book.getNum() %></td>
+                       			<td>
+                       				<form action="delBook?isbn=<%=book.getIsbn()%>" method="post">
+                       					<input type="submit" value="删 除" class="btn btn-primary"/>
+                       				</form>
+                       			</td>
                     		</tr>
                     	<%
                         	}

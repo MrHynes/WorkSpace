@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>regSuccess</title>
+<title>addSuccess</title>
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="css/head.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>

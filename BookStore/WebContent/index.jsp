@@ -120,8 +120,14 @@
 										| 作者:
 										<%=book.getAuthor()%></p>
 									<p>
+										<!-- 
 										<button type="button" class="btn btn-xs btn-primary">购买</button>
 										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
+										-->
+										<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										<form action="addCart?isbn=<%=book.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
+										</form>
 									</p>
 								</div>
 							</div>
@@ -148,8 +154,14 @@
 										| 作者:
 										<%=searchBook.getAuthor()%></p>
 									<p>
+										<!-- 
 										<button type="button" class="btn btn-xs btn-primary">购买</button>
 										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
+										-->
+										<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										<form action="addCart?isbn=<%=searchBook.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
+										</form>
 									</p>
 								</div>
 							</div>

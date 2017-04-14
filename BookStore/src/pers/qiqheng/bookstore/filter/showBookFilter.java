@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import pers.qiqcheng.bookstore.bean.BookBean;
 import pers.qiqcheng.bookstore.factory.DaoFactory;
 
-public class showBookFilter implements Filter{
+public class ShowBookFilter implements Filter{
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
