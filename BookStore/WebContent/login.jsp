@@ -33,7 +33,7 @@
 					<h1>BookStore</h1>
 					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online BookStore is a place where you can 
 					browser books and buy book on the Internet.</p>
-					<p>天涯海角，相隔仅是弹指之间。</p>
+					<p>在线图书购买系统。精品图书，一网打尽！</p>
 					<p>
 						<button class="btn btn-primary">开始使用>></button>
 					</p>

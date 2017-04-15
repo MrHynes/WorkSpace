@@ -1,0 +1,5 @@
+package pers.qiqcheng.bookstore.servlet;
+
+public class InventoryChange {
+
+}

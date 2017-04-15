@@ -97,6 +97,7 @@
 							if (session.getAttribute("books") == null) {
 					%>
 					<h3>
+						<p><%=flag%></p>
 						没有商品，敬请期待
 						<h3>
 							<%
@@ -123,11 +124,16 @@
 										<!-- 
 										<button type="button" class="btn btn-xs btn-primary">购买</button>
 										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-										-->
-										<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										
+										<form action="payment?isbn=<%=book.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										</form>
 										<form action="addCart?isbn=<%=book.getIsbn() %>" method="post">
 											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
 										</form>
+										-->
+										<div class="btn btn-xs btn-primary"><a href="payment?isbn=<%=book.getIsbn() %>" style="color: white;">购买</a></div>
+										<div class="btn btn-xs btn-primary"><a href="addCart?isbn=<%=book.getIsbn() %>" style="color: white;">加入购物车</a></div>
 									</p>
 								</div>
 							</div>
@@ -158,7 +164,10 @@
 										<button type="button" class="btn btn-xs btn-primary">购买</button>
 										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
 										-->
-										<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										<form action="payment?isbn=<%=searchBook.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										</form>
+										<br>
 										<form action="addCart?isbn=<%=searchBook.getIsbn() %>" method="post">
 											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
 										</form>

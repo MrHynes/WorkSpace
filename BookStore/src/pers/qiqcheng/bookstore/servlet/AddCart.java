@@ -46,7 +46,7 @@ public class AddCart extends HttpServlet {
 				if(flag){
 					req.getRequestDispatcher("addCartSucc.jsp").forward(req, resp);
 				}else {
-					resp.sendRedirect("error.jsp");
+					//resp.sendRedirect("error.jsp");
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

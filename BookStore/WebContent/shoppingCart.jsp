@@ -59,9 +59,12 @@ if(name==null){
                         		<td><%=book.getNum() %></td>
                         		<td>￥<%=book.getPrice()*book.getNum() %></td>
                        			<td>
+                       				<!-- 
                        				<form action="delBook?isbn=<%=book.getIsbn()%>" method="post">
                        					<input type="submit" value="删 除" class="btn btn-primary"/>
                        				</form>
+                       				 -->
+                       				 <div class="btn btn-success"><a href="delBook?isbn=<%=book.getIsbn()%>" style="color: white;">刪除</a></div>
                        			</td>
                     		</tr>
                     	<%

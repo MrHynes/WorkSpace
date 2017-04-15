@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-	<display-name>FirstServlet</display-name>
+	<display-name>BookStore</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -15,7 +15,7 @@
 
 	<filter>
 		<filter-name>show_book</filter-name>
-		<filter-class>pers.qiqheng.bookstore.filter.ShowBookFilter</filter-class>
+		<filter-class>pers.qiqcheng.bookstore.filter.ShowBookFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>show_book</filter-name>
@@ -24,7 +24,7 @@
 	
 	<filter>
 	    <filter-name>bookcart</filter-name>
-		<filter-class>pers.qiqheng.bookstore.filter.ShopCartFilter</filter-class>
+		<filter-class>pers.qiqcheng.bookstore.filter.ShopCartFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>bookcart</filter-name>
@@ -74,5 +74,23 @@
 	<servlet-mapping>
 		<servlet-name>delBook</servlet-name>
 		<url-pattern>/delBook</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>payment</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.Payment</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>payment</servlet-name>
+		<url-pattern>/payment</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>inventory</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.InventoryChange</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inventory</servlet-name>
+		<url-pattern>/inventory</url-pattern>
 	</servlet-mapping>
 </web-app>
