@@ -1,0 +1,10 @@
+package pers.qiqcheng.spring.firstspring;
+
+public class SpringTest1 {
+	@Test
+	//传统方式
+	public void demo1(){
+		
+	}
+
+}

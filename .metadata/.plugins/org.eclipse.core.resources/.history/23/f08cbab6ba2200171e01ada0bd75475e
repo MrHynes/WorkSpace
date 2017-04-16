@@ -1,0 +1,11 @@
+package pers.qiqcheng.spring.firstspring;
+
+public class HelloServiceImpl implements HelloService {
+
+	@Override
+	public void sayHello() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

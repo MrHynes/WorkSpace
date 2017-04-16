@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- 通过bean标签 设置类的信息，通过id属性为类起个标识--> 
+   <bean id="userService" class="pers.qiqcheng.spring.firstspring.HelloService"></bean>
+
+</beans>
