@@ -37,7 +37,7 @@
                     	</div>
                     	<a href="login.jsp" class="btn btn-warning">登  录</a>
                     <%
-                }else if(msg.equals("购物车为空！请将您所需要购买的商品加入购物车，再选择支付")){
+                }else if(msg.equals("未选择商品或者购物车为空！请将您所需要购买的商品加入购物车，再选择支付")){
                 	%>
                 		<p><%=msg %></p>
                     	</div>
@@ -53,6 +53,29 @@
                			 </div>
                 		<a href="index.jsp" class="btn btn-success">点击这里</a>
                 		<a href="shoppingCart.jsp" class="btn btn-success">购物车</a>
+                	<%
+                }else if(msg.equals("购物车已经是空！")||msg.equals("已经清空购物车！")){
+                	%>
+                		<p><%=msg %></p>
+                    	</div>
+                    	<a href="index.jsp" class="btn btn-warning">继续购物</a>
+                	<%
+                }else if(msg==null){
+                	%>
+                		<p><%=msg %></p>
+                    	<p>3秒后，将自动跳转回主页面。如果不能跳转，请</p>
+                     	<%
+                    	response.setHeader("refresh", "3;url=index.jsp");
+                    	%>
+               			 </div>
+                		<a href="index.jsp" class="btn btn-success">点击这里</a>
+                		<a href="shoppingCart.jsp" class="btn btn-success">购物车</a>
+                	<%
+                }else if(msg.equals("购买成功！")){
+                	%>
+                		<p><%=msg %></p>
+                    	</div>
+                    	<a href="index.jsp" class="btn btn-warning">继续购物</a>
                 	<%
                 }
                  %>

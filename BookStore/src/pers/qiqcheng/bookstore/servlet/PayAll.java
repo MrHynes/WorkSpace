@@ -24,7 +24,7 @@ public class PayAll extends HttpServlet {
 		resp.setContentType("text/html;charset=utf-8");
 		String []confirm=req.getParameterValues("confirm");
 		if(confirm==null){
-			req.setAttribute("message", "购物车为空！请将您所需要购买的商品加入购物车，再选择支付");
+			req.setAttribute("message", "未选择商品或者购物车为空！请将您所需要购买的商品加入购物车，再选择支付");
 			req.getRequestDispatcher("msg.jsp").forward(req, resp);
 			return;
 		}
@@ -52,7 +52,8 @@ public class PayAll extends HttpServlet {
 			}
 		}
 		if(flags==confirm.length){
-			req.getRequestDispatcher("paySucc.jsp").forward(req, resp);
+			req.setAttribute("message", "购买成功！");
+			req.getRequestDispatcher("msg.jsp").forward(req, resp);
 		}else {
 			resp.sendRedirect("error.jsp");
 		}

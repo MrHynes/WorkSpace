@@ -102,4 +102,13 @@
 		<servlet-name>payall</servlet-name>
 		<url-pattern>/payall</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>emptycart</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.EmptyCart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>emptycart</servlet-name>
+		<url-pattern>/emptycart</url-pattern>
+	</servlet-mapping>
 </web-app>

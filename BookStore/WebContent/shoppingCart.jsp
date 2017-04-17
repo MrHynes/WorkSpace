@@ -26,14 +26,14 @@ if(name==null){
 %>
 <!--导航栏 2-->
 <jsp:include page="head.jsp"></jsp:include>
+<div style="height: 30px;"></div>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <div class="col-lg-12">
                 <div class="panel panel-success">
                     <div class="panel-heading"><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp;购物车<br></div>
                    <form action="payall" method="post">
-                    <div class="panel-body">
+                    <div class="panel-body pre-scrollable" style="height: 500px;">
                         <table class="table table-hover">
                         <thead>
                        		<td>&nbsp;</td>
@@ -75,11 +75,12 @@ if(name==null){
                     </div>
                     <div class="panel-footer">
                     	<input type="submit" value="购买" class="btn btn-success">
+                    	<div class="btn btn-warning"><a href="emptycart" style="color: white;">清空购物车</a></div>
                     </div>
                     </form>
                 </div>
             </div>
-        </div>
+
     </div>
 </div>
 <!--foot-->

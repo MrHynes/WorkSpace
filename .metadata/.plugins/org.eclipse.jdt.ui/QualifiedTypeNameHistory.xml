@@ -54,10 +54,10 @@
 <fullyQualifiedTypeName name="java.nio.file.attribute.UserPrincipalLookupService"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.firstspring.HelloService"/>
 <fullyQualifiedTypeName name="com.sun.net.httpserver.HttpsConfigurator"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.ReplicationMySQLConnection"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.bookstore.factory.DaoFactory"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.bookstore.factory.DaoFactory"/>
 </qualifiedTypeNameHistroy>

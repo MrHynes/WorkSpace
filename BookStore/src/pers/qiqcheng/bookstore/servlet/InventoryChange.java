@@ -28,7 +28,8 @@ public class InventoryChange extends HttpServlet {
 		try {
 			flag=DaoFactory.getBookDaoInstances().doUpdate(sql, params);
 			if(flag){
-				req.getRequestDispatcher("paySucc.jsp").forward(req, resp);
+				req.setAttribute("message", "购买成功！");
+				req.getRequestDispatcher("msg.jsp").forward(req, resp);
 //				PrintWriter out=resp.getWriter();
 //				out.println("正确");
 			}else {
