@@ -82,7 +82,7 @@
 			<div class="col-lg-1"></div>
 		</div>
 	</div>
-
+	
 	<!--商品显示-->
 	<div class="col-lg-12">
 		<div class="container">
@@ -98,6 +98,7 @@
 		                    		response.setHeader("refresh", "0;url=index.jsp");
 								} else {
 										List<BookBean> books = (List<BookBean>) session.getAttribute("books");
+										//List<BookBean> books=pageBean.getList();
 										BookBean book = null;
 										for (int i = 0; i < books.size(); i++) {
 											book = books.get(i);
@@ -126,6 +127,7 @@
 									}
 								} else {
 									List<BookBean> searchBooks = (List<BookBean>) session.getAttribute("searchBooks");
+								
 									BookBean searchBook = null;
 									for (int i = 0; i < searchBooks.size(); i++) {
 										searchBook = searchBooks.get(i);
@@ -154,22 +156,29 @@
 									</p>
 								</div>
 							</div>
-
 							<%
 								}
 								}
 							%>
-						
 				</div>
 			</div>
 		</div>
-		<div>&nbsp;</div>
+		<%--
+		<div align="center">&nbsp;
+				<ul class="pagination">
+					<li><a>共<%=pageBean.getTotalPages()%>页</a></li>
+					<li><a>当前第<%=pageBean.getPageNo() %>页</a></li>
+			        <li><a href="getAll?pageNo=<%=pageBean.getTopPage()%>">首页</a></li>
+					<li><a href="getAll?pageNo=<%=pageBean.getPreviousPage()%>">上一页</a></li>
+			        <li><a href="#">...</a></li>
+			        <li><a href="#">...</a></li>
+			        <li><a href="getAll?pageNo=<%=pageBean.getNextPage() %>">下一页</a></li>
+					<li><a href="getAll?pageNo=<%=pageBean.getButtonPage()%>">尾页</a></li>
+			    </ul>
+		--%>
+		</div>
 	</div>
-<!-- 
-<div class="col-lg-12" style=" background-color:#3b414f; height: 60px;text-align: center;color: white; line-height: 60px;  ">
-    Copyright ©2017, 程祺004 All rights reserved.
-</div>
- -->
+	
  <jsp:include page="foot.jsp"></jsp:include>
 </body>
 </html>

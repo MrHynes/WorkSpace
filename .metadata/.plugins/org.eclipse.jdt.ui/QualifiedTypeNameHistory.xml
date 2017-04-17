@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="sun.security.x509.AuthorityInfoAccessExtension"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.Readable"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.exp03_02.Select"/>
 <fullyQualifiedTypeName name="java.lang.Package"/>
@@ -35,8 +32,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.Select"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.awt.print.Book"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.HttpserverMessages"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.bookstore.bean.BookChatBean"/>
@@ -44,8 +39,6 @@
 <fullyQualifiedTypeName name="pers.qiqcheng.bookstore.bean.BookCartBean"/>
 <fullyQualifiedTypeName name="com.sun.crypto.provider.DHKeyPairGenerator"/>
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.bookstore.bean.BookBean"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.firstspring.HelloServiceImpl"/>
 <fullyQualifiedTypeName name="com.sun.glass.ui.Application"/>
 <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
@@ -57,7 +50,14 @@
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.ReplicationMySQLConnection"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.bookstore.bean.PageBean"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.bookstore.bean.BookBean"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.bookstore.factory.DaoFactory"/>
+<fullyQualifiedTypeName name="com.sun.corba.se.impl.util.PackagePrefixChecker"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

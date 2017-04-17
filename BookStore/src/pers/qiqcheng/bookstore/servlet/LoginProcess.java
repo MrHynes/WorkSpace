@@ -44,6 +44,7 @@ public class LoginProcess extends HttpServlet {
 					resp.addCookie(cookie);
 				}
 				req.getRequestDispatcher("index.jsp").forward(req, resp);
+				//req.getRequestDispatcher("pageNo?pageNo=0").forward(req, resp);
 				//resp.sendRedirect("http://localhost:8080/BookStore/index.jsp");
 			} else {
 				session.setAttribute("username", username);
