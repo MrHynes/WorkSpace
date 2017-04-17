@@ -1,0 +1,21 @@
+package pers.qiqcheng.spring.newbean;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * 通过无参构造方法实例化bena
+ * @author Buer
+ *
+ */
+public class SpringTest1 {
+	
+	public static void main(String[] args) {
+		
+	}
+	public static demo01(){
+		ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
+		Bean01 bean=(Bean01)applicationContext.getBean("bean01");
+		System.out.println(bean.toString());
+	}
+}

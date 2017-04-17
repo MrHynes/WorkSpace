@@ -1,0 +1,19 @@
+package pers.qiqcheng.spring.scop;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * beanµÄ×÷ÓÃ·¶Î§
+ * @author Buer
+ *
+ */
+public class SpringTest3 {
+public static void main(String[] args) {
+	ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
+	Customer customer1=(Customer)applicationContext.getBean("customer");
+	System.out.println(customer1);
+	Customer customer2=(Customer)applicationContext.getBean("customer");
+	System.out.println(customer2);
+}
+}

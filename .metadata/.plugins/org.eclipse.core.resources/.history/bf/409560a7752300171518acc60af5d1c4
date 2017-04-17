@@ -1,0 +1,11 @@
+package pers.qiqcheng.spring.newbean;
+
+/**
+ * ÈëÃÅ°¸Àı£º
+ * 
+ * @author Buer
+ *
+ */
+public interface HelloService {
+	public void sayHello();
+}

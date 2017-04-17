@@ -1,0 +1,10 @@
+package pers.qiqcheng.spring.newbean;
+
+
+
+public class FactoryBean02 {
+	public static Bean02 getBean02(){
+		return new Bean02();
+	}
+
+}
