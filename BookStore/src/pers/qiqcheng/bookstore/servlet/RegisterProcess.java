@@ -43,9 +43,10 @@ public class RegisterProcess extends HttpServlet {
 		}
 		if(flag){
 			req.setAttribute("name", username);
-			req.getRequestDispatcher("regSuccess.jsp").forward(req, resp);
+			req.setAttribute("message", "¹§Ï²Äú£¡×¢²á³É¹¦£¡");
+			req.getRequestDispatcher("msg.jsp").forward(req, resp);
 		}else{
-			resp.sendRedirect("http://localhost:8080/OnlineChatting/register.jsp");
+			resp.sendRedirect("http://localhost:8080/BookStore/register.jsp");
 		}
 	}
 

@@ -6,6 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>head</title>
 </head>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/head.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
 <%
 	String name = (String) session.getAttribute("username");
 %>

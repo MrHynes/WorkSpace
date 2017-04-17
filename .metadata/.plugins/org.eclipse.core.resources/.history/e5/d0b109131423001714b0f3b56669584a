@@ -1,5 +1,5 @@
 package pers.qiqcheng.bookstore.servlet;
 
-public class AddCart {
+public class PayAll {
 
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="pers.qiqcheng.facedetection.factory.DaoFactory"/>
 <fullyQualifiedTypeName name="sun.security.x509.AuthorityInfoAccessExtension"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
@@ -47,12 +46,6 @@
 <fullyQualifiedTypeName name="java.lang.Boolean"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.bookstore.bean.BookBean"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="com.sun.net.httpserver.HttpsConfigurator"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.bookstore.factory.DaoFactory"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.firstspring.HelloServiceImpl"/>
 <fullyQualifiedTypeName name="com.sun.glass.ui.Application"/>
 <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
 <fullyQualifiedTypeName name="java.nio.file.attribute.UserPrincipalLookupService"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.firstspring.HelloService"/>
+<fullyQualifiedTypeName name="com.sun.net.httpserver.HttpsConfigurator"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.ReplicationMySQLConnection"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.bookstore.factory.DaoFactory"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

@@ -93,4 +93,13 @@
 		<servlet-name>inventory</servlet-name>
 		<url-pattern>/inventory</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>payall</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.PayAll</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>payall</servlet-name>
+		<url-pattern>/payall</url-pattern>
+	</servlet-mapping>
 </web-app>

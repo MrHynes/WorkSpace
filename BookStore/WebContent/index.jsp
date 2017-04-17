@@ -95,12 +95,7 @@
 						String flag = request.getParameter("flag");
 						if (flag == null) {
 							if (session.getAttribute("books") == null) {
-					%>
-					<h3>
-						<p><%=flag%></p>
-						没有商品，敬请期待
-						<h3>
-							<%
+		                    		response.setHeader("refresh", "0;url=index.jsp");
 								} else {
 										List<BookBean> books = (List<BookBean>) session.getAttribute("books");
 										BookBean book = null;
@@ -121,17 +116,6 @@
 										| 作者:
 										<%=book.getAuthor()%></p>
 									<p>
-										<!-- 
-										<button type="button" class="btn btn-xs btn-primary">购买</button>
-										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-										
-										<form action="payment?isbn=<%=book.getIsbn() %>" method="post">
-											<input type="submit" class="btn btn-xs btn-primary" value="购买">
-										</form>
-										<form action="addCart?isbn=<%=book.getIsbn() %>" method="post">
-											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
-										</form>
-										-->
 										<div class="btn btn-xs btn-primary"><a href="payment?isbn=<%=book.getIsbn() %>" style="color: white;">购买</a></div>
 										<div class="btn btn-xs btn-primary"><a href="addCart?isbn=<%=book.getIsbn() %>" style="color: white;">加入购物车</a></div>
 									</p>
@@ -160,10 +144,6 @@
 										| 作者:
 										<%=searchBook.getAuthor()%></p>
 									<p>
-										<!-- 
-										<button type="button" class="btn btn-xs btn-primary">购买</button>
-										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
-										-->
 										<form action="payment?isbn=<%=searchBook.getIsbn() %>" method="post">
 											<input type="submit" class="btn btn-xs btn-primary" value="购买">
 										</form>

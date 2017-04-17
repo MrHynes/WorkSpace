@@ -97,6 +97,7 @@
 							if (session.getAttribute("books") == null) {
 					%>
 					<h3>
+						<p><%=flag%></p>
 						没有商品，敬请期待
 						<h3>
 							<%
@@ -120,8 +121,19 @@
 										| 作者:
 										<%=book.getAuthor()%></p>
 									<p>
+										<!-- 
 										<button type="button" class="btn btn-xs btn-primary">购买</button>
 										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
+										
+										<form action="payment?isbn=<%=book.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										</form>
+										<form action="addCart?isbn=<%=book.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
+										</form>
+										-->
+										<div class="btn btn-xs btn-primary"><a href="payment?isbn=<%=book.getIsbn() %>" style="color: white;">购买</a></div>
+										<div class="btn btn-xs btn-primary"><a href="addCart?isbn=<%=book.getIsbn() %>" style="color: white;">加入购物车</a></div>
 									</p>
 								</div>
 							</div>
@@ -148,8 +160,17 @@
 										| 作者:
 										<%=searchBook.getAuthor()%></p>
 									<p>
+										<!-- 
 										<button type="button" class="btn btn-xs btn-primary">购买</button>
 										<button type="button" class="btn btn-xs btn-primary">加入购物车</button>
+										-->
+										<form action="payment?isbn=<%=searchBook.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="购买">
+										</form>
+										<br>
+										<form action="addCart?isbn=<%=searchBook.getIsbn() %>" method="post">
+											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
+										</form>
 									</p>
 								</div>
 							</div>
@@ -164,9 +185,11 @@
 		</div>
 		<div>&nbsp;</div>
 	</div>
-
-<div class="foot col-lg-12"  style="position: fixed; bottom: 0px;">
+<!-- 
+<div class="col-lg-12" style=" background-color:#3b414f; height: 60px;text-align: center;color: white; line-height: 60px;  ">
     Copyright ©2017, 程祺004 All rights reserved.
 </div>
+ -->
+ <jsp:include page="foot.jsp"></jsp:include>
 </body>
 </html>

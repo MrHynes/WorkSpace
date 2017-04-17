@@ -1,0 +1,49 @@
+package pers.qiqcheng.bookstore.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pers.qiqcheng.bookstore.factory.DaoFactory;
+
+public class PayAll extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html;charset=utf-8");
+		String []confirm=req.getParameterValues("confirm");
+//		PrintWriter out=resp.getWriter();
+//		for (String string : confirm) {
+//			out.print(string+"\n");
+//		}
+		int flags=0;
+		String sql="update bookinfo set inventory=inventory-1 where isbn=?";
+		for(int i=0;i<confirm.length;i++){
+			boolean flag=false;
+			String []params={confirm[i]};
+			try {
+				flag=DaoFactory.getBookDaoInstances().doUpdate(sql, params);
+				if(flag){
+					flags++;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			if(flags==confirm.length){
+				req.getRequestDispatcher("paySucc.jsp").forward(req, resp);
+			}else {
+				resp.sendRedirect("error.jsp");
+			}
+		}
+	}
+}

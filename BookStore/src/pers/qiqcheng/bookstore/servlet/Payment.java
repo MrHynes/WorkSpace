@@ -23,6 +23,13 @@ public class Payment extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
+		HttpSession session=req.getSession();
+		String username=(String)session.getAttribute("username");
+		if(username==null){
+			req.setAttribute("message", "Äú»¹Î´µÇÂ¼£¬ÇëÏÈµÇÂ¼");
+			req.getRequestDispatcher("msg.jsp").forward(req, resp);
+			return;
+		}
 		String isbn=req.getParameter("isbn");
 		String sql="select * from bookinfo where isbn=?";
 		String []params={isbn};

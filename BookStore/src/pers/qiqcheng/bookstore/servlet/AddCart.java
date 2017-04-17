@@ -26,7 +26,8 @@ public class AddCart extends HttpServlet {
 		HttpSession session=req.getSession();
 		String username=(String)session.getAttribute("username");
 		if(username==null){
-			req.getRequestDispatcher("warning.jsp").forward(req, resp);
+			req.setAttribute("message", "您还未登录，请先登录");
+			req.getRequestDispatcher("msg.jsp").forward(req, resp);
 		}else{
 			String isbn=req.getParameter("isbn");
 //			PrintWriter out=resp.getWriter();
@@ -44,9 +45,10 @@ public class AddCart extends HttpServlet {
 					flag=DaoFactory.getBookDaoInstances().doInsert(sql3, params);
 				}
 				if(flag){
-					req.getRequestDispatcher("addCartSucc.jsp").forward(req, resp);
+					req.setAttribute("message", "添加购物车成功！");
+					req.getRequestDispatcher("msg.jsp").forward(req, resp);
 				}else {
-					//resp.sendRedirect("error.jsp");
+					resp.sendRedirect("error.jsp");
 				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

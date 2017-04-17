@@ -32,7 +32,7 @@ if(name==null){
             <div class="col-lg-12">
                 <div class="panel panel-success">
                     <div class="panel-heading"><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp;购物车<br></div>
-                   <form action="error.jsp" method="post">
+                   <form action="payall" method="post">
                     <div class="panel-body">
                         <table class="table table-hover">
                         <thead>
@@ -52,7 +52,7 @@ if(name==null){
                         		book=cartbooks.get(i);
                         %>
                     		<tr>
-                    			<td><input type="checkbox" name="confirm" value="0"></td>
+                    			<td><input type="checkbox" name="confirm" value="<%=book.getIsbn() %>"></td>
                         		<td><img src="simg/<%=book.getIsbn()%>.jpg"></td>
                         		<td><%=book.getBookName() %></td>
                        			<td>￥<%=book.getPrice() %></td>
