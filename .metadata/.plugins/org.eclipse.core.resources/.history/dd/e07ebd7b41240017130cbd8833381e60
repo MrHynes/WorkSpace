@@ -1,0 +1,25 @@
+package pers.qiqcheng.spring.demo05;
+
+public class User {
+	private String name;
+	private float score;
+	public User() {
+		System.out.println("创建对象..");
+	}
+	public User(String name, float score) {
+		super();
+		this.name = name;
+		this.score = score;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setScore(float score) {
+		this.score = score;
+	}
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", score=" + score + "]";
+	}
+
+}

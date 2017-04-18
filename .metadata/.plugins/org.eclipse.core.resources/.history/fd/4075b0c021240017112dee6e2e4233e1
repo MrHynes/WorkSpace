@@ -1,0 +1,11 @@
+package pers.qiqcheng.spring.scop;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class SpringTest4 {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext cpxac=new ClassPathXmlApplicationContext("applicationContext.xml");
+		Producter producter=(Producter)cpxac.getBean("producter");
+	}
+
+}

@@ -1,0 +1,11 @@
+package pers.qiqcheng.spring.demo01;
+
+/**
+ * »Î√≈∞∏¿˝£∫
+ * 
+ * @author Buer
+ *
+ */
+public interface HelloService {
+	public void sayHello();
+}

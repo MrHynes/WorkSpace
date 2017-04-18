@@ -1,0 +1,8 @@
+package pers.qiqcheng.spring.demo05;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSpring6 {
+
+}

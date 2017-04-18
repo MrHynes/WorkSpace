@@ -1,0 +1,16 @@
+package pers.qiqcheng.spring.demo05;
+
+public class Person2 {
+	private String name;
+	private float score;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setScore(float score) {
+		this.score = score;
+	}
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", score=" + score + "]";
+	}
+}

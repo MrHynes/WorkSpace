@@ -1,0 +1,12 @@
+package pers.qiqcheng.spring.demo05;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSpring5 {
+	public static void main(String[] args) {
+		ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
+		Person person=(Person)applicationContext.getBean("person");
+		
+	}
+}

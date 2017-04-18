@@ -1,0 +1,15 @@
+package pers.qiqcheng.spring.demo05;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSpring6 {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
+		//setter·½Ê½×¢Èë
+		Person person=(Person)applicationContext.getBean("person");
+		System.out.println(person.toString());
+		Person2 person2=(Person2)applicationContext.getBean("person2");
+		System.out.println(person2.toString());
+		applicationContext.close();
+	}
+}

@@ -1,0 +1,8 @@
+package pers.qiqcheng.spring.demo04;
+
+public class CustomerService {
+	public CustomerService(){
+		System.err.println("1.执行构造方法...");
+	}
+
+}
