@@ -29,4 +29,16 @@ public class User {
 	public String toString() {
 		return "User [name=" + name + ", score=" + score + ", car=" + car.toString() + "]";
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public float getScore() {
+		return score;
+	}
+
+	public Car getCar() {
+		return car;
+	}
 }

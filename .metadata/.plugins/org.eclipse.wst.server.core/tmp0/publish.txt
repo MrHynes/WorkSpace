@@ -1,3 +1,5 @@
 #Tomcat publish data
-#Mon Apr 17 21:00:18 CST 2017
+#Wed Apr 19 22:44:57 CST 2017
+org.eclipse.jst.jee.server\:/binary\:F\:\\WorkSpace\\FirstSpring\\WebContent\\WEB-INF\\lib\\spring-web-4.3.2.RELEASE.jar=D\:\\tomcat\\webapps\\FirstSpring\\WEB-INF\\lib\\spring-web-4.3.2.RELEASE.jar
+org.eclipse.jst.jee.server\:FirstSpring=D\:\\tomcat\\webapps\\FirstSpring
 org.eclipse.jst.jee.server\:BookStore=D\:\\tomcat\\webapps\\BookStore

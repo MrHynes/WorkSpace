@@ -1,0 +1,8 @@
+package pers.qiqcheng.spring.demo06;
+
+public class HelloService {
+	public void sayHllo(){
+		System.out.println("Hello World");
+	}
+
+}

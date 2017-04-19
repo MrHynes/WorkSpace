@@ -1,0 +1,12 @@
+package pers.qiqcheng.spring.demo05;
+
+import java.util.List;
+
+import com.sun.javafx.collections.MappingChange.Map;
+
+public class CollectionBean {
+	private List<String> list;
+	private Map<Integer, String> map;
+	
+
+}

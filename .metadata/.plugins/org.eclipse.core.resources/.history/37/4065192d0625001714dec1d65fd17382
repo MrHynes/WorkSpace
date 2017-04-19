@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<context:annotation-config></context:annotation-config>
+<context:component-scan base-package="pers.qiqcheng.spring.demo06"></context:component-scan>
+
+<bean id="student" class="pers.qiqcheng.spring.demo06.Student"></bean>
+<bean id="teacher" class="pers.qiqcheng.spring.demo06.Teacher"></bean>
+<bean id="userService" class="pers.qiqcheng.spring.demo06.UserService"></bean>
+
+</beans>

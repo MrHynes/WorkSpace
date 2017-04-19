@@ -1,0 +1,9 @@
+package pers.qiqcheng.spring.demo06;
+
+import org.springframework.stereotype.Component;
+
+@Component("user")
+public class Student {
+	private String name;
+
+}

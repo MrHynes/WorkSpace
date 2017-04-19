@@ -1,0 +1,13 @@
+package pers.qiqcheng.spring.demo06;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test2 {
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext2.xml");
+		HelloService helloService=(HelloService)applicationContext.getBean("userService");
+		helloService.sayHllo();
+		System.out.println(helloService.toString());
+	}
+
+}

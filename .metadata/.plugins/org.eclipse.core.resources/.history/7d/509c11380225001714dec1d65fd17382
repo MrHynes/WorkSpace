@@ -1,0 +1,7 @@
+package pers.qiqcheng.spring.demo06;
+
+public class UserService {
+	private Student student;
+	private User user;
+
+}
