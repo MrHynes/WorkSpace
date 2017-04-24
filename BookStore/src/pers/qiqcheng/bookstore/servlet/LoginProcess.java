@@ -21,9 +21,9 @@ public class LoginProcess extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html;charset=utf-8");
+//		req.setCharacterEncoding("UTF-8");
+//		resp.setCharacterEncoding("UTF-8");
+//		resp.setContentType("text/html;charset=utf-8");
 		HttpSession session = req.getSession();
 		String username = req.getParameter("username");
 		// 将密码转化为MD5码
@@ -43,7 +43,7 @@ public class LoginProcess extends HttpServlet {
 					cookie.setMaxAge(60 * 5);// 保存5分钟
 					resp.addCookie(cookie);
 				}
-				req.getRequestDispatcher("index.jsp").forward(req, resp);
+				req.getRequestDispatcher("pageNo?pageNo=1").forward(req, resp);
 				//req.getRequestDispatcher("pageNo?pageNo=0").forward(req, resp);
 				//resp.sendRedirect("http://localhost:8080/BookStore/index.jsp");
 			} else {

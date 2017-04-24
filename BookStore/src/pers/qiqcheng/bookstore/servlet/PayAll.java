@@ -20,8 +20,8 @@ public class PayAll extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
-		resp.setContentType("text/html;charset=utf-8");
+//		req.setCharacterEncoding("utf-8");
+//		resp.setContentType("text/html;charset=utf-8");
 		String []confirm=req.getParameterValues("confirm");
 		if(confirm==null){
 			req.setAttribute("message", "未选择商品或者购物车为空！请将您所需要购买的商品加入购物车，再选择支付");

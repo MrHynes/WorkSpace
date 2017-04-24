@@ -1,7 +1,0 @@
-package pers.qiqheng.bookstore.filter;
-
-import com.sun.net.httpserver.Filter;
-
-public class showBookFilter extends Filter{
-
-}

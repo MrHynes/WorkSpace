@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>BookStore</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+
+	<filter>
+		<filter-name>show_book</filter-name>
+		<filter-class>pers.qiqcheng.bookstore.filter.ShowBookFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>show_book</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter>
+	    <filter-name>book_cart</filter-name>
+		<filter-class>pers.qiqcheng.bookstore.filter.ShopCartFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>book_cart</filter-name>
+		<url-pattern>/shoppingCart.jsp</url-pattern>
+	</filter-mapping>
+	
+	 
+	<filter>
+		<filter-name>encode</filter-name>
+		<filter-class>pers.qiqcheng.bookstore.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encode</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encode</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	 
+	 <filter>
+	    <filter-name>user_info</filter-name>
+		<filter-class>pers.qiqcheng.bookstore.filter.UserInfoFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>user_info</filter-name>
+		<url-pattern>/userInfo.jsp</url-pattern>
+	</filter-mapping>
+	
+	<servlet>
+		<servlet-name>loginProcess</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.LoginProcess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginProcess</servlet-name>
+		<url-pattern>/loginProcess</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>RegisterProcess</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.RegisterProcess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterProcess</servlet-name>
+		<url-pattern>/registerProcess</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SearchBook</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.SearchBookByKey</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchBook</servlet-name>
+		<url-pattern>/searchBook</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>addCart</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.AddCart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addCart</servlet-name>
+		<url-pattern>/addCart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>delBook</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.DelBook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delBook</servlet-name>
+		<url-pattern>/delBook</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>payment</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.Payment</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>payment</servlet-name>
+		<url-pattern>/payment</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>inventory</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.InventoryChange</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>inventory</servlet-name>
+		<url-pattern>/inventory</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>payall</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.PayAll</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>payall</servlet-name>
+		<url-pattern>/payall</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>emptycart</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.EmptyCart</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>emptycart</servlet-name>
+		<url-pattern>/emptycart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>pageNo</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.GetPageNo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pageNo</servlet-name>
+		<url-pattern>/pageNo</url-pattern>
+	</servlet-mapping>
+</web-app>

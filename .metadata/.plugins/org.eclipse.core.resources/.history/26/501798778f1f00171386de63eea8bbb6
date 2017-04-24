@@ -1,9 +1,0 @@
-package pers.qiqheng.bookstore.filter;
-
-import java.io.IOException;
-
-
-public class showBookFilter implements Filter{
-
-
-}

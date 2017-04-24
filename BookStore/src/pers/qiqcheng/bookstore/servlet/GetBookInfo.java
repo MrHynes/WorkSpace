@@ -24,14 +24,14 @@ public class GetBookInfo extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
-		resp.setContentType("text.html;charset=utf-8");
+//		req.setCharacterEncoding("utf-8");
+//		resp.setContentType("text.html;charset=utf-8");
 		String pageNoStr=(String)req.getParameter("pageNo");
 		String sql="select count(*) as t from bookinfo;";
 		String sql2="select * from bookinfo limit ?,?";
 		PageBean pageBean=new PageBean();
 		BookBean bookBean=null;
-		int pageSize=3;
+		int pageSize=12;
 		int pageNo=0;
 		int totalRecords=0;
 		if(pageNoStr==null){

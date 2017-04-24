@@ -28,7 +28,7 @@ public class PageBean {
 	 * 取得尾页
 	 * @return
 	 */
-	public int getButtonPage(){
+	public int getBottonPage(){
 		return getTotalPages();
 	}
 	/**
@@ -53,6 +53,10 @@ public class PageBean {
 			return pageNo+1;
 		}
 	}
+	/**
+	 * getter/setter方法
+	 * @return
+	 */
 	public List getList() {
 		return list;
 	}

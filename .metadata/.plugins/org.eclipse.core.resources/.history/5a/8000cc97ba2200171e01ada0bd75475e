@@ -1,5 +1,0 @@
-package pers.qiqcheng.spring.firstspring;
-
-public interface HelloService {
-
-}

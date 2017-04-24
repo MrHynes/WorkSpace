@@ -6,7 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import pers.qiqcheng.bookstore.dao.IBookDao;
-
+/**
+ * 数据库操作实现类
+ * @author Buer
+ *
+ */
 public class BookDaoImp implements IBookDao {
 
 	private Connection conn = null;

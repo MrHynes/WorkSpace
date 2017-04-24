@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="java.util.*,pers.qiqcheng.bookstore.bean.BookBean"%>
+	import="java.util.*,pers.qiqcheng.bookstore.bean.BookBean,pers.qiqcheng.bookstore.bean.PageBean"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -82,7 +82,7 @@
 			<div class="col-lg-1"></div>
 		</div>
 	</div>
-	
+
 	<!--商品显示-->
 	<div class="col-lg-12">
 		<div class="container">
@@ -92,93 +92,57 @@
 				<div class="col-lg-12">
 					<!--  style="color: white" -->
 					<%
-						String flag = request.getParameter("flag");
-						if (flag == null) {
-							if (session.getAttribute("books") == null) {
-		                    		response.setHeader("refresh", "0;url=index.jsp");
-								} else {
-										List<BookBean> books = (List<BookBean>) session.getAttribute("books");
-										//List<BookBean> books=pageBean.getList();
-										BookBean book = null;
-										for (int i = 0; i < books.size(); i++) {
-											book = books.get(i);
-							%>
-							<div class="col-lg-3">
-								<a href="#" class="thumbnail"> <img
-									src="img/<%=book.getIsbn()%>.jpg" alt="">
-								</a>
-								<div class="fontcolor">
-									<h3><%=book.getBookName()%></h3>
-									<p>
-										定价: ￥<%=book.getPrice()%>元 | 库存：<%=book.getInventory()%></p>
-									<p>
-										出版社名称:
-										<%=book.getPress()%>
-										| 作者:
-										<%=book.getAuthor()%></p>
-									<p>
-										<div class="btn btn-xs btn-primary"><a href="payment?isbn=<%=book.getIsbn() %>" style="color: white;">购买</a></div>
-										<div class="btn btn-xs btn-primary"><a href="addCart?isbn=<%=book.getIsbn() %>" style="color: white;">加入购物车</a></div>
-									</p>
-								</div>
+						PageBean pageBean = (PageBean) session.getAttribute("pageBean");
+						List<BookBean> books = pageBean.getList();
+						for (int i = 0; i < books.size(); i++) {
+							BookBean book = books.get(i);
+					%>
+					<div class="col-lg-3">
+						<a href="#" class="thumbnail"> <img
+							src="img/<%=book.getIsbn()%>.jpg" alt="">
+						</a>
+						<div class="fontcolor">
+							<h3><%=book.getBookName()%></h3>
+							<p>
+								定价: ￥<%=book.getPrice()%>元 | 库存：<%=book.getInventory()%></p>
+							<p>
+								出版社名称:
+								<%=book.getPress()%>
+								| 作者:
+								<%=book.getAuthor()%></p>
+							<p>
+							<div class="btn btn-xs btn-primary">
+								<a href="payment?isbn=<%=book.getIsbn()%>" style="color: white;">购买</a>
 							</div>
-							<%
-								}
-									}
-								} else {
-									List<BookBean> searchBooks = (List<BookBean>) session.getAttribute("searchBooks");
-								
-									BookBean searchBook = null;
-									for (int i = 0; i < searchBooks.size(); i++) {
-										searchBook = searchBooks.get(i);
-							%>
-							<div class="col-lg-3">
-								<a href="#" class="thumbnail"> <img
-									src="img/<%=searchBook.getIsbn()%>.jpg" alt="">
-								</a>
-								<div class="fontcolor">
-									<h3><%=searchBook.getBookName()%></h3>
-									<p>
-										定价: ￥<%=searchBook.getPrice()%>元 | 库存：<%=searchBook.getInventory()%></p>
-									<p>
-										出版社名称:
-										<%=searchBook.getPress()%>
-										| 作者:
-										<%=searchBook.getAuthor()%></p>
-									<p>
-										<form action="payment?isbn=<%=searchBook.getIsbn() %>" method="post">
-											<input type="submit" class="btn btn-xs btn-primary" value="购买">
-										</form>
-										<br>
-										<form action="addCart?isbn=<%=searchBook.getIsbn() %>" method="post">
-											<input type="submit" class="btn btn-xs btn-primary" value="加入购物车">
-										</form>
-									</p>
-								</div>
+							<div class="btn btn-xs btn-primary">
+								<a href="addCart?isbn=<%=book.getIsbn()%>" style="color: white;">加入购物车</a>
 							</div>
-							<%
-								}
-								}
-							%>
+							</p>
+						</div>
+					</div>
+					<%
+						}
+					%>
 				</div>
 			</div>
 		</div>
-		<%--
-		<div align="center">&nbsp;
-				<ul class="pagination">
-					<li><a>共<%=pageBean.getTotalPages()%>页</a></li>
-					<li><a>当前第<%=pageBean.getPageNo() %>页</a></li>
-			        <li><a href="getAll?pageNo=<%=pageBean.getTopPage()%>">首页</a></li>
-					<li><a href="getAll?pageNo=<%=pageBean.getPreviousPage()%>">上一页</a></li>
-			        <li><a href="#">...</a></li>
-			        <li><a href="#">...</a></li>
-			        <li><a href="getAll?pageNo=<%=pageBean.getNextPage() %>">下一页</a></li>
-					<li><a href="getAll?pageNo=<%=pageBean.getButtonPage()%>">尾页</a></li>
-			    </ul>
-		--%>
+		<!-- 分页 -->
+		<div align="center">
+			&nbsp;
+			<ul class="pagination">
+				<li><a>共<%=pageBean.getTotalPages()%>页</a></li>
+				<li><a>当前第<%=pageBean.getPageNo()%>页</a></li>
+				<li><a href="pageNo?pageNo=<%=pageBean.getTopPage()%>">首页</a></li>
+				<li><a href="pageNo?pageNo=<%=pageBean.getPreviousPage()%>">上一页</a></li>
+				<li><a href="#">...</a></li>
+				<li><a href="#">...</a></li>
+				<li><a href="pageNo?pageNo=<%=pageBean.getNextPage()%>">下一页</a></li>
+				<li><a href="pageNo?pageNo=<%=pageBean.getBottonPage()%>">尾页</a></li>
+			</ul>
 		</div>
 	</div>
-	
- <jsp:include page="foot.jsp"></jsp:include>
+	</div>
+
+	<jsp:include page="foot.jsp"></jsp:include>
 </body>
 </html>

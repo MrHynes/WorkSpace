@@ -1,9 +1,0 @@
-package pers.qiqcheng.spring.firstspring;
-
-public class SpringTest1 {
-	@Test
-	public void demo1(){
-		
-	}
-
-}

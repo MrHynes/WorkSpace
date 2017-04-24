@@ -24,12 +24,35 @@
 	</filter-mapping>
 
 	<filter>
-	    <filter-name>bookcart</filter-name>
+	    <filter-name>book_cart</filter-name>
 		<filter-class>pers.qiqcheng.bookstore.filter.ShopCartFilter</filter-class>
 	</filter>
 	<filter-mapping>
-		<filter-name>bookcart</filter-name>
+		<filter-name>book_cart</filter-name>
 		<url-pattern>/shoppingCart.jsp</url-pattern>
+	</filter-mapping>
+	
+	 
+	<filter>
+		<filter-name>encode</filter-name>
+		<filter-class>pers.qiqcheng.bookstore.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encode</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encode</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	 
+	 <filter>
+	    <filter-name>user_info</filter-name>
+		<filter-class>pers.qiqcheng.bookstore.filter.UserInfoFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>user_info</filter-name>
+		<url-pattern>/userInfo.jsp</url-pattern>
 	</filter-mapping>
 	
 	<servlet>
@@ -111,5 +134,24 @@
 	<servlet-mapping>
 		<servlet-name>emptycart</servlet-name>
 		<url-pattern>/emptycart</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>pageNo</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.GetPageNo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pageNo</servlet-name>
+		<url-pattern>/pageNo</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>save</servlet-name>
+		<servlet-class>pers.qiqcheng.bookstore.servlet.SaveModify</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>save</servlet-name>
+		<url-pattern>/save</url-pattern>
 	</servlet-mapping>
 </web-app>

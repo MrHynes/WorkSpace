@@ -22,13 +22,13 @@ public class RegisterProcess extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
-		resp.setCharacterEncoding("UTF-8");
+//		req.setCharacterEncoding("UTF-8");
+//		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html;charset=utf-8");
 		String username=req.getParameter("rusername");
 		String pass=req.getParameter("rpassword");
 		String pass2=req.getParameter("rpassword2");
-		String sql="insert into userinfo values(?,?)";
+		String sql="insert into userinfo(username,password) values(?,?)";
 		boolean flag=false;
 		//判断 username==null,pass==null,pass2==null,pass==pass2,pass=" ".pass2==" ",username==" "
 		if(username!=""&&pass!=""&&pass.equals(pass2)){//判断如果两次密码相同或者密码/用户名不为空的时候

@@ -1,0 +1,32 @@
+package pers.qiqcheng.bookstore.servlet;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pers.qiqcheng.bookstore.bean.BookBean;
+
+public class GetPageNo extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html;charset=utf-8");
+		int pageNo=Integer.parseInt(req.getParameter("pageNo"));
+		int pageSize=6;
+		int totalRecord;
+		List<BookBean> books=null;
+		String sql="select count(*) as t from bookinfo";
+		String sql2="select * from bookinfo limit ?,?"
+	}
+
+}

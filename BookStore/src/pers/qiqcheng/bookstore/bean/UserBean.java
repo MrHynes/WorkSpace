@@ -3,6 +3,28 @@ package pers.qiqcheng.bookstore.bean;
 public class UserBean {
 	private String userName;//”√ªß√˚
 	private String passWord;//√‹¬Î
+	private String relName;
+	private String telNumber;
+	private String postalCode;
+	private String address;
+	private String headImageID;
+	
+	public UserBean() {
+		super();
+	}
+	
+	public UserBean(String userName, String passWord, String relName, String telNumber, String postalCode,
+			String address, String headImageID) {
+		super();
+		this.userName = userName;
+		this.passWord = passWord;
+		this.relName = relName;
+		this.telNumber = telNumber;
+		this.postalCode = postalCode;
+		this.address = address;
+		this.headImageID = headImageID;
+	}
+
 	public String getUserName() {
 		return userName;
 	}
@@ -14,6 +36,36 @@ public class UserBean {
 	}
 	public void setPassWord(String passWord) {
 		this.passWord = passWord;
+	}
+	public String getRelName() {
+		return relName;
+	}
+	public void setRelName(String relName) {
+		this.relName = relName;
+	}
+	public String getTelNumber() {
+		return telNumber;
+	}
+	public void setTelNumber(String telNumber) {
+		this.telNumber = telNumber;
+	}
+	public String getPostalCode() {
+		return postalCode;
+	}
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getHeadImageID() {
+		return headImageID;
+	}
+	public void setHeadImageID(String headImageID) {
+		this.headImageID = headImageID;
 	}
 	
 }

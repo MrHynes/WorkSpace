@@ -26,14 +26,14 @@ if(name==null){
 %>
 <!--导航栏 2-->
 <jsp:include page="head.jsp"></jsp:include>
-<div style="height: 30px;"></div>
+<div style="height: 20px;"></div>
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-                <div class="panel panel-success">
+                <div class="panel panel-primary">
                     <div class="panel-heading"><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp;购物车<br></div>
-                   <form action="payall" method="post">
-                    <div class="panel-body pre-scrollable" style="height: 500px;">
+                   	<form action="payall" method="post">
+                    <div class="panel-body pre-scrollable" style="height: 560px;">
                         <table class="table table-hover">
                         <thead>
                        		<td>&nbsp;</td>
@@ -59,11 +59,6 @@ if(name==null){
                         		<td><%=book.getNum() %></td>
                         		<td>￥<%=book.getPrice()*book.getNum() %></td>
                        			<td>
-                       				<!-- 
-                       				<form action="delBook?isbn=<%=book.getIsbn()%>" method="post">
-                       					<input type="submit" value="删 除" class="btn btn-primary"/>
-                       				</form>
-                       				 -->
                        				 <div class="btn btn-success"><a href="delBook?isbn=<%=book.getIsbn()%>" style="color: white;">刪除</a></div>
                        			</td>
                     		</tr>

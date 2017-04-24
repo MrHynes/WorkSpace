@@ -3,7 +3,11 @@ package pers.qiqcheng.bookstore.dbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+/**
+ * 加载数据库驱动程序，并连接数据库
+ * @author Buer
+ *
+ */
 public class DBConnection {
 	public static final String DBDRIVER="org.gjt.mm.mysql.Driver";
 	public static final String DBURL="jdbc:mysql://localhost:3306/bookstore";

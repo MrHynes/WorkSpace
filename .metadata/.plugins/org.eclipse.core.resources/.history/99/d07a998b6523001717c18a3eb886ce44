@@ -1,7 +1,0 @@
-package pers.qiqcheng.bookstore.servlet;
-
-import javax.servlet.http.HttpServlet;
-
-public class GetBookInfo extends HttpServlet {
-
-}

@@ -1,0 +1,13 @@
+package pers.qiqcheng.bookstore.filter;
+
+import com.sun.org.apache.xalan.internal.xsltc.dom.Filter;
+
+public class EncodingFilter implements Filter{
+
+	@Override
+	public boolean test(int node) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

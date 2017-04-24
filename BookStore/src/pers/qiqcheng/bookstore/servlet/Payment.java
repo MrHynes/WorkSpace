@@ -21,8 +21,8 @@ public class Payment extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("utf-8");
-		resp.setContentType("text/html;charset=utf-8");
+//		req.setCharacterEncoding("utf-8");
+//		resp.setContentType("text/html;charset=utf-8");
 		HttpSession session=req.getSession();
 		String username=(String)session.getAttribute("username");
 		if(username==null){

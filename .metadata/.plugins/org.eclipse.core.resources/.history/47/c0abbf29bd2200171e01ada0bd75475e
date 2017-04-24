@@ -1,9 +1,0 @@
-package pers.qiqcheng.spring.firstspring;
-
-public class SpringTest1 {
-	//传统方式
-	public static void main(String[] args) {
-		HelloService helloService=new HelloServiceImpl();
-		helloService.sayHello();
-	}
-}

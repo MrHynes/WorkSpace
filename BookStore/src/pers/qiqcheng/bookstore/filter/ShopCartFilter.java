@@ -19,7 +19,11 @@ import javax.servlet.http.HttpSession;
 
 import pers.qiqcheng.bookstore.bean.BookCartBean;
 import pers.qiqcheng.bookstore.factory.DaoFactory;
-
+/**
+ * 购物车显示过滤器
+ * @author Buer
+ *
+ */
 public class ShopCartFilter implements Filter{
 
 	@Override
@@ -39,6 +43,7 @@ public class ShopCartFilter implements Filter{
 			{
 				
 				cartbook=new BookCartBean(rs.getString(2), rs.getFloat(3), rs.getString(4), rs.getString(5), rs.getString(1), rs.getInt(8));
+				//将改用户购物车的商品查询，并保存在List集合上，存在session中
 				cartBooks.add(cartbook);
 				//System.out.println(book.getBookName());
 			}
