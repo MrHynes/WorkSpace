@@ -1,0 +1,12 @@
+package pers.qiqcheng.bookstore.test;
+
+public class test2 {
+public static void main(String[] args) {
+	int i=10;
+	if(i<11){
+		System.out.println("i<11");
+	}else if(i>6) {
+		System.out.println("i>6");
+	}
+}
+}

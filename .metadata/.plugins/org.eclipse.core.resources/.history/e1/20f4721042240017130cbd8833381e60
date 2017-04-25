@@ -1,7 +1,0 @@
-package pers.qiqcheng.spring.demo05;
-
-public class Car {
-	private String name;
-	private float price;
-
-}

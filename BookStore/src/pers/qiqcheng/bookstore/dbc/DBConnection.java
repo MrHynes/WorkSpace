@@ -10,7 +10,7 @@ import java.sql.SQLException;
  */
 public class DBConnection {
 	public static final String DBDRIVER="org.gjt.mm.mysql.Driver";
-	public static final String DBURL="jdbc:mysql://localhost:3306/bookstore";
+	public static final String DBURL="jdbc:mysql://localhost:3306/bookstore?useUnicode=true&characterEncoding=utf8";
 	public static final String DBUSER="root";
 	public static final String DBPASSWORD="chengqi";
 	Connection conn=null;
