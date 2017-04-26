@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
 	import="java.util.*,pers.qiqcheng.bookstore.bean.BookBean,pers.qiqcheng.bookstore.bean.PageBean"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +11,8 @@
 <link href="css/head.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/bootbox.js" type="text/javascript"></script>
+
 </head>
 <body style="background-color: #f4f4f4">
 	<!--导航栏 -->
@@ -97,6 +100,7 @@
 						for (int i = 0; i < books.size(); i++) {
 							BookBean book = books.get(i);
 					%>
+					<fmt:formatNumber var="price" value="<%=book.getPrice()%>" maxFractionDigits="2" type="currency" currencyCode="CNY"></fmt:formatNumber>
 					<div class="col-lg-3">
 						<a href="#" class="thumbnail"> <img
 							src="img/<%=book.getIsbn()%>.jpg" alt="">
@@ -104,7 +108,7 @@
 						<div class="fontcolor">
 							<h3><%=book.getBookName()%></h3>
 							<p>
-								定价: ￥<%=book.getPrice()%>元 | 库存：<%=book.getInventory()%></p>
+								定价: <%-- ￥<%=book.getPrice()%> --%>${price}元 | 库存：<%=book.getInventory()%></p>
 							<p>
 								出版社名称:
 								<%=book.getPress()%>

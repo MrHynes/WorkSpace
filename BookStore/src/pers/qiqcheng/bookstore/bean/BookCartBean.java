@@ -55,5 +55,8 @@ public class BookCartBean {
 	public void setNum(int num) {
 		this.num = num;
 	}
+	public float getSum(){
+		return this.num*this.price;
+	}
 	
 }

@@ -15,6 +15,16 @@
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/my.js" type="text/javascript"></script>
+<script type="text/javascript">
+	/* function issubmit() {
+		var gnl=confirm("确定要购买？");  
+		if (gnl==true){  
+			return true;  
+		}else{  
+			return false;  
+		}  
+	} */
+</script>
 </head>
 <body  style="background-color: #f4f4f4">
 <%
@@ -32,7 +42,7 @@ if(name==null){
         <div class="col-lg-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading"><span class="glyphicon glyphicon-shopping-cart"></span> &nbsp;购物车<br></div>
-                   	<form action="payall" method="post">
+                   	<form action="payall" method="post"> <%--onsubmit="return issubmit()" --%>
                     <div class="panel-body pre-scrollable" style="height: 560px;">
                         <table class="table table-hover">
                         <thead>
@@ -57,7 +67,7 @@ if(name==null){
                         		<td><%=book.getBookName() %></td>
                        			<td>￥<%=book.getPrice() %></td>
                         		<td><%=book.getNum() %></td>
-                        		<td>￥<%=book.getPrice()*book.getNum() %></td>
+                        		<td>￥<%=book.getSum() %></td>
                        			<td>
                        				 <div class="btn btn-success"><a href="delBook?isbn=<%=book.getIsbn()%>" style="color: white;">刪除</a></div>
                        			</td>
@@ -70,18 +80,43 @@ if(name==null){
                     </div>
                     <div class="panel-footer">
                     	<input type="submit" value="购买" class="btn btn-success">
+                    	<%-- 如果要弹出对话框，input中要加：data-toggle="modal" data-target="#buy" --%>
                     	<div class="btn btn-warning"><a href="emptycart" style="color: white;">清空购物车</a></div>
                     </div>
                     </form>
                 </div>
             </div>
-
     </div>
 </div>
 <!--foot-->
 
+<%--
+提示对话框
+<div class="modal fade" id="buy" tabindex="-1" role="dialog"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form action="payall" method="post">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span> <span class="sr-only"></span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">是否要购买？</h4>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+						<input type="submit" value="确定" class="btn btn-primary">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+--%>
 <div class="foot col-lg-12" style="position: fixed; bottom: 0px;">
-    Copyright ©2017, 程祺004 All rights reserved.
+     Copyright ©2017, 程祺004 All rights reserved.
 </div>
 </body>
 </html>

@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.reflect.InvocationHandler"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
-<fullyQualifiedTypeName name="java.lang.Object"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo05.Person2"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo05.Person"/>
 <fullyQualifiedTypeName name="javax.print.attribute.standard.PrinterMessageFromOperator"/>
 <fullyQualifiedTypeName name="psers.qiqcheng.spring.demo01.HelloSpring"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.bookstore.factory.DaoFactory"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
+<fullyQualifiedTypeName name="java.security.spec.ECPrivateKeySpec"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.exp01_01.Sort"/>
 </qualifiedTypeNameHistroy>

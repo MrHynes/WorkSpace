@@ -5,6 +5,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -48,11 +49,13 @@ if(name==null){
                         	BookBean paybook=(BookBean)request.getAttribute("paybook");
                         	if(paybook!=null){
                         		%>
+                        		<fmt:formatNumber var="price" value="<%=paybook.getPrice()%>" maxFractionDigits="2" type="currency" currencyCode="CNY"></fmt:formatNumber>
+					
                         		<td><img src="simg/<%=paybook.getIsbn()%>.jpg"></td>
                         		<td><%=paybook.getBookName() %></td>
-                       			<td>￥<%=paybook.getPrice() %></td>
+                       			<td>${price}</td>
                         		<td><%=1%></td>
-                        		<td>￥<%=paybook.getPrice()*1%></td>
+                        		<td>${price}</td>
                         		<%
                         	}
                         %>
