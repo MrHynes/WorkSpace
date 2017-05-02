@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,7 +12,7 @@
 <script src="js/my.js" type="text/javascript"></script>
 <script src="js/bootstrapValidator.min.js" type="text/javascript"></script>
 </head>
-<body style="background:url(img/bgpic.jpg) center">
+<body style="background: url(img/bgpic.jpg) center">
 	<%
 		String users = (String) session.getAttribute("username");
 		//实现自动登录
@@ -31,8 +31,8 @@
 			<div class="col-lg-8">
 				<div class="jumbotron jumbot">
 					<h1>BookStore</h1>
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online BookStore is a place where you can 
-					browser books and buy book on the Internet.</p>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Online BookStore is a
+						place where you can browser books and buy book on the Internet.</p>
 					<p>在线图书购买系统。精品图书，一网打尽！</p>
 					<p>
 						<button class="btn btn-primary">开始使用>></button>

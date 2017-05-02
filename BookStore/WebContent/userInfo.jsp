@@ -5,6 +5,7 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -30,9 +31,14 @@
 			$("#telNumber").attr("disabled", true);
 			$("#code").attr("disabled", true);
 			$("#headImage").attr("disabled", true);
+			$("#upload").attr("disabled", true);
 			$("#save").attr("disabled", true);
 			//$("input").attr("disabled",true); 这样把按钮的属性都disable了
 		});
+		$("#sub").click(function(){
+	        var test="upload";
+	        $("#upload").attr("action",test);
+	    });
 	});
 </script>
 </head>
@@ -49,30 +55,34 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-			
+
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<span class="glyphicon glyphicon-user"></span>&nbsp;我的帐户
 					</div>
+					<%
+						UserBean userBean = (UserBean) session.getAttribute("userinfo");
+					%>
+					
+						<!--头像-->
+						<div class="panel-body col-lg-3" style="height: 400px;">
+							<legend>
+								<label><span class="glyphicon glyphicon-hand-right"></span>&nbsp;头像</label>
+							</legend>
+							<a class="thumbnail"> <img
+								src="image/<%=userBean.getUserName()%>.jpg"
+								style="width: 220px; height: 200px;">
+							</a> 
+							<form action="upload" method="post" enctype="multipart/form-data">
+							<!-- <input type="file" class="btn btn-default col-lg-12"> <br> 
+							<input class="btn btn-primary col-lg-12" type="submit"  value="上传">&nbsp; -->
+							<input type="file" value="上传图片" name="img" class="col-lg-12 btn btn-default"> 
+							<input type="submit" value="上传" id="sub"  class="col-lg-12 btn btn-primary">
+							</form>
+						</div>
+					
 					<form action="save" method="post">
 						<div class="panel-body" style="height: 400px;">
-							<%
-								UserBean userBean = (UserBean) session.getAttribute("userinfo");
-							%>
-							<!--头像-->
-							<div class="col-lg-3">
-								<legend>
-									<label><span class="glyphicon glyphicon-hand-right"></span>&nbsp;头像</label>
-								</legend>
-								<a class="thumbnail"> <img src="img/<%=userBean.getHeadImageID()%>.jpg" alt="..."
-									style="width: 220px; height: 200px;">
-								</a> 
-								
-								<input type="file" id="headImage" disabled="disabled" class="btn btn-default col-lg-12">
-								<br>
-								<input class="btn btn-primary col-lg-12" type="button" disabled="disabled" id="upload" value="上传">&nbsp; 
-								
-							</div>
 							<!--个人信息-->
 							<div class="col-lg-9">
 								<legend>
@@ -128,13 +138,15 @@
 
 						</div>
 						<div class="panel-footer">
-							<input class="btn btn-danger" type="button" id="modify" value="修改信息">&nbsp; 
-							<input class="btn btn-warning" type="button" id="cancel" value="取消修改">&nbsp; 
-							<input class="btn btn-success" type="submit" disabled="disabled" id="save" value="保存修改">
+							<input class="btn btn-danger" type="button" id="modify"
+								value="修改信息">&nbsp; <input class="btn btn-warning"
+								type="button" id="cancel" value="取消修改">&nbsp; <input
+								class="btn btn-success" type="submit" disabled="disabled"
+								id="save" value="保存修改">
 						</div>
 					</form>
 				</div>
-				
+
 			</div>
 		</div>
 	</div>

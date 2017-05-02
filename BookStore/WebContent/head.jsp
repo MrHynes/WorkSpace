@@ -58,7 +58,7 @@
 				<li><a>欢迎您：<%=name %></a></li>
 				<li><a href="shoppingCart.jsp">购物车</a></li>
 				<li><a href="userInfo.jsp">我的帐户</a></li>
-				<li><a  id="exit">退出</a></li>
+				<li><a id="exit">退出</a></li>
 				<li><a href="error.jsp">帮助</a></li>
 				<%
 					} else {

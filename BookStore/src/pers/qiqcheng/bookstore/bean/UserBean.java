@@ -7,14 +7,13 @@ public class UserBean {
 	private String telNumber;
 	private String postalCode;
 	private String address;
-	private String headImageID;
 	
 	public UserBean() {
 		super();
 	}
 	
 	public UserBean(String userName, String passWord, String relName, String telNumber, String postalCode,
-			String address, String headImageID) {
+			String address) {
 		super();
 		this.userName = userName;
 		this.passWord = passWord;
@@ -22,7 +21,6 @@ public class UserBean {
 		this.telNumber = telNumber;
 		this.postalCode = postalCode;
 		this.address = address;
-		this.headImageID = headImageID;
 	}
 
 	public String getUserName() {
@@ -61,11 +59,4 @@ public class UserBean {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getHeadImageID() {
-		return headImageID;
-	}
-	public void setHeadImageID(String headImageID) {
-		this.headImageID = headImageID;
-	}
-	
 }

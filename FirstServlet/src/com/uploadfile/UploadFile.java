@@ -46,6 +46,7 @@ public class UploadFile extends HttpServlet {
 		List<FileItem> list;
 		try {
 			list = upload.parseRequest(req);
+			System.out.println(list+"2");
 			for (FileItem item : list) {
 				if(item.isFormField()){
 					String name=item.getFieldName();

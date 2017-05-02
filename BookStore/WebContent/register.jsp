@@ -17,7 +17,11 @@
 	<jsp:include page="head.jsp"></jsp:include>
 	<div class="container">
 		<div class="row">
-			<br><br><br><br><br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 			<div class="col-lg-3"></div>
 			<div class="col-lg-6">
 				<form action="registerProcess" method="post" id="register">
@@ -29,19 +33,18 @@
 						</div>
 						<div class="panel-body">
 							<div class="form-group">
-								<label for="username">用户名</label> <input
-									class="form-control" type="text"
-									placeholder="请输入用户名" name="username" id="username">
+								<label for="username">用户名</label> <input class="form-control"
+									type="text" placeholder="请输入用户名" name="username" id="username">
 							</div>
 							<div class="form-group">
 								<label for="password">密码</label> <input class="form-control"
-									type="password"  placeholder="请输入用密码"
-									name="password" id="password">
+									type="password" placeholder="请输入用密码" name="password"
+									id="password">
 							</div>
 							<div class="form-group">
 								<label for="repassword">密码</label> <input class="form-control"
-									type="password" placeholder="请重新输入用密码"
-									name="repassword" id="repassword">
+									type="password" placeholder="请重新输入用密码" name="repassword"
+									id="repassword">
 							</div>
 							<div class="col-lg-5 col-lg-offset-1">
 								<input type="submit" class="btn btn-primary btn-block "

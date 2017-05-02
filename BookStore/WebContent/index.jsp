@@ -100,7 +100,8 @@
 						for (int i = 0; i < books.size(); i++) {
 							BookBean book = books.get(i);
 					%>
-					<fmt:formatNumber var="price" value="<%=book.getPrice()%>" maxFractionDigits="2" type="currency" currencyCode="CNY"></fmt:formatNumber>
+					<fmt:formatNumber var="price" value="<%=book.getPrice()%>"
+						maxFractionDigits="2" type="currency" currencyCode="CNY"></fmt:formatNumber>
 					<div class="col-lg-3">
 						<a href="#" class="thumbnail"> <img
 							src="img/<%=book.getIsbn()%>.jpg" alt="">
@@ -108,7 +109,9 @@
 						<div class="fontcolor">
 							<h3><%=book.getBookName()%></h3>
 							<p>
-								定价: <%-- ￥<%=book.getPrice()%> --%>${price}元 | 库存：<%=book.getInventory()%></p>
+								定价:
+								<%-- ￥<%=book.getPrice()%> --%>${price}元
+								| 库存：<%=book.getInventory()%></p>
 							<p>
 								出版社名称:
 								<%=book.getPress()%>
@@ -134,8 +137,10 @@
 		<div align="center">
 			&nbsp;
 			<ul class="pagination">
-				<li><a>共<%=pageBean.getTotalPages()%>页</a></li>
-				<li><a>当前第<%=pageBean.getPageNo()%>页</a></li>
+				<li><a>共<%=pageBean.getTotalPages()%>页
+				</a></li>
+				<li><a>当前第<%=pageBean.getPageNo()%>页
+				</a></li>
 				<li><a href="pageNo?pageNo=<%=pageBean.getTopPage()%>">首页</a></li>
 				<li><a href="pageNo?pageNo=<%=pageBean.getPreviousPage()%>">上一页</a></li>
 				<li><a href="#">...</a></li>
