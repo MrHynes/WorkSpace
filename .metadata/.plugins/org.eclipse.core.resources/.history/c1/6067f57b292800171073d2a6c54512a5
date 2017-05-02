@@ -1,7 +1,0 @@
-package pers.qiqcheng.bookstore.filter;
-
-
-
-public class EncodingFilter implements Filter{
-
-}

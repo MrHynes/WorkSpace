@@ -1,0 +1,5 @@
+package com.imageupload;
+
+public class UploadServlet {
+
+}

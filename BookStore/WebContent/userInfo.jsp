@@ -64,11 +64,14 @@
 								<legend>
 									<label><span class="glyphicon glyphicon-hand-right"></span>&nbsp;头像</label>
 								</legend>
-								<a href="#" class="thumbnail"> <img
-									src="img/<%=userBean.getHeadImageID()%>.jpg" alt="..."
-									style="width: 220px; height: 220px;">
-								</a> <input type="file" id="headImage" disabled="disabled"
-									class="btn btn-default col-lg-12">
+								<a class="thumbnail"> <img src="img/<%=userBean.getHeadImageID()%>.jpg" alt="..."
+									style="width: 220px; height: 200px;">
+								</a> 
+								
+								<input type="file" id="headImage" disabled="disabled" class="btn btn-default col-lg-12">
+								<br>
+								<input class="btn btn-primary col-lg-12" type="button" disabled="disabled" id="upload" value="上传">&nbsp; 
+								
 							</div>
 							<!--个人信息-->
 							<div class="col-lg-9">

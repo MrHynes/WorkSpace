@@ -36,7 +36,7 @@ public class SaveModify extends HttpServlet {
 		String sql = null;
 		String params[] = { username, pass, relName, telNumber, code, address, username };
 		boolean flag = false;
-		PrintWriter out = resp.getWriter();
+		//PrintWriter out = resp.getWriter();
 		/*
 		 * 1)要判断密码是否有填，如果有，表示修改了密码 2)如果没有填，那么就不需要更新密码 3)同时还要
 		 * 判断两次的密码是否相同，如果是就更新密码，如果不是就要提示。
@@ -52,6 +52,7 @@ public class SaveModify extends HttpServlet {
 					+ "postalcode=?,address=? where username=?";
 		} else {
 			// return 两次密码不对,用jquery实现
+			req.getRequestDispatcher("error.jsp").forward(req, resp);
 		}
 
 		try {
