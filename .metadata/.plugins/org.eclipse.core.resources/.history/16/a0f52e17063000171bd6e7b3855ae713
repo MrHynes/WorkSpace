@@ -1,0 +1,7 @@
+package pers.qiqcheng.spring.demo08;
+
+import java.lang.reflect.InvocationHandler;
+
+public class JDKProxy implements InvocationHandler {
+
+}

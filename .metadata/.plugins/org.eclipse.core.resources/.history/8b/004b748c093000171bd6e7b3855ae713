@@ -1,0 +1,6 @@
+package pers.qiqcheng.spring.demo09;
+
+public interface UserDao {
+	void add();
+	void update();
+}

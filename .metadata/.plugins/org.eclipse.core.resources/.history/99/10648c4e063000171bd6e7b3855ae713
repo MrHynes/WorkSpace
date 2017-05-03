@@ -1,0 +1,25 @@
+package pers.qiqcheng.spring.demo08;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
+public class JDKProxy implements InvocationHandler {
+
+	private UserDao userdao;
+	
+	public JDKProxy(UserDao userdao) {
+		super();
+		this.userdao = userdao;
+	}
+
+	public UserDao createProxy(){
+		UserDao proxy=Proxy.newProxyInstance(userdao.getClass().getClassLoader(), userdao.getClass().getInterfaces(), this)
+	}
+	@Override
+	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

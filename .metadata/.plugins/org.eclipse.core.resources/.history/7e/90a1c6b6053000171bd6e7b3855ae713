@@ -1,0 +1,8 @@
+package pers.qiqcheng.spring.demo08;
+
+public class HelloSpringWeb {
+	public void sayHello(){
+		System.out.println("hello spring web");
+	}
+
+}

@@ -35,6 +35,7 @@ public class PayAll extends HttpServlet {
 //			out.print(string+"\n");
 //		}
 		int flags=0;
+		//更新库存的同时要将购物车中的记录删除
 		String sql="update bookinfo set inventory=inventory-1 where isbn=?";
 		String sql2="delete from shopcart where username=? and isbn=?";
 		for(int i=0;i<confirm.length;i++){

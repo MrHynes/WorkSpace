@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Map"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo06.HelloService"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo06.User"/>
-<fullyQualifiedTypeName name="com.sun.org.glassfish.gmbal.NameValue"/>
-<fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
-<fullyQualifiedTypeName name="javax.annotation.PreDestroy"/>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo06.Student"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
 <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
 <fullyQualifiedTypeName name="javax.annotation.Resource"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo06.Teacher"/>
@@ -60,4 +49,15 @@
 <fullyQualifiedTypeName name="org.apache.commons.fileupload.FileItem"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo08.UserDaoImpl"/>
+<fullyQualifiedTypeName name="java.lang.reflect.InvocationHandler"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Proxy"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo08.UserDao"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo08.JDKProxy"/>
+<fullyQualifiedTypeName name="org.springframework.cglib.proxy.MethodInterceptor"/>
+<fullyQualifiedTypeName name="sun.net.www.content.text.plain"/>
+<fullyQualifiedTypeName name="org.springframework.cglib.proxy.Enhancer"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo09.ProductDao"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo09.CGLibProxy"/>
 </qualifiedTypeNameHistroy>

@@ -20,7 +20,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 public class UploadImage extends HttpServlet {
 
 	/**
-	 * 
+	 * 头像上传
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -35,50 +35,59 @@ public class UploadImage extends HttpServlet {
 		String username=(String)session.getAttribute("username");
 		String filePath=this.getServletContext().getRealPath("/image");
 		File file=new File(filePath);
+		//如果目录不存在，就新建一个。
 		if(!file.exists()&&!file.isDirectory()){
-			System.out.println("目录不存在");
+			//创建目录
 			file.mkdir();
 		}
-		String message="";
+		//使用Apache文件上传组件处理文件上传步骤：
+		//1、创建一个DiskFileItemFactory工厂
 		DiskFileItemFactory factory=new DiskFileItemFactory();
+		//2、创建一个文件上传解析器
 		ServletFileUpload upload=new ServletFileUpload(factory);
+		//解决上传文件名的中文乱码
 		upload.setHeaderEncoding("utf-8");
+		//3、判断提交上来的数据是否是上传表单的数据
 		if(!ServletFileUpload.isMultipartContent(req)){
-			System.out.println("1");
 			return;
 		}
+		//4、使用ServletFileUpload解析器解析上传数据，解析结果返回的是一个List<FileItem>集合，每一个FileItem对应一个Form表单的输入项
 		List<FileItem> list;
 		try {
 			list = upload.parseRequest(req);
-			//没有执行..
 			for (FileItem item : list) {
+				//如果fileitem中封装的是普通输入项的数据
 				if(item.isFormField()){
 					String name=item.getFieldName();
+					//解决普通输入项的数据的中文乱码问题
 					String value=item.getString("UTF-8");
-				}else{
-					String filename = item.getName();
+				}else{//如果fileitem中封装的是上传文件
+					String filename = item.getName();//得到上传的文件名称，
 					if(filename==null || filename.trim().equals("")){
 						continue;
 					}
+					//处理获取到的上传文件的文件名的路径部分，只保留文件名部分
 					filename = filename.substring(filename.lastIndexOf("\\")+1);
-					InputStream in = item.getInputStream();
+					InputStream in = item.getInputStream();//获取item中的上传文件的输入流
+					//创建一个文件输出流
 					FileOutputStream out = new FileOutputStream(filePath + "\\" + username+".jpg");
-					byte buffer[] = new byte[1024];
+					byte buffer[] = new byte[1024];//创建一个缓冲区
+					//判断输入流中的数据是否已经读完的标识
 					int len = 0;
 					while((len=in.read(buffer))>0){
+						//使用FileOutputStream输出流将缓冲区的数据写入到指定的目录(savePath + "\\" + filename)当中
 						out.write(buffer, 0, len);
 					}
 					in.close();
 					out.close();
+					//删除处理文件上传时生成的临时文件
 					item.delete();
-					message = "文件上传成功！";
 				}
 			}
 		} catch (FileUploadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		req.setAttribute("message",message);
 		req.getRequestDispatcher("userInfo.jsp").forward(req,resp);
 	}
 }

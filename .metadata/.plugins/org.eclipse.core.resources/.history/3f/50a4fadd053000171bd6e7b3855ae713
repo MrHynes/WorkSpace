@@ -1,0 +1,17 @@
+package pers.qiqcheng.spring.demo08;
+
+public class UserDaoImpl implements UserDao {
+
+	@Override
+	public void add() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

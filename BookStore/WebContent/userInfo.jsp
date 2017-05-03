@@ -55,7 +55,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<span class="glyphicon glyphicon-user"></span>&nbsp;我的帐户
@@ -63,8 +62,7 @@
 					<%
 						UserBean userBean = (UserBean) session.getAttribute("userinfo");
 					%>
-					
-						<!--头像-->
+					<!--头像-->
 						<div class="panel-body col-lg-3" style="height: 400px;">
 							<legend>
 								<label><span class="glyphicon glyphicon-hand-right"></span>&nbsp;头像</label>
@@ -74,10 +72,10 @@
 								style="width: 220px; height: 200px;">
 							</a> 
 							<form action="upload" method="post" enctype="multipart/form-data">
-							<!-- <input type="file" class="btn btn-default col-lg-12"> <br> 
-							<input class="btn btn-primary col-lg-12" type="submit"  value="上传">&nbsp; -->
-							<input type="file" value="上传图片" name="img" class="col-lg-12 btn btn-default"> 
-							<input type="submit" value="上传" id="sub"  class="col-lg-12 btn btn-primary">
+								<!-- <input type="file" class="btn btn-default col-lg-12"> <br> 
+								<input class="btn btn-primary col-lg-12" type="submit"  value="上传">&nbsp; -->
+								<input type="file" value="上传图片" name="img" class="col-lg-12 btn btn-default"> 
+								<input type="submit" value="上传" id="sub"  class="col-lg-12 btn btn-primary">
 							</form>
 						</div>
 					
@@ -151,7 +149,6 @@
 		</div>
 	</div>
 	<!--foot-->
-
 	<!-- 
 	<div class="foot col-lg-12" style="position: fixed; bottom: 0px;">
 		Copyright ©2017, 程祺004 All rights reserved.</div>
