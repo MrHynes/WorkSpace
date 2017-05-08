@@ -1,5 +1,0 @@
-package com.imageupload;
-
-public class UploadServlet extends HttpServlet {
-
-}

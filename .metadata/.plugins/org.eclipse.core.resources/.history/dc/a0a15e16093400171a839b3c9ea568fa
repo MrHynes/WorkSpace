@@ -1,0 +1,13 @@
+package pers.qiqcheng.spring.demo12;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+@Aspect
+public class MyAspect {
+	@Before("execution(* pers.qiqcheng.spring.demo12.UserDao.add(..))")
+	public void before(){
+		System.out.println("addbefore..");
+	}
+
+}
