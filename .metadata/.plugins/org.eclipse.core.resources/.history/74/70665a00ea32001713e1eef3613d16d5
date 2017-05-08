@@ -1,0 +1,46 @@
+package pers.qiqcheng.ec.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pers.qiqcheng.ec.factory.DaoFactory;
+
+public class UpdateServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html;charset=utf-8");
+		String sql="update t_user values set suser=?,sname=?,ssex=?,dbirth=?,semail=?,sphone=?,saddress=?score=?";
+		String user=req.getParameter("user");
+		String name=req.getParameter("name");
+		String sex=req.getParameter("sex");
+		String birth=req.getParameter("birth");
+		String email=req.getParameter("email");
+		String phone=req.getParameter("phone");
+		String address=req.getParameter("address");
+		String code=req.getParameter("code");
+		String params[]={user,name,sex,birth,email,phone,address,code};
+		boolean flag=false;
+		try {
+			flag=DaoFactory.getUserDaoInstances().doUpdate(sql, params);
+			if(flag){
+				req.getRequestDispatcher("regsucc.jsp");
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+}

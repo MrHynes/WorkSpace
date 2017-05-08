@@ -1,0 +1,5 @@
+package pers.qiqcheng.spring.demo10;
+
+public class MyBeforeAdvice {
+
+}

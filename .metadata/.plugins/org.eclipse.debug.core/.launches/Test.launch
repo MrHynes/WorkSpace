@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/Zxing2/src/pers/qiqcheng/qrcode/test.java"/>
+<listEntry value="/EC/src/pers/qiqcheng/ec/test/test.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="pers.qiqcheng.qrcode.test"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Zxing2"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="pers.qiqcheng.ec.test.test"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="EC"/>
 </launchConfiguration>

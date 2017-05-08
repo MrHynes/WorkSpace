@@ -1,0 +1,33 @@
+package pers.qiqcheng.ec.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UpdateServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html;charset=utf-8");
+		String sql="update t_user values set suser=?,ssex=?,dbirth=?,semail=?,sphone=?,saddress=?score=?";
+		String user=req.getParameter("user");
+		String name=req.getParameter("name");
+		String sex=req.getParameter("sex");
+		String birth=req.getParameter("birth");
+		String email=req.getParameter("email");
+		String phone=req.getParameter("phone");
+		String address=req.getParameter("address");
+		String code=req.getParameter("code");
+	}
+
+	
+}

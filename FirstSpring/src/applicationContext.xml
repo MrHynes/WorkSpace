@@ -59,7 +59,7 @@
    		<property name="score" value="#{'94.5'}"></property>
    		<property name="car" value="#{car3}"></property>
 	</bean>
-	
+	<bean class="" id="" ></bean>
 	<!-- 集合属性注入 -->
 	<bean id="collection" class="pers.qiqcheng.spring.demo05.CollectionBean">
 		<property name="list">

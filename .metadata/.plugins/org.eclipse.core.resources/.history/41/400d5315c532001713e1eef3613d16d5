@@ -1,0 +1,15 @@
+package pers.qiqcheng.ec.factory;
+
+import pers.qiqcheng.ec.dao.IUserDao;
+import pers.qiqcheng.ec.proxy.UserDaoProxy;
+/**
+ * ¹¤³§
+ * @author Buer
+ *
+ */
+public class DaoFactory {
+	public static IUserDao getBookDaoInstances() throws Exception{
+		return new UserDaoProxy();
+	}
+
+}

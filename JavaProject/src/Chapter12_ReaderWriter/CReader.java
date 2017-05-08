@@ -11,7 +11,7 @@ public class CReader {
 				+ "src" + File.separator + "Chapter12_ReaderWriter" + File.separator + "f.txt");
 		Reader reader=new FileReader(file);
 		
-		char b[]=new char[1024];
+		char b[]=new char[1000];
 		/*
 		int len=reader.read(b);
 		reader.close();
@@ -24,7 +24,22 @@ public class CReader {
 			b[i]=(char) temp;
 			i++;
 		}
+		//int count=0,index=0;
 		System.out.println(new String(b,0,i));
+		/*String string=new String(b,0,i);
+		String key="婚";
+		if(string.indexOf("婚")!=-1){
+			count++;
+		}
+		while((index = string.indexOf(key,index))!=-1){  
+            
+            //每循环一次，就要明确下一次查找的起始位置。  
+            index = index + key.length();  
+            //每查找一次，count自增。  
+            count++;  
+        }  
+		System.out.println("count:"+count);*/
+
 	}
 
 }

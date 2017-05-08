@@ -1,0 +1,8 @@
+package pers.qiqcheng.spring.demo10;
+
+import org.springframework.aop.BeforeAdvice;
+import org.springframework.aop.MethodBeforeAdvice;
+
+public class MyBeforeAdvice implements MethodBeforeAdvice {
+
+}

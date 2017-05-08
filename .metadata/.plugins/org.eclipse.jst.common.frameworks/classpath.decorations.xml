@@ -1,0 +1,7 @@
+<classpath>
+  <container id="FirstSpring!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="F:/WorkSpace/FirstSpring/WebContent/WEB-INF/lib/spring-aop-4.3.2.RELEASE.jar">
+      <source-attachment-path>F:/软件备份/Spring/Aop_lib/spring-aop-4.3.2.RELEASE.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

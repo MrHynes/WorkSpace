@@ -1,0 +1,12 @@
+package pers.qiqcheng.spring.demo10;
+
+import java.lang.reflect.Method;
+
+import org.springframework.aop.MethodBeforeAdvice;
+
+public class MyBeforeAdvice implements MethodBeforeAdvice {
+
+		
+	}
+
+}

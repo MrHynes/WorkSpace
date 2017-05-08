@@ -1,0 +1,10 @@
+package pers.qiqcheng.ec.proxy.test;
+
+import pers.qiqcheng.ec.factory.DaoFactory;
+
+public class test {
+	public static void main(String[] args) {
+		DaoFactory.getBookDaoInstances().doInsert(sql, params);
+	}
+
+}

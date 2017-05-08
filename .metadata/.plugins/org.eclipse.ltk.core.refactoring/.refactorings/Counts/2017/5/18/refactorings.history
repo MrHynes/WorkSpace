@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;CountNumber&apos; to &apos;Count&apos;&#x0D;&#x0A;- Original project: &apos;Counts&apos;&#x0D;&#x0A;- Original element: &apos;CountNumber&apos;&#x0D;&#x0A;- Renamed element: &apos;Count&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CountNumber&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{CountNumber.java[CountNumber" matchStrategy="1" name="Count" qualified="false" references="true" similarDeclarations="true" stamp="1493909296480" textual="false" version="1.0"/>
+</session>
