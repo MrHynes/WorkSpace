@@ -1,0 +1,8 @@
+package pers.qiqcheng.spring.demo14;
+
+public class SprintTest {
+	public static void main(String[] args) {
+		
+	}
+
+}
