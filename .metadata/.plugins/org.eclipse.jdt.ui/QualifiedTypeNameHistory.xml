@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.FileInputStream"/>
-<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
-<fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="javax.xml.datatype.DatatypeFactory"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.ReplicationMySQLConnection"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.dom.Filter"/>
-<fullyQualifiedTypeName name="javax.servlet.Filter"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.Select"/>
 <fullyQualifiedTypeName name="sun.text.resources.cldr.om.FormatData_om"/>
@@ -38,8 +28,6 @@
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo10.CustomDao"/>
 <fullyQualifiedTypeName name="org.springframework.core.annotation.Order"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo10.OrderDao"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.ws.developer.UsesJAXBContext"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo11.SpringTest"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
@@ -59,5 +47,17 @@
 <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.compiler.sym"/>
 <fullyQualifiedTypeName name="com.mchange.v2.c3p0.DriverManagerDataSource"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DriverManagerDataSource"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo14.JdbcTemplate"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo14.JDBCTemplate"/>
+<fullyQualifiedTypeName name="org.apache.log4j.lf5.viewer.TrackingAdjustmentListener"/>
+<fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+<fullyQualifiedTypeName name="org.springframework.test.context.junit4.SpringJUnit4ClassRunner"/>
+<fullyQualifiedTypeName name="org.springframework.test.context.ContextConfiguration"/>
+<fullyQualifiedTypeName name="sun.tools.jar.resources.jar"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+<fullyQualifiedTypeName name="org.apache.commons.dbcp.BasicDataSource"/>
+<fullyQualifiedTypeName name="com.mchange.v2.c3p0.ComboPooledDataSource"/>
 </qualifiedTypeNameHistroy>

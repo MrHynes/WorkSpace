@@ -37,13 +37,13 @@ public class JDBCTemplate {
 	public void test3(){
 		jdbcTemplate3.execute("create table user(id int,name varchar(7))");
 	}
-	//将参数保存在properties文件中
+	//将参数保存早properties文件中
 	@Autowired
 	@Qualifier("jdbcTemplate4")
 	private JdbcTemplate jdbcTemplate4;
 	@Test
 	public void test4(){
-		jdbcTemplate3.execute("create table user(id int,name varchar(8))");
+		jdbcTemplate3.execute("create table user(id int,name varchar(7))");
 	}
 
 	@Test
