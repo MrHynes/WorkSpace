@@ -42,8 +42,8 @@ public class RecognitionQRCode {
 		String text = "你好";
 		System.out.println("请输入信息：");
 		text = scanner.next();
-		int width = 200;
-		int height = 200;
+		int width = 400;
+		int height = 400;
 		String format = "png";
 		Hashtable hints = new Hashtable();
 		hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
@@ -58,7 +58,7 @@ public class RecognitionQRCode {
 	 */
 	@Test
 	public void QRDecode() {
-		String filePath = "F://WorkSpace//Zxing2//test.jpg";//test.jpg,zxing.png
+		String filePath = "F://WorkSpace//Zxing2//zxing.png";//test.jpg,zxing.png
 		// F:\WorkSpace\Zxing2
 		BufferedImage image;
 		try {
