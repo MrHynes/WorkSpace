@@ -1,0 +1,9 @@
+package pers.qiqcheng.spring.demo15;
+
+public class UserDao {
+	
+	public void add(User user){
+		
+	}
+
+}

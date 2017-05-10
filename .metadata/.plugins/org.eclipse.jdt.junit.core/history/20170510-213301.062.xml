@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SpringTest (6)" project="FirstSpring" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="pers.qiqcheng.spring.demo15.SpringTest" time="0.569">
+    <testcase name="test1" classname="pers.qiqcheng.spring.demo15.SpringTest" time="0.358"/>
+    <testcase name="test2" classname="pers.qiqcheng.spring.demo15.SpringTest" time="0.037"/>
+    <testcase name="test3" classname="pers.qiqcheng.spring.demo15.SpringTest" time="0.14"/>
+    <testcase name="test4" classname="pers.qiqcheng.spring.demo15.SpringTest" time="0.034"/>
+  </testsuite>
+</testrun>

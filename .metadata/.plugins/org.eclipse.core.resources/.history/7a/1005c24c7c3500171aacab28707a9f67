@@ -1,0 +1,6 @@
+package pers.qiqcheng.spring.demo15;
+
+public class User {
+	private String id;
+
+}
