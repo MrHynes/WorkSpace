@@ -1,0 +1,19 @@
+package pers.qiqcheng.spring.demo16;
+
+import pers.qiqcheng.spring.demo14.JDBCTemplate;
+
+public class AccountDaoImpl extends JDBCTemplate implements AccountDao {
+
+	@Override
+	public void in(String to, Double money) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void out(String from, Double money) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

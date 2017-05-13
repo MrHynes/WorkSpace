@@ -1,0 +1,12 @@
+package pers.qiqcheng.spring.demo16;
+
+public class AccountServiceImpl implements AccountService{
+
+	private AccountDaoImpl accountDaoImpl;
+	@Override
+	public void transfer(String from, String to, Double money) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

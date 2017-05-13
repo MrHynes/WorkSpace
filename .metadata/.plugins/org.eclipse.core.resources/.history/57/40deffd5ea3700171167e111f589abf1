@@ -1,0 +1,27 @@
+package pers.qiqcheng.spring.demo16;
+
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+import pers.qiqcheng.spring.demo14.JDBCTemplate;
+
+public class AccountDaoImpl extends JdbcDaoSupport implements AccountDao {
+
+	/**
+	 * 转入
+	 */
+	@Override
+	public void in(String to, Double money) {
+		String sql="update account set money=money-? where name=?";
+		this.getJdbcTemplate().execute(sql,money,to);
+	}
+
+	/**
+	 * 转出
+	 */
+	@Override
+	public void out(String from, Double money) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
