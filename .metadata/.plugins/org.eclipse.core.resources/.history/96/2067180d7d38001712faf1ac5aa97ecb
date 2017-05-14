@@ -1,0 +1,38 @@
+package pers.qiqcheng.ec.servlet;
+
+import java.io.IOException;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pers.qiqcheng.ec.factory.DaoFactory;
+import pers.qiqcheng.ec.tools.MD5Code;
+
+public class UserLoginServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String username=req.getParameter("username");
+		String pass=req.getParameter("password");
+		String password=new MD5Code().getMD5ofStr(pass);
+		String sql="select * from t_user where username=? and password=?";
+		String params[]={username,password};
+		try {
+			ResultSet rs=DaoFactory.getUserDaoInstances().doSelect(sql, params);
+			while(rs.next()){
+				req.getRequestDispatcher("/frontend/success.jsp").forward(req, resp);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}

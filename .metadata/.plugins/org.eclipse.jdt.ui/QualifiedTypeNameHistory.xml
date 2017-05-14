@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator"/>
-<fullyQualifiedTypeName name="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo10.CustomDao"/>
-<fullyQualifiedTypeName name="org.springframework.core.annotation.Order"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo10.OrderDao"/>
-<fullyQualifiedTypeName name="com.sun.xml.internal.ws.developer.UsesJAXBContext"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo11.SpringTest"/>
-<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Before"/>
-<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
-<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo12.UserDao"/>
-<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Pointcut"/>
-<fullyQualifiedTypeName name="org.aspectj.lang.annotation.AfterReturning"/>
-<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Aspect"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo12.MyAspect"/>
-<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Around"/>
-<fullyQualifiedTypeName name="org.aspectj.lang.ProceedingJoinPoint"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.After"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.AfterThrowing"/>
@@ -33,7 +16,6 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.IllegalFormatCodePointException"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.sun.jmx.snmp.SnmpStringFixed"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo15.UserDao.UserRowMapper"/>
@@ -43,7 +25,6 @@
 <fullyQualifiedTypeName name="java.lang.Double"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo16.AccountDao"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.spring.demo14.JDBCTemplate"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.core.support.JdbcDaoSupport"/>
 <fullyQualifiedTypeName name="javax.print.attribute.standard.MediaSize.NA"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.Name"/>
@@ -60,4 +41,23 @@
 <fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionTemplate"/>
 <fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionCallbackWithoutResult"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DataSourceTransactionManager"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="jdk.nashorn.internal.ir.RuntimeNode.Request"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.tools.MD5Code"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.dom.Filter"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="jdk.nashorn.internal.objects.DataPropertyDescriptor"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.HttpserverMessages"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.factory.DaoFactory"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.UserBean"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 </qualifiedTypeNameHistroy>

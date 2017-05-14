@@ -1,0 +1,38 @@
+package pers.qiqcheng.ec.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UserRegisterServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getCharacterEncoding("utf-8");
+		String username =req.getParameter("username");
+		String password =req.getParameter("password");
+		String relname=req.getParameter("relname");
+		String sex=req.getParameter("sex");
+		String birthday=req.getParameter("birthday");
+		String telephone=req.getParameter("telephone");
+		String email=req.getParameter("email");
+		String postcode=req.getParameter("postcode");
+		String address=req.getParameter("address");
+		PrintWriter out=resp.getWriter();
+		out.println(username);
+		out.println(password);
+		out.println(birthday);
+		out.println(sex);
+	}
+	
+
+}
