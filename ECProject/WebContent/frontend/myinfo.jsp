@@ -47,6 +47,46 @@
 			}
 		});
 	});
+
+	var xhr;
+	var flag;
+	function createXHR() {
+		if (window.XMLHttpRequest) {
+			xhr = new XMLHttpRequest();
+		} else {
+			try {
+				xhr = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e) {
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+		}
+	}
+
+	function checkuser(username) {
+		createXHR();
+		xhr.open("GET", "/ECProject/isExist?username=" + username);
+		xhr.onreadystatechange = checkuserCalBack;
+		xhr.send(null);
+	};
+	function checkuserCalBack() {
+		if (xhr.readyState == 4) {
+			if (xhr.status == 200) {
+				var text = xhr.responseText;
+				if (text == "true") {
+					flag = true;
+					//document.getElementById("text").innerHTML = "可以注册";
+					document.getElementById("updatetext").innerHTML = "可以修改成此帐号";
+				} else {
+					flag = false;
+					//document.getElementById("text").innerHTML = "不可以注册";
+					document.getElementById("updatetext").innerHTML = "已经有其他用户使用此帐号，请换一个";
+				}
+			}
+		}
+	};
+	function checkForm() {
+		return flag;
+	};
 </script>
 <body>
 	<!-- 导航 -->
@@ -68,6 +108,17 @@
 					</ul>
 					</div>
 				</div>
+				
+				<div class="panel panel-danger">
+					<div class="panel-heading">
+						<span class="glyphicon glyphicon-user"></span>&nbsp;<strong>购物车</strong>
+					</div>
+					<div class="panel-body">
+						<p align="left"><label>选购商品共 0 种，0 件。</label></p>
+						<p align="left"><label>共计： ￥0 元</label></p>
+						<p align="right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="<%=basePath%>frontend/shopcart.jsp">进入购物车</a><p>
+					</div>
+				</div>
 			</div>
 			<div class="col-lg-9">
 				<div class="panel">
@@ -83,12 +134,12 @@
 								%>
 								<div class="col-lg-2"></div>
 								<div class="col-lg-8">
-									<form action="hello" method="post">
+									<form action="updateInfo" method="post">
 										<div class="form-group">
 											<label for="username">用户名</label> <input class="form-control"
 												type="text" id="username" name="username" disabled="disabled"
-												value="<%=userBean.getUserName()%>">
-											<div id="text" style="color: #A94442; font-size: 10px;"></div>
+												value="<%=userBean.getUserName()%>" onblur="checkuser(this.value)">
+											<div id="updatetext" style="color: #A94442; font-size: 10px;"></div>
 										</div>
 										<div class="form-group">
 											<label for="relname">真实姓名</label> <input class="form-control"
@@ -160,17 +211,28 @@
 									<label><span class="glyphicon glyphicon-asterisk"></span>&nbsp;密码修改</label>
 								</legend>
 								<div class="col-lg-2"></div>
-								<div class="col-lg-8">
-									<div class="form-group">
-										<input type="password" name="password" id="password" class="form-control" placeholder="请输入密码"
-											style="height: 40px;"><br>
-									</div>
-									<div class="form-group">
-										<input type="password" name="repassword" id="repassword" class="form-control" placeholder="请再次输入密码"
-											style="height: 40px;"><br>
-									</div>
-									<div class='col-lg-5 col-lg-offset-1'><input type='submit' id='btnsubmit' class='btn btn-primary btn-block'></input></div>
-									<div class='col-lg-5'><input type='reset' id='btnreset' class='btn btn-warning btn-block'></input></div>
+								<div class="col-lg-8" style="height: 400px;">
+									<br>
+									<form action="changePwd" method="post">
+										<div class="form-group">
+											<label for="oldpassword">旧密码</label> 
+											<input type="password" name="oldpassword" id="oldpassword" class="form-control" placeholder="请输入旧密码"
+												style="height: 40px;"><br>
+										</div>
+										<div class="form-group">
+											<label for="password">新密码</label> 
+											<input type="password" name="password" id="password" class="form-control" placeholder="请输入密码"
+												style="height: 40px;"><br>
+										</div>
+										<div class="form-group">
+											<label for="repassword">新密码</label> 
+											<input type="password" name="repassword" id="repassword" class="form-control" placeholder="请再次输入新密码"
+												style="height: 40px;"><br>
+										</div>
+										<br>
+										<div class='col-lg-5 col-lg-offset-1'><input type='submit' id='btnsubmit' class='btn btn-primary btn-block'></input></div>
+										<div class='col-lg-5'><input type='reset' id='btnreset' class='btn btn-warning btn-block'></input></div>
+									</form>
 								</div>
 							</div>
 							<div class="tab-pane" id="D">

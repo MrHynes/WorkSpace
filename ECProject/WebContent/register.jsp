@@ -22,45 +22,7 @@
 	src="<%=basePath%>js/bootstrapValidator.min.js"></script>
 <script src="<%=basePath%>js/my.js" type="text/javascript"></script>
 </head>
-<script type="text/javascript">
-	var xhr;
-	var flag;
-	function createXHR() {
-		if (window.XMLHttpRequest) {
-			xhr = new XMLHttpRequest();
-		} else {
-			try {
-				xhr = new ActiveXObject("Msxml2.XMLHTTP");
-			} catch (e) {
-				xhr = new ActiveXObject("Microsoft.XMLHTTP");
-			}
-		}
-	}
 
-	function checkuser(username) {
-		createXHR();
-		xhr.open("GET", "/ECProject/isExist?username=" + username);
-		xhr.onreadystatechange = checkuserCalBack;
-		xhr.send(null);
-	}
-	function checkuserCalBack() {
-		if (xhr.readyState == 4) {
-			if (xhr.status == 200) {
-				var text = xhr.responseText;
-				if (text == "true") {
-					flag = true;
-					document.getElementById("text").innerHTML = "可以注册";
-				} else {
-					flag = false;
-					document.getElementById("text").innerHTML = "不可以注册";
-				}
-			}
-		}
-	}
-	function checkForm() {
-		return flag;
-	}
-</script>
 <body>
 	<!--导航栏-->
 	<jsp:include page="common/head.jsp"></jsp:include>

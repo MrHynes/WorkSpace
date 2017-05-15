@@ -68,4 +68,21 @@
 		<url-pattern>/getUserInfon</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>changePwd</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.PasswordChangeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>changePwd</servlet-name>
+		<url-pattern>/changePwd</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>updateInfo</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.InfoUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateInfo</servlet-name>
+		<url-pattern>/updateInfo</url-pattern>
+	</servlet-mapping>
 </web-app>

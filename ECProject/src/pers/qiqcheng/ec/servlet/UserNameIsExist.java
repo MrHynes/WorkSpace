@@ -22,7 +22,7 @@ public class UserNameIsExist extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String user=req.getParameter("username");
 		PrintWriter out=resp.getWriter();
-		if("".equals(user)){
+		if("".equals(user)||user.length()<6||user.length()>10){
 			out.print("false");
 		}
         String sql="select * from t_user where username=?";

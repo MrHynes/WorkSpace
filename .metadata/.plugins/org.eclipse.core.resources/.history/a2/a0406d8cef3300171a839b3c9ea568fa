@@ -1,7 +1,0 @@
-package pers.qiqcheng.spring.demo10;
-
-import org.aopalliance.intercept.MethodInterceptor;
-
-public class MyAroundAdvice implements MethodInterceptor {
-
-}

@@ -4,9 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Message {
-	private String senderName;//·¢ËÍ·½êÇ³Æ
-	private String sendMsg;//·¢ËÍµÄÐÅÏ¢
-	private Date sendTime;//·¢ËÍµÄÊ±¼ä
+	private String senderName;//ï¿½ï¿½ï¿½Í·ï¿½ï¿½Ç³ï¿½
+	private String sendMsg;//ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½Ï¢
+	private Date sendTime;//ï¿½ï¿½ï¿½Íµï¿½Ê±ï¿½ï¿½
 	public String getSenderName() {
 		return senderName;
 	}
@@ -26,12 +26,16 @@ public class Message {
 		this.sendTime = sendTime;
 	}
 	/**
-	 * »ñÈ¡Ö¸¶¨¸ñÊ½µÄÊ±¼ä
+	 * ï¿½ï¿½È¡Ö¸ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ê±ï¿½ï¿½
 	 * @return
 	 */
 	public String getTime(){
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return sdf.format(getSendTime());
+	}
+	@Override
+	public String toString() {	
+		return this.getTime()+"&"+this.senderName+"&"+this.sendMsg ;
 	}
 	
 

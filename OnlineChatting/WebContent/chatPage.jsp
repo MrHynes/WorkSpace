@@ -11,9 +11,115 @@
 <link href="css/head.css" rel="stylesheet" type="text/css">
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/my.js" type="text/javascript"></script>
+<script src="js/ajax.js" type="text/javascript"></script>
+<script src="js/json.js" type="text/javascript"></script>
+<script src="js/json2.js" type="text/javascript"></script>
 </head>
-<body onload="inputFocus()">
+<script type="text/javascript">
+   			var xhr = createXMLRequest() ;
+    		function sendMsg() {
+    			
+    			var url = "getMsg" ;
+    			var msg = document.getElementById("sendbtn").value ;
+    			document.getElementById("sendbtn").value="";
+    			
+    			if ( msg == null || msg == "") {
+    				alert("msg is null!"); 
+    				return ;
+    			}
+    	
+    			var payload ="action=sendMsg"+"&msg="+msg;
+    			xhr.open("POST", url,"true") ;
+    			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=utf-8") ;
+    			xhr.onreadystatechange = function() {
+    				processResponse(xhr) ;
+    			};
+    			xhr.send(payload) ;
+    		}
+
+    		 function processResponse(xhr) {
+    			 if (xhr.readyState==4 && xhr.status==200) {
+					 var sender ;//= document.getElementById("sender") ;
+					 var sendtime;// = document.getElementById("sendtime") ;
+					 var message;// = document.getElementById("messasge") ; 
+					 var sendbtn= document.getElementById("sendbtn") ;
+					 sendbtn.value=null;
+					 var msgList = xhr.responseText.parseJSON() ;
+					 $("#showMessage").empty();
+					 for(var i=0;i<msgList.length;i++){
+						 var cities=msgList[i].split("&");
+						 /* sendtime.innerHTML=cities[0];
+						 sender.innerHTML=cities[1];
+						 message.innerHTML=cities[2]; */
+						 sendtime=cities[0];
+						 sender=cities[1];
+						 message=cities[2];
+						 var showmsg=$(
+									"<div class='msg-list-body' id='msglist'>"
+										+"<div class='clearfix msg-wrap'>"
+											+"<div class='msg-head'>"
+												+"<span class='msg-time label label-danger pull-left'>" 
+													+"<span class='glyphicon glyphicon-time'></span> &nbsp;<span id='sendtime'>"+sendtime+"</span>"
+												+"</span>"
+												+"<span class='msg-name label label-success pull-left'> "
+													+"<span class='glyphicon glyphicon-user'></span> &nbsp;<span id='sender'>"+sender+"</span>"
+												+"</span> "
+											+"</div>"
+											+"<br>"
+											+"<div class='msg-content' id='messasge'>"+message+"</div>"
+										+"</div>"
+									+"</div>");
+						$("#showMessage").append(showmsg);
+					 }
+				 }			
+			} 
+    		 function getMsg() {
+    			 var url = "getMsg?action=getMsg" ;
+    			 xhr.open("GET", url, true) ;
+    			 xhr.onreadystatechange= function() {
+    				 processResponse(xhr) ;
+    			 } ;
+    			 xhr.send(null) ;
+    		 }
+    		 
+    		function getMsgPerSecond() {
+    			
+    			setInterval("getMsg()",3000) ;  
+    			 
+    		 } ;
+    		 
+    		 /* function getMsgList() {
+    			 var url = "getMsg?action=msgList" ;
+    			 xhr.open("GET",url, "true") ;
+    			 xhr.onreadystatechange = function() {
+    				 if (xhr.readyState == 4 && xhr.status == 200 ) {
+    					 var msgList = xhr.responseText.parseJSON() ;
+    					 showMsg(msgList) ;
+    				 } 
+    			 } ;
+    			 xhr.send(null) ;
+    		 }
+    		 function showMsg(msgList) {
+    			 var msg = null ;
+    			 var table = document.getElementById("msgTable") ;
+    			 var tr, td1,td2,td3 ;
+    			 for ( var i =0; i<msgList.length; i++) {
+    				 tr = document.createElement("tr") ;
+    				 td1 = document.createElement("td") ;
+    				 td2 = document.createElement("td") ;
+    				 td3 = document.createElement("td") ;
+    				 td1.innerHTML = msgList[i].date ;
+    				 td2.innerHTML = msgList[i].content ;
+    				 td3.innerHTML = msgList[i].username ;
+    				 tr.appendChild(td1) ;
+    				 tr.appendChild(td2) ;
+    				 tr.appendChild(td3) ;
+    				 table.appendChild(tr) ;
+    			 }
+    		 } */
+    	</script>
+<body onload="getMsgPerSecond();">
+	<!-- <body "> -->
 	<%
 		String name = (String) session.getAttribute("users");
 		if (name == null) {
@@ -22,6 +128,7 @@
 	<%
 		}
 	%>
+
 	<jsp:include page="head.jsp"></jsp:include>
 	<div class="container">
 		<div class="row" style="margin-top: 15px;">
@@ -32,50 +139,39 @@
 					<div class="panel-heading">
 						<span class="glyphicon glyphicon-earphone"></span> &nbsp;聊天内容
 					</div>
-					<div class="panel-body  ">
+					<div class="panel-body pre-scrollable" id="showMessage">
 						<!--显示聊天内容-->
-						<iframe src="msg.jsp" frameborder="0" width="100%" height="390px"></iframe>
-						<!-- 
-						<%List<Message> msgList = (List<Message>) application.getAttribute("msgList");
-							if (msgList != null) {
-								for (int i = 0; i < msgList.size(); i++) {
-									Message message = msgList.get(i);
-						%>
-						<div class="msg-list-body">
+						<!-- <iframe src="msg.jsp" frameborder="0" width="100%" height="390px"></iframe> -->
+						<!-- <div class="msg-list-body" id="msglist">
 							<div class="clearfix msg-wrap">
 								<div class="msg-head">
-									<span class="msg-name label label-success pull-left"> <span
-										class="glyphicon glyphicon-user"></span> &nbsp;<%=message.getSenderName()%>
-									</span> <span class="msg-time label label-danger pull-left"> <span
-										class="glyphicon glyphicon-time"></span> &nbsp;<%=message.getTime()%>
+									<span class="msg-time label label-danger pull-left"> <span
+										class="glyphicon glyphicon-time"></span> &nbsp;<span
+										id="sendtime">2017-05-16 00:45:20</span>
+									</span> <span class="msg-name label label-success pull-left"> <span
+										class="glyphicon glyphicon-user"></span> &nbsp;<span
+										id="sender">chengqi</span>
 									</span>
 								</div>
 								<br>
-								<div class="msg-content"><%=message.getSendMsg()%></div>
+								<div class="msg-content" id="messasge">信息</div>
 							</div>
-						</div>
-						<%
-							}
-						}
-						%>
-						-->
+						</div>  -->
 					</div>
 				</div>
 				<!-- 输入框 -->
-				<form action="getMsg" method="post">
-					<div class="input-group input-group-lg">
-						<span class="input-group-btn">
-							<button class="btn btn-default" id="emotion-btn" type="button">
-								<!--添加表情图-->
-								<img src="img/emotion_smile.png"
-									style="width: 24px; height: 24px;">
-							</button>
-						</span> <input type="text" class="form-control" placeholder="请输入聊天内容"
-							name="msg" id="sendbtn"> <span class="input-group-btn">
-						</span> <input type="submit" id="sendMsg" class="form-control btn btn-warning"
-							value="发送">
-					</div>
-				</form>
+				<div class="input-group input-group-lg">
+					<span class="input-group-btn">
+						<button class="btn btn-default" id="emotion-btn" type="button">
+							<!--添加表情图-->
+							<img src="img/emotion_smile.png"
+								style="width: 24px; height: 24px;">
+						</button>
+					</span> <input type="text" class="form-control" placeholder="请输入聊天内容"
+						name="msg"  id="sendbtn"> <span class="input-group-btn"></span>
+					<input type="submit" class="form-control btn btn-warning"
+						value="发送" onclick="sendMsg();">
+				</div>
 			</div>
 
 			<!-- 个人信息 -->
