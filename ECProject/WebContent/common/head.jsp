@@ -21,14 +21,6 @@
 <script type="text/javascript">
 	$(function() {
 		$("#exit").click(function() {
-			/* bootbox.setDefaults("locale", "zh_CN");
-			bootbox.confirm("确认退出系统吗?", function(result) {
-				if (result) {
-					location.href = "/ECProject/common/exit.jsp";
-				} else {
-					return;
-				}
-			}); */
 			//http://www.weixuehao.com/archives/415 中文
 			bootbox.confirm({ 
 				  size: "small",

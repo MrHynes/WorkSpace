@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>BookStore</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<filter>
+		<filter-name>encode</filter-name>
+		<filter-class>pers.qiqcheng.ec.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encode</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encode</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>user_login</filter-name>
+		<filter-class>pers.qiqcheng.ec.filter.UserLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>user_login</filter-name>
+		<url-pattern>/frontend/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>is_exist</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.UserNameIsExist</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>is_exist</servlet-name>
+		<url-pattern>/isExist</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>register</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.UserRegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>register</servlet-name>
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>user_login</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.UserLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>user_login</servlet-name>
+		<url-pattern>/userlogin</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>getInfo</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.GetUserInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getInfo</servlet-name>
+		<url-pattern>/getUserInfon</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>changePwd</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.PasswordChangeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>changePwd</servlet-name>
+		<url-pattern>/changePwd</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>updateInfo</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.InfoUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateInfo</servlet-name>
+		<url-pattern>/updateInfo</url-pattern>
+	</servlet-mapping>
+</web-app>

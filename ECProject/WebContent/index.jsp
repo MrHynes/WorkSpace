@@ -1,3 +1,6 @@
+<%@page import="pers.qiqcheng.ec.bean.PageBean"%>
+<%@page import="pers.qiqcheng.ec.bean.GoodsBean"%>
+<%@page import="java.util.List"%>
 <%@page import="com.sun.org.apache.xerces.internal.impl.dv.util.Base64"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
@@ -98,52 +101,62 @@
 				<!--商品-->
 				<div class="col-lg-12">
 					<!--  style="color: white" -->
-					<fmt:formatNumber var="price" value=""
+					<%
+						//List<GoodsBean> goodList=(List)session.getAttribute("goodList");
+					      PageBean pageBean=(PageBean)session.getAttribute("pageBean");
+					      List<GoodsBean> goodList=pageBean.getList();
+						if(pageBean!=null&&goodList!=null){
+							GoodsBean goodsBean=null;
+							for(int i=0;i<goodList.size();i++){
+								goodsBean=goodList.get(i);
+								
+					%>
+					<fmt:formatNumber var="price" value="<%=goodsBean.getGoodPrice()%>"
 						maxFractionDigits="2" type="currency" currencyCode="CNY"></fmt:formatNumber>
 					<div class="col-lg-3">
-						<a href="#" class="thumbnail"> <img
-							src="" alt="">
-						</a>
+						<a href="#" class="thumbnail"> <img src="<%=basePath %>img/<%=goodsBean.getGoodImage()%>.jpg" alt=""></a>
 						<div class="fontcolor">
-							<h3></h3>
+							<h3><%=goodsBean.getGoodName() %></h3>
 							<p>
 								定价:
 								<%-- ￥<%=book.getPrice()%> --%>${price}元
-								| 库存：</p>
+								| 库存：<%=goodsBean.getInventory() %>
+							</p>
 							<p>
-								出版社名称:
-								
-								| 作者:
-								</p>
-							<p>
-							<div class="btn btn-xs btn-primary">
-								<a href="" style="color: white;">购买</a>
-							</div>
-							<div class="btn btn-xs btn-primary">
-								<a href="" style="color: white;">加入购物车</a>
-							</div>
+								描述:<%=goodsBean.getGoodDescription() %>
+							</p>
+								<div class="btn btn-xs btn-primary">
+									<a href="" style="color: white;">购买</a>
+								</div>
+								<div class="btn btn-xs btn-primary">
+									<a href="" style="color: white;">加入购物车</a>
+								</div>
 							</p>
 						</div>
 					</div>
+						<%
+							}
+						}
+						%>
 				</div>
 			</div>
 		</div>
 		<!-- 分页 -->
-		<%-- <div align="center">
+		<div align="center">
 			&nbsp;
 			<ul class="pagination">
-				<li><a>共<%=pageBean.getTotalPages()%>页
+				<li><a>共<%=pageBean.getTotalPages()  %>页
 				</a></li>
-				<li><a>当前第<%=pageBean.getPageNo()%>页
+				<li><a>当前第<%=pageBean.getPageNo()  %>页
 				</a></li>
-				<li><a href="pageNo?pageNo=<%=pageBean.getTopPage()%>">首页</a></li>
-				<li><a href="pageNo?pageNo=<%=pageBean.getPreviousPage()%>">上一页</a></li>
+				<li><a href="getPageNo?pageNo=<%=pageBean.getTopPage()%>">首页</a></li>
+				<li><a href="getPageNo?pageNo=<%=pageBean.getPreviousPage()%>">上一页</a></li>
 				<li><a href="#">...</a></li>
 				<li><a href="#">...</a></li>
-				<li><a href="pageNo?pageNo=<%=pageBean.getNextPage()%>">下一页</a></li>
-				<li><a href="pageNo?pageNo=<%=pageBean.getBottonPage()%>">尾页</a></li>
+				<li><a href="getPageNo?pageNo=<%=pageBean.getNextPage()%>">下一页</a></li>
+				<li><a href="getPageNo?pageNo=<%=pageBean.getBottonPage()%>">尾页</a></li>
 			</ul>
-		</div> --%>
+		</div>
 	</div>
 	</div>
 	

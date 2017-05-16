@@ -26,6 +26,15 @@
 	</filter-mapping>
 	
 	<filter>
+		<filter-name>getAllGoods</filter-name>
+		<filter-class>pers.qiqcheng.ec.filter.GetAllGoodsFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>getAllGoods</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
+	
+	<filter>
 		<filter-name>user_login</filter-name>
 		<filter-class>pers.qiqcheng.ec.filter.UserLoginFilter</filter-class>
 	</filter>
@@ -84,5 +93,14 @@
 	<servlet-mapping>
 		<servlet-name>updateInfo</servlet-name>
 		<url-pattern>/updateInfo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>getPageNo</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.GetPageNo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getPageNo</servlet-name>
+		<url-pattern>/getPageNo</url-pattern>
 	</servlet-mapping>
 </web-app>

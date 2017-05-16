@@ -1,7 +1,0 @@
-package pers.qiqcheng.spring.demo13;
-
-public class hello {
-	public static void main(String[] args) {
-		
-	}
-}
