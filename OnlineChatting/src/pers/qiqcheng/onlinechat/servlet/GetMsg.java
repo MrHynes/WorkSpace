@@ -61,23 +61,17 @@ public class GetMsg extends HttpServlet{
 		if(msgList==null){
 			msgList =new ArrayList<>();
 		}
-		PrintWriter out = resp.getWriter() ;
-		//System.out.println(action+" "+msg);
-		//System.out.println("entering !") ;		
+		PrintWriter out = resp.getWriter() ;		
 		if (action==null || action.equals("getMsg")) {
-			//System.out.println("3");
 			JSONArray json = JSONArray.fromObject(msgList) ;
 			out.write(json.toString());
 			out.close() ;
 		} else if (action.equals("sendMsg")){
-			//System.out.println("1");
-			//String msg = req.getParameter("msg") ;
 			String user = (String)session.getAttribute("users") ;
 			Message msgObj = new Message() ;
 			msgObj.setSenderName(user);
 			msgObj.setSendMsg(msg);
 			msgObj.setSendTime(new Date());
-			//System.out.println("msg:"+msgObj.toString()) ;
 			msgList.add(msgObj.toString()) ;
 			application.setAttribute("msgList",msgList) ;
 			JSONArray jsonarray = JSONArray.fromObject(msgList);

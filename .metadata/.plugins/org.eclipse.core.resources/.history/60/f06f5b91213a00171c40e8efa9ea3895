@@ -1,0 +1,5 @@
+package pers.qiqcheng.onlinechat.listener;
+
+public class OnlineUserListener {
+
+}

@@ -12,13 +12,12 @@
 <script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/ajax.js" type="text/javascript"></script>
-<script src="js/json.js" type="text/javascript"></script>
+<!--  <script src="js/json.js" type="text/javascript"></script>  -->
 <script src="js/json2.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">
    			var xhr = createXMLRequest() ;
     		function sendMsg() {
-    			
     			var url = "getMsg" ;
     			var msg = document.getElementById("sendbtn").value ;
     			document.getElementById("sendbtn").value="";
@@ -27,11 +26,10 @@
     				alert("msg is null!"); 
     				return ;
     			}
-    	
     			var payload ="action=sendMsg"+"&msg="+msg;
     			xhr.open("POST", url,"true") ;
     			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=utf-8") ;
-    			xhr.onreadystatechange = function() {
+    			xhr.onreadystatechange = function() {//回调函数
     				processResponse(xhr) ;
     			};
     			xhr.send(payload) ;
@@ -44,7 +42,8 @@
 					 var message;// = document.getElementById("messasge") ; 
 					 var sendbtn= document.getElementById("sendbtn") ;
 					 sendbtn.value=null;
-					 var msgList = xhr.responseText.parseJSON() ;
+					// var msgList = xhr.responseText.parseJSON() ;
+					 var msgList=JSON.parse(xhr.responseText);
 					 $("#showMessage").empty();
 					 for(var i=0;i<msgList.length;i++){
 						 var cities=msgList[i].split("&");
@@ -221,7 +220,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
