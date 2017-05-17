@@ -1,0 +1,21 @@
+
+public class Replace {
+	public static String replace(String str,char src,char dest){
+		char c[]=str.toCharArray();
+		for(int i=0;i<str.length();i++){
+			if(c[i]==src){
+				c[i]=dest;
+			}
+		}
+		String[] newStr=new String(c).split("@");
+		StringBuffer stringBuffer=null;
+		for (String string : newStr) {
+			stringBuffer+=string;
+		}
+		return stringBuffer;
+	}
+	public static void main(String[] args) {
+		System.out.println(replace("Hello", 'e','a'));
+	}
+
+}

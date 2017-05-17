@@ -1,0 +1,15 @@
+
+public class HappynUmber {
+
+	public static boolean getHappyNumber(int number){
+		if(number==1) return true;
+		else{
+			int numA=number/10;
+			int numB=number%10;
+			getHappyNumber(numA*numA+numB+numB);
+		}
+	}
+	public static void main(String[] args) {
+		
+	}
+}

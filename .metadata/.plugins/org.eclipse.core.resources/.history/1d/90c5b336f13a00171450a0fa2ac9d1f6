@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Replace {
+	public static String replace(String str,char src,char dest){
+		char c[]=str.toCharArray();
+		for(int i=0;i<str.length();i++){
+			if(c[i]==src){
+				c[i]=dest;
+			}
+		}
+		String[] newStr=new String(c).split("@");
+		StringBuffer stringBuffer=null;
+		for (String string : newStr) {
+			stringBuffer.append(string);
+		}
+		return stringBuffer.toString();
+	}
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		String string=scanner.nextLine();
+		System.out.println(replace("Hello", 'e','a'));
+	}
+
+}

@@ -1,0 +1,28 @@
+
+public class HappynUmber {
+
+	/*public static boolean getHappyNumber(int number){
+		boolean flag=false;
+		if(number==1) flag= true;
+		else{
+			int numA=number/10;
+			int numB=number%10;
+			flag=getHappyNumber(numA*numA+numB+numB);
+		}
+		return flag;
+	}*/
+	public static void main(String[] args) {
+		System.out.println(getHappyNumber(19));
+	}
+	
+	public static boolean getHappyNumber(String number){
+		boolean flag=false;
+		if(number==1) flag= true;
+		else{
+			int numA=number/10;
+			int numB=number%10;
+			flag=getHappyNumber(numA*numA+numB+numB);
+		}
+		return flag;
+	}
+}

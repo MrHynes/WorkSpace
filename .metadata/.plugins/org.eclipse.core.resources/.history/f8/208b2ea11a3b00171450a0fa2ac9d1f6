@@ -1,0 +1,50 @@
+package pers.qiqcheng.ec.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class GetAlTypes extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//getTypes
+		resp.setContentType("text/json;charset=utf-8") ;
+		String action =req.getParameter("action") ;
+		String msg = req.getParameter("msg") ;
+		HttpSession session = req.getSession() ;
+		ServletContext application = session.getServletContext() ;
+		List<String> msgList = (List<String>)application.getAttribute("msgList") ;
+		if(msgList==null){
+			msgList =new ArrayList<>();
+		}
+		PrintWriter out = resp.getWriter() ;		
+		if (action.equals("getAll")){
+			String user = (String)session.getAttribute("users") ;
+			Message msgObj = new Message() ;
+			msgObj.setSenderName(user);
+			msgObj.setSendMsg(msg);
+			msgObj.setSendTime(new Date());
+			msgList.add(msgObj.toString()) ;
+			application.setAttribute("msgList",msgList) ;
+			JSONArray jsonarray = JSONArray.fromObject(msgList);
+			out.print(jsonarray);
+			out.close() ;
+		} 
+	}
+	
+
+}

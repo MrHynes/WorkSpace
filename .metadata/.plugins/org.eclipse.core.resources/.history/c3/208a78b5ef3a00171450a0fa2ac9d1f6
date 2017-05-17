@@ -1,0 +1,13 @@
+
+public class Replace {
+	public String replace(String str,char src,char dest){
+		char c[]=str.toCharArray();
+		for(int i=0;i<str.length();i++){
+			if(c[i]==src){
+				s[i]=dest;
+			}
+		}
+		return str;
+	}
+
+}

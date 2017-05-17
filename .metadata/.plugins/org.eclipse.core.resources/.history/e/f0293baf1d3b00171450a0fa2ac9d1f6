@@ -1,0 +1,16 @@
+package pers.qiqcheng.ec.bean;
+
+public class TypeBean {
+	private Integer majorTypeID;
+	private String majortypeName;
+	private Integer typeID;
+	private String typeName;
+	
+	@Override
+	public String toString() {
+		return this.getTypeID() +"&" + this.getTypeName() + "&" + this.getMajorClassID();
+	}
+	
+	
+
+}

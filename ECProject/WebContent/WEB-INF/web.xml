@@ -103,4 +103,13 @@
 		<servlet-name>getPageNo</servlet-name>
 		<url-pattern>/getPageNo</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>searchByKey</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.SearchBookByKey</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>searchByKey</servlet-name>
+		<url-pattern>/searchByKey</url-pattern>
+	</servlet-mapping>
 </web-app>

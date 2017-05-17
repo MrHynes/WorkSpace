@@ -25,8 +25,6 @@ public class GetPageNo extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		req.setCharacterEncoding("utf-8");
-//		resp.setContentType("text/html;charset=utf-8");
 		int pageNo=Integer.parseInt(req.getParameter("pageNo"));//一开始登录后，默认是0
 		int pageSize=12;
 		int totalRecord=0;

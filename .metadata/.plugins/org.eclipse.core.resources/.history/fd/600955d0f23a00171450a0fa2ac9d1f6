@@ -1,0 +1,5 @@
+
+public class HappynUmber {
+
+	public int getHappyNumber()
+}
