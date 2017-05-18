@@ -112,4 +112,24 @@
 		<servlet-name>searchByKey</servlet-name>
 		<url-pattern>/searchByKey</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>getTypes</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.GetAlTypes</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getTypes</servlet-name>
+		<url-pattern>/getTypes</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>getByType</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.getGoodsByType</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getByType</servlet-name>
+		<url-pattern>/getByType</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

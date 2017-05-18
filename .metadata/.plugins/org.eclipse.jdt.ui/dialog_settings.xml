@@ -81,6 +81,8 @@
 		<item value="383" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="completion_proposal_size">
+		<item value="273" key="size.y"/>
+		<item value="382" key="size.x"/>
 		<item value="241" key="contextSelector.size.y"/>
 		<item value="331" key="contextSelector.size.x"/>
 	</section>

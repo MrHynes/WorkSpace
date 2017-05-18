@@ -1,0 +1,50 @@
+package pers.qiqcheng.ec.servlet;
+
+import java.io.IOException;
+import java.util.Arrays;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pers.qiqcheng.ec.factory.DaoFactory;
+
+public class getGoodsByType extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String majorTypeID=req.getParameter("majorTypeID");
+		String typeID=req.getParameter("typeID");
+		String sql=new String();
+		String params[]={majorTypeID,typeID};
+		if(majorTypeID==null){
+			sql="select * from t_goods where subclassid=?";
+			for(int i=1;i<params.length;i++){
+				params[i-1]=params[i];
+			}
+			params = Arrays.copyOf(params, params.length - 1);
+			/*for (String integer : params) {
+				System.out.println(integer);
+			}*/
+		}else{
+			sql="select * from t_goods where majorclassid=?";
+			params = Arrays.copyOf(params, params.length - 1);
+			/*for (String integer : params) {
+				System.out.println(integer);
+			}*/
+		}
+		try {
+			DaoFactory.getUserDaoInstances().doSelect(sql, params);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

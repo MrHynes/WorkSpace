@@ -50,7 +50,11 @@
 				}
 			}
 		}
-		function sendMsg() {
+		$("#classmenue").click(function() {
+			getType();
+		});
+		function getType() {
+			createXHR();
 			var url = "getTypes" ;
 			var payload ="action=getAll";
 			xhr.open("POST", url,"true") ;
@@ -64,72 +68,30 @@
 		 function processResponse(xhr) {
 			 if (xhr.readyState==4 && xhr.status==200) {
 				 var msgList=JSON.parse(xhr.responseText);
-				 
-				 for(var i=0;i<msgList.length;i++){
-					 var cities=msgList[i].split("&");
-					 sendtime=cities[0];
-					 sender=cities[1];
-					 message=cities[2];
-					 var showmsg=$(
-								"<div class='msg-list-body' id='msglist'>"
-									+"<div class='clearfix msg-wrap'>"
-										+"<div class='msg-head'>"
-											+"<span class='msg-time label label-danger pull-left'>" 
-												+"<span class='glyphicon glyphicon-time'></span> &nbsp;<span id='sendtime'>"+sendtime+"</span>"
-											+"</span>"
-											+"<span class='msg-name label label-success pull-left'> "
-												+"<span class='glyphicon glyphicon-user'></span> &nbsp;<span id='sender'>"+sender+"</span>"
-											+"</span> "
-										+"</div>"
-										+"<br>"
-										+"<div class='msg-content' id='messasge'>"+message+"</div>"
-									+"</div>"
-								+"</div>");
-					$("#showMessage").append(showmsg);
-				 }
+				 $("#getclass").empty();
+				 for(var i=0;i<msgList.length;i++){					
+					var types=msgList[i].split("&");
+					//types[0]是大类，即j==0的时候
+					var majorType=types[0].split("@");
+					var msg=$(
+						"	<li class='dropdown-submenu'><a href='getByType?majorTypeID="+majorType[0]+"'>"+majorType[1]+"</a>"
+						+"		<ul class='dropdown-menu' id='"+majorType[1]+"'>"
+						+"		</ul>"
+						+"	</li>"
+						);
+					$("#getclass").append(msg);
+					for(var j=1;j<types.length;j++){
+						//type[0]是类的id，type[1]是类名
+						//j!=0的时候是小类
+						var type=types[j].split("@");
+						var msg1=$(
+								"<li><a tabindex='-1' href='getByType?typeID="+type[0]+"' id='"+type[1]+"'>"+type[1]+"</a></li>"	
+							);
+						$("#"+majorType[1]).append(msg1);
+					}
+				 }  
 			 }			
 		} 
-		/* var xhr;
-		function createXHR() {
-			if (window.XMLHttpRequest) {
-				xhr = new XMLHttpRequest();
-			} else {
-				try {
-					xhr = new ActiveXObject("Msxml2.XMLHTTP");
-				} catch (e) {
-					xhr = new ActiveXObject("Microsoft.XMLHTTP");
-				}
-			}
-		}
-		$("#getclass").mouseover(function() {
-			getType();
-		});
-
-		function getType() {
-			createXHR();
-			var url = "getType";
-			xhr.open("GET", url, true);
-			xhr.onreadystatechange = function() {
-				processReadyStateChange();
-			};
-			xhr.send(null);
-		}
-
-		function processReadyStateChange() {
-			if (xhr.readyState == 4) {
-				if (xhr.status == 200) {
-					var resp = xhr.responseText;
-					var cities = resp.split("&");
-					/* var select = document.getElementById("city");
-					select.innerHTML = null;
-					for (var i = 0; i < cities.length; i++) {
-						var option = document.createElement("option");
-						option.innerHTML = cities[i];
-						select.appendChild(option);
-					} */
-			//	}
-		//	}//
-		//} */
 	});
 </script>
 
@@ -144,18 +106,6 @@
 					class="label label-danger">New</span></a></li>
 			<li><a href="<%=path%>/index.jsp">商城<span
 					class="label label-default">New</span></a></li>
-
-			<!-- <li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">分类
-					<span class="caret"></span>
-				</a>
-				<ul class="dropdown-menu">
-					<li><a href="index.jsp">教材</a></li>
-					<li><a href="index.jsp">文学</a></li>
-					<li><a href="index.jsp">名著</a></li>
-					<li><a href="index.jsp">生活</a></li>
-				</ul>
-			</li>  -->
 			<!-- 分类 
 			<li class="dropdown" id="classmenue"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown">分类 <span class="caret"></span>
@@ -190,18 +140,15 @@
 				</ul>
 			</li>
 			end -->
-			<li class="dropdown" id="classmenue"><a href="#"
-				class="dropdown-toggle" data-toggle="dropdown" id="getclass">分类
-					<span class="caret"></span>
-			</a>
-				<ul class="dropdown-menu multi-level" id="menuelist">
-					<!-- 鼠标移动到 “分类”上方，Ajax获得大类和小类然后构造结点显示出来 -->
-					<li class="dropdown-submenu"><a href="#"></a>
-						<ul class="dropdown-menu">
-							<li><a tabindex="-1" href="" id=""></a></li>
-						</ul></li>
-				</ul></li>
-
+			<li class="dropdown" id="classmenue">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="classmenue">
+					分类<span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu multi-level" id="getclass">
+					<!-- 鼠标点击 “分类”，Ajax获得大类和小类然后构造结点显示出来-->
+				</ul>
+			</li>
+			
 			<li><a href="index.jsp">店铺<span class="label"></span></a></li>
 			<li><a href="index.jsp">活动<span class="label"></span></a></li>
 			<li><a href="index.jsp">折扣<span class="label"></span></a></li>
