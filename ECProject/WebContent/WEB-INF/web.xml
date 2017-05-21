@@ -125,7 +125,7 @@
 	
 	<servlet>
 		<servlet-name>getByType</servlet-name>
-		<servlet-class>pers.qiqcheng.ec.servlet.getGoodsByType</servlet-class>
+		<servlet-class>pers.qiqcheng.ec.servlet.GetGoodsByType</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>getByType</servlet-name>

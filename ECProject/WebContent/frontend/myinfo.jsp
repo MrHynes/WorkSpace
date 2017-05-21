@@ -116,7 +116,7 @@
 					<div class="panel-body">
 						<p align="left"><label>选购商品共 0 种，0 件。</label></p>
 						<p align="left"><label>共计： ￥0 元</label></p>
-						<p align="right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="<%=basePath%>frontend/shopcart.jsp">进入购物车</a><p>
+						<p align="right"><span class="glyphicon glyphicon-shopping-cart"></span><a href="<%=basePath%>shopcart.jsp">进入购物车</a><p>
 					</div>
 				</div>
 			</div>

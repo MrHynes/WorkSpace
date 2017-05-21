@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import pers.qiqcheng.ec.factory.DaoFactory;
 import pers.qiqcheng.ec.tools.MD5Code;
-
+/**
+ * 用户注册
+ * @author Buer
+ *
+ */
 public class UserRegisterServlet extends HttpServlet{
 
 	@Override
@@ -27,6 +31,7 @@ public class UserRegisterServlet extends HttpServlet{
 				+ path + "/";
 		req.setCharacterEncoding("utf-8");
 		resp.setContentType("text/html;charset=utf-8");
+		//获取用户输入的信息
 		String username =req.getParameter("username");
 		String pass =req.getParameter("password");
 		String relname=req.getParameter("relname");
@@ -38,14 +43,17 @@ public class UserRegisterServlet extends HttpServlet{
 		String address=req.getParameter("address");
 		String password=new MD5Code().getMD5ofStr(pass);
 		String status="0";
+		//将日期格式转化为yyyy-MM-dd
 		SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd");
 		Date date=new Date();
 		String joindate=sim.format(date);
 		boolean flag=false;
+		//sql语句以及参数
 		String params[]={username,password,relname,sex,birthday,telephone,email,postcode,address,status,joindate};
 		String sql="insert into t_user (username,password,relname,sex,birthday,telephone,email,postcode,address,status,joindate) values"
 				+ "(?,?,?,?,?,?,?,?,?,?,?)";
 		try {
+			//插入数据，如果成功跳转到注册成功页面，否则到出错页面
 			flag=DaoFactory.getUserDaoInstances().doInsert(sql, params);
 			if(flag){
 				req.setAttribute("registername", username);

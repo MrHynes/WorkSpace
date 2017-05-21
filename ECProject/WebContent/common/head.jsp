@@ -159,7 +159,7 @@
 					if (name != null) {
 				%>
 				<li><a>欢迎您：<%=name%></a></li>
-				<li><a href="<%=basePath%>frontend/shopcart.jsp">购物车</a></li>
+				<li><a href="<%=basePath%>shopcart.jsp">购物车</a></li>
 				<li><a href="<%=basePath%>getUserInfon">会员中心</a></li>
 				<li><a href="<%=basePath%>frontend/order.jsp">查看订单</a></li>
 				<li><a id="exit">退出</a></li>
@@ -169,6 +169,7 @@
 				%>
 				<li><a data-toggle="modal" data-target="#login">登录</a></li>
 				<li><a href="#">后台管理</a></li>
+				<li><a href="<%=basePath%>shopcart.jsp">购物车</a></li>
 				<li><a href="<%=path%>/common/error.jsp">帮助</a></li>
 				<%
 					}

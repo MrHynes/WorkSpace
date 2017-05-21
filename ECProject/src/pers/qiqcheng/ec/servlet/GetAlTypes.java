@@ -36,10 +36,10 @@ public class GetAlTypes extends HttpServlet{
 		List<TypeBean> typeList=new ArrayList<TypeBean>();
 		List<String> typeArray=new ArrayList<String>();
 		if (action.equals("getAll")){
-			//²éÑ¯³ö´óÀà£¬ÒÔ¼°Æä×ÓÀà
+			//æŸ¥è¯¢å‡ºå¤§ç±»ï¼Œä»¥åŠå…¶å­ç±»
 			String sql="select a.typeid,a.typename,b.typeid,b.typename from t_goodstype a "
 					+ "left join t_goodstype b on a.typeid=b.majorclassid where a.typeid<10 order by a.typeid,b.typeid";
-			//ÕâÀïÓĞ¸öÎÊÌâ£¬Èç¹ûÖ»ÓĞ´óÀà£¬Ã»ÓĞ×ÓÀà£¬²»»á²éÑ°³ö£¬ËùÒÔ¸Ä³É×óÁ¬½Ó
+			//è¿™é‡Œæœ‰ä¸ªé—®é¢˜ï¼Œå¦‚æœåªæœ‰å¤§ç±»ï¼Œæ²¡æœ‰å­ç±»ï¼Œä¸ä¼šæŸ¥å¯»å‡ºï¼Œæ‰€ä»¥æ”¹æˆå·¦è¿æ¥
 			String []params={};
 			int flags=0;
 			try { 
@@ -54,32 +54,32 @@ public class GetAlTypes extends HttpServlet{
 					typeBean.setTypeName(rs.getString(4));
 					typeList.add(typeBean);
 				} 
-				//flag==1±íÊ¾³É¹¦´Ó±íÖĞ»ñÈ¡ĞÅÏ¢
+				//flag==1è¡¨ç¤ºæˆåŠŸä»è¡¨ä¸­è·å–ä¿¡æ¯
 				if(flags==1){
 					int flag=0;
 					String msg=new String();
-					//Ê×ÏÈµÚÒ»ÌõĞÅÏ¢
+					//é¦–å…ˆç¬¬ä¸€æ¡ä¿¡æ¯
 					msg=msg+typeList.get(0).getMajorTypeID()+"@"+typeList.get(0).getMajortypeName()+"&"
 							+typeList.get(0).getTypeID()+"@"+typeList.get(0).getTypeName();
-					//½ÓÏÂÀ´Ñ­»·ÅĞ¶Ïµ±Ç°¼ÇÂ¼ºÍÉÏÒ»Ìì¼ÇÂ¼ÊÇ·ñÊÇÊôÓÚÍ¬Ò»¸ö´óÀà
+					//æ¥ä¸‹æ¥å¾ªç¯åˆ¤æ–­å½“å‰è®°å½•å’Œä¸Šä¸€å¤©è®°å½•æ˜¯å¦æ˜¯å±äºåŒä¸€ä¸ªå¤§ç±»
 					for(int i=1;i<typeList.size();i++){
-						//Èç¹ûÊÇÍ¬Ò»¸ö´óÀà
+						//å¦‚æœæ˜¯åŒä¸€ä¸ªå¤§ç±»
 						if(typeList.get(i).getMajorTypeID()==typeList.get(i-1).getMajorTypeID()){
 							msg=msg+"&"+typeList.get(i).getTypeID()+"@"+typeList.get(i).getTypeName();
-						//Èç¹û²»ÊÇ£¬¾Í½«msg±£´æµ½listÊı×éÖĞ
+						//å¦‚æœä¸æ˜¯ï¼Œå°±å°†msgä¿å­˜åˆ°listæ•°ç»„ä¸­
 						}else {
 							flag=1;
 							typeArray.add(msg);
 							msg="";
 						}
 						if(flag==1){
-							//Èç¹ûÊÇÒ»ÌõÍêÕûµÄ¼ÇÂ¼
+							//å¦‚æœæ˜¯ä¸€æ¡å®Œæ•´çš„è®°å½•
 							if(typeList.get(i).getTypeName()!=null){
 							msg=msg+typeList.get(i).getMajorTypeID()+"@"+typeList.get(i).getMajortypeName()+"&"
 									+typeList.get(i).getTypeID()+"@"+typeList.get(i).getTypeName();
 							flag=0;
 							}else {
-								//Èç¹ûÖ»ÓĞ´óÀà£¬Ã»ÓĞ×ÓÀà
+								//å¦‚æœåªæœ‰å¤§ç±»ï¼Œæ²¡æœ‰å­ç±»
 								msg=msg+typeList.get(i).getMajorTypeID()+"@"+typeList.get(i).getMajortypeName();
 								flag=0;
 							}
@@ -89,7 +89,7 @@ public class GetAlTypes extends HttpServlet{
 						typeArray.add(msg);
 					}
 				}else{
-					out.print("ÎŞÀà±ğ");
+					out.print("æ— ç±»åˆ«");
 					return;
 				}
 				
@@ -97,7 +97,7 @@ public class GetAlTypes extends HttpServlet{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			//ĞòÁĞ»¯Îªjson
+			//åºåˆ—åŒ–ä¸ºjson
 			JSONArray jsonarray = JSONArray.fromObject(typeArray);
 			out.print(jsonarray);
 			out.close();

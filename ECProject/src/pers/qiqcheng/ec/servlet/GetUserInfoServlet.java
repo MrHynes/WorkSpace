@@ -45,7 +45,7 @@ public class GetUserInfoServlet extends HttpServlet{
 				userBean.setPostCode(rs.getString(9));
 				userBean.setAddress(rs.getString(10));
 				session.setAttribute("userbean", userBean);
-				//ÔÚÒ³ÃæÖ±½ÓÊä³ö£¬²âÊÔ²éÑ¯µÄÊı¾İÊÇ·ñÕıÈ·
+				//åœ¨é¡µé¢ç›´æ¥è¾“å‡ºï¼Œæµ‹è¯•æŸ¥è¯¢çš„æ•°æ®æ˜¯å¦æ­£ç¡®
 				/*PrintWriter out=resp.getWriter();
 				out.println(userBean.toString());*/
 				req.getRequestDispatcher("/frontend/myinfo.jsp").forward(req, resp);
