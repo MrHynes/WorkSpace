@@ -1,0 +1,10 @@
+package pers.qiqcheng.ec.bean;
+
+import java.util.List;
+
+public class CartBean {
+	private List<CartItemBean> items;
+	private Integer count;
+	
+
+}

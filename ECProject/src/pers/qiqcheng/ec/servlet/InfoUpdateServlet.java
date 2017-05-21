@@ -45,7 +45,7 @@ public class InfoUpdateServlet extends HttpServlet {
 			flag=DaoFactory.getUserDaoInstances().doUpdate(sql, params);
 			if(flag){
 				//修改成功
-				req.getRequestDispatcher("/getUserInfon").forward(req, resp);
+				req.getRequestDispatcher("/frontend/getUserInfon").forward(req, resp);
 			}else {
 				resp.sendRedirect(basePath+"/common/error.jsp");
 			}

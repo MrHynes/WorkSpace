@@ -1,0 +1,6 @@
+package pers.qiqcheng.ec.bean;
+
+public class CartItemBean {
+	
+
+}

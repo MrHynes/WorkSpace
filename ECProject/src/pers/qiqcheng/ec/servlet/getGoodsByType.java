@@ -15,8 +15,12 @@ import javax.servlet.http.HttpSession;
 import pers.qiqcheng.ec.bean.GoodsBean;
 import pers.qiqcheng.ec.bean.PageBean;
 import pers.qiqcheng.ec.factory.DaoFactory;
-
-public class getGoodsByType extends HttpServlet{
+/**
+ * 根据关键字key查询商品
+ * @author Buer
+ *
+ */
+public class GetGoodsByType extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,6 +29,7 @@ public class getGoodsByType extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//req获得majorTypeId，typeID
 		String majorTypeID=req.getParameter("majorTypeID");
 		String typeID=req.getParameter("typeID");
 		String sql=new String();
@@ -35,6 +40,7 @@ public class getGoodsByType extends HttpServlet{
 		List<GoodsBean> goodsList=new ArrayList<GoodsBean>();
 		GoodsBean goodsBean=null;
 		int totalRecord=0;
+		//如果majorTypeID为nul说明查询的的是小类
 		if(majorTypeID==null){
 			sql="select * from t_goods where subclassid=? limit 0,12";
 			sql2="select count(*) as t from t_goods where subclassid=?";
@@ -42,6 +48,7 @@ public class getGoodsByType extends HttpServlet{
 				params[i-1]=params[i];
 			}
 			params = Arrays.copyOf(params, params.length - 1);
+			//否则查询大类
 		}else{
 			sql="select * from t_goods where majorclassid=? limit 0,12";
 			sql2="select count(*) as t from t_goods where majorclassid=?";

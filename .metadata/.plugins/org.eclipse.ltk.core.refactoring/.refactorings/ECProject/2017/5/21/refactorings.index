@@ -1,2 +1,5 @@
 1495333092136	Move 'shopcart.jsp' to 'WebContent'
 1495334390400	Rename type 'getGoodsByType'
+1495347748968	Move 'detailed.jsp' to 'common'
+1495372118465	Rename type 'CartInfoSavaAndGet'
+1495375160328	Delete element

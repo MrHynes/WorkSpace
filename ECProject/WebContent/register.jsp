@@ -145,6 +145,7 @@
 			<div class="col-lg-3"></div>
 		</div>
 	</div>
+	<jsp:include page="common/foot.jsp"></jsp:include>
 </body>
 </body>
 </html>

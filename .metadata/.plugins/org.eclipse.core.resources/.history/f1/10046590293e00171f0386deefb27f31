@@ -1,0 +1,23 @@
+package pers.qiqcheng.ec.listener;
+
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+import pers.qiqcheng.ec.bean.CartBean;
+
+public class SessionListener implements HttpSessionListener {
+	@Override
+	public void sessionDestroyed(HttpSessionEvent se) {
+		System.out.println("session destroy");
+		HttpSession session=se.getSession();
+		CartBean cartBean=(CartBean) session.getAttribute("cartBean");
+		if(cartBean!=null){
+			String sql="insert into t_cart values(?,?,?)";
+			
+		}
+		
+		
+	}
+
+}

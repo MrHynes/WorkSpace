@@ -1,0 +1,7 @@
+package pers.qiqcheng.ec.bean;
+
+public class CartItemBean {
+	private String goodID;
+	private String goodName;
+
+}
