@@ -159,4 +159,17 @@
 		<servlet-name>exit</servlet-name>
 		<url-pattern>/exit</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>createOrder</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.CreateOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createOrder</servlet-name>
+		<url-pattern>/frontend/createOrder</url-pattern>
+	</servlet-mapping>
+	
+	<listener>
+		<listener-class>pers.qiqcheng.ec.listener.SessionListener</listener-class>
+	</listener>
 </web-app>

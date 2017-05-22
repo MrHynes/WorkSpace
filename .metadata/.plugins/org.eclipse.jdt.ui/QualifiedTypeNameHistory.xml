@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="pers.qiqcheng.spring.demo16.AccountService"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
-<fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionTemplate"/>
-<fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionCallbackWithoutResult"/>
-<fullyQualifiedTypeName name="org.springframework.jdbc.datasource.DataSourceTransactionManager"/>
-<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="jdk.nashorn.internal.ir.RuntimeNode.Request"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.dom.Filter"/>
 <fullyQualifiedTypeName name="jdk.nashorn.internal.objects.DataPropertyDescriptor"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.HttpserverMessages"/>
@@ -21,7 +13,6 @@
 <fullyQualifiedTypeName name="net.sf.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.messaging.saaj.util.FastInfosetReflection"/>
 <fullyQualifiedTypeName name="Replace"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
@@ -30,7 +21,6 @@
 <fullyQualifiedTypeName name="javax.xml.stream.events.EndElement"/>
 <fullyQualifiedTypeName name="org.omg.PortableServer.ID_ASSIGNMENT_POLICY_ID"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.PRIVATE_MEMBER"/>
 <fullyQualifiedTypeName name="com.sun.glass.ui.CommonDialogs.Type"/>
 <fullyQualifiedTypeName name="org.apache.commons.fileupload.util.LimitedInputStream"/>
@@ -44,20 +34,30 @@
 <fullyQualifiedTypeName name="java.lang.Float"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.INTERNAL"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.filter.GetAllGoodsFilter"/>
 <fullyQualifiedTypeName name="sun.security.jca.GetInstance"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="javax.servlet.Filter"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSessionListener"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.factory.DaoFactory"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.CartBean"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.CartItemBean"/>
 <fullyQualifiedTypeName name="com.sun.prism.shader.DrawEllipse_Color_AlphaTest_Loader"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.I2F"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.CartBean"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.CartItemBean"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="net.sf.ezmorph.array.ObjectArrayMorpher"/>
+<fullyQualifiedTypeName name="sun.security.ec.ECDHKeyAgreement"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.OrderBean"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.OrderItemBean"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.factory.DaoFactory"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSessionListener"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

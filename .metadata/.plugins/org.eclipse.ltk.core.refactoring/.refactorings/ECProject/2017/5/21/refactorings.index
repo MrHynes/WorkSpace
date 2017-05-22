@@ -3,3 +3,8 @@
 1495347748968	Move 'detailed.jsp' to 'common'
 1495372118465	Rename type 'CartInfoSavaAndGet'
 1495375160328	Delete element
+1495444032343	Delete element
+1495444147008	Delete element
+1495467158666	Copy package
+1495467163463	Delete elements
+1495467221439	Rename type 'HttpSessionListener'

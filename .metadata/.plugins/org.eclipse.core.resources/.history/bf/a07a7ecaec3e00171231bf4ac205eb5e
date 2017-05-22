@@ -1,0 +1,53 @@
+package pers.qiqcheng.ec.bean;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class OrderBean {
+	private String orderID;
+	private int typeCount;
+	private int count;
+	private  float totalPrice;
+	private Date orderDate;
+	
+	public OrderBean(){
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		Date date=new Date();
+		this.orderID=sdf.format(date);
+		this.typeCount=0;
+		this.count=0;
+		this.totalPrice=0.0f;
+	}
+	//订单编号为时间+用户名
+	public void setOrderID(String orderID) {
+		this.orderID += orderID;
+	}
+	public String getOrderID() {
+		return orderID;
+	}
+	public Date getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+	public int getTypeCount() {
+		return typeCount;
+	}
+	public void setTypeCount(int typeCount) {
+		this.typeCount = typeCount;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public float getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(float totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+}

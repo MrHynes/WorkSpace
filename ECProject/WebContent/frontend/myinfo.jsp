@@ -14,14 +14,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>会员中心</title>
-<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet"
-	type="text/css">
+<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="<%=basePath%>css/head.css" rel="stylesheet" type="text/css">
 <script src="<%=basePath%>js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/bootstrap.min.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/bootbox.js" type="text/javascript"></script>
-<script type="text/javascript"
-	src="<%=basePath%>js/bootstrapValidator.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>js/bootstrapValidator.min.js"></script>
 <script src="<%=basePath%>js/my.js" type="text/javascript"></script>
 </head>
 <script type="text/javascript">

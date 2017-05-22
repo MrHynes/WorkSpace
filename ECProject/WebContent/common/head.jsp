@@ -161,7 +161,7 @@
 				<li><a>欢迎您：<%=name%></a></li>
 				<li><a href="<%=basePath%>shopcart.jsp">购物车</a></li>
 				<li><a href="<%=basePath%>frontend/getUserInfon">会员中心</a></li>
-				<li><a href="<%=basePath%>frontend/order.jsp">查看订单</a></li>
+				<li><a href="<%=basePath%>frontend/revieworder.jsp">查看订单</a></li>
 				<li><a id="exit">退出</a></li>
 				<li><a href="<%=path%>/common/error.jsp">帮助</a></li>
 				<%

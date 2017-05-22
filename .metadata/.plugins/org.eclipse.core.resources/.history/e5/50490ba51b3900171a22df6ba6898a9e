@@ -1,7 +1,0 @@
-package pers.qiqcheng.ec.servlet;
-
-import com.sun.net.httpserver.HttpsConfigurator;
-
-public class InfoUpdateServlet extends HttpsConfigurator {
-
-}

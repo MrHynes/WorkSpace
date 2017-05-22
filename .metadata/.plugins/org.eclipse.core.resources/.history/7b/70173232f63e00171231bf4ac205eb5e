@@ -1,0 +1,104 @@
+package pers.qiqcheng.ec.servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import net.sf.ezmorph.array.ObjectArrayMorpher;
+import pers.qiqcheng.ec.bean.CartBean;
+import pers.qiqcheng.ec.bean.CartItemBean;
+import pers.qiqcheng.ec.bean.OrderBean;
+import pers.qiqcheng.ec.bean.OrderItemBean;
+import pers.qiqcheng.ec.factory.DaoFactory;
+
+public class CreateOrderServlet extends HttpServlet{
+
+	public void getOrderGoodsId(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
+		String goodID=req.getParameter("check");
+		String []goodIDs=goodID.split(",");
+		HttpSession session=req.getSession();
+		session.setAttribute("order", goodIDs);
+		String username=(String)session.getAttribute("username");
+		CartBean cartBean=CartBean.getCartBean(session);
+		List<CartItemBean> items=cartBean.getItems();
+		List<OrderItemBean> itemsOrder=new ArrayList<OrderItemBean>();
+		OrderItemBean orderItemBean=null;
+		int count=0;
+		float totalPrice=0.0f;
+		for (CartItemBean cartItemBean : items) {
+			for(int i=0;i<goodIDs.length;i++){
+				if(goodIDs[i].equals(cartItemBean.getGoodID())){
+					orderItemBean.setGoodId(goodIDs[i]);
+					orderItemBean.setCount(cartItemBean.getCount());
+					orderItemBean.setGoodsPrice(cartBean.getTotalPrice());
+					itemsOrder.add(orderItemBean);
+					count+=cartItemBean.getCount();
+					totalPrice+=cartBean.getTotalPrice();
+				}
+			}
+		}
+		OrderBean orderBean=new OrderBean();
+		orderBean.setItems(itemsOrder);
+		orderBean.setCount(count);
+		orderBean.setTypeCount(goodIDs.length);
+		orderBean.setTotalPrice(totalPrice);
+		orderBean.setOrderID(username);
+		session.setAttribute("orderBean", orderBean);
+		req.getRequestDispatcher("/frontend/order.jsp").forward(req, resp);
+	}
+	//点击确认下单，生成订单，并存储到数据库中，然后将选购的商品从session中删除
+	public void insertIntoTable(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
+		HttpSession session=req.getSession();
+		String userName=(String)session.getAttribute("username");
+		String orderId=req.getParameter("orderid");
+		String orderTime=req.getParameter("orderdate");
+		String payMent=req.getParameter("parment");
+		String sendWay=req.getParameter("sendway");
+		String receiver=req.getParameter("relname");
+		String address=req.getParameter("address");
+		String postCode=req.getParameter("postcode");
+		String telePhone=req.getParameter("telephone");
+		String email=req.getParameter("email");
+		String sql="insert into t_order(orderid,username,ordertime,payment, sendway,receiver,telephone,email,postcode,address)"
+				+ "values(?,?,?,?,?,?,?,?,?,?)";
+		String []params={orderId,userName,orderTime,payMent,sendWay,receiver,telePhone,email,postCode,address};
+		try {
+			boolean flag=DaoFactory.getUserDaoInstances().doInsert(sql, params);
+			if(flag){
+				OrderBean orderBean=(OrderBean)session.getAttribute("orderBean");
+				String orderID=orderBean.getOrderID();
+				String sql2="insert into t_order_detail values(?,?,?)";
+				List<OrderItemBean> itemBeans=orderBean.getItems();
+				for (OrderItemBean orderItemBean : itemBeans) {
+					
+				}
+				req.getRequestDispatcher("/frontend/revieworder.jsp").forward(req, resp);
+			}else {
+				resp.sendRedirect("/common/error.jsp");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String task=req.getParameter("task");
+		if("getID".equals(task)){
+			getOrderGoodsId(req, resp);
+		}else if("insertTable".equals(task)){
+			insertIntoTable(req,resp);
+		}
+	}
+
+}
