@@ -30,6 +30,25 @@
 		$("#session4").click(function () {
 			document.getElementById('session4').scrollIntoView();
 		});
+		$("#order").click(function () {
+			var orderID=$("#orderid").val();
+			var orderTime=$("#orderdate").val();
+			bootbox.confirm({
+				message : "您的订单已经提交成功，订单编号为"+orderID+"，下当日期为"+orderTime,
+				callback : function(result) {
+					if (result) {
+						return true;
+					} else {
+						return false;
+					}
+				}
+			});
+		});
+		$("form").submit(function(e){
+			var orderID=$("#orderid").val();
+			var orderTime=$("#orderdate").val();
+			alert("您的订单已经提交成功，订单编号为"+orderID+"，下当日期为"+orderTime");
+		});
 	});
 </script>
 </head>
@@ -96,7 +115,7 @@
 										orderBean=new OrderBean();
 									}
 								%>
-								<input type="hidden" value="<%=orderBean.getOrderID()%>" name="orderid">
+								<input type="hidden" value="<%=orderBean.getOrderID()%>" name="orderid" id="orderid">
 								<div class="form-group">
 									<label for="typecount">商品种类数</label>
 									<input class="form-control" type="text" name="typecount" value="<%=orderBean.getTypeCount()%>">
@@ -111,7 +130,7 @@
 								</div>
 								<div class="form-group">
 									<label for="orderdate">订单日期</label>
-									<input class="form-control" type="text" name="orderdate" value="<%=orderBean.getOrderDateTime() %>">
+									<input class="form-control" type="text" id="orderdate" name="orderdate" value="<%=orderBean.getOrderDateTime() %>">
 								</div>
 								
 								<div class="form-group">
@@ -135,9 +154,9 @@
 									</select>
 								</div>
 							</div>
-								<!-- 确认下单 -->
+								<!-- 确认下单 id="order"-->
 								<legend></legend>
-								<input type="submit" value="确认下单" id="order" class="btn btn-success col-lg-offset-10" style="width: 100px;">
+								<input type="submit" value="确认下单"  class="btn btn-success col-lg-offset-10" style="width: 100px;">
 							</div>
 							<div class="col-lg-2" id="session4"></div>
 						</form>

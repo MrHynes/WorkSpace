@@ -1,0 +1,75 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="pers.qiqcheng.ec.bean.ShowOrderBean"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>查看订单</title>
+<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="<%=basePath%>css/head.css" rel="stylesheet" type="text/css">
+<script src="<%=basePath%>js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/bootbox.js" type="text/javascript"></script>
+<script type="text/javascript"
+	src="<%=basePath%>js/bootstrapValidator.min.js"></script>
+<script src="<%=basePath%>js/my.js" type="text/javascript"></script>
+</head>
+<body>
+	<jsp:include page="/common/head.jsp"></jsp:include>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<legend>
+					<label><span class="glyphicon glyphicon-plus"></span>&nbsp;我的订单</label>
+				</legend>
+				<div class="col-lg-12">
+					<div class="panel-body <!-- pre-scrollable -->">
+						<table class="table table-hover">
+							<thead>
+								<td>订单编号</td>
+								<td>下单时间</td>
+								<td>商品总数</td>
+								<td>总额</td>
+								<td>订单状态</td>
+								<td>操作</td>
+							</thead>
+							<%
+								List<ShowOrderBean> order=(ArrayList)session.getAttribute("order");
+								ShowOrderBean showOrderBean=null;
+								if(order!=null){
+									for(int i=0;i<order.size();i++){
+										showOrderBean=order.get(i);
+							%>
+							<tr>
+								<td><%=showOrderBean.getOrderId() %></td>
+								<td><%=showOrderBean.getOrderTime() %></td>
+								<td><%=showOrderBean.getSum() %></td>
+								<td><%=showOrderBean.getTotalPrice() %></td>
+								<td><%=showOrderBean.getOrderStatus() %></td>
+								<td>查看订单</td>
+							</tr>
+							<%
+								}else{
+									%>
+									您还没有订单，快到<a href="../index.jsp">主页</a>购买您需要的商品吧！
+									<%
+								}
+								}
+							%>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

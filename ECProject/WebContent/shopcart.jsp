@@ -114,7 +114,7 @@ List<CartItemBean> list=cartBean.getItems();
 		<div class="col-lg-9">
 			<form action="createOrder" method="post">
 				<div class="panel panel-success">
-					<div class="panel-body">
+					<div class="panel-body pre-scrollable" style="max-height: 470px;height: 470px;">
 						<table class="table table-hover">
 							<thead>
 								<td>状态</td>

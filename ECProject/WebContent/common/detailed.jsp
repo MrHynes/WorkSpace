@@ -23,6 +23,37 @@
 <script type="text/javascript"
 	src="<%=basePath%>js/bootstrapValidator.min.js"></script>
 <script src="<%=basePath%>js/my.js" type="text/javascript"></script>
+<script>
+$(function () {
+	$("button").click(function () {
+		var goodID=$("#goodID").val();
+		var price=$("#price").val();
+		var num=$("#count").val();
+		var isLogin=$("#isLogin").val();
+		if(isLogin.length<=0){
+			bootbox.confirm({
+				size : "small",
+				message : "您还未登录，请先登录！",
+				callback : function(result) {
+					return;
+				}
+			});
+		}else{
+			bootbox.confirm({
+				size : "small",
+				message : "确定要购买此商品吗？",
+				callback : function(result) {
+					if(result){
+						location.href="/ECProject/frontend/createOrder?task=directBuy&goodid="+goodID+"&price="+price+"&num="+num;	
+					}else{
+						return ;
+					}
+				}
+			});
+		}
+	});
+ });
+</script>
 </head>
 <body>
 <%
@@ -50,6 +81,14 @@
 %>
 <!--导航栏 -->
 	<jsp:include page="../common/head.jsp"></jsp:include>
+	<%
+	String username=(String)session.getAttribute("username");
+	if(username!=null){
+	%>
+	<input type="hidden" id="isLogin" value="<%=username%>">
+	<%} else{%>
+	<input type="hidden" id="isLogin" value="">
+	<%} %>
 	<br>
 <div class="container">
     <div class="row">
@@ -72,10 +111,12 @@
 	                        <p>[商品价格]:${price}</p>
 	                        <br>
 	                        <p>[商品库存]:<%=goodsBean.getInventory() %></p><br>
-	                        <p>[购买数量]:<input type="text" name="count" value="1"></p>
+	                        <p>[购买数量]:<input type="text" name="count" id="count" value="1"></p>
 	                    </div>
 	                </div>
-	                <a href="#"><button class="btn btn-success" style="width: 70px;height: 35px;">购买</button></a>&nbsp;&nbsp;
+	                	<input type="hidden" id="goodID" value="<%=goodsBean.getGoodId()%>">
+						<input type="hidden" id="price" value="<%=goodsBean.getGoodPrice()%>">
+	                <a><button class="btn btn-success" style="width: 70px;height: 35px;">购买</button></a>&nbsp;&nbsp;
 	                <input type="submit" class="btn btn-warning" style="width: 100px;height: 35px;" value="加入购物车">
 	                <br>
 	            </div>

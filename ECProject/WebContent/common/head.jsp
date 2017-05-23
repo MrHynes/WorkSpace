@@ -149,9 +149,9 @@
 				</ul>
 			</li>
 			
-			<li><a href="index.jsp">店铺<span class="label"></span></a></li>
-			<li><a href="index.jsp">活动<span class="label"></span></a></li>
-			<li><a href="index.jsp">折扣<span class="label"></span></a></li>
+			<li><a href="<%=basePath%>index.jsp">店铺<span class="label"></span></a></li>
+			<li><a href="<%=basePath%>index.jsp">活动<span class="label"></span></a></li>
+			<li><a href="<%=basePath%>index.jsp">折扣<span class="label"></span></a></li>
 		</ul>
 		<div class="collapse navbar-collapse">
 			<div class="nav navbar-nav navbar-right">
@@ -161,7 +161,7 @@
 				<li><a>欢迎您：<%=name%></a></li>
 				<li><a href="<%=basePath%>shopcart.jsp">购物车</a></li>
 				<li><a href="<%=basePath%>frontend/getUserInfon">会员中心</a></li>
-				<li><a href="<%=basePath%>frontend/revieworder.jsp">查看订单</a></li>
+				<li><a href="<%=basePath%>frontend/createOrder?task=showOrders">查看订单</a></li>
 				<li><a id="exit">退出</a></li>
 				<li><a href="<%=path%>/common/error.jsp">帮助</a></li>
 				<%
@@ -183,9 +183,9 @@
 		<div class="modal-dialog" style="width: 370px;">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
+					<a type="button" class="close" data-dismiss="modal">
 						<span aria-hidden="true">&times;</span> <span class="sr-only"></span>
-					</button>
+					</a>
 					<h5 class="modal-title" id="myModalLabel">用户登录</h5>
 				</div>
 				<div class="modal-body">
@@ -201,7 +201,7 @@
 						<input type="submit" value="登录" class="btn btn-success btn-block"><br>
 						<input type="reset" value="重置" class="btn btn-warning btn-block">
 						<br> <input type="checkbox" name="free" value="1">下次自动登录<br>
-						<br> <a href="<%=basePath%>public/error.jsp"
+						<br> <a href="<%=basePath%>common/error.jsp"
 							class="col-lg-offset-0">登录遇到问题</a> <a
 							href="<%=basePath%>register.jsp" class="col-lg-offset-6">立即注册</a>
 					</form>

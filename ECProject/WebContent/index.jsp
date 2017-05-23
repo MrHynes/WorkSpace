@@ -24,27 +24,63 @@
 
 </head>
 <script>
-function showimage(source)
+/* function showimage(source)
 {
   $("#ShowImage_Form").find("#img_show").html("<image src='"+source+"' class='carousel-inner img-responsive img-rounded' />");
   $("#ShowImage_Form").modal();
 }
+ */	
 	
-		  
+ $(function () {
+	$("button").click(function () {
+		var goodID=$("#goodID").val();
+		var price=$("#price").val();
+		var isLogin=$("#isLogin").val();
+		if(isLogin.length<=0){
+			bootbox.confirm({
+				size : "small",
+				message : "您还未登录，请先登录！",
+				callback : function(result) {
+					return;
+				}
+			});
+		}else{
+			bootbox.confirm({
+				size : "small",
+				message : "确定要购买此商品吗？",
+				callback : function(result) {
+					if(result){
+						location.href="/ECProject/frontend/createOrder?task=directBuy&goodid="+goodID+"&price="+price;	
+					}else{
+						return ;
+					}
+				}
+			});
+		}
+	});
+ });
 </script>
 <body style="background-color: #f4f4f4">
 	<!--导航栏 -->
 	<jsp:include page="common/head.jsp"></jsp:include>
+	<%
+	String username=(String)session.getAttribute("username");
+	if(username!=null){
+	%>
+	<input type="hidden" id="isLogin" value="<%=username%>">
+	<%} else{%>
+	<input type="hidden" id="isLogin" value="">
+	<%} %>
 	<!-- 搜索框 -->
 	<div class="col-lg-3"></div>
 	<div class="col-lg-5">
 		<form action="searchByKey" method="post">
 			<div class="input-group">
 				<div class="input-group-btn">
-					<button class="btn btn-default dropdown-toggle"
+				<!-- 	<button class="btn btn-default dropdown-toggle"
 						data-toggle="dropdown" type="button" style="height: 45px;">
 						请选择<span class="caret"></span>
-					</button>
+					</button> -->
 					<ul class="dropdown-menu">
 						<li><a href="#">宝贝</a></li>
 					</ul>
@@ -81,13 +117,13 @@ function showimage(source)
 							</div>
 						</div>
 						<div class="item">
-							<a href="#"><img src="<%=basePath%>img/headImg2.jpg" alt=""></a>
+							<a href="<%=basePath%>index.jsp"><img src="<%=basePath%>img/headImg2.jpg" alt=""></a>
 						</div>
 						<div class="item">
-							<a href="#"><img src="<%=basePath%>img/headImg.jpg" alt=""></a>
+							<a href="<%=basePath%>index.jsp"><img src="<%=basePath%>img/headImg.jpg" alt=""></a>
 						</div>
 						<div class="item">
-							<a href="#"><img src="<%=basePath%>img/headImg2.jpg" alt=""></a>
+							<a href="<%=basePath%>index.jsp"><img src="<%=basePath%>img/headImg2.jpg" alt=""></a>
 						</div>
 					</div>
 					<a class="left carousel-control" href="#carouselcontainer"
@@ -140,9 +176,12 @@ function showimage(source)
 							<p>
 								描述:<%=goodsBean.getGoodDescription()%>
 							</p>
-							<div class="btn btn-xs btn-primary">
-								<a href="" style="color: white;">购买</a>
-							</div>
+							<input type="hidden" id="goodID" value="<%=goodsBean.getGoodId()%>">
+							<input type="hidden" id="price" value="<%=goodsBean.getGoodPrice()%>">
+							<button class="btn btn-xs btn-primary">
+								<a style="color: white;">购买</a>
+								<%--/ECProject/frontend/createOrder?task=directBuy&goodid=<%=goodsBean.getGoodId()%> --%>
+							</button>
 							<div class="btn btn-xs btn-primary">
 								<a href="<%=basePath %>common/detailed.jsp?goodId=<%=goodsBean.getGoodId()%>" style="color: white;">详细</a>
 							</div>
@@ -175,7 +214,7 @@ function showimage(source)
 		</div>
 	</div>
 	</div>
-
+	<!-- 页脚 -->
 	<jsp:include page="common/foot.jsp"></jsp:include>
 </body>
 </html>

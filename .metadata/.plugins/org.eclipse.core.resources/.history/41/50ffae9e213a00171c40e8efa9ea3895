@@ -1,8 +1,0 @@
-package pers.qiqcheng.onlinechat.listener;
-
-import javax.servlet.http.HttpSessionListener;
-
-public class OnlineUserListener implements HttpSessionListener {
-	
-
-}

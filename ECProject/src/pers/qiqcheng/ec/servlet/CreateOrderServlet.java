@@ -2,6 +2,7 @@ package pers.qiqcheng.ec.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import pers.qiqcheng.ec.bean.CartBean;
 import pers.qiqcheng.ec.bean.CartItemBean;
 import pers.qiqcheng.ec.bean.OrderBean;
 import pers.qiqcheng.ec.bean.OrderItemBean;
+import pers.qiqcheng.ec.bean.ShowOrderBean;
 import pers.qiqcheng.ec.factory.DaoFactory;
 
 public class CreateOrderServlet extends HttpServlet{
@@ -33,8 +35,8 @@ public class CreateOrderServlet extends HttpServlet{
 		List<CartItemBean> items=cartBean.getItems();
 		List<OrderItemBean> itemsOrder=new ArrayList<OrderItemBean>();
 		OrderItemBean orderItemBean=null;
-		int count=0;
-		float totalPrice=0.0f;
+		//int count=0;
+		//float totalPrice=0.0f;
 		//将被勾选的商品的 单价数量等信息保存在orderItemBean中
 		for (CartItemBean cartItemBean : items) {
 			for(int i=0;i<goodIDs.length;i++){
@@ -42,19 +44,19 @@ public class CreateOrderServlet extends HttpServlet{
 					orderItemBean=new OrderItemBean();
 					orderItemBean.setGoodId(goodIDs[i]);
 					orderItemBean.setCount(cartItemBean.getCount());
-					orderItemBean.setGoodsPrice(cartBean.getTotalPrice());
+					orderItemBean.setGoodsPrice(cartItemBean.getTotalPrice());
 					itemsOrder.add(orderItemBean);
-					count+=cartItemBean.getCount();
-					totalPrice+=cartBean.getTotalPrice();
+					/*count+=cartItemBean.getCount();
+					totalPrice+=cartItemBean.getTotalPrice();*/
 				}
 			}
 		}
 		//计算出现在订单中的商品种类数和商品总数，以及价格等，保存在orderBean中
 		OrderBean orderBean=new OrderBean();
 		orderBean.setItems(itemsOrder);
-		orderBean.setCount(count);
+		orderBean.setCount(cartBean.getCount());
 		orderBean.setTypeCount(goodIDs.length);
-		orderBean.setTotalPrice(totalPrice);
+		orderBean.setTotalPrice(cartBean.getTotalPrice());
 		orderBean.setOrderID(username);
 		session.setAttribute("orderBean", orderBean);
 		req.getRequestDispatcher("/frontend/order.jsp").forward(req, resp);
@@ -83,11 +85,11 @@ public class CreateOrderServlet extends HttpServlet{
 			if(flag){
 				OrderBean orderBean=(OrderBean)session.getAttribute("orderBean");
 				String orderID=orderBean.getOrderID();
-				String sql2="insert into t_order_detail values(?,?,?)";
+				String sql2="insert into t_order_detail values(?,?,?,?)";
 				String sql3="update t_goods set inventory=inventory-? where goodid=?";
 				List<OrderItemBean> itemBeans=orderBean.getItems();
 				for (OrderItemBean orderItemBean : itemBeans) {
-					String params2[]={orderID,orderItemBean.getGoodId(),orderItemBean.getCount()+""};
+					String params2[]={orderID,orderItemBean.getGoodId(),orderItemBean.getCount()+"",orderItemBean.getGoodsPrice()+""};
 					DaoFactory.getUserDaoInstances().doInsert(sql2, params2);
 					//更新库存
 					String params3[]={orderBean.getCount()+"",orderItemBean.getGoodId()};
@@ -113,11 +115,59 @@ public class CreateOrderServlet extends HttpServlet{
 	 * 查看订单
 	 */
 	public void showOrders(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
-		//String sql="select * from ";
-		PrintWriter oPrintWriter=resp.getWriter();
-		oPrintWriter.println("hello");
-	}
+		String sql=" select t_order.orderid,ordertime,orderstatus,sum(num),sum(goodprice)  "
+				+ "from t_order,t_order_detail where username=? and t_order.orderid=t_order_detail.orderid "
+				+ "group by orderid;";
+		HttpSession session=req.getSession();
+		String username=(String)session.getAttribute("username");
+		ShowOrderBean showOrderBean=null;
+		List<ShowOrderBean> order=new ArrayList<ShowOrderBean>();
+		String parmas[]={username};
+		try {
+			ResultSet rs=DaoFactory.getUserDaoInstances().doSelect(sql, parmas);
+			while(rs.next()){
+				showOrderBean=new ShowOrderBean();
+				showOrderBean.setOrderId(rs.getString(1));
+				showOrderBean.setOrderTime(rs.getString(2));
+				showOrderBean.setOrderStatus(rs.getString(3));
+				showOrderBean.setSum(rs.getInt(4));
+				showOrderBean.setTotalPrice(rs.getFloat(5));
+				order.add(showOrderBean);
+			}
+			session.setAttribute("order", order);
+			req.getRequestDispatcher("/frontend/revieworder.jsp").forward(req, resp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
+	}
+	public void directBuy(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		String goodID=req.getParameter("goodid");
+		float price =Float.parseFloat(req.getParameter("price"));
+		int num=1;
+		if(req.getParameter("num")!=null){
+			num=Integer.parseInt(req.getParameter("num"));
+		}
+		HttpSession session=req.getSession();
+		String username=(String)session.getAttribute("username");
+		/*PrintWriter out=resp.getWriter();
+		out.println(goodID);
+		out.print(price);*/
+		List<OrderItemBean> itemsOrder=new ArrayList<OrderItemBean>();
+		OrderItemBean orderItemBean=new OrderItemBean();
+		orderItemBean.setCount(num);
+		orderItemBean.setGoodId(goodID);
+		orderItemBean.setGoodsPrice(price);
+		itemsOrder.add(orderItemBean);
+		OrderBean orderBean=new OrderBean();
+		orderBean.setItems(itemsOrder);
+		orderBean.setCount(num);
+		orderBean.setTypeCount(1);
+		orderBean.setTotalPrice(price*num);
+		orderBean.setOrderID(username);
+		session.setAttribute("orderBean", orderBean);
+		req.getRequestDispatcher("/frontend/order.jsp").forward(req, resp);
+	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
@@ -132,6 +182,8 @@ public class CreateOrderServlet extends HttpServlet{
 			insertIntoTable(req,resp);
 		}else if("showOrders".equals(task)){
 			showOrders(req, resp);
+		}else if("directBuy".equals(task)) {
+			directBuy(req, resp);
 		}
 	}
 

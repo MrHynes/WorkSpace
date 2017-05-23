@@ -1,7 +1,0 @@
-package pers.qiqcheng.ec.filter;
-
-import javax.servlet.Filter;
-
-public class GetAllGoodsFilter implements Filter {
-
-}

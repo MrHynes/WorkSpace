@@ -105,7 +105,7 @@
 								id="showInfo">资料显示</a></li>
 							<li><a href="#A" data-toggle="tab" id="alterInfo">资料修改</a></li>
 							<li><a href="#C" data-toggle="tab">密码修改</a></li>
-							<li><a href="#D" data-toggle="tab">我的订单</a></li>
+							<li><a href="<%=basePath %>frontend/createOrder?task=showOrders" >我的订单</a></li>
 					</ul>
 					</div>
 				</div>
@@ -249,11 +249,6 @@
 										<div class='col-lg-5'><input type='reset' id='btnreset' class='btn btn-warning btn-block'></input></div>
 									</form>
 								</div>
-							</div>
-							<div class="tab-pane" id="D">
-								<legend>
-									<label><span class="glyphicon glyphicon-plus"></span>&nbsp;我的订单</label>
-								</legend>
 							</div>
 						</div>
 					</div>

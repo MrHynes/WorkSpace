@@ -1,0 +1,10 @@
+package pers.qiqcheng.ec.bean;
+
+public class ShowOrderBean {
+	private String orderId;
+	private String orderTime;
+	private String orderStatus;
+	private Integer sum;
+	private Float totalPrice;
+
+}
