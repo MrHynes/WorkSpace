@@ -26,19 +26,19 @@ public class Select {
 	private static int select(int[] arr, int low, int high, int k) {
 		int q;
 		Sort sort=new Sort();
-		int p = high - low + 1;// ×ÓÊı×é¹æÄ£
+		int p = high - low + 1;// å­æ•°ç»„è§„æ¨¡
 		if (p < 12) {//44
 			sort.QuickSort(arr, low, high);
 			return arr[k-1];
 		}else{
-			q=(int) Math.floor(p/5);//arr·Ö³Éq×é
+			q=(int) Math.floor(p/5);//arråˆ†æˆqç»„
 			int M[]=new int[q];
 			//System.out.println("q="+q);
 			for(int i=1;i<=q;i++){
-				sort.QuickSort(arr, (i-1)*5, 5*i-1);//arr·Ö³Éq×é£¬Ã¿×é¸÷×ÔÅÅĞò
-				M[i-1]=arr[i*5-3];//¸÷×éÖĞÏîµÄ¼¯ºÏ
+				sort.QuickSort(arr, (i-1)*5, 5*i-1);//arråˆ†æˆqç»„ï¼Œæ¯ç»„å„è‡ªæ’åº
+				M[i-1]=arr[i*5-3];//å„ç»„ä¸­é¡¹çš„é›†åˆ
 			}
-			int mm=select(M, 0, q-1,(int)Math.rint(q-1/2));//ÖĞÏî¼¯ºÏµÄÖ÷Ôª 46
+			int mm=select(M, 0, q-1,(int)Math.rint(q-1/2));//ä¸­é¡¹é›†åˆçš„ä¸»å…ƒ 46
 			int lm=0,em=0,gm=0;
 			int A1[]=new int[20];
 			int A2[]=new int[20];

@@ -1,12 +1,12 @@
 package Chapter07;
 /**
- * Çó¾ØÕóÏà³ËµÄÊıÁ¿³Ë·¨×îĞ¡´ÎÊı£¬ÒÔ¼°×îÓÅ³Ë·¨Ë³Ğò,×îºóÊä³ö³Ë»ı
- * ¾ØÕóÁ´³ËÎÊÌâ
+ * æ±‚çŸ©é˜µç›¸ä¹˜çš„æ•°é‡ä¹˜æ³•æœ€å°æ¬¡æ•°ï¼Œä»¥åŠæœ€ä¼˜ä¹˜æ³•é¡ºåº,æœ€åè¾“å‡ºä¹˜ç§¯
+ * çŸ©é˜µé“¾ä¹˜é—®é¢˜
  * @author Buer
  *
  */
-//r[i]Êı×é£¬±íÊ¾¾ØÕóµÄ½×£¬ÈçAµÄ¾ØÕóÎª2*3£¬BµÄ¾ØÕóÎª3*4£¬ÄÇÃ´Êı×ér[]={2,3,4};
-//×îÓÅË³ĞòµÄĞÅÏ¢Êı×éS[1..n][ 1..n]¡£
+//r[i]æ•°ç»„ï¼Œè¡¨ç¤ºçŸ©é˜µçš„é˜¶ï¼Œå¦‚Açš„çŸ©é˜µä¸º2*3ï¼ŒBçš„çŸ©é˜µä¸º3*4ï¼Œé‚£ä¹ˆæ•°ç»„r[]={2,3,4};
+//æœ€ä¼˜é¡ºåºçš„ä¿¡æ¯æ•°ç»„S[1..n][ 1..n]ã€‚
 public class Matchain1 {
 	public static int min(int x,int y){
 		return x<y ? x:y;
@@ -33,7 +33,7 @@ public class Matchain1 {
 				}
 			}
 		}
-		//Êä³ö¾ØÕóÁ´
+		//è¾“å‡ºçŸ©é˜µé“¾
 		for(int i=1;i<=n;i++){
 			for(int j1=i;j1<=n;j1++){
 				System.out.print(C[i][j1]+" ");
@@ -41,8 +41,8 @@ public class Matchain1 {
 			System.out.println();
 		}
 		//return C[1][n];
-		System.out.println("×îĞ¡³Ë·¨´ÎÊıÎª£º"+C[1][n]);
-		System.out.println("×îÓÅË³Ğò£º");
+		System.out.println("æœ€å°ä¹˜æ³•æ¬¡æ•°ä¸ºï¼š"+C[1][n]);
+		System.out.println("æœ€ä¼˜é¡ºåºï¼š");
 		for(int i=1;i<=n;i++){
 			for(int j1=i;j1<=n;j1++){
 				System.out.print(S[i][j1]+" ");
@@ -52,13 +52,13 @@ public class Matchain1 {
 		//matchin_product(C[1][n], S,1,n);
 		
 	}
-	//Çó³Ë»ı
+	//æ±‚ä¹˜ç§¯
 	//public static int  matchin_product(int n,int S[][],int i,int j){
 		/*if i=j then return Mi
 		else
 			A=matchain_product(i, S[i, j]-1)
 			B=matchain_product(S[i, j], j)
-			C=multiply( A , B)  //¼ÆËãÁ½¸ö¾ØÕó³Ë»ıC=AB¡£
+			C=multiply( A , B)  //è®¡ç®—ä¸¤ä¸ªçŸ©é˜µä¹˜ç§¯C=ABã€‚
 		return C*/
 	//}
 	public static void main(String[] args) {

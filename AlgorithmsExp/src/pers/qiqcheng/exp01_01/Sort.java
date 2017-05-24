@@ -2,7 +2,7 @@ package pers.qiqcheng.exp01_01;
 
 public class Sort {
 	/*
-	 * ¿ìËÙÅÅĞò
+	 * å¿«é€Ÿæ’åº
 	 */
 	public void QuickSort(int a[],int left,int right){
 		if(left>right) return;

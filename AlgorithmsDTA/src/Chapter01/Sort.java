@@ -1,7 +1,7 @@
 package Chapter01;
 
 public class Sort {
-	//ºÏ²¢Á½¸öÓĞĞòÊı×é
+	//åˆå¹¶ä¸¤ä¸ªæœ‰åºæ•°ç»„
 	public int[] Merge(int a[],int b[]){
 		int i=0,j=0,k=0;
 		int c[]=new int[a.length+b.length];
@@ -17,7 +17,7 @@ public class Sort {
 				j++;
 			}
 		}
-		//½«Ê£ÏÂµÄÈ«²¿²åÈëµ½Êı×écÖĞ
+		//å°†å‰©ä¸‹çš„å…¨éƒ¨æ’å…¥åˆ°æ•°ç»„cä¸­
 		if(i==a.length){
 			for(;j<b.length;j++){
 				c[k]=b[j];
@@ -32,7 +32,7 @@ public class Sort {
 		return c;
 	}
 	/**
-	 * ºÏ²¢Á½¸öÓĞĞòÊı×éA[p..q] A[p+1..r]
+	 * åˆå¹¶ä¸¤ä¸ªæœ‰åºæ•°ç»„A[p..q] A[p+1..r]
 	 * @param a
 	 */
 	public void Merge(int a[],int low,int mid,int high){
@@ -62,22 +62,22 @@ public class Sort {
 		for(int i=low;i<=high;i++)
 			a[i]=b[i];
 	}
-	//Ñ¡ÔñÅÅĞò
+	//é€‰æ‹©æ’åº
 	public void selectionSort(int a[]){
 		int k,temp,i;
 		for(i=0;i<a.length-1;i++){
 			k=i;
-			for(int j=i+1;j<a.length;j++){//Ñ¡³ö×îĞ¡µÄÔªËØ
-				if(a[k]>a[j]) k=j;//kÊÇ×îĞ¡ÔªËØµÄÏÂ±ê
+			for(int j=i+1;j<a.length;j++){//é€‰å‡ºæœ€å°çš„å…ƒç´ 
+				if(a[k]>a[j]) k=j;//kæ˜¯æœ€å°å…ƒç´ çš„ä¸‹æ ‡
 			}
-			if(k!=i){//×îĞ¡ÔªËØºÍ×îÇ°ÃæµÄÔªËØ½»»»
+			if(k!=i){//æœ€å°å…ƒç´ å’Œæœ€å‰é¢çš„å…ƒç´ äº¤æ¢
 				temp=a[i];
 				a[i]=a[k];
 				a[k]=temp;
 			}
 		}
 	}
-	//²åÈëÅÅĞò5,3,1,7
+	//æ’å…¥æ’åº5,3,1,7
 	public void insertionSort(int a[]){
 		int x,j;
 		for(int i=1;i<a.length;i++){
@@ -92,12 +92,12 @@ public class Sort {
 	}
 	
 	/*
-	 * Ã°ÅİÅÅĞò
+	 * å†’æ³¡æ’åº
 	 */
 	public void bubbleSort(int a[]){
 		int temp;
-		for(int i=1;i<a.length;i++){//×Ü¹²ĞèÒª¸øn-1¸öÔªËØÅÅĞò
-			for(int j=0;j<a.length-i;j++){//±È½Ï´ÎÊıÊÇa.length-i
+		for(int i=1;i<a.length;i++){//æ€»å…±éœ€è¦ç»™n-1ä¸ªå…ƒç´ æ’åº
+			for(int j=0;j<a.length-i;j++){//æ¯”è¾ƒæ¬¡æ•°æ˜¯a.length-i
 				if(a[j]>a[j+1]){
 					temp=a[j];
 					a[j]=a[j+1];
@@ -107,7 +107,7 @@ public class Sort {
 		}
 	}
 	/**
-	 * ¿ìËÙÅÅĞò
+	 * å¿«é€Ÿæ’åº
 	 */
 	public void quickSort(int a[],int left,int right){
 		if(left>right) return;
@@ -115,9 +115,9 @@ public class Sort {
 		int temp=a[left];
 		int t;
 		/**
-		 * //ÉÚ±øjÔÚÓÒ±ß£¬ÉÚ±øiÔÚ×ó±ß£¬jÏÈÏòÇ°×ß£¬ÈôÕÒµ½Ò»¸öĞ¡ÓÚa[left]µÄÔªËØ¾Í£¬Í£Ö¹
-		 * È»ºóÉÚ±øiÏòÓÒ×ß£¬Èç¹ûÕÒµ½Ò»¸ö´óÓÚa[left]µÄÔªËØ£¬¾ÍÍ£Ö¹£¬È»ºó»¥»»a[i] a[j].
-		 * Ö±µ½iºÍjÏàÓö£¬½«ÏàÓöµÄÔªËØºÍa[left]»¥»»¡£
+		 * //å“¨å…µjåœ¨å³è¾¹ï¼Œå“¨å…µiåœ¨å·¦è¾¹ï¼Œjå…ˆå‘å‰èµ°ï¼Œè‹¥æ‰¾åˆ°ä¸€ä¸ªå°äºa[left]çš„å…ƒç´ å°±ï¼Œåœæ­¢
+		 * ç„¶åå“¨å…µiå‘å³èµ°ï¼Œå¦‚æœæ‰¾åˆ°ä¸€ä¸ªå¤§äºa[left]çš„å…ƒç´ ï¼Œå°±åœæ­¢ï¼Œç„¶åäº’æ¢a[i] a[j].
+		 * ç›´åˆ°iå’Œjç›¸é‡ï¼Œå°†ç›¸é‡çš„å…ƒç´ å’Œa[left]äº’æ¢ã€‚
 		 */
 		while(i!=j){			
 			while(i<j&&a[j]>=temp)
@@ -136,7 +136,7 @@ public class Sort {
 		quickSort(a, i+1, right);
 	}
 	/**
-	 * ×Ôµ×ÏòÉÏºÏ²¢ÅÅĞò
+	 * è‡ªåº•å‘ä¸Šåˆå¹¶æ’åº
 	 */
 	public void bottomupSort(int a[]){
 		int t=1;
@@ -154,7 +154,7 @@ public class Sort {
 		}
 	}
 	/**
-	 * ×Ô¶¥ÏòÏÂºÏ²¢ÅÅĞò
+	 * è‡ªé¡¶å‘ä¸‹åˆå¹¶æ’åº
 	 */
 	public void mergeSort(int a[],int low,int high){
 		int mid;

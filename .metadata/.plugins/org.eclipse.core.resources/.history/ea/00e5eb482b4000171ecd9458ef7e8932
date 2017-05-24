@@ -1,0 +1,10 @@
+package pers.qiqcheng.exp04_02;
+class A{
+	public static int f(int x){
+		return x*x;
+	}
+}
+
+public class test {
+
+}

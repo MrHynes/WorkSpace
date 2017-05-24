@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.sun.org.apache.xalan.internal.xsltc.dom.Filter"/>
-<fullyQualifiedTypeName name="jdk.nashorn.internal.objects.DataPropertyDescriptor"/>
-<fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.HttpserverMessages"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.UserBean"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.xpath.internal.operations.Bool"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.tools.MD5Code"/>
 <fullyQualifiedTypeName name="sun.awt.PaintEventDispatcher"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.interceptors.SessionAssociationInterceptor"/>
 <fullyQualifiedTypeName name="com.mysql.fabric.xmlrpc.base.Params"/>
@@ -14,8 +8,6 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.messaging.saaj.util.FastInfosetReflection"/>
 <fullyQualifiedTypeName name="Replace"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="javax.xml.stream.events.EndElement"/>
 <fullyQualifiedTypeName name="org.omg.PortableServer.ID_ASSIGNMENT_POLICY_ID"/>
@@ -60,4 +52,12 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.OrderItemBean"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="test.B"/>
+<fullyQualifiedTypeName name="test.A"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.exp04_02.A"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.exp04_02.B"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="javax.swing.text.DefaultStyledDocument"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>

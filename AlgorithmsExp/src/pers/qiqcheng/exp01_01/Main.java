@@ -24,7 +24,7 @@ public class Main {
 	}
 	
 	/**
-	 * 判断相邻元素是否相同
+	 * 鍒ゆ柇鐩搁偦鍏冪礌鏄惁鐩稿悓
 	 * @param a
 	 * @return
 	 */
