@@ -1,9 +1,12 @@
 package pers.qiqcheng.ec.bean;
 
+
 public class OrderItemBean {
 	private String goodId;
 	private int count;
 	private float goodsPrice;
+	
+	
 	
 	public String getGoodId() {
 		return goodId;

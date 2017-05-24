@@ -7,8 +7,8 @@ import javax.servlet.http.HttpSession;
 
 public class CartBean {
 	private List<CartItemBean> items;
-	private Integer count;
-	private Float totalPrice;
+	private Integer count;//商品数量之和
+	private Float totalPrice;//所有商品价格之和
 	private CartBean(){
 		items = new ArrayList<CartItemBean>();
 		count = 0;
@@ -21,6 +21,14 @@ public class CartBean {
 			session.setAttribute("cartBean", cartBean);
 		}
 		return cartBean;	
+	}
+	public static CartBean getCartOrderBean(HttpSession session){
+		CartBean cartOrderBean=(CartBean)session.getAttribute("cartOrderBean");
+		if(cartOrderBean==null){
+			cartOrderBean=new CartBean();
+			session.setAttribute("cartOrderBean",cartOrderBean);
+		}
+		return cartOrderBean;	
 	}
 	public CartItemBean isItemExits(String goodID){
 		for (CartItemBean cartItemBean : items) {

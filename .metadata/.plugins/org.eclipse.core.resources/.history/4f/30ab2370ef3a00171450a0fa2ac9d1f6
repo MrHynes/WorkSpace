@@ -1,9 +1,0 @@
-
-public class Replace {
-	public String replace(String str,char src,char dest){
-		for(int i=0;i<str.length();i++){
-			
-		}
-	}
-
-}

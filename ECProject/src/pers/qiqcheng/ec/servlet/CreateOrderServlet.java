@@ -16,6 +16,7 @@ import net.sf.ezmorph.array.ObjectArrayMorpher;
 import pers.qiqcheng.ec.bean.CartBean;
 import pers.qiqcheng.ec.bean.CartItemBean;
 import pers.qiqcheng.ec.bean.OrderBean;
+import pers.qiqcheng.ec.bean.OrderInfoBean;
 import pers.qiqcheng.ec.bean.OrderItemBean;
 import pers.qiqcheng.ec.bean.ShowOrderBean;
 import pers.qiqcheng.ec.factory.DaoFactory;
@@ -168,6 +169,40 @@ public class CreateOrderServlet extends HttpServlet{
 		session.setAttribute("orderBean", orderBean);
 		req.getRequestDispatcher("/frontend/order.jsp").forward(req, resp);
 	}
+	public void showDetailOrder(HttpServletRequest req,HttpServletResponse resp)throws ServletException,IOException{
+		String orderID=req.getParameter("orderid");
+		String params[]={orderID};
+		HttpSession session=req.getSession();
+		CartBean cartOrderBean=CartBean.getCartOrderBean(session);
+		CartItemBean cartItemBean=null;
+		List<CartItemBean> good=new ArrayList<CartItemBean>();
+		//查询订单中的信息
+		String sql="select * from t_order where orderid=?";
+		//查询订单中的书本信息
+		String sql2="select t_order_detail.goodid,num,goodname,t_goods.goodprice from "
+				+ "t_order_detail,t_goods where orderid=? and t_order_detail.goodid=t_goods.goodid";
+		try {
+			ResultSet rs=DaoFactory.getUserDaoInstances().doSelect(sql, params);
+			ResultSet rs2=DaoFactory.getUserDaoInstances().doSelect(sql2, params);
+			while(rs2.next()){
+				cartItemBean =new CartItemBean();
+				cartItemBean.setGoodID(rs2.getString(1));
+				cartItemBean.setGoodName(rs2.getString(3));
+				cartItemBean.setGoodPrice(rs2.getFloat(4));
+				cartItemBean.setCount(rs2.getInt(2));
+				good.add(cartItemBean);
+			}
+			OrderInfoBean orderInfoBean=new OrderInfoBean();
+			orderInfoBean=orderInfoBean.setOrderInfo(rs);
+			session.setAttribute("orderInfoBean", orderInfoBean);
+			cartOrderBean.setItems(good);
+			session.setAttribute("cartOrderBean",cartOrderBean);
+			req.getRequestDispatcher("/frontend/showdetailorder.jsp").forward(req, resp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
@@ -184,6 +219,8 @@ public class CreateOrderServlet extends HttpServlet{
 			showOrders(req, resp);
 		}else if("directBuy".equals(task)) {
 			directBuy(req, resp);
+		}else if("showDetailOrder".equals(task)){
+			showDetailOrder(req,resp);
 		}
 	}
 

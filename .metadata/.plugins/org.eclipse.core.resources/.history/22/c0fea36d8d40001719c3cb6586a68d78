@@ -1,0 +1,43 @@
+package pers.qiqcheng.ec.bean;
+
+public class OrderItemBean {
+	private String goodId;
+	private int count;
+	private float goodsPrice;
+	
+	//新增
+	private String orderTime;
+	private String payMent;
+	private String sendWay;
+	private String Receiver;
+	private String telePhone;
+	private String Email;
+	private String postCode;
+	private String address;
+	private String orderStatus;
+	private String checker;
+	private String checkTime;
+	//
+	
+	//
+	public String getGoodId() {
+		return goodId;
+	}
+	public void setGoodId(String goodId) {
+		this.goodId = goodId;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public float getGoodsPrice() {
+		return goodsPrice;
+	}
+	public void setGoodsPrice(float goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
+	
+
+}

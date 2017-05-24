@@ -1,0 +1,30 @@
+package pers.qiqcheng.ec.bean;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class OrderInfoBean {
+	//新增
+		private String orderTime;
+		private String payMent;
+		private String sendWay;
+		private String Receiver;
+		private String telePhone;
+		private String Email;
+		private String postCode;
+		private String address;
+		private String orderStatus;
+		private String checker;
+		private String checkTime;
+		//新增
+		public OrderItemBean setOrderInfo(ResultSet rs){
+			try {
+				while(rs.next()){
+					this.
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return this;
+		}
+}

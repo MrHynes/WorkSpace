@@ -1,0 +1,96 @@
+package pers.qiqcheng.ec.bean;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class OrderInfoBean {
+		private String orderID;
+		private String orderTime;
+		private String payMent;
+		private String sendWay;
+		private String Receiver;
+		private String telePhone;
+		private String Email;
+		private String postCode;
+		private String address;
+		private String orderStatus;
+		private String checker;
+		private String checkTime;
+		//新增
+		public OrderInfoBean setOrderInfo(ResultSet rs){
+			try {
+				while(rs.next()){
+					this.
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return this;
+		}
+		public String getOrderTime() {
+			return orderTime;
+		}
+		public void setOrderTime(String orderTime) {
+			this.orderTime = orderTime;
+		}
+		public String getPayMent() {
+			return payMent;
+		}
+		public void setPayMent(String payMent) {
+			this.payMent = payMent;
+		}
+		public String getSendWay() {
+			return sendWay;
+		}
+		public void setSendWay(String sendWay) {
+			this.sendWay = sendWay;
+		}
+		public String getReceiver() {
+			return Receiver;
+		}
+		public void setReceiver(String receiver) {
+			Receiver = receiver;
+		}
+		public String getTelePhone() {
+			return telePhone;
+		}
+		public void setTelePhone(String telePhone) {
+			this.telePhone = telePhone;
+		}
+		public String getEmail() {
+			return Email;
+		}
+		public void setEmail(String email) {
+			Email = email;
+		}
+		public String getPostCode() {
+			return postCode;
+		}
+		public void setPostCode(String postCode) {
+			this.postCode = postCode;
+		}
+		public String getAddress() {
+			return address;
+		}
+		public void setAddress(String address) {
+			this.address = address;
+		}
+		public String getOrderStatus() {
+			return orderStatus;
+		}
+		public void setOrderStatus(String orderStatus) {
+			this.orderStatus = orderStatus;
+		}
+		public String getChecker() {
+			return checker;
+		}
+		public void setChecker(String checker) {
+			this.checker = checker;
+		}
+		public String getCheckTime() {
+			return checkTime;
+		}
+		public void setCheckTime(String checkTime) {
+			this.checkTime = checkTime;
+		}
+}

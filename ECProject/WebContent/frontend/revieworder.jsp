@@ -65,7 +65,7 @@
 								<td><%=showOrderBean.getSum()%></td>
 								<td>${price}</td>
 								<td><%=showOrderBean.getOrderStatus()%></td>
-								<td><a><input type="button" class="btn btn-success" style="height: 30px;" value="查看订单"></a></td>
+								<td><a href="<%=basePath %>frontend/createOrder?task=showDetailOrder&orderid=<%=showOrderBean.getOrderId()%>"><input type="button" class="btn btn-success" style="height: 30px;" value="查看订单"></a></td>
 							</tr>
 							<%
 								}
