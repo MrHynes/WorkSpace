@@ -155,5 +155,6 @@ List<CartItemBean> list=cartBean.getItems();
 		</div>
 	</div>
 </div>
+<jsp:include page="common/foot.jsp"></jsp:include>
 </body>
 </html>

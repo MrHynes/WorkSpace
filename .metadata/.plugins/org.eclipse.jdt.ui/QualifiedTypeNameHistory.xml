@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="net.sf.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.messaging.saaj.util.FastInfosetReflection"/>
@@ -24,7 +23,6 @@
 <fullyQualifiedTypeName name="javax.servlet.Filter"/>
 <fullyQualifiedTypeName name="com.sun.prism.shader.DrawEllipse_Color_AlphaTest_Loader"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.I2F"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.bcel.internal.generic.NEW"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
@@ -49,7 +47,6 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.omg.PortableServer.REQUEST_PROCESSING_POLICY_ID"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.factory.DaoFactory"/>
-<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.CartBean"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -59,5 +56,8 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.OrderItemBean"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.OrderInfoBean"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ScheduledExecutorService"/>
 </qualifiedTypeNameHistroy>

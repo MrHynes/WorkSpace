@@ -98,7 +98,7 @@
 <%
 	String name = (String) session.getAttribute("username");
 %>
-<body style="background-color: #f4f4f4">
+<body style="background-color: #E2E2E2">
 	<div class="navbar navbar-inverse">
 		<!--#2ea3fd-->
 		<ul class="nav navbar-nav">

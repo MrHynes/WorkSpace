@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user name="SuperAdmin" pwd="888888"></user>
+	<user name="Admin" pwd="888888"></user>
+	<user name="Test" pwd="888888"></user>
+</users>
+<!-- 
+	超级管理员：SuperAdmin，密码：888888
+	普通管理员：Admin，密码：888888
+	注册用户：Test，密码：888888 -->

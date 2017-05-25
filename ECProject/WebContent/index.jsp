@@ -60,7 +60,7 @@
 	});
  });
 </script>
-<body style="background-color: #f4f4f4">
+<body style="background-color: #E2E2E2">
 	<!--导航栏 -->
 	<jsp:include page="common/head.jsp"></jsp:include>
 	<%

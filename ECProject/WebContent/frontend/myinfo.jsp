@@ -26,7 +26,7 @@
 	var i=0;
 	$(function() {
 		$("#showInfo").click(function() {
-				$("#username").attr("disable",true);
+				$("#username").attr("disabled",true);
 				$("select").attr("disabled", true);
 				$("#relname").attr("disabled", true);
 				$("#birthday").attr("disabled", true);

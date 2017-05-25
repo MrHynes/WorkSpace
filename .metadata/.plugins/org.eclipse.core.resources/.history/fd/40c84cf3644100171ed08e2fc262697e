@@ -1,0 +1,143 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>后台管理</title>
+<link href="<%=basePath %>css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="<%=basePath %>css/font-awesome.css" rel="stylesheet" />
+<link href="<%=basePath %>css/basic.css" rel="stylesheet" />
+<link href="<%=basePath %>css/custom.css" rel="stylesheet" />
+<script src="<%=basePath %>js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="<%=basePath %>js/bootstrap.min.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<script src="<%=basePath %>js/jquery.metisMenu.js"></script>
+<script src="<%=basePath %>js/custom.js"></script> 
+<script type="text/javascript">
+$(function() {
+	$("#exit").click(function() {
+		//http://www.weixuehao.com/archives/415 中文
+		bootbox.confirm({
+			size : "small",
+			message : "确认退出系统吗?",
+			callback : function(result) {
+				if (result) {
+					location.href = "/ECProject/backend/login.jsp";
+				} else {
+					return;
+				}
+			}
+		});
+	});
+	$("#exit2").click(function() {
+		bootbox.confirm({
+			size : "small",
+			message : "确认退出系统吗?",
+			callback : function(result) {
+				if (result) {
+					location.href = "/ECProject/backend/login.jsp";
+				} else {
+					return;
+				}
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0px;;background-color:#00C979;">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="" style="color: white;">在线购物系统后台管理</a>
+            </div>
+            <div class="header-right">
+                <a class="btn btn-danger" title="New Task"><b id="exit">退出系统</b><i class="fa fa-sign-in "></i></a>
+            </div>
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                        	<img src="../simg/9787894204622.jpg" class="img-thumbnail" /></br>
+                        	<div class="inner-text"> 管理员姓名：${sessionScope.adminName } </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard "></i>商品管理 <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                        	<li>
+                                <a href="#A" data-toggle="tab"><i class="fa fa-toggle-on"></i>商品类别管理</a>
+                            </li>
+                             <li>
+                                <a href="#B"><i class="fa fa-bell "></i>商品信息管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-desktop "></i>用户管理 <span class="fa arrow"></span></a>
+                        	 <ul class="nav nav-second-level">
+                             <li>
+                                <a href=""><i class="fa fa-circle-o "></i>注册用户管理</a>
+                            </li>
+                             <li>
+                                <a href=""><i class="fa fa-code "></i>系统用户管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="#"><i class="fa fa-yelp "></i>个人资料管理 <span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href=""><i class="fa fa-coffee"></i>显示个人资料</a>
+                            </li>
+                            <li>
+                                <a href=""><i class="fa fa-flash "></i>个人资料修改</a>
+                            </li>
+                             <li>
+                                <a href=""><i class="fa fa-key "></i>密码修改</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="table.html"><i class="fa fa-flash "></i>订单管理 <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                        	 <li>
+                                <a href=""><i class="fa fa-recycle "></i>订单管理</a>
+                            </li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <a id="exit2"><i class="fa fa-sign-in "></i>退出系统 <span class="fa arrow"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+       
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">商品管理</h1>
+                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
+                    </div>
+                    <div class="tab-content">
+                    	<div class="tab-pane active fade in" id="A">
+                    		123
+                    	</div>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </div>
+    <jsp:include page="../common/foot.jsp"></jsp:include>           
+</body>
+</html>

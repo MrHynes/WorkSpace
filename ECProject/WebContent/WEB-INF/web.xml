@@ -172,4 +172,15 @@
 	<listener>
 		<listener-class>pers.qiqcheng.ec.listener.SessionListener</listener-class>
 	</listener>
+	
+	
+	<servlet>
+		<servlet-name>admin_login</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.admin.AdminLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin_login</servlet-name>
+		<url-pattern>/backend/admlogin</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
