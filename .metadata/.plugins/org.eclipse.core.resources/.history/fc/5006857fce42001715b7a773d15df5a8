@@ -1,0 +1,22 @@
+package pers.qiqcheng.ec.bean.admin;
+
+import java.util.List;
+
+public class TypeBean {
+	private String typeID;
+	private List<TypeItemBean> items=null;
+	public String getTypeID() {
+		return typeID;
+	}
+	public void setTypeID(String typeID) {
+		this.typeID = typeID;
+	}
+	public List<TypeItemBean> getItems() {
+		return items;
+	}
+	public void setItems(List<TypeItemBean> items) {
+		this.items = items;
+	}
+	
+
+}

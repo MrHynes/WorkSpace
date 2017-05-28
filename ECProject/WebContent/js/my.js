@@ -41,6 +41,19 @@ $(function () {
                     }
                 }
             },
+            tyepName: {
+                message: '类别名验证失败',
+                validators: {
+                    notEmpty: {
+                        message: '类别名不能为空'
+                    },
+                    stringLength: {
+                        min: 1,
+                        max: 20,
+                        message: '类别名长度必须在1到20位之间'
+                    }
+                }
+            },
             password: {
                 validators: {
                     notEmpty: {

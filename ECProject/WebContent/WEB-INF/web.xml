@@ -183,4 +183,12 @@
 		<url-pattern>/backend/admlogin</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>b_getTypes</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.admin.GetTypeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>b_getTypes</servlet-name>
+		<url-pattern>/backend/getTypes</url-pattern>
+	</servlet-mapping>
 </web-app>

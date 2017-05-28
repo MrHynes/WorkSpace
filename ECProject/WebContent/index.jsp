@@ -24,13 +24,6 @@
 
 </head>
 <script>
-/* function showimage(source)
-{
-  $("#ShowImage_Form").find("#img_show").html("<image src='"+source+"' class='carousel-inner img-responsive img-rounded' />");
-  $("#ShowImage_Form").modal();
-}
- */	
-	
  $(function () {
 	$("button").click(function () {
 		var goodID=$("#goodID").val();

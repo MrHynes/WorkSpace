@@ -71,7 +71,7 @@ public class AdminLoginServlet extends HttpServlet {
                 }
             }
             if(flag){
-            	req.getRequestDispatcher("/backend/index.jsp").forward(req, resp);
+            	req.getRequestDispatcher("/backend/getTypes?task=getTypes").forward(req, resp);
             }else{
             	resp.sendRedirect("http://localhost:8080/ECProject/common/error.jsp");
             }

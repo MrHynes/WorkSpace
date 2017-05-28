@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 /**
- * 加载数据库驱动程序，并连接数据库
+ * 鍔犺浇鏁版嵁搴撻┍鍔ㄧ▼搴忥紝骞惰繛鎺ユ暟鎹簱
  * @author Buer
  *
  */
