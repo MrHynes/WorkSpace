@@ -1,0 +1,12 @@
+package pers.qiqcheng.springmvc.first;
+
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * 入门程序
+ * @author Buer
+ *
+ */
+public class ItemController1 implements Controller {
+
+}

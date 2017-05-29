@@ -1,0 +1,10 @@
+package pers.qiqcheng.springmvc.first;
+
+/**
+ * 入门程序
+ * @author Buer
+ *
+ */
+public class ItemController1  {
+
+}

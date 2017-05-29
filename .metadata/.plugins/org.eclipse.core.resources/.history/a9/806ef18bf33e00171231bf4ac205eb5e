@@ -1,9 +1,0 @@
-package pers.qiqcheng.ec.bean;
-
-public class OrderItemBean {
-	private String orderID;
-	private String goodId;
-	private int count;
-	private float goodsPrice; 
-
-}

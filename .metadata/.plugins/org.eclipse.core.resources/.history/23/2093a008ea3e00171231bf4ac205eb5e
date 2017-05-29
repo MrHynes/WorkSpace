@@ -1,9 +1,0 @@
-package pers.qiqcheng.ec.bean;
-
-import java.util.Date;
-
-public class OrderBean {
-	private String orderID;
-	
-
-}

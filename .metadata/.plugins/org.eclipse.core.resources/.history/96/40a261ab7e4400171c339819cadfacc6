@@ -1,0 +1,23 @@
+package pers.qiqcheng.springmvc.po;
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * 入门程序
+ * @author Buer
+ *
+ */
+public class ItemController1 implements Controller{
+
+	@Override
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//使用静态数据，将商品信息列表显示在jsp页面
+		return null;
+	}
+
+}

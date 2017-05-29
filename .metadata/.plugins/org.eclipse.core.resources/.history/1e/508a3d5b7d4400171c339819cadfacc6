@@ -1,0 +1,30 @@
+package pers.qiqcheng.springmvc.first;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+
+import org.springframework.web.portlet.ModelAndView;
+import org.springframework.web.portlet.mvc.Controller;
+
+/**
+ * 入门程序
+ * @author Buer
+ *
+ */
+public class ItemController1 implements Controller {
+
+	@Override
+	public void handleActionRequest(ActionRequest arg0, ActionResponse arg1) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ModelAndView handleRenderRequest(RenderRequest arg0, RenderResponse arg1) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
