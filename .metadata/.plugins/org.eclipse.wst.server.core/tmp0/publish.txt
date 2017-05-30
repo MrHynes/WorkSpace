@@ -1,6 +1,6 @@
 #Tomcat publish data
-#Mon May 29 23:46:37 CST 2017
+#Tue May 30 18:21:45 CST 2017
 org.eclipse.jst.jee.server\:FirstSpringMVC=D\:\\tomcat\\webapps\\FirstSpringMVC
+org.eclipse.jst.jee.server\:/binary\:F\:\\WorkSpace\\FirstSpringMVC\\WebContent\\WEB-INF\\lib\\spring-web-4.3.0.RELEASE.jar=D\:\\tomcat\\webapps\\FirstSpringMVC\\WEB-INF\\lib\\spring-web-4.3.0.RELEASE.jar
 org.eclipse.jst.jee.server\:ECProject=D\:\\tomcat\\webapps\\ECProject
 org.eclipse.jst.jee.server\:OnlineChatting=D\:\\tomcat\\webapps\\OnlineChatting
-org.eclipse.jst.jee.server\:/binary\:F\:\\WorkSpace\\FirstSpringMVC\\WebContent\\WEB-INF\\lib\\spring-web-3.2.0.RELEASE.jar=D\:\\tomcat\\webapps\\FirstSpringMVC\\WEB-INF\\lib\\spring-web-3.2.0.RELEASE.jar

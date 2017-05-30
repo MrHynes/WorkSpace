@@ -1,0 +1,11 @@
+package pers.qiqcheng.springmvc.third;
+
+public class StudentServiceImpl implements StudentService {
+
+	@Override
+	public StudentModel getStudent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

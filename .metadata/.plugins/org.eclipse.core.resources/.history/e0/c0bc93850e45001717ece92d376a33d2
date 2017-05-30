@@ -1,0 +1,5 @@
+package pers.qiqcheng.springmvc.third;
+
+public class StudentServiceImpl implements StudentService {
+
+}

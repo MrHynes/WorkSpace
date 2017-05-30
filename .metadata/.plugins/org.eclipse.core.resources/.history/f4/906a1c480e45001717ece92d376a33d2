@@ -1,0 +1,7 @@
+package pers.qiqcheng.springmvc.third;
+
+public class StudentModel {
+	private String name;
+	private Integer age;
+
+}
