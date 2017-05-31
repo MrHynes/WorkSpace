@@ -27,6 +27,9 @@ public class GetGoodsByType extends HttpServlet{
 		doPost(req, resp);
 	}
 
+	/**
+	 * 根据商品类型查询商品
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//req获得majorTypeId，typeID

@@ -1,0 +1,9 @@
+/**
+ * Created by Buer on 2017/4/24.
+ */
+
+$(function () {
+    $("#modify").click(function () {
+        $("#address").removeAttr("disabled");
+    });
+});

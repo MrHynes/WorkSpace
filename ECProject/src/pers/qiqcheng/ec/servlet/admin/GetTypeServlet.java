@@ -18,8 +18,8 @@ import pers.qiqcheng.ec.factory.DaoFactory;
 
 public class GetTypeServlet extends HttpServlet{
 	public void getTypes(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String sql="select typeid,typename from t_goodstype where majorclassid is null";
-		String sql2="select typeid,typename from t_goodstype where typeid like ?";
+		String sql="select typeid,typename from t_goodstype where majorclassid is null";//查询父类别
+		String sql2="select typeid,typename from t_goodstype where typeid like ?";//查询父类的子类别
 		String params[]={};
 		ArrayList<TypeBean> types=new ArrayList<TypeBean>();
 		TypeBean typeBean=null;
@@ -27,14 +27,14 @@ public class GetTypeServlet extends HttpServlet{
 		TypeItemBean item=null;
 		HttpSession session=req.getSession();
 		try {
-			ResultSet rs=DaoFactory.getUserDaoInstances().doSelect(sql, params);
-			while(rs.next()){
+			ResultSet rs=DaoFactory.getUserDaoInstances().doSelect(sql, params);//查询父类，保存在rs中
+			while(rs.next()){//遍历父类，同时将其子类查询出来，然后一起保存在集合types中
 				typeBean=new TypeBean();
 				typeBean.setTypeID(rs.getInt(1));
 				typeBean.setTypeName(rs.getString(2));
 				items=new ArrayList<TypeItemBean>();
 				String params2[]={rs.getInt(1)+"_"};
-				ResultSet rs2=DaoFactory.getUserDaoInstances().doSelect(sql2, params2);
+				ResultSet rs2=DaoFactory.getUserDaoInstances().doSelect(sql2, params2);//查询子类
 				while(rs2.next()){
 					item=new TypeItemBean();
 					item.setTypeID(rs2.getInt(1));
@@ -45,8 +45,8 @@ public class GetTypeServlet extends HttpServlet{
 				types.add(typeBean);
 				
 			}
-			session.setAttribute("types", types);
-			req.getRequestDispatcher("/backend/adminIndex.jsp").forward(req, resp);
+			session.setAttribute("types", types);//保存父类及其子类
+			req.getRequestDispatcher("/backend/adminIndex.jsp").forward(req, resp);//请求转发到商品类别管理页面
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,29 +59,31 @@ public class GetTypeServlet extends HttpServlet{
 		boolean flag=false;
 		int newTypeID=0;
 		HttpSession session=req.getSession();
-		//如果是父类
+		
 		ArrayList<TypeBean> types = (ArrayList<TypeBean>) session.getAttribute("types");
 		TypeBean typeBean=null;
 		if(typeName==null){
 			resp.sendRedirect("http://localhost:8080/ECProject/backend/error.jsp");
 			return;
 		}
+		//如果添加的是父类
 		if(superTypeName.length()<1){
 			newTypeID=types.size()+1;
 			String params[]={newTypeID+"",typeName};
-			String sql="insert into t_goodstype(typeid,typename) values(?,?)";
+			String sql="insert into t_goodstype(typeid,typename) values(?,?)";//插入信息
 			try {
 				flag=DaoFactory.getUserDaoInstances().doInsert(sql, params);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			//如果添加的是子类，需要找出父类对应的id
 		}else {
 			for(int i=0;i<types.size();i++){
 				typeBean=types.get(i);
-				if(superTypeName.equals(typeBean.getTypeName())){
+				if(superTypeName.equals(typeBean.getTypeName())){//找父类的ID
 					newTypeID=typeBean.getTypeID()*10+typeBean.getItems().size()+1;
 					String params[]={newTypeID+"",typeName,typeBean.getTypeID()+""};
-					String sql="insert into t_goodstype values(?,?,?)";
+					String sql="insert into t_goodstype values(?,?,?)";//插入信息
 					try {
 						flag=DaoFactory.getUserDaoInstances().doInsert(sql, params);
 					} catch (Exception e) {
@@ -90,6 +92,7 @@ public class GetTypeServlet extends HttpServlet{
 				}
 			}
 		}
+		//请求转发
 		if(flag){
 			req.getRequestDispatcher("/backend/getTypes?task=getTypes").forward(req, resp);
 		}else {
@@ -100,7 +103,7 @@ public class GetTypeServlet extends HttpServlet{
 		/*PrintWriter out=resp.getWriter();
 		out.print("delete");*/
 		String typeID=req.getParameter("typeID");
-		String sql="delete from t_goodstype where typeid=?";
+		String sql="delete from t_goodstype where typeid=?";//根据ID删除记录
 		String params[]={typeID};
 		try {
 			boolean flag=DaoFactory.getUserDaoInstances().doDelete(sql, params);
@@ -114,11 +117,57 @@ public class GetTypeServlet extends HttpServlet{
 		}
 	}
 	public void updateTypes(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		PrintWriter out=resp.getWriter();
-		out.print("update");
+		resp.setContentType("text/html;charset=utf-8");
+		req.setCharacterEncoding("utf-8");
+		//PrintWriter out=resp.getWriter();
+		//out.print("update");
 		String typeID=req.getParameter("typeID");
-		
-		
+		String typeName=req.getParameter("typeName");
+		String supName=req.getParameter("supName");
+		//out.print(typeID+" "+typeName+" "+supName);
+		String sql="update t_goodstype set typename=? where typeid=?";
+		String sql2="update t_goodstype set typename=?,majorclassid=?,typeid=? where typeid=?";
+		String params[]={typeName,typeID};
+		boolean flag=false;
+		boolean flag2=false;
+		//如果是父类别修改信息
+		if(supName==null){
+			try {
+				flag=DaoFactory.getUserDaoInstances().doUpdate(sql, params);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			//如果子类别修改信息，并修改了父类别，那么需要更改其ID
+		}else {
+			Integer majorclassid=-1;
+			Integer typeid=-1;
+			HttpSession session=req.getSession();
+			ArrayList<TypeBean> types = (ArrayList<TypeBean>) session.getAttribute("types");
+			if(types==null) types=new ArrayList<TypeBean>();
+			TypeBean typeBean=null;
+			for(int i=0;i<types.size();i++){
+				typeBean=types.get(i);
+				if(supName.equals(typeBean.getTypeName())){
+					majorclassid=typeBean.getTypeID();
+					typeid=typeBean.getTypeID()*10+typeBean.getItems().size()+1;
+					flag2=true;
+				}
+			}
+			if(flag2){
+				String params2[]={typeName,majorclassid+"",typeid+"",typeID};
+				try {
+					flag=DaoFactory.getUserDaoInstances().doUpdate(sql2, params2);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		//请求转发
+		if(flag){
+			req.getRequestDispatcher("/backend/getTypes?task=getTypes").forward(req, resp);
+		}else {
+			resp.sendRedirect("http://localhost:8080/ECProject/backend/error.jsp");
+		}
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

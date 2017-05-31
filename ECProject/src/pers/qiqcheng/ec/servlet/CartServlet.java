@@ -72,16 +72,23 @@ public class CartServlet extends HttpServlet {
 		for (int i=0;i<items.size();i++) {
 			cartItemBean=items.get(i);
 			if(goodID.equals(cartItemBean.getGoodID())){
-				items.remove(i);
+				items.remove(i);//remove方法，删除满足条件的元素
 			}
 		}
 		req.getRequestDispatcher("/shopcart.jsp").forward(req, resp);
 	}
+	/**
+	 * 清空购物车
+	 * @param req
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void delAll(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
 		HttpSession session=req.getSession();
 		CartBean cartBean=CartBean.getCartBean(session);
 		List<CartItemBean> items=cartBean.getItems();
-		items.clear();
+		items.clear();//使用clear方法，将集合中的元素删除
 		req.getRequestDispatcher("/shopcart.jsp").forward(req, resp);
 	}
 	@Override

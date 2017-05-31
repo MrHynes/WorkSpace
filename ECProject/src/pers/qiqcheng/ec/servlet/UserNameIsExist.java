@@ -18,6 +18,9 @@ public class UserNameIsExist extends HttpServlet{
 		doPost(req, resp);
 	}
 
+	/**
+	 * 注册时，判断注册的帐号是否已经存在了，如果不存在则允许新用户注册，否则不允许
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String user=req.getParameter("username");

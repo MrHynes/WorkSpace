@@ -35,20 +35,22 @@ public class UserLoginServlet extends HttpServlet {
 		try {
 			ResultSet rs=DaoFactory.getUserDaoInstances().doSelect(sql, params);
 			while(rs.next()){
-				session.setAttribute("username", username);
-				String sql2="update t_user set logintime=? where username=?";
-				SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-				Date date=new Date();
-				String loginTime=sim.format(date);
-				String []params2={loginTime,username};
-				DaoFactory.getUserDaoInstances().doUpdate(sql2, params2);
-				req.getRequestDispatcher("/index.jsp").forward(req, resp);
-				return;
+				if(rs.getInt("status")==0){
+					session.setAttribute("username", username);
+					String sql2="update t_user set logintime=? where username=?";
+					SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+					Date date=new Date();
+					String loginTime=sim.format(date);
+					String []params2={loginTime,username};
+					DaoFactory.getUserDaoInstances().doUpdate(sql2, params2);
+					req.getRequestDispatcher("/index.jsp").forward(req, resp);
+					return;
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		resp.sendRedirect(basePath+"common/error.jsp");
-		
+		//basePathresp.sendRedirect(basePath+"common/error.jsp?msg=登录失败，可能是密码输入错误，或者帐户已经被冻结！");
+		req.getRequestDispatcher("common/error.jsp?msg=登录失败，可能是密码输入错误，或者帐户已经被冻结！").forward(req, resp);
 	}
 }

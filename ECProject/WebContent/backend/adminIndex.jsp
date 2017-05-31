@@ -29,6 +29,25 @@
 <script src="<%=basePath%>js/custom.js"></script>
 <script src="<%=basePath%>js/backend.js"></script>
 </head>
+<script type="text/javascript">
+function modify(id) {
+	var typeName=$("#"+id).val();
+	var supName=$("#"+id+"sup").val();
+	//alert(typeName);
+	//alert(supName);
+	bootbox.confirm({
+		size : "small",
+		message : "确认修改吗?",
+		callback : function(result) {
+			if (result) {
+				location.href = "getTypes?task=updateType&typeID="+id+"&typeName="+typeName+"&supName="+supName;
+			} else {
+				return;
+			}
+		}
+	});
+}
+</script>
 <body>
 	<div id="wrapper">
 		<jsp:include page="menue.jsp"></jsp:include>
@@ -63,19 +82,22 @@
 										typeBean = types.get(i);
 										List<TypeItemBean> items = typeBean.getItems();
 								%>
-								<tr>
-									<td class="col-lg-2"><%=typeBean.getTypeID()%></td>
-									<td class="col-lg-4"><input type="text" name="typename"
-										value="<%=typeBean.getTypeName()%>" class="form-control">
-									</td>
-									<td class="col-lg-4"><input type="text" name="suptypename"
-										value="" class="form-control" disabled="disabled"></td>
-									<td class="col-lg-2"><a href="getTypes?task=updateType&typeID=<%=typeBean.getTypeID()%>"><button
-												class="btn btn-success"
-												style="height: 30px; text-align: center;">修改</button></a>&nbsp;&nbsp;
-										<a href="getTypes?task=deleteType&typeID=<%=typeBean.getTypeID()%>"><button class="btn btn-danger"
-												style="height: 30px; text-align: center;">删除</button></a></td>
-								</tr>
+									<tr>
+										<td class="col-lg-2"><%=typeBean.getTypeID()%></td>
+										<td class="col-lg-4">
+											<input type="text" name="typename" value="<%=typeBean.getTypeName()%>" id="<%=typeBean.getTypeID()%>" class="form-control">
+										</td>
+										<td class="col-lg-4">
+											<input type="text" name="suptypename" id="<%=typeBean.getTypeID()%>sup" class="form-control" disabled="disabled">
+										</td>
+										<td class="col-lg-2">
+											<button type="button" class="btn btn-success" style="height: 30px; text-align: center;" onClick="modify(<%=typeBean.getTypeID()%>)">修改</button>
+											&nbsp;&nbsp;
+											<a href="getTypes?task=deleteType&typeID=<%=typeBean.getTypeID()%>">
+												<button class="btn btn-danger" style="height: 30px; text-align: center;">删除</button>
+											</a>
+										</td>
+									</tr>
 								<%
 									if (items != null) {
 											for (int j = 0; j < items.size(); j++) {
@@ -83,16 +105,17 @@
 								%>
 								<tr>
 									<td class="col-lg-2"><%=typeItemBean.getTypeID()%></td>
-									<td class="col-lg-4"><input type="text" name="typename"
-										value="<%=typeItemBean.getTypeName()%>" class="form-control">
+									<td class="col-lg-4">
+										<input type="text" name="typename" value="<%=typeItemBean.getTypeName()%>" id="<%=typeItemBean.getTypeID()%>" class="form-control">
 									</td>
-									<td class="col-lg-4"><input type="text" name="suptypename"
-										value="<%=typeBean.getTypeName()%>" class="form-control"></td>
-									<td class="col-lg-2"><a href="getTypes?task=updateType&typeID=<%=typeItemBean.getTypeID()%>"><button
-												class="btn btn-success"
-												style="height: 30px; text-align: center;">修改</button></a>&nbsp;&nbsp;
-										<a href="getTypes?task=deleteType&typeID=<%=typeItemBean.getTypeID()%>"><button class="btn btn-danger"
-												style="height: 30px; text-align: center;">删除</button></a></td>
+									<td class="col-lg-4"><input type="text" name="suptypename" id="<%=typeItemBean.getTypeID()%>sup" value="<%=typeBean.getTypeName()%>" class="form-control"></td>
+									<td class="col-lg-2">
+										<button class="btn btn-success" style="height: 30px; text-align: center;" onClick="modify(<%=typeItemBean.getTypeID()%>)">修改</button>
+										&nbsp;&nbsp;
+										<a href="getTypes?task=deleteType&typeID=<%=typeItemBean.getTypeID()%>">
+											<button class="btn btn-danger" style="height: 30px; text-align: center;">删除</button>
+										</a>
+									</td>
 								</tr>
 								<%
 									}

@@ -25,7 +25,7 @@ public class GetPageNo extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int pageNo=Integer.parseInt(req.getParameter("pageNo"));//Ò»¿ªÊ¼µÇÂ¼ºó£¬Ä¬ÈÏÊÇ0
+		int pageNo=Integer.parseInt(req.getParameter("pageNo"));//ä¸€å¼€å§‹ç™»å½•åï¼Œé»˜è®¤æ˜¯0
 		int pageSize=12;
 		int totalRecord=0;
 		int start=pageSize*(pageNo-1);
@@ -34,7 +34,7 @@ public class GetPageNo extends HttpServlet {
 		HttpSession session=req.getSession();
 		PageBean pageBean=new PageBean();
 		String sql="select count(*) as t from t_goods";
-		String sql2="select * from t_goods limit ?,?";//µÚÒ»¸ö?  0¿ªÊ¼£¬µÚ¶ş¸öÎÊºÅ±íÊ¾ ³¤¶È
+		String sql2="select * from t_goods limit ?,?";//ç¬¬ä¸€ä¸ª?  0å¼€å§‹ï¼Œç¬¬äºŒä¸ªé—®å·è¡¨ç¤º é•¿åº¦
 		ResultSet rs=null,rs2=null;
 		String[] params={};
 		Integer []params2={start,pageSize};

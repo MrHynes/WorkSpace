@@ -20,6 +20,9 @@ public class ExitSystemServlet extends HttpServlet {
 		doPost(req, resp);
 	}
 
+	/**
+	 * 退出系统之前，把购物车中的记录插入数据库，并销毁session
+	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//System.out.println("session destroy");

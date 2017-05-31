@@ -191,4 +191,13 @@
 		<servlet-name>b_getTypes</servlet-name>
 		<url-pattern>/backend/getTypes</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>admin_user</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.admin.AdminUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin_user</servlet-name>
+		<url-pattern>/backend/admUser</url-pattern>
+	</servlet-mapping>
 </web-app>

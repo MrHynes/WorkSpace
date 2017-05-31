@@ -22,6 +22,7 @@
 			<br> <br> <br> <br>
 			<div>
 				<img src="<%=path%>/img/error.png" class="img">
+				<div style="color: red;">错误信息：<%=request.getParameter("msg") %></div>
 			</div>
 		</div>
 	</div>

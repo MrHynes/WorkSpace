@@ -1,3 +1,5 @@
+<%@page import="pers.qiqcheng.ec.bean.UserBean"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -35,11 +37,71 @@
 					<div class="col-md-12">
 						<h1 class="page-head-line">注册用户管理</h1>
 						<h1 class="page-subhead-line"></h1>
-					</div>	
-					<div class="col-md-12">
-						<h1 class="page-head-line">系统用户管理</h1>
-						<h1 class="page-subhead-line"></h1>		
 					</div>
+					
+					<div class="col-lg-12  form-inline">
+						<form action="admUser?task=getUser" method="post">
+							<table class="table">
+								<tr>
+								<td char="col-lg-4"> <label>用户名:</label><input class="form-control" type="text"  name="k_username" style="width: 300px;"></td>
+								<td char="col-lg-3"> 
+									<label>性别:</label> 
+									<select class="form-control" name="k_sex" style="width: 125px;">
+									   <option>请选择性别</option>
+						               <option value="男">男</option>
+						               <option value="女">女</option>
+			            			</select>
+		            			</td>
+		            			<td class="col-lg-3">
+		            				<label>状态:</label> 
+									<select class="form-control" name="k_status" style="width: 125px;">
+						               <option>请选择状态</option>
+						               <option value="0">正常</option>
+						               <option value="1">冻结</option>
+			            			</select>
+		            			</td>
+		            			<td class="col-lg-1"><input type="submit" value="查询" class="btn btn-primary"></td>
+		            			<td class="col-lg-1"><input type="reset" value="重置" class="btn btn-primary"></td>
+		            			<td></td>
+		            			</tr>
+		            			<tr><td></td><td></td><td></td><td></td><td></td></tr>
+	            			</table>
+            			</form>
+					</div>
+					<div class="col-lg-12">
+						<table class="table">
+						<thead>
+							<th>用户名</th>
+							<th>真实姓名</th>
+							<th>性别</th>
+							<th>注册时间</th>
+							<th>状态</th>
+							<th>操作</th>
+						</thead>
+						<%
+							ArrayList<UserBean> items=(ArrayList<UserBean>)session.getAttribute("userItems");
+						UserBean userBean=null;
+							if(items==null) items=new ArrayList();
+							for(int i=0;i<items.size();i++){
+								userBean=items.get(i);
+						%>
+						<tr>
+							<td><%=userBean.getUserName() %></td>
+							<td><%=userBean.getRelName() %></td>
+							<td><%=userBean.getSex() %></td>
+							<td><%=userBean.getJoniDate() %></td>
+							<%if(userBean.getStatus()==0){ %>
+							<td>正常</td>
+							<%}else{ %>
+							<td>冻结</td>
+							<%} %>
+							<td>
+								<a href="admUser?task=acountFreeze&username=<%=userBean.getUserName() %>"><input type="button" class="btn btn-warning" value="冻结"></a>
+							</td>
+						</tr>
+						<%} %>
+					</table>
+					</div>	
 				</div>
 			</div>
 		</div>

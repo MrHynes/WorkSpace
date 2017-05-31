@@ -24,7 +24,7 @@
 			<li><a class="active-menu" href="" id="goodAdmin"><i
 					class="fa fa-dashboard "></i>商品管理 <span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
-					<li><a href="adminIndex.jsp"><i
+					<li><a href="getTypes?task=getTypes"><i
 							class="fa fa-toggle-on"></i>商品类别管理</a></li>
 					<li><a href="adminGoodInfo.jsp"><i class="fa fa-bell "></i>商品信息管理</a>
 					</li>
@@ -32,7 +32,7 @@
 			<li><a href="#" id="userAdmin"><i class="fa fa-desktop "></i>用户管理
 					<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
-					<li><a href="#" data-toggle="tab"><i
+					<li><a href="admUser?task=getUser"><i
 							class="fa fa-circle-o "></i>注册用户管理</a></li>
 					<li><a href="adminUser.jsp" ><i class="fa fa-code "></i>系统用户管理</a>
 					</li>

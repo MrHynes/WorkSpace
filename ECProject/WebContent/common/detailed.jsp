@@ -106,12 +106,38 @@ $(function () {
 								<label><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;商品详情</label>
 							</legend>
 							<input type="hidden" name="goodID" value="<%= goodsBean.getGoodId()%>">
-	                        <p><h3 style="color: red;">[商品名称]:<%=goodsBean.getGoodName() %></h3></p>
+	                        <%-- <p>商品名称:<%=goodsBean.getGoodName() %></p>
 	                        <br>
-	                        <p>[商品价格]:${price}</p>
+	                        <p>商品价格:${price}</p>
 	                        <br>
-	                        <p>[商品库存]:<%=goodsBean.getInventory() %></p><br>
-	                        <p>[购买数量]:<input type="text" name="count" id="count" value="1"></p>
+	                        <p>商品库存:<%=goodsBean.getInventory() %></p><br>
+	                        <p>购买数量:<input type="text" name="count" id="count" value="1"></p> --%>
+	                        <table class="table">
+	                        	<tr>
+	                        		<td>商品名称</td>
+	                        		<td><%=goodsBean.getGoodName() %></td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>商品价格</td>
+	                        		<td>${price}</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>商品库存</td>
+	                        		<td><%=goodsBean.getInventory() %></td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>购买数量</td>
+	                        		<td><input type="text" name="count" id="count" value="1" class="form-control"></td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>承 诺</td>
+	                        		<td><img src="../img/per.jpg"></td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>支付方式</td>
+	                        		<td><img src="../img/pay.jpg"></td>
+	                        	</tr>
+	                        </table>
 	                    </div>
 	                </div>
 	                	<input type="hidden" id="goodID" value="<%=goodsBean.getGoodId()%>">
@@ -131,8 +157,8 @@ $(function () {
 						</legend>
 						<a href="<%=basePath %>common/detailed.jsp?goodId=<%=goodsBeanNext.getGoodId()%>"><img  src="../img/<%=goodsBeanNext.getGoodImage() %>.jpg" width="220px;" height="220px;"></a>
 						<br>
-						<p>[商品名称]：<%=goodsBeanNext.getGoodName() %></p>
-						<p>[商品价格]：${nextprice}</p>
+						<p>商品名称：<%=goodsBeanNext.getGoodName() %></p>
+						<p>商品价格：${nextprice}</p>
             		</div>
             	</div>
             </div>
@@ -140,7 +166,7 @@ $(function () {
             <br>
             	<div class="panel">
             		<div class="panel-body" style="height: 100px;">
-            			<p><h3>[商品描述]:<%=goodsBean.getGoodDescription() %></h3></p>
+            			<p><h3>商品描述:<%=goodsBean.getGoodDescription() %></h3></p>
             		</div>
             	</div>
             </div>
