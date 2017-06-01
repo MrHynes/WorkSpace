@@ -146,7 +146,9 @@
 					<fmt:formatNumber var="price" value="<%=goodsBean.getGoodPrice()%>"
 						maxFractionDigits="2" type="currency" currencyCode="CNY"></fmt:formatNumber>
 					<div class="col-lg-3">
-						<a href="<%=basePath %>common/detailed.jsp?goodId=<%=goodsBean.getGoodId()%>" class="thumbnail" > <img src="<%=basePath%>img/<%=goodsBean.getGoodImage()%>.jpg" onclick="showimage(this.src)"></a>
+						<a href="<%=basePath %>common/detailed.jsp?goodId=<%=goodsBean.getGoodId()%>" class="thumbnail" > 
+							<img src="<%=basePath%>img/<%=goodsBean.getGoodImage()%>.jpg" style="height: 240px;width: 400px;" onclick="showimage(this.src)">
+						</a>
 						<!-- 弹出图片大图 -->
 						<!-- ﻿<div id="ShowImage_Form" class="modal" align="center" style="display: none">
 				  			<div class="modal-body">

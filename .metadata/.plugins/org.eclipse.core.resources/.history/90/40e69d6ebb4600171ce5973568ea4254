@@ -1,0 +1,8 @@
+package pers.qiqcheng.ec.test;
+
+public class SetXML {
+	public void setInfo(){
+		
+	}
+
+}

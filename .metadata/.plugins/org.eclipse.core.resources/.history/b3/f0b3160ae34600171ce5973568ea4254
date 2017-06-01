@@ -1,0 +1,8 @@
+package pers.qiqcheng.ec.test;
+
+public class ImgCopy {
+
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,5 +1,5 @@
 #Tomcat publish data
-#Wed May 31 23:39:32 CST 2017
+#Fri Jun 02 00:11:25 CST 2017
 org.eclipse.jst.jee.server\:FirstSpringMVC=D\:\\tomcat\\webapps\\FirstSpringMVC
 org.eclipse.jst.jee.server\:BookManagerSystem=D\:\\tomcat\\webapps\\BookManagerSystem
 org.eclipse.jst.jee.server\:ECProject=D\:\\tomcat\\webapps\\ECProject

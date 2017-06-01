@@ -200,4 +200,13 @@
 		<servlet-name>admin_user</servlet-name>
 		<url-pattern>/backend/admUser</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>admin_good</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.admin.AdminGoodInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin_good</servlet-name>
+		<url-pattern>/backend/admGood</url-pattern>
+	</servlet-mapping>
 </web-app>

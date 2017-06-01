@@ -1,0 +1,237 @@
+package pers.qiqcheng.ec.servlet.admin;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.URLDecoder;
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileUploadException;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+
+import net.sf.json.JSONArray;
+import pers.qiqcheng.ec.bean.GoodsBean;
+import pers.qiqcheng.ec.factory.DaoFactory;
+import pers.qiqcheng.ec.tools.MultipartRequestWrapper;
+
+public class AdminGoodInfoServlet extends HttpServlet {
+
+	public void getGoods(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String sql = "select goodid,goodname,goodprice,inventory from t_goods "
+				+ "where goodname like ? and goodprice>=? and goodprice<=?";
+		String params[] = { "%", 0 + "", Double.MAX_VALUE + "" };
+		String bookName = req.getParameter("k_bookname");
+		String l_price = req.getParameter("kl_price");
+		String r_price = req.getParameter("kr_price");
+		if (bookName != null && bookName.length() > 0) {
+			params[0] = "%" + bookName + "%";
+		}
+		if (l_price != null && l_price.length() > 0) {
+			params[1] = l_price;
+		}
+		if (r_price != null && r_price.length() > 0) {
+			params[2] = r_price;
+		}
+		/*
+		 * for (String string : params) { System.out.println(string); }
+		 */
+		ArrayList<GoodsBean> items = new ArrayList<GoodsBean>();
+		GoodsBean goodsBean = null;
+		HttpSession session = req.getSession();
+		try {
+			ResultSet rs = DaoFactory.getUserDaoInstances().doSelect(sql, params);
+			while (rs.next()) {
+				goodsBean = new GoodsBean();
+				goodsBean.setGoodId(rs.getString(1));
+				goodsBean.setGoodName(rs.getString(2));
+				goodsBean.setGoodPrice(rs.getFloat(3));
+				goodsBean.setInventory(rs.getInt(4));
+				items.add(goodsBean);
+			}
+			session.setAttribute("adm_goods", items);
+			req.getRequestDispatcher("/backend/adminGoodInfo.jsp").forward(req, resp);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean copyImgToFile(String imgName){
+		boolean flag=false;
+		//1.提供读入和写入的文件
+		File f1=new File("F:\\WorkSpace\\ECProject\\WebContent\\simg");
+		File f2=new File("F:\\WorkSpace\\ECProject\\WebContent\\img");
+		//2.提供相应的流对象
+		FileInputStream fis=null;
+		FileOutputStream fos=null;
+		try{
+		fis=new FileInputStream(f1);
+		fos=new FileOutputStream(f2);
+		//3.实现复制
+		byte[]b=new byte[200];
+		int len;
+		while((len=fis.read(b))!=-1){
+		fos.write(b, 0, len);
+		}
+		}catch(Exception e){
+		e.printStackTrace();
+		}finally{
+		if(fis!=null){
+		try {
+		fis.close();
+		} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
+		}
+		if(fos!=null){
+		try {
+		fos.close();
+		} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+		}
+		}
+
+		return flag;
+	}
+
+	/**
+	 * 添加商品信息，包括文件上传。 文件上传 需修改form表单的 enctype="multipart/form-data"
+	 * 如此，就无法像往常一样通过req.getParameter("XX");获得值
+	 * 解决方法：类MultipartRequestWrapper，对reques重新包装
+	 * http://www.2cto.com/kf/201603/492916.html
+	 */
+	public void addGood(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// id ,time,goodimage
+		req = new MultipartRequestWrapper(req);// 重新包装
+		String goodname = req.getParameter("goodname");
+		String type = req.getParameter("type");// 父类别
+		String suptype = req.getParameter("suptype");// 子类别
+		String price = req.getParameter("price");
+		String inventory = req.getParameter("inventory");
+		String introduction = req.getParameter("introduction");
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd");
+		String goodID = sdf.format(date);
+		String addTime = sdf2.format(date);
+		// upLoadImg(req, resp, goodID);
+		String sql = "insert into t_goods values(?,?,?,?,?,?,?,?,?)";
+		String params[] = { goodID, type, suptype, goodname, price, introduction, goodID, addTime, inventory };
+		/*
+		 * for (String string : params) { System.out.print(string+" "); }
+		 */
+		boolean flag = false;
+		try {
+			flag = DaoFactory.getUserDaoInstances().doInsert(sql, params);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// 将simg中的图片copy到img中
+
+		getGoods(req, resp);
+	}
+
+	public void getType(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/json;charset=utf-8");
+		PrintWriter out = resp.getWriter();
+		String sql = "select typeid,typename from t_goodstype where majorclassid is null";
+		String params[] = {};
+		List<String> typeArray = new ArrayList<String>();
+		String type = null;
+		try {
+			ResultSet rs = DaoFactory.getUserDaoInstances().doSelect(sql, params);
+			while (rs.next()) {
+				type = rs.getInt(1) + "&" + rs.getString(2);
+				typeArray.add(type);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		/*
+		 * for (String string : typeArray) { System.out.println(string); }
+		 */
+		JSONArray jsonarray = JSONArray.fromObject(typeArray);
+		out.print(jsonarray);
+		out.close();
+	}
+
+	public void getSmType(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/json;charset=utf-8");
+		PrintWriter out = resp.getWriter();
+		String sql = "select typeid,typename from t_goodstype where majorclassid=?";
+		String majorclassid = req.getParameter("typeid");
+		String params[] = { majorclassid };
+		List<String> typeArray = new ArrayList<String>();
+		String type = null;
+		try {
+			ResultSet rs = DaoFactory.getUserDaoInstances().doSelect(sql, params);
+			while (rs.next()) {
+				type = rs.getInt(1) + "&" + rs.getString(2);
+				typeArray.add(type);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		JSONArray jsonarray = JSONArray.fromObject(typeArray);
+		out.print(jsonarray);
+		out.close();
+	}
+
+	public void delGood(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String goodID = req.getParameter("goodID");
+		String sql = "delete from t_goods where goodid=?";
+		String params[] = { goodID };
+		boolean flag = false;
+		try {
+			flag = DaoFactory.getUserDaoInstances().doDelete(sql, params);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (flag) {
+			req.getRequestDispatcher("/backend/admGood?task=getGoods").forward(req, resp);
+		} else {
+			resp.sendRedirect("http://localhost:8080/ECProject/backend/error.jsp");
+		}
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String task = req.getParameter("task");
+		if (task != null) {
+			if ("getGoods".equals(task)) {
+				getGoods(req, resp);
+			} else if ("addGood".equals(task)) {
+				addGood(req, resp);
+			} else if ("getType".equals(task)) {
+				getType(req, resp);
+			} else if ("getSmType".equals(task)) {
+				getSmType(req, resp);
+			} else if ("delGood".equals(task)) {
+				delGood(req, resp);
+			}
+		}
+	}
+
+}

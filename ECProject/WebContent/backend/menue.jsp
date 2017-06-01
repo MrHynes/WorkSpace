@@ -4,7 +4,7 @@
 <nav class="navbar navbar-default navbar-cls-top" role="navigation"
 	style="margin-bottom: 0px; background-color: #00C979;">
 	<div class="navbar-header">
-		<a class="navbar-brand" style="color: white;">在线购物系统后台管理</a>
+		<a class="navbar-brand" style="color: white;" href="adminIndex.jsp">在线购物系统后台管理</a>
 	</div>
 	<div class="header-right">
 		<a class="btn btn-danger" title="New Task"><b id="exit">退出系统</b><i
@@ -26,7 +26,7 @@
 				<ul class="nav nav-second-level">
 					<li><a href="getTypes?task=getTypes"><i
 							class="fa fa-toggle-on"></i>商品类别管理</a></li>
-					<li><a href="adminGoodInfo.jsp"><i class="fa fa-bell "></i>商品信息管理</a>
+					<li><a href="admGood?task=getGoods"><i class="fa fa-bell "></i>商品信息管理</a>
 					</li>
 				</ul></li>
 			<li><a href="#" id="userAdmin"><i class="fa fa-desktop "></i>用户管理
