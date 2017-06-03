@@ -1,0 +1,14 @@
+package pers.qiqcheng.ec.bean.admin;
+
+public class AdminBean {
+	private String userName;
+	private String relName;
+	private String sex;
+	private String birthDay;
+	private String email;
+	private String telePhone;
+	private String address;
+	private String postCode;
+	private String index;
+
+}

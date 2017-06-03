@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user>
+		<name>SuperAdmin</name>
+		<pwd>888888</pwd>
+		<relname>程祺</relname>
+	</user>
+	<user>
+		<name>Admin1</name>
+		<pwd>888888</pwd>
+	</user>
+</users>
+

@@ -1,8 +1,0 @@
-package pers.qiqcheng.ec.bean.admin;
-
-public class TypeItemBean {
-	private String typeID;
-	private String typeName;
-	
-
-}

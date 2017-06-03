@@ -4,3 +4,11 @@
 1496317344883	Delete elements
 1496329444000	Rename compilation unit 'd.java'
 1496331240146	Move compilation unit
+1496408078521	Copy file
+1496495893844	Delete element
+1496495908534	Copy file
+1496499951341	Copy file
+1496502389896	Copy compilation unit
+1496502398908	Rename type 'AdminLoginFilter2'
+1496502442386	Rename resource 'login.jsp'
+1496502449827	Move 'adminlogin.jsp' to 'WebContent'

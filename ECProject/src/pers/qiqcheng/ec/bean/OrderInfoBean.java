@@ -16,6 +16,7 @@ public class OrderInfoBean {
 		private String orderStatus;
 		private String checker;
 		private String checkTime;
+		private String userName;
 		//新增
 		public OrderInfoBean setOrderInfo(ResultSet rs){
 			try {
@@ -109,5 +110,11 @@ public class OrderInfoBean {
 		}
 		public void setCheckTime(String checkTime) {
 			this.checkTime = checkTime;
+		}
+		public String getUserName() {
+			return userName;
+		}
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 }

@@ -140,7 +140,7 @@ function modify(id) {
 					<h5 class="modal-title" id="myModalLabel">添加类别</h5>
 				</div>
 				<div class="modal-body">
-					<form action="getTypes?task=addType" method="post">
+					<form action="<%=basePath %>backend/getTypes?task=addType" method="post">
 						<div class="form-group">
 							<input type="text" name="tyepName" id="tyepName"
 								class="form-control" placeholder="请输入类别名称" style="height: 40px;"><br>

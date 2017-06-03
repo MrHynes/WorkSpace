@@ -168,7 +168,7 @@
 					} else {
 				%>
 				<li><a data-toggle="modal" data-target="#login">登录</a></li>
-				<li><a href="<%=basePath%>backend/login.jsp">后台管理</a></li>
+				<li><a href="<%=basePath%>adminlogin.jsp">后台管理</a></li>
 				<li><a href="<%=basePath%>shopcart.jsp">购物车</a></li>
 				<li><a href="<%=path%>/common/error.jsp">帮助</a></li>
 				<%

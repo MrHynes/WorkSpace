@@ -1,0 +1,15 @@
+package pers.qiqcheng.ec.test;
+
+public class JDom {
+	public static void main(String[] args) {
+		SAXBuilder builder = new SAXBuilder();   
+		11     Document doc = builder.build(new File("data_10k.xml"));   
+		12     Element foo = doc.getRootElement();   
+		13     List allChildren = foo.getChildren();   
+		14    for (int i = 0; i < allChildren.size(); i++) {   
+		15      System.out.print("车牌号码:"+ ((Element) allChildren.get(i)).getChild("NO").getText());   
+		16      System.out.println("车主地址:"+ ((Element) allChildren.get(i)).getChild("ADDR").getText());   
+		17     }   
+	}
+
+}

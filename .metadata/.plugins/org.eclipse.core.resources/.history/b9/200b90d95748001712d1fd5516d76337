@@ -1,0 +1,87 @@
+package pers.qiqcheng.exp06_02;
+
+import java.util.Scanner;
+
+public class Stamp {
+	/**
+	 * 判断面为y的组合是否存在，存在返回ture，否则false
+	 * @param n：邮票面值种类数
+	 * @param v：每种邮票面值
+	 * @param m:每个信封最多贴邮票的张数
+	 * @param y：所判断是否满足的邮资
+	 * @return :true，false
+	 */
+	public static boolean stamps(int n,int m,int v[],int y){
+		boolean flag=false;
+		int a[]=new int[n+1];
+		int x[]=new int[n+1];
+		x[1]=-1;
+		int y1=0;
+		for(int i=1;i<=n;i++){
+			a[i]=(int) Math.floor(y/v[i]);//x[i]的取值在(0-a[i])之间
+		}
+		int k=1;
+		int count=0;
+		while(k>=1&&!flag){
+			while(x[k]<a[k]&&!flag){
+				x[k]=x[k]+1;
+				if(x[k]>0){
+					y1=y1+v[k];
+				}
+				if(y==y1) {
+					count=0;
+					for(int i=1;i<=k;i++){
+						//System.out.print(x[i]+"*"+v[i]+" ");
+						count+=x[i];
+					}
+					//System.out.println(y1+" m:"+count);
+					if(count>m) return false;
+					else {
+						flag=true;
+					}
+				}
+				else if(y1<y){
+					if(k<n){
+						k=k+1;
+						x[k]=-1;
+					}else {
+						break;
+					}
+				}
+			}
+			y1=y1-x[k]*v[k];
+			k=k-1;//回溯
+		}
+		return flag;
+	}
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		int l;
+		l=scanner.nextInt();
+		while(l>0){
+			int n;//n中不同面值的邮票；
+			int m;//每封信最多贴m张邮票；
+			n=scanner.nextInt();
+			m=scanner.nextInt();
+			int v[]=new int[n+1];//邮票的面值
+			for(int i=1;i<=n;i++){
+				v[i]=scanner.nextInt();
+			}
+			int left=0;
+			int right=0;
+			boolean flag=false;
+			boolean flag2=true;
+			for(int y=1;y<100;y++){
+				flag=stamps(n, m, v, y);
+				if(flag2&&flag){
+					left=y;
+					flag2=false;
+				}
+				if(!flag2&&!flag) break;
+				right=y;
+			}
+			System.out.println(left+" "+right);
+			l--;
+		}
+	}
+}

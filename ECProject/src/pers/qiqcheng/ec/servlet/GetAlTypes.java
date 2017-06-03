@@ -35,7 +35,7 @@ public class GetAlTypes extends HttpServlet{
 		TypeBean typeBean=null;
 		List<TypeBean> typeList=new ArrayList<TypeBean>();
 		List<String> typeArray=new ArrayList<String>();
-		if (action.equals("getAll")){
+		if ("getAll".equals(action)){
 			//查询出大类，以及其子类
 			String sql="select a.typeid,a.typename,b.typeid,b.typename from t_goodstype a "
 					+ "left join t_goodstype b on a.typeid=b.majorclassid where a.typeid<10 order by a.typeid,b.typeid";

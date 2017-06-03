@@ -1,9 +1,0 @@
-package pers.qiqcheng.ec.bean.admin;
-
-import java.util.List;
-
-public class TypeBean {
-	private String typeID;
-	private List<TypeItemBean> items=null;
-
-}

@@ -1,0 +1,23 @@
+package pers.qiqcheng.exp03_01;
+
+import java.util.Scanner;
+
+public class LCheeseCover {
+	private int count=0;
+	public static void coverCheese(int Matrix[][],int size){
+		int s=size/2;
+		
+	}
+	public static void main(String[] args) {
+		int n;
+		Scanner scanner=new Scanner(System.in);
+		n=scanner.nextInt();
+		int Matrix[][]=new int[n][n];
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				Matrix[i][j]=0;
+			}
+		}
+		coverCheese(Matrix, n);
+	}
+}

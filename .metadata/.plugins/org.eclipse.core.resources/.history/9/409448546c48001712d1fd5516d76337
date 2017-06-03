@@ -1,0 +1,140 @@
+<%@page import="pers.qiqcheng.ec.bean.admin.AdminBean"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>用户管理</title>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="<%=basePath%>css/font-awesome.css" rel="stylesheet" />
+<link href="<%=basePath%>css/basic.css" rel="stylesheet" />
+<link href="<%=basePath%>css/custom.css" rel="stylesheet" />
+<script src="<%=basePath%>js/jquery-3.1.1.min.js"
+	type="text/javascript"></script>
+<script src="<%=basePath%>js/bootstrap.min.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+<script src="<%=basePath%>js/jquery.metisMenu.js"></script>
+<script src="<%=basePath%>js/custom.js"></script>
+<script src="<%=basePath%>js/backend.js"></script>
+<script src="<%=basePath%>js/bootbox.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrapper">
+<jsp:include page="menue.jsp"></jsp:include>
+	<div id="page-wrapper">
+		<div id="page-inner">
+			<div class="row">
+				<div class="tab-content">
+					<div class="col-md-12">
+						<h1 class="page-head-line">系统用户管理</h1>
+						<h6 class="page-subhead-line">
+							<!-- href="getTypes?task=addType" -->
+								<a data-toggle="modal" data-target="#addAdmin"><button class="btn btn-primary col-lg-offset-11"
+										style="width: 90px;">添加管理员</button></a>
+							</h6>	
+					</div>
+					<div class="col-lg-12">
+						<table class="table table-hover">
+							<thead>
+								<th>用户名</th>
+								<th>真实姓名</th>
+								<th>性别</th>
+								<th>权限级别</th>
+								<th>注册时间</th>
+								<th>操 作</th>
+							</thead>
+							<%
+								ArrayList<AdminBean> items=(ArrayList)session.getAttribute("admininfo");
+								AdminBean adminBean=null;
+								if(items==null) items=new ArrayList();
+								for(int i=0;i<items.size();i++){
+									adminBean=items.get(i);
+							%>
+							<tr>
+								<td class="col-lg-2"><%=adminBean.getUserName()%></td>
+								<td class="col-lg-2"><%=adminBean.getRelName()%></td>
+								<td class="col-lg-2"><%=adminBean.getSex()%></td>
+								<td class="col-lg-2"><%=adminBean.getIdentify()%></td>
+								<td class="col-lg-2"><%=adminBean.getRegisteTime()%></td>
+								<td class="col-lg-2">
+									<input type="button" value="删除" class="btn btn-success">
+									<a href="admInfo?task=getAdmin&flag=showmyinfo&show_name=<%=adminBean.getUserName()%>"><input type="button" value="查看" class="btn btn-warning"></a>
+								</td>
+							</tr>
+							<%
+								}
+							%>
+							<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 添加管理员 -->
+<div class="modal fade" id="addAdmin" tabindex="-1" role="dialog"
+		aria-hidden="true">
+		<div class="modal-dialog" style="width: 370px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<a type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span> <span class="sr-only"></span>
+					</a>
+					<h5 class="modal-title" id="myModalLabel">添加管理员</h5>
+				</div>
+				<div class="modal-body">
+					<form action="" method="post"
+						enctype="multipart/form-data">
+						<div class="form-group">
+							<input type="text" name="username" class="form-control"
+								placeholder="请输入管理员名称" style="height: 40px;">
+						</div>
+						<div class="form-group">
+							<input type="text" name="password" class="form-control"
+								placeholder="请输入密码" style="height: 40px;">
+						</div>
+						<div class="form-group">
+							<select class="form-control" name="sex">
+								<option>请选择性别</option>
+								<option>男</option>
+								<option>女</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<input type="text" name="relName" class="form-control"
+								placeholder="请输入真实姓名" style="height: 40px;">
+						</div>
+						<div class="form-group">
+							<input type="text" name="birthday" class="form-control"
+								placeholder="请输入出生日期" style="height: 40px;">
+						</div>
+						<!-- 图片 -->
+						<input type="file" value="上传图片" name="img"
+							class="col-lg-12 btn btn-default"> <br>
+						<br>
+						<div class="form-group">
+							<textarea class="form-control" rows="6" id="introduction"
+								name="introduction" placeholder="请输入商品简介"></textarea>
+						</div>
+						<input type="submit" value="确定" class="btn btn-success"
+							style="width: 165px;"> <input type="reset" value="重置"
+							class="btn btn-warning" style="width: 165px;">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="col-lg-12" style="background-color: black; height: 60px; text-align: center; color: white; line-height: 60px;">
+		Copyright ©2017, 程祺004 All rights reserved.</div>
+</body>
+</html>

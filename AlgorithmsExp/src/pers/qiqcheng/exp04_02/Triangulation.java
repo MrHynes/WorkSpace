@@ -2,6 +2,12 @@ package pers.qiqcheng.exp04_02;
 
 import java.util.Scanner;
 
+/**
+ * t[i][j],1<=i<j<=n为凸多边形{Vi-1,Vi……Vj}的最优三角剖分所对应的权值函数值，即其最优值。
+ * 最优剖分包含三角形Vi-1VkVj的权，子多边形{Vi-1,Vi……Vk}的权，子多边形{Vk，Vk+1……Vj}的权之和。
+ * @author Buer
+ *
+ */
 public class Triangulation {
 	public static double getMinTriangulation(double v[][],int l,double w[][]){
 		double t[][]=new double[l+1][l+1];
@@ -9,19 +15,20 @@ public class Triangulation {
 				t[i][i]=0;
 		}
 		int j;
-		for(int d=1;d<l;d++){
-			for(int i=1;i<=l-d;i++){
-				j=i+d;
-				t[i][j]=Integer.MAX_VALUE;//
-				for(int k=i+1;k<=j;k++){
-					t[i][j]=min(t[i][j],t[i][k-1] + t[k][j] + getSum(i,k,j,v));
+		for(int d=2;d<=l;d++){
+			for(int i=1;i<=l-d+1;i++){
+				j=i+d-1;
+				//t[i][j]=Integer.MAX_VALUE;//
+				t[i][j] = t[i+1][j] + getSum(i-1,i,j,w);
+				for(int k=i+1;k<j;k++){
+					t[i][j]=min(t[i][j],t[i][k] + t[k+1][j] + getSum(i-1,k,j,w));
 				}
 			}
 		}
 		System.out.println("----t----");
 		for(int i=1;i<=l;i++){
 			for(int k=1;k<=l;k++){
-				System.out.println(t[i][k]);
+				System.out.printf("%3.2f ",t[i][k]);
 			}
 			System.out.println();
 		}
@@ -46,12 +53,12 @@ public class Triangulation {
 		return len;
 	}
 	//计算三条边权之和
-	public static double getSum(int i,int j,int k,double v[][]){
-		return v[i][j]+v[i][k]+v[j][k];
+	public static double getSum(int i,int j,int k,double w[][]){
+		return w[i][j]+w[i][k]+w[j][k];
 	}
 	//两个数的最小值
 	public static double min(double x,double y){
-		return x>y?x:y;
+		return x<y?x:y;
 	}
 	public static void main(String[] args) {
 		int n=0;
@@ -65,26 +72,29 @@ public class Triangulation {
 				v[i][0]=scanner.nextDouble();
 				v[i][1]=scanner.nextDouble();
 			}
+			double w[][]=new double[l+1][l+1];
+			w=getWeight(l,v);
+			System.out.printf("%3.3f",getMinTriangulation(v,l,w));
 			//System.out.println(getMinTriangulation(v, l));
 			n--;
 		}
-		System.out.println("----v----");
+		/*System.out.println("----v----");
 		for(int i=1;i<l+1;i++){
 			for(int j=0;j<2;j++){
 				System.out.print(v[i][j]+" ");
 			}
 			System.out.println();
-		}
-		double w[][]=new double[l+1][l+1];
-		w=getWeight(l,v);
-		System.out.println("----w----");
+		}*/
+		/*double w[][]=new double[l+1][l+1];
+		w=getWeight(l,v);*/
+		/*System.out.println("----w----");
 		for(int i=1;i<=l;i++){
 			for(int j=1;j<=l;j++){
-				System.out.print(w[i][j]+" ");
+				System.out.printf("%3.2f ",w[i][j]);
 			}
 			System.out.println();
-		}
-		System.out.println(getMinTriangulation(v,l,w));
+		}*/
+		//System.out.printf("%3.3f",getMinTriangulation(v,l,w));
 	}
 
 }

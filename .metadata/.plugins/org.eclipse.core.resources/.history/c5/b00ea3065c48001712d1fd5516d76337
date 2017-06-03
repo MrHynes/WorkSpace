@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user>
+		<name>SuperAdmin</name>
+		<pwd>888888</pwd>
+	</user>
+	<user>
+		<name>Admin</name>
+		<pwd>888888</pwd>
+	</user>
+</users>
+

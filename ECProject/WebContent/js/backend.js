@@ -6,7 +6,7 @@ $(function() {
 				message : "确认退出系统吗?",
 				callback : function(result) {
 					if (result) {
-						location.href = "/ECProject/backend/login.jsp";
+						location.href = "/ECProject/adminlogin.jsp";
 					} else {
 						return;
 					}
@@ -19,7 +19,7 @@ $(function() {
 				message : "确认退出系统吗?",
 				callback : function(result) {
 					if (result) {
-						location.href = "/ECProject/backend/login.jsp";
+						location.href = "/ECProject/adminlogin.jsp";
 					} else {
 						return;
 					}

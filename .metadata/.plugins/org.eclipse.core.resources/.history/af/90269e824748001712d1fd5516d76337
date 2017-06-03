@@ -1,0 +1,64 @@
+package pers.qiqcheng.exp03_01;
+
+import java.util.Scanner;
+
+public class LCheeseCover {
+	private static int count = 0;
+
+	// (tr,tc):棋盘左上角坐标，(dr,dc):特殊方块，即没有被覆盖的一个方格坐标
+	public static void coverCheese(int tr, int tc, int dr, int dc, int Matrix[][], int size) {
+		if (size == 1)
+			return;
+		int s = size / 2;
+		int t = ++count;
+		// 左上角
+		if (dr < tr + s && dc < tc + s) {
+			coverCheese(tr, tc, dr, dc, Matrix, s);
+		} else {
+			Matrix[tr + s - 1][tc + s - 1] = t;
+			coverCheese(tr, tc, tr + s - 1, tc + s - 1, Matrix, s);
+		}
+		// 右上角
+		if (dr < tr + s && dc >= tc + s) {
+			coverCheese(tr, tc + s, dr, dc, Matrix, s);
+		} else {
+			Matrix[tr + s - 1][tc + s] = t;
+			coverCheese(tr, tc + s, tr + s - 1, tc + s, Matrix, s);
+		}
+
+		// locate the special grid on top right corner
+		if (dr >= tr + s && dc < tc + s) {
+			coverCheese(tr + s, tc, dr, dc, Matrix, s);
+		} else {
+			Matrix[tr + s][tc + s - 1] = t;
+			coverCheese(tr + s, tc, tr + s, tc + s - 1, Matrix, s);
+		}
+
+		// locate the special grid on top left corner
+		if (dr >= tr + s && dc >= tc + s) {
+			coverCheese(tr + s, tc + s, dr, dc, Matrix, s);
+		} else {
+			Matrix[tr + s][tc + s] = t;
+			coverCheese(tr + s, tc + s, tr + s, tc + s, Matrix, s);
+		}
+	}
+
+	public static void main(String[] args) {
+		int n;
+		Scanner scanner = new Scanner(System.in);
+		n = scanner.nextInt();
+		int Matrix[][] = new int[n][n];
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				Matrix[i][j] = 0;
+			}
+		}
+		coverCheese(0, 0, 0, 0, Matrix, n);
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				System.out.printf("%3d ", Matrix[i][j]);
+			}
+			System.out.println();
+		}
+	}
+}

@@ -1,0 +1,119 @@
+<%@page import="pers.qiqcheng.ec.bean.OrderInfoBean"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>订单管理</title>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+<link href="<%=basePath%>css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<link href="<%=basePath%>css/font-awesome.css" rel="stylesheet" />
+<link href="<%=basePath%>css/basic.css" rel="stylesheet" />
+<link href="<%=basePath%>css/custom.css" rel="stylesheet" />
+<script src="<%=basePath%>js/jquery-3.1.1.min.js"
+	type="text/javascript"></script>
+<script src="<%=basePath%>js/bootstrap.min.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css' />
+<script src="<%=basePath%>js/jquery.metisMenu.js"></script>
+<script src="<%=basePath%>js/custom.js"></script>
+<script src="<%=basePath%>js/backend.js"></script>
+<script src="<%=basePath%>js/bootbox.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrapper">
+<jsp:include page="menue.jsp"></jsp:include>
+	<div id="page-wrapper">
+		<div id="page-inner">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="page-head-line">订单管理</h1>
+					<h1 class="page-subhead-line"></h1>
+				</div>
+				<div class="col-lg-12">
+					<div class="col-lg-12  form-inline">
+						<form action="admOrder?task=getOrders" method="post">
+							<table class="table">
+								<tr>
+									<td char="col-lg-4">
+									<label>用户名称:</label>
+										<input class="form-control" type="text" name="k_username" style="width: 350px;">
+									</td>
+									<td class="col-lg-2">
+										<select class="form-control" name="k_orderstatus">
+											<option>请选择订单状态</option>
+											<option>通过</option>
+											<option>不通过</option>
+											<option>未审核</option>
+										</select>
+									</td>
+									<td class="col-lg-1">
+										<input type="submit" value="查询" class="btn btn-danger">
+									</td>
+									<td class="col-lg-1">
+										<input type="reset" value="重置" class="btn btn-warning">
+									</td>
+									<td class="col-lg-2"></td>
+									</tr>
+										<td></td><td></td><td></td><td></td><td></td>
+									</tr>
+							</table>
+						</form>
+					</div>
+					<table class="table table-horver">
+						<thead>
+							<th>订单编号</th>
+							<th>订单用户</th>
+							<th>下单时间</th>
+							<th>审核人</th>
+							<th>订单状态</th>
+							<th>更多操作</th>
+						</thead>
+						<%
+							ArrayList<OrderInfoBean> items=(ArrayList)session.getAttribute("orders");
+							OrderInfoBean infoBean=null;
+							for(int i=0;i<items.size();i++){
+								infoBean=items.get(i);
+						%>
+						<tr>
+							<td class="col-lg-3"><%=infoBean.getOrderID()%></td>
+							<td class="col-lg-2"><%=infoBean.getUserName()%></td>
+							<td class="col-lg-2"><%=infoBean.getOrderTime()%></td>
+							<%
+								if(infoBean.getChecker()==null){
+							%>
+							<td class="col-lg-1"></td>
+							<%
+								}else{ 
+							%>
+							<td class="col-lg-1"><%=infoBean.getChecker()%></td>
+							<%
+								} 
+							%>
+							<td class="col-lg-1"><%=infoBean.getOrderStatus()%></td>
+							<td class="col-lg-3">
+								<a href="frontend/createOrder?task=showDetailOrder&orderid=<%=infoBean.getOrderID()%>">
+									<input class="btn btn-success" value="查看" style="width:55px;height: 30px;">
+								</a>
+								<a><input class="btn btn-primary" value="审核" style="width:55px;height: 30px;"></a>
+								<a><input class="btn btn-warning" value="修改" style="width:55px;height: 30px;"></a>
+							</td>
+						</tr>
+						<%} %>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-12" style="background-color: black; height: 60px; text-align: center; color: white; line-height: 60px;">
+		Copyright ©2017, 程祺004 All rights reserved.</div>
+</body>
+</html>

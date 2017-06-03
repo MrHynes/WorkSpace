@@ -61,6 +61,9 @@ public class GetTypeServlet extends HttpServlet{
 		HttpSession session=req.getSession();
 		
 		ArrayList<TypeBean> types = (ArrayList<TypeBean>) session.getAttribute("types");
+		if(types==null){
+			types=new ArrayList<>();
+		}
 		TypeBean typeBean=null;
 		if(typeName==null){
 			resp.sendRedirect("http://localhost:8080/ECProject/backend/error.jsp");
@@ -131,7 +134,7 @@ public class GetTypeServlet extends HttpServlet{
 		boolean flag=false;
 		boolean flag2=false;
 		//如果是父类别修改信息
-		if(supName==null){
+		if(supName==null||supName.length()<=0){
 			try {
 				flag=DaoFactory.getUserDaoInstances().doUpdate(sql, params);
 			} catch (Exception e) {

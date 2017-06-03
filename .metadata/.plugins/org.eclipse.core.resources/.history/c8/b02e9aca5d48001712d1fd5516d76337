@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user>
+		<name>SuperAdmin</name>
+		<pwd>888888</pwd>
+		<relname>程祺</relname>
+		<sex></sex>
+		<birthday></birthday>
+		<email></email>
+		<telphone></telphone>
+		<address>fjnumcs</address>
+		<postcode>350100</postcode>
+	</user>
+	<user>
+		<name>Admin1</name>
+		<pwd>888888</pwd>
+	</user>
+</users>
+

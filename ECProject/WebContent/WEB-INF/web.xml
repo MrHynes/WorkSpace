@@ -44,6 +44,16 @@
 	</filter-mapping>
 	
 	<filter>
+		<filter-name>admin_login</filter-name>
+		<filter-class>pers.qiqcheng.ec.filter.AdminLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>admin_login</filter-name>
+		<url-pattern>/backend/*</url-pattern>
+	</filter-mapping>
+	 
+
+	<filter>
 		<filter-name>cart_save_get</filter-name>
 		<filter-class>pers.qiqcheng.ec.filter.CartSavaAndGetFilter</filter-class>
 	</filter>
@@ -167,6 +177,7 @@
 	<servlet-mapping>
 		<servlet-name>createOrder</servlet-name>
 		<url-pattern>/frontend/createOrder</url-pattern>
+		<url-pattern>/backend/createOrder</url-pattern>
 	</servlet-mapping>
 	
 	<listener>
@@ -180,7 +191,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>admin_login</servlet-name>
-		<url-pattern>/backend/admlogin</url-pattern>
+		<url-pattern>/admlogin</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
@@ -208,5 +219,23 @@
 	<servlet-mapping>
 		<servlet-name>admin_good</servlet-name>
 		<url-pattern>/backend/admGood</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>admin_order</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.admin.AdminOrderServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin_order</servlet-name>
+		<url-pattern>/backend/admOrder</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>admin_info</servlet-name>
+		<servlet-class>pers.qiqcheng.ec.servlet.admin.AdminInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin_info</servlet-name>
+		<url-pattern>/backend/admInfo</url-pattern>
 	</servlet-mapping>
 </web-app>

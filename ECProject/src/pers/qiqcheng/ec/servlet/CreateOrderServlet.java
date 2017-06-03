@@ -171,6 +171,7 @@ public class CreateOrderServlet extends HttpServlet{
 	}
 	public void showDetailOrder(HttpServletRequest req,HttpServletResponse resp)throws ServletException,IOException{
 		String orderID=req.getParameter("orderid");
+		String rflag=req.getParameter("flag");
 		String params[]={orderID};
 		HttpSession session=req.getSession();
 		CartBean cartOrderBean=CartBean.getCartOrderBean(session);
@@ -197,7 +198,12 @@ public class CreateOrderServlet extends HttpServlet{
 			session.setAttribute("orderInfoBean", orderInfoBean);
 			cartOrderBean.setItems(good);
 			session.setAttribute("cartOrderBean",cartOrderBean);
-			req.getRequestDispatcher("/frontend/showdetailorder.jsp").forward(req, resp);
+			if("admin".equals(rflag)){
+				req.getRequestDispatcher("/backend/adminOrderRead.jsp").forward(req, resp);
+			}else {
+				req.getRequestDispatcher("/frontend/showdetailorder.jsp").forward(req, resp);
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

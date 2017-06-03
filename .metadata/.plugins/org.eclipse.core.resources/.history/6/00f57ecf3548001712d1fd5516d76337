@@ -1,0 +1,91 @@
+package pers.qiqcheng.exp04_02;
+
+import java.util.Scanner;
+
+public class Triangulation {
+	public static double getMinTriangulation(double v[][],int l,double w[][]){
+		double t[][]=new double[l+1][l+1];
+		for(int i=0;i<=l;i++){
+				t[i][i]=0;
+		}
+		int j;
+		for(int d=2;d<=l;d++){
+			for(int i=1;i<=l-d+1;i++){
+				j=i+d-1;
+				t[i][j]=Integer.MAX_VALUE;//
+				//t[i][j] = t[i+1][j] + getSum(i-1,i,j,w);
+				for(int k=i;k<j;k++){
+					t[i][j]=min(t[i][j],/*t[i][k] + t[k+1][j] +*/ getSum(i-1,k,j,w));
+				}
+			}
+		}
+		System.out.println("----t----");
+		for(int i=1;i<=l;i++){
+			for(int k=1;k<=l;k++){
+				System.out.printf("%3.2f ",t[i][k]);
+			}
+			System.out.println();
+		}
+		return t[1][l];
+	}
+	//计算所有点的权
+	public static double[][] getWeight(int l,double v[][]){
+		double w[][]=new double[l+1][l+1];
+		for(int i=1;i<=l;i++){
+			for(int j=1;j<=l;j++){
+				if(i==j) w[i][j]=0;
+				else {
+					w[i][j]=getLength(v[i][0], v[i][1], v[j][0], v[j][1]);
+				}
+			}
+		}
+		return w;
+	}
+	//计算两点之间的距离，点用坐标表示
+	public static double getLength(double x1,double y1,double x2,double y2){
+		double len=Math.sqrt(Math.pow(x1-x2, 2)+Math.pow(y1-y2, 2));
+		return len;
+	}
+	//计算三条边权之和
+	public static double getSum(int i,int j,int k,double w[][]){
+		return w[i][j]+w[i][k]+w[j][k];
+	}
+	//两个数的最小值
+	public static double min(double x,double y){
+		return x<y?x:y;
+	}
+	public static void main(String[] args) {
+		int n=0;
+		int l=0;
+		Scanner scanner=new Scanner(System.in);
+		n=scanner.nextInt();
+		double v[][]=new double[100][2];
+		while(n>0){
+			l=scanner.nextInt();
+			for(int i=1;i<=l;i++){
+				v[i][0]=scanner.nextDouble();
+				v[i][1]=scanner.nextDouble();
+			}
+			//System.out.println(getMinTriangulation(v, l));
+			n--;
+		}
+		System.out.println("----v----");
+		for(int i=1;i<l+1;i++){
+			for(int j=0;j<2;j++){
+				System.out.print(v[i][j]+" ");
+			}
+			System.out.println();
+		}
+		double w[][]=new double[l+1][l+1];
+		w=getWeight(l,v);
+		System.out.println("----w----");
+		for(int i=1;i<=l;i++){
+			for(int j=1;j<=l;j++){
+				System.out.printf("%3.2f ",w[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.printf("%3.3f",getMinTriangulation(v,l,w));
+	}
+
+}
