@@ -64,7 +64,7 @@ public class AdminUserServlet extends HttpServlet {
 		}
 	}
 	/**
-	 * 冻结账户
+	 * 冻结账户/解冻帐户
 	 * @param req
 	 * @param resp
 	 * @throws ServletException
@@ -73,11 +73,15 @@ public class AdminUserServlet extends HttpServlet {
 	public void accountFreeze(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		//获得需要冻结账户的帐户名
 		String username=req.getParameter("username");
+		String nofreeze=req.getParameter("flag");
 		boolean flag=false;
 		//使用sql语句执行更新操作
 		if(username!=null){
-			String sql="update t_user set status=1 where username=?";
-			String params[]={username};
+			String sql="update t_user set status=? where username=?";
+			String params[]={"1",username};//1：冻结
+			if(nofreeze!=null){
+				params[0]="0";//0：解冻
+			}
 			try {
 				flag=DaoFactory.getUserDaoInstances().doUpdate(sql, params);
 			} catch (Exception e) {

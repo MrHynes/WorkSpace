@@ -67,6 +67,10 @@ $(function () {
                     different: {//不能和用户名相同
                         field: 'username',//需要进行比较的input name值
                         message: '不能和用户名相同'
+                    },
+                    different: {//不能和旧密码相同
+                        field: 'oldpassword',//需要进行比较的input name值
+                        message: '不能和旧密码相同'
                     }
                 }
             },

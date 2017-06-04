@@ -3,7 +3,15 @@ package pers.qiqcheng.exp01_01;
 import java.util.Scanner;
 
 public class Main {
-	
+	/*
+3
+10
+9 71 25 64 38 52 5 31 19 45
+16
+26 35 17 92 53 24 6 57 21 12 34 2 17 86 75 33
+20
+15 87 32 7 84 35 26 45 78 96 52 22 37 65 9 43 21 3 33 91
+	 */
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		int n=scanner.nextInt();

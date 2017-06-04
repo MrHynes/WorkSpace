@@ -1,0 +1,28 @@
+package pers.qiqcheng.ec.test;
+
+import java.util.List;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
+
+public class SetXML2 {
+	public static void updateXML() {
+		SAXBuilder sb = new SAXBuilder();
+		Document doc = null;
+		try {
+			doc = sb.build("F://WorkSpace//ECProject//WebContent//WEB-INF//info.xml");
+			Element root = doc.getRootElement();
+			List<Element> list = root.getChildren("person");
+			for (Element el : list) {
+				if (el.getAttributeValue("id").equals("ID001")) {
+					Element name = el.getChild("name");
+					name.setText("xingoo---update");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//saveXML(doc);
+	}
+}

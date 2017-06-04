@@ -43,6 +43,7 @@ $(function() {
 		$("#alterInfo").click(function() {
 			if(i==0){
 				$("input").removeAttr("disabled");
+				$("#username").attr("disabled",true);
 				$("select").removeAttr("disabled");
 				var info = $("<div id='alter'><br><div class='col-lg-5 col-lg-offset-1'><input type='submit' id='btnsubmit' class='btn btn-primary btn-block'></input></div>"
 					+ "<div class='col-lg-5'><input type='reset' id='btnreset' class='btn btn-warning btn-block'></input></div></div>");

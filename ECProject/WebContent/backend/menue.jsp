@@ -48,7 +48,7 @@
 							class="fa fa-coffee"></i>显示个人资料</a></li>
 					<li><a href="#" data-toggle="tab" id="alterInfo"><i
 							class="fa fa-flash "></i>个人资料修改</a></li>
-					<li><a href="#" data-toggle="tab"><i class="fa fa-key "></i>密码修改</a>
+					<li><a href="<%=basePath %>backend/adminPwdModify.jsp"><i class="fa fa-key "></i>密码修改</a>
 					</li>
 				</ul></li>
 			<li><a id="orderAdmin"><i class="fa fa-flash "></i>订单管理

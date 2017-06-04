@@ -148,6 +148,13 @@ public class AdminGoodInfoServlet extends HttpServlet {
 		getGoods(req, resp);
 	}
 
+	/**
+	 * 获取父类别
+	 * @param req
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void getType(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/json;charset=utf-8");
 		PrintWriter out = resp.getWriter();
@@ -172,6 +179,13 @@ public class AdminGoodInfoServlet extends HttpServlet {
 		out.close();
 	}
 
+	/**
+	 * 获取子类别
+	 * @param req
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void getSmType(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/json;charset=utf-8");
 		PrintWriter out = resp.getWriter();
@@ -193,7 +207,13 @@ public class AdminGoodInfoServlet extends HttpServlet {
 		out.print(jsonarray);
 		out.close();
 	}
-
+	/**
+	 * 删除商品
+	 * @param req
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public void delGood(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String goodID = req.getParameter("goodID");
 		String sql = "delete from t_goods where goodid=?";
@@ -211,6 +231,16 @@ public class AdminGoodInfoServlet extends HttpServlet {
 		}
 	}
 
+	/**
+	 * 更新商品信息
+	 * @param req
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void updateGood(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("update");
+	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req, resp);
@@ -230,6 +260,8 @@ public class AdminGoodInfoServlet extends HttpServlet {
 				getSmType(req, resp);
 			} else if ("delGood".equals(task)) {
 				delGood(req, resp);
+			}else if("updateGood".equals(task)){
+				updateGood(req, resp);
 			}
 		}
 	}

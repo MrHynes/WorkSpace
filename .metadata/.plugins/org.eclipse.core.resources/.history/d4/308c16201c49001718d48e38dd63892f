@@ -1,0 +1,57 @@
+package pers.qiqcheng.ec.test;
+
+import java.io.FileWriter;
+import java.util.List;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.input.SAXBuilder;
+import org.jdom.output.Format;
+import org.jdom.output.XMLOutputter;
+
+public class SetXML2 {
+	public static void saveXML(Document doc) {
+		// 将doc对象输出到文件
+		try {
+			// 创建xml文件输出流
+			XMLOutputter xmlopt = new XMLOutputter();
+
+			// 创建文件输出流
+			FileWriter writer = new FileWriter("person.xml");
+
+			// 指定文档格式
+			Format fm = Format.getPrettyFormat();
+			// fm.setEncoding("GB2312");
+			xmlopt.setFormat(fm);
+
+			// 将doc写入到指定的文件中
+			xmlopt.output(doc, writer);
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void updateXML() {
+		SAXBuilder sb = new SAXBuilder();
+		Document doc = null;
+		try {
+			doc = sb.build("F://WorkSpace//ECProject//WebContent//WEB-INF//info.xml");
+			Element root = doc.getRootElement();
+			List<Element> list = root.getChildren();
+			for (Element el : list) {
+				if (el.getChild("test").getText().equals("123")) {
+					Element name = el.getChild("postcode");
+					name.setText("123049");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		saveXML(doc);
+	}
+
+	public static void main(String[] args) {
+		updateXML();
+	}
+}

@@ -34,7 +34,7 @@
 				<div class="row">
 					<div class="tab-content">
 						<div class="col-md-12">
-							<h1 class="page-head-line">系统用户管理</h1>
+							<h1 class="page-head-line">用户管理</h1>
 							<h1 class="page-subhead-line"></h1>
 						</div>
 						<div class="col-lg-2"></div>

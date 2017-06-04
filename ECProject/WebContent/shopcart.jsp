@@ -132,7 +132,7 @@ List<CartItemBean> list=cartBean.getItems();
 							%>
 							<tr>
 								<td><input type="checkbox" name="confirm" value="<%=cartItemBean.getGoodID()%>"></td>
-								<td><img src="simg/<%=cartItemBean.getGoodID() %>.jpg"></td>
+								<td><img src="simg/<%=cartItemBean.getGoodID() %>.jpg" style="width: 70px;height: 70px;"></td>
 								<td><%=cartItemBean.getGoodName() %></td>
 								<td><%=cartItemBean.getGoodPrice() %></td>
 								<td><%=cartItemBean.getCount() %></td>

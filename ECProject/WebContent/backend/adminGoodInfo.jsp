@@ -159,7 +159,7 @@
 									<td class="col-lg-2"><%=goodsBean.getGoodPrice()%></td>
 									<td class="col-lg-2"><%=goodsBean.getInventory()%></td>
 									<td class="col-lg-2">
-										<a href="#"><input type="button" value="修改" class="btn btn-warning"></a> 
+										<a href="adminGoodUpdate.jsp"><input type="button" value="修改" class="btn btn-warning"></a> 
 										<a href="admGood?task=delGood&goodID=<%=goodsBean.getGoodId()%>"><input type="button" value="删除" class="btn btn-primary"></a>
 									</td>
 								</tr>

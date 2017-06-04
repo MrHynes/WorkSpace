@@ -1,0 +1,229 @@
+package pers.qiqcheng.ec.servlet.admin;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.Namespace;
+import org.jdom.input.SAXBuilder;
+import org.jdom.output.Format;
+import org.jdom.output.XMLOutputter;
+
+import pers.qiqcheng.ec.bean.admin.AdminBean;
+
+public class AdminInfoServlet extends HttpServlet {
+
+	public void saveXML(Document doc, String path) {
+		// 将doc对象输出到文件
+		try {
+			// 创建xml文件输出流
+			XMLOutputter xmlopt = new XMLOutputter();
+			// 创建文件输出流
+			FileWriter writer = new FileWriter(path);
+			// 指定文档格式
+			Format fm = Format.getPrettyFormat();
+			// fm.setEncoding("UTF-8");
+			xmlopt.setFormat(fm);
+			// 将doc写入到指定的文件中
+			xmlopt.output(doc, writer);
+			writer.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void getAdmin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String flag = req.getParameter("flag");
+		String show_name = req.getParameter("show_name");
+		HttpSession session = req.getSession();
+		String userName = (String) session.getAttribute("adminName");
+		List<AdminBean> items = new ArrayList<AdminBean>();
+		AdminBean adminBean = null;
+		String path = "F:\\WorkSpace\\ECProject\\WebContent\\WEB-INF\\info.xml";
+		List<Element> allChildren = null;
+		SAXBuilder builder = new SAXBuilder();
+		Document doc = null;
+		try {
+			doc = builder.build(new File(path));
+			Element foo = doc.getRootElement();
+			allChildren = foo.getChildren();
+
+		} catch (JDOMException e) {
+			e.printStackTrace();
+		}
+		for (int i = 0; i < allChildren.size(); i++) {
+			adminBean = new AdminBean();
+			adminBean.setUserName((allChildren.get(i)).getChild("name").getText());
+			adminBean.setRelName((allChildren.get(i)).getChild("relname").getText());
+			adminBean.setSex((allChildren.get(i)).getChild("sex").getText());
+			adminBean.setBirthDay((allChildren.get(i)).getChild("birthday").getText());
+			adminBean.setEmail((allChildren.get(i)).getChild("email").getText());
+			adminBean.setTelePhone((allChildren.get(i)).getChild("telphone").getText());
+			adminBean.setAddress((allChildren.get(i)).getChild("address").getText());
+			adminBean.setPostCode((allChildren.get(i)).getChild("postcode").getText());
+			adminBean.setIdentify((allChildren.get(i)).getChild("identify").getText());
+			adminBean.setRegisteTime((allChildren.get(i)).getChild("registeTime").getText());
+			items.add(adminBean);
+		}
+		session.setAttribute("admininfo", items);
+		if ("systemuser".equals(flag)) {
+			req.getRequestDispatcher("/backend/adminSysUser.jsp").forward(req, resp);
+		} else if ("showmyinfo".equals(flag)) {
+			if (show_name != null) {
+				for (AdminBean adminBean2 : items) {
+					if (adminBean2.getUserName().equals(show_name)) {
+						session.setAttribute("admininfo2", adminBean2);
+						req.getRequestDispatcher("/backend/showAdminInfo.jsp").forward(req, resp);
+						return;
+					}
+				}
+			}
+			req.getRequestDispatcher("/backend/adminInfo.jsp").forward(req, resp);
+		}
+	}
+
+	public void updateInfo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("update");
+	}
+
+	public void modifyPwd(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String path = "F:\\WorkSpace\\ECProject\\WebContent\\WEB-INF\\info.xml";
+		SAXBuilder builder = new SAXBuilder();
+		List<Element> allChildren = null;
+		Document doc = null;
+		try {
+			doc = builder.build(new File(path));
+			Element foo = doc.getRootElement();
+			allChildren = foo.getChildren();
+
+		} catch (JDOMException e) {
+			e.printStackTrace();
+		}
+		String oldpassword = req.getParameter("oldpassword");
+		String password = req.getParameter("password");
+		HttpSession session = req.getSession();
+		String userName = (String) session.getAttribute("adminName");
+		// System.out.println(oldpassword+" "+password+" "+userName);
+		String pwd = null;
+		for (Element element : allChildren) {
+			if (element.getChild("name").getText()
+					.equals(userName)/*
+										 * &&element.getChild("pwd").getText().
+										 * equals(oldpassword)
+										 */) {
+				element.getChild("pwd").setText(password);
+			}
+		}
+		saveXML(doc, path);
+		resp.sendRedirect("http://localhost:8080/ECProject/adminlogin.jsp");
+	}
+
+	public void addAdmin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// System.out.println("addAdmin");
+		String name = req.getParameter("username");
+		String pwd = req.getParameter("password");
+		String sex = req.getParameter("sex");
+		String relName = req.getParameter("relname");
+		String birthday = req.getParameter("birthday");
+		String email = req.getParameter("email");
+		String telephone = req.getParameter("telephone");
+		String address = req.getParameter("address");
+		String postCode = req.getParameter("postcode");
+		String identify = "普通管理员";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String registeTime = sdf.format(new Date());
+		String path = "F:\\WorkSpace\\ECProject\\WebContent\\WEB-INF\\info.xml";
+		SAXBuilder builder = new SAXBuilder();
+		List<Element> allChildren = null;
+		Document doc = null;
+		try {
+			doc = builder.build(new File(path));
+			Element foo = doc.getRootElement();
+			// System.out.println(foo.getName());==users
+			Element user = new Element("user");
+			foo.addContent(user);
+			user.addContent(new Element("name").setText(name));
+			user.addContent(new Element("pwd").setText(pwd));
+			user.addContent(new Element("relname").setText(relName));
+			user.addContent(new Element("sex").setText(sex));
+			user.addContent(new Element("birthday").setText(birthday));
+			user.addContent(new Element("email").setText(email));
+			user.addContent(new Element("telphone").setText(telephone));
+			user.addContent(new Element("address").setText(address));
+			user.addContent(new Element("postcode").setText(postCode));
+			user.addContent(new Element("identify").setText(identify));
+			user.addContent(new Element("registeTime").setText(registeTime));
+
+		} catch (JDOMException e) {
+			e.printStackTrace();
+		}
+		saveXML(doc, path);
+		resp.sendRedirect("admInfo?task=getAdmin&flag=systemuser");
+
+	}
+
+	public void delAdmin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html;charset=utf-8");
+		String name = req.getParameter("name");
+		String path = "F:\\WorkSpace\\ECProject\\WebContent\\WEB-INF\\info.xml";
+		// 超级管理员不可以删除
+		SAXBuilder builder = new SAXBuilder();
+		Document doc = null;
+		try {
+			doc = builder.build(path);
+			Element root = doc.getRootElement();
+			List<Element> list = root.getChildren();
+			for (Element el : list) {
+				if("SuperAdmin".equals(name)||name==null){
+					//System.out.println(el.getChild("name").getText());
+					resp.sendRedirect("error.jsp?msg=超级管理员信息无法删除");
+					return ;
+				}else{
+					if (name.equals(el.getChild("name").getText())) {
+						root.removeContent(el);
+					}
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		saveXML(doc,path);
+		resp.sendRedirect("admInfo?task=getAdmin&flag=systemuser");
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doPost(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String task = req.getParameter("task");
+		if ("getAdmin".equals(task)) {
+			getAdmin(req, resp);
+		} else if ("updateInfo".equals(task)) {
+			updateInfo(req, resp);
+		} else if ("modifyPwd".equals(task)) {
+			modifyPwd(req, resp);
+		} else if ("addAdmin".equals(task)) {
+			addAdmin(req, resp);
+		} else if ("delAdmin".equals(task)) {
+			delAdmin(req, resp);
+		}
+	}
+
+}

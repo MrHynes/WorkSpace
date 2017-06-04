@@ -68,7 +68,7 @@
 								<td class="col-lg-2"><%=adminBean.getIdentify()%></td>
 								<td class="col-lg-2"><%=adminBean.getRegisteTime()%></td>
 								<td class="col-lg-2">
-									<input type="button" value="删除" class="btn btn-success">
+									<a href="admInfo?task=delAdmin&name=<%=adminBean.getUserName()%>"><input type="button" value="删除" class="btn btn-success"></a>
 									<a href="admInfo?task=getAdmin&flag=showmyinfo&show_name=<%=adminBean.getUserName()%>"><input type="button" value="查看" class="btn btn-warning"></a>
 								</td>
 							</tr>
@@ -95,14 +95,13 @@
 					<h5 class="modal-title" id="myModalLabel">添加管理员</h5>
 				</div>
 				<div class="modal-body">
-					<form action="admInfo?task=addAdmin" method="post"
-						enctype="multipart/form-data">
+					<form action="admInfo?task=addAdmin" method="post">
 						<div class="form-group">
 							<input type="text" name="username" class="form-control"
 								placeholder="请输入管理员名称" style="height: 40px;">
 						</div>
 						<div class="form-group">
-							<input type="text" name="password" class="form-control"
+							<input type="password" name="password" class="form-control"
 								placeholder="请输入密码" style="height: 40px;">
 						</div>
 						<div class="form-group">

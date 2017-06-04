@@ -1,0 +1,22 @@
+package pers.qiqcheng.ec.test;
+
+public class SetXML2 {
+	public static void updateXML(){
+		 2         SAXBuilder sb = new SAXBuilder();
+		 3         Document doc = null;
+		 4         try {
+		 5             doc = sb.build("person.xml");
+		 6             Element root = doc.getRootElement();
+		 7             List<Element> list = root.getChildren("person");
+		 8             for (Element el : list) {
+		 9                 if (el.getAttributeValue("id").equals("ID001")) {
+		10                     Element name = el.getChild("name");
+		11                     name.setText("xingoo---update");
+		12                 }
+		13             }
+		14         } catch (Exception e) {
+		15             e.printStackTrace();
+		16         }
+		17         saveXML(doc);
+		18     }
+}

@@ -19,6 +19,8 @@
 <link href="<%=basePath%>css/custom.css" rel="stylesheet" />
 <script src="<%=basePath%>js/jquery-3.1.1.min.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/bootstrapValidator.min.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/my.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans'
 	rel='stylesheet' type='text/css' />
 <script src="<%=basePath%>js/jquery.metisMenu.js"></script>
@@ -34,7 +36,7 @@
 				<div class="row">
 					<div class="tab-content">
 						<div class="col-md-12">
-							<h1 class="page-head-line">显示个人资料</h1>
+							<h1 class="page-head-line">用户管理</h1>
 							<h1 class="page-subhead-line"></h1>
 						</div>
 						<div class="col-lg-2"></div>

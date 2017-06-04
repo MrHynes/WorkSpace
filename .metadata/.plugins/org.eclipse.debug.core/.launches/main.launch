@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/test/src/test/MAIN.java"/>
+<listEntry value="/AlgorithmsExp/src/pers/qiqcheng/exp01_01/Main.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="test.MAIN"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="test"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="pers.qiqcheng.exp01_01.Main"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="AlgorithmsExp"/>
 </launchConfiguration>

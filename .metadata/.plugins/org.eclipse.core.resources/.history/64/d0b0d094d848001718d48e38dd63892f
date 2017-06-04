@@ -1,0 +1,48 @@
+package pers.qiqcheng.exp01_01;
+
+import java.util.Scanner;
+
+public class Main {
+	/*
+	 3
+10
+9 71 25 64 38 52 5 31 19 45
+16
+26 35 17 92 53 24 6 57 21 12 34 2 17 86 75 33
+20
+15 87 32 7 84 35 26 45 78 96 52 22 37 65 9 43 21 3 33 91
+	 */
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		int n=scanner.nextInt();
+		int m;
+		for(int i=0;i<n;i++){
+			m=scanner.nextInt();
+			int a[]=new int[m];
+			for(int j=0;j<m;j++){
+				a[j]=scanner.nextInt();
+			}
+			new Sort().QuickSort(a, 0, a.length-1);
+			if(isEqual(a)){
+				System.out.println("YES");
+			}else {
+				System.out.println("NO");
+			}
+		}
+	}
+	
+	/**
+	 * 判断相邻元素是否相同
+	 * @param a
+	 * @return
+	 */
+	public static boolean isEqual(int a[]){
+		boolean flag=false;
+		for(int i=0;i<a.length-1;i++){
+			if(a[i+1]==a[i]){
+				flag=true;
+			}
+		}
+		return flag;
+	}
+}
