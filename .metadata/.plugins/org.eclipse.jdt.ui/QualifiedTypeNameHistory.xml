@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.sun.xml.internal.ws.resources.HttpserverMessages"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.admin.TypeBean"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.servlet.GetUserInfoServlet"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.UserBean"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.servlet.SearchBookByKey"/>
@@ -11,7 +9,6 @@
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.lang.Double"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.GoodsBean"/>
 <fullyQualifiedTypeName name="com.mysql.fabric.xmlrpc.base.Data"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.Name"/>
 <fullyQualifiedTypeName name="com.sun.java.util.jar.pack.Package.File"/>
@@ -28,14 +25,11 @@
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.OrderItemBean"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.OrderInfoBean"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="java.util.zip.DataFormatException"/>
-<fullyQualifiedTypeName name="pers.qiqcheng.ec.factory.DaoFactory"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.util.IllegalFormatCodePointException"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.exp01_01.Main"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.lang.Math"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
@@ -43,7 +37,6 @@
 <fullyQualifiedTypeName name="com.sun.net.httpserver.HttpsConfigurator"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.admin.AdminBean"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.jdom.Document"/>
 <fullyQualifiedTypeName name="org.jdom.input.SAXBuilder"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -57,7 +50,14 @@
 <fullyQualifiedTypeName name="org.jdom.Namespace"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.output.ForkXmlOutput"/>
 <fullyQualifiedTypeName name="org.jdom.Element"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.ReplicationMySQLConnection"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.bean.GoodsBean"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="sun.print.resources.serviceui_pt_BR"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="javax.xml.bind.helpers.AbstractMarshallerImpl"/>
+<fullyQualifiedTypeName name="pers.qiqcheng.ec.factory.DaoFactory"/>
 </qualifiedTypeNameHistroy>

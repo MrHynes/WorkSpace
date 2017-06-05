@@ -47,6 +47,19 @@ function modify(id) {
 		}
 	});
 }
+function delByID(id) {
+	bootbox.confirm({
+		size : "small",
+		message : "确认删除吗?",
+		callback : function(result) {
+			if (result) {
+				location.href = "getTypes?task=deleteType&typeID="+id;
+			} else {
+				return;
+			}
+		}
+	});
+}
 </script>
 <body>
 	<div id="wrapper">
@@ -93,7 +106,8 @@ function modify(id) {
 										<td class="col-lg-2">
 											<button type="button" class="btn btn-success" style="height: 30px; text-align: center;" onClick="modify(<%=typeBean.getTypeID()%>)">修改</button>
 											&nbsp;&nbsp;
-											<a href="getTypes?task=deleteType&typeID=<%=typeBean.getTypeID()%>">
+											<a  onclick="delByID('<%=typeBean.getTypeID()%>');">
+											<!-- href="getTypes?task=deleteType&typeID=" -->
 												<button class="btn btn-danger" style="height: 30px; text-align: center;">删除</button>
 											</a>
 										</td>
@@ -112,7 +126,7 @@ function modify(id) {
 									<td class="col-lg-2">
 										<button class="btn btn-success" style="height: 30px; text-align: center;" onClick="modify(<%=typeItemBean.getTypeID()%>)">修改</button>
 										&nbsp;&nbsp;
-										<a href="getTypes?task=deleteType&typeID=<%=typeItemBean.getTypeID()%>">
+										<a  onclick="delByID('<%=typeItemBean.getTypeID()%>')">
 											<button class="btn btn-danger" style="height: 30px; text-align: center;">删除</button>
 										</a>
 									</td>

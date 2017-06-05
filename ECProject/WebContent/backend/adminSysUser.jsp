@@ -20,6 +20,7 @@
 <script src="<%=basePath%>js/jquery-3.1.1.min.js"
 	type="text/javascript"></script>
 <script src="<%=basePath%>js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/bootbox.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/bootstrapValidator.min.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/my.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans'
@@ -27,8 +28,25 @@
 <script src="<%=basePath%>js/jquery.metisMenu.js"></script>
 <script src="<%=basePath%>js/custom.js"></script>
 <script src="<%=basePath%>js/backend.js"></script>
-<script src="<%=basePath%>js/bootbox.js" type="text/javascript"></script>
 </head>
+<script type="text/javascript">
+function a(){
+	alert("123");
+}
+function delAdmin(name) {
+	bootbox.confirm({
+		size : "small",
+		message : "确认删除吗?",
+		callback : function(result) {
+			if (result) {
+				location.href = "admInfo?task=delAdmin&name="+name;
+			} else {
+				return;
+			}
+		}
+	});
+}
+</script>
 <body>
 <div id="wrapper">
 <jsp:include page="menue.jsp"></jsp:include>
@@ -39,9 +57,15 @@
 					<div class="col-md-12">
 						<h1 class="page-head-line">系统用户管理</h1>
 						<h6 class="page-subhead-line">
-							<!-- href="getTypes?task=addType" -->
+								<%
+									String name=(String)session.getAttribute("adminName");
+									boolean flag=false;
+									if("SuperAdmin".equals(name)){
+										flag=true;
+								%>
 								<a data-toggle="modal" data-target="#addAdmin"><button class="btn btn-primary col-lg-offset-11"
 										style="width: 90px;">添加管理员</button></a>
+								<%} %>
 							</h6>	
 					</div>
 					<div class="col-lg-12">
@@ -68,8 +92,14 @@
 								<td class="col-lg-2"><%=adminBean.getIdentify()%></td>
 								<td class="col-lg-2"><%=adminBean.getRegisteTime()%></td>
 								<td class="col-lg-2">
-									<a href="admInfo?task=delAdmin&name=<%=adminBean.getUserName()%>"><input type="button" value="删除" class="btn btn-success"></a>
-									<a href="admInfo?task=getAdmin&flag=showmyinfo&show_name=<%=adminBean.getUserName()%>"><input type="button" value="查看" class="btn btn-warning"></a>
+									<%if(flag){ %>
+										<a onclick="delAdmin('<%=adminBean.getUserName()%>');">
+										<input type="button" value="删除" class="btn btn-success">
+									</a>
+									<%}%>	
+									<a href="admInfo?task=getAdmin&flag=showmyinfo&show_name=<%=adminBean.getUserName()%>">
+										<input type="button" value="查看" class="btn btn-warning">
+									</a>
 								</td>
 							</tr>
 							<%

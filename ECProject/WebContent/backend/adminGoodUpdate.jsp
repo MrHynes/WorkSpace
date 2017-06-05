@@ -91,7 +91,8 @@
 		}
 	}
 </script>
-<body onload="getType();">
+<!-- <body onload="getType();"> -->
+<body>
 	<div id="wrapper">
 		<jsp:include page="menue.jsp"></jsp:include>
 		<div id="page-wrapper">
@@ -104,44 +105,49 @@
 						</div>
 						<div class="col-lg-2"></div>
 						<div class="col-lg-8">
-							<form action="admGood?task=updateGood" method="post"
-							enctype="multipart/form-data">
+							<form action="admGood?task=updateGood" method="post">
+							<!-- enctype="multipart/form-data" -->
+							<%
+								GoodsBean goodsBean=(GoodsBean)session.getAttribute("getOne");
+								if(goodsBean==null) goodsBean=new GoodsBean();
+							%>
+							<input type="hidden" name="goodid" value="<%=goodsBean.getGoodId()%>">
 							<div class="form-group">
 								<label>商品名称</label>
 								<input type="text" name="goodname" class="form-control"
-									placeholder="请输入商品名称" style="height: 40px;">
+									placeholder="请输入商品名称" style="height: 40px;" value="<%=goodsBean.getGoodName()%>">
 							</div>
 							<div class="form-group">
 								<label>所属大类</label>	
 								<select class="form-control" name="type" id="type"
 									onchange="get_sm_type();">
-									<option>请选择商品所属大类</option>
+									<option><%=(String)session.getAttribute("majorClass")%></option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label>所属小类</label>
 								<select class="form-control" name="suptype" id="suptype">
-									<option>请选择商品所属小类</option>
+									<option><%=(String)session.getAttribute("subClass")%></option>
 								</select>
 							</div>
 							<div class="form-group">
 								<label>商品价格</label>
 								<input type="text" name="price" class="form-control"
-									placeholder="请输入商品价格" style="height: 40px;">
+									placeholder="请输入商品价格" style="height: 40px;" value="<%=goodsBean.getGoodPrice()%>">
 							</div>
 							<div class="form-group">
 								<label>商品库存</label>
 								<input type="text" name="inventory" class="form-control"
-									placeholder="请输入商品库存" style="height: 40px;">
+									placeholder="请输入商品库存" style="height: 40px;" value="<%=goodsBean.getInventory()%>">
 							</div>
 							<!-- 图片 -->
 							<label>商品图片(可选)</label>
 							<input type="file" value="上传图片" name="img"
-								class="col-lg-12 btn btn-default"> <br> <br>
+								class="col-lg-12 btn btn-default" disabled="disabled"> <br> <br>
 							<div class="form-group">
 								<label>商品简介</label>
 								<textarea class="form-control" rows="6" id="introduction"
-									name="introduction" placeholder="请输入商品简介"></textarea>
+									name="introduction" placeholder="请输入商品简介"><%=goodsBean.getGoodDescription() %></textarea>
 							</div>
 							<input type="submit" value="确定" class="btn btn-success"
 								style="width: 329px;"> <input type="reset" value="重置"

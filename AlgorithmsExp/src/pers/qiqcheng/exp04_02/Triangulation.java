@@ -25,13 +25,13 @@ public class Triangulation {
 				}
 			}
 		}
-		System.out.println("----t----");
+		/*System.out.println("----t----");
 		for(int i=1;i<=l;i++){
 			for(int k=1;k<=l;k++){
 				System.out.printf("%3.2f ",t[i][k]);
 			}
 			System.out.println();
-		}
+		}*/
 		return t[1][l];
 	}
 	//计算所有点的权

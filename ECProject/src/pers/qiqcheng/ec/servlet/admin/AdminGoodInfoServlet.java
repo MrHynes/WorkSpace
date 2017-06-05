@@ -239,7 +239,76 @@ public class AdminGoodInfoServlet extends HttpServlet {
 	 * @throws IOException
 	 */
 	public void updateGood(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("update");
+		String goodid=req.getParameter("goodid");
+		String goodName=req.getParameter("goodname");
+		String type=req.getParameter("type");
+		String suptype=req.getParameter("suptype");
+		String price=req.getParameter("price");
+		String inventory=req.getParameter("inventory");
+		String introduction=req.getParameter("introduction");
+		String sql="update t_goods set goodname=?,goodprice=?,inventory=?,gooddescription=? where goodid=?";
+		String params[]={goodName,price,inventory,introduction,goodid};
+		boolean flag=false;
+		try {
+			flag=DaoFactory.getUserDaoInstances().doUpdate(sql, params);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if(flag){
+			//admGood?task=getOne&goodID=
+			req.getRequestDispatcher("/backend/admGood?task=getOne&goodID="+goodid).forward(req, resp);
+		}else {
+			req.getRequestDispatcher("/backend/error.jsp?msg=更新失败！").forward(req, resp);
+		}
+	}
+	/**
+	 * 获取单个商品的信息，显示在更新页面
+	 * @param req
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void getOne(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String goodID=req.getParameter("goodID");
+		String sql="select * from t_goods where goodid=?";
+		String sql2="select typename from t_goodstype where typeid=?";
+		String params[]={goodID};
+		HttpSession session=req.getSession();
+		GoodsBean goodsBean=null;
+		try {
+			ResultSet rs=DaoFactory.getUserDaoInstances().doSelect(sql, params);
+			while(rs.next()){
+				goodsBean=new GoodsBean();
+				goodsBean.setGoodId(rs.getString(1));
+				goodsBean.setMajorClassID(rs.getInt(2));
+				goodsBean.setSubClassID(rs.getInt(3));
+				goodsBean.setGoodName(rs.getString(4));
+				goodsBean.setGoodPrice(rs.getFloat(5));
+				goodsBean.setGoodDescription(rs.getString(6));
+				goodsBean.setGoodImage(rs.getString(7));
+				goodsBean.setAddTime(rs.getDate(8));
+				goodsBean.setInventory(rs.getInt(9));
+			}
+			session.setAttribute("getOne", goodsBean);
+			String majorClass=null;
+			String subClass=null;
+			params[0]=goodsBean.getMajorClassID()+"";
+			ResultSet rs2=DaoFactory.getUserDaoInstances().doSelect(sql2, params);
+			while(rs2.next()){
+				majorClass=rs2.getString(1);
+			}
+			session.setAttribute("majorClass", majorClass);
+			params[0]=goodsBean.getSubClassID()+"";
+			ResultSet rs3=DaoFactory.getUserDaoInstances().doSelect(sql2, params);
+			while(rs3.next()){
+				subClass=rs3.getString(1);
+			}
+			session.setAttribute("subClass", subClass);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		req.getRequestDispatcher("/backend/adminGoodUpdate.jsp").forward(req, resp);
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -260,8 +329,10 @@ public class AdminGoodInfoServlet extends HttpServlet {
 				getSmType(req, resp);
 			} else if ("delGood".equals(task)) {
 				delGood(req, resp);
-			}else if("updateGood".equals(task)){
+			} else if("updateGood".equals(task)){
 				updateGood(req, resp);
+			} else if("getOne".equals(task)) {
+				getOne(req, resp);
 			}
 		}
 	}

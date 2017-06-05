@@ -1,4 +1,4 @@
-eclipse.m2.defaultRuntime=EMBEDDED
+eclipse.m2.defaultRuntime=apache-maven-3.5.0
 eclipse.m2.globalSettingsFile=F\:\\maven\\apache-maven-3.5.0\\conf\\settings.xml
 eclipse.m2.runtimes=apache-maven-3.5.0
 eclipse.m2.runtimesNodes/apache-maven-3.5.0/location=F\:\\maven\\apache-maven-3.5.0

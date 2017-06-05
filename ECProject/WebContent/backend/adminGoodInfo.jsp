@@ -90,6 +90,19 @@
 			}
 		}
 	}
+	function confirmDel(goodid) {
+		bootbox.confirm({
+			size : "small",
+			message : "确认删除吗?",
+			callback : function(result) {
+				if (result) {
+					location.href = "admGood?task=delGood&goodID="+goodid;
+				} else {
+					return;
+				}
+			}
+		});
+	}
 </script>
 <body onload="getType();">
 	<div id="wrapper">
@@ -159,8 +172,12 @@
 									<td class="col-lg-2"><%=goodsBean.getGoodPrice()%></td>
 									<td class="col-lg-2"><%=goodsBean.getInventory()%></td>
 									<td class="col-lg-2">
-										<a href="adminGoodUpdate.jsp"><input type="button" value="修改" class="btn btn-warning"></a> 
-										<a href="admGood?task=delGood&goodID=<%=goodsBean.getGoodId()%>"><input type="button" value="删除" class="btn btn-primary"></a>
+										<a href="admGood?task=getOne&goodID=<%=goodsBean.getGoodId()%>">
+											<input type="button" value="修改" class="btn btn-warning"></a> 
+										<a onclick="confirmDel(<%=goodsBean.getGoodId()%>);">
+										<!-- href="admGood?task=delGood&goodID=<%=goodsBean.getGoodId()%>" -->
+											<input type="button" value="删除" class="btn btn-primary">
+										</a>
 									</td>
 								</tr>
 								<%

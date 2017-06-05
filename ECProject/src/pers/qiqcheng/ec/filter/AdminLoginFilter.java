@@ -25,7 +25,7 @@ public class AdminLoginFilter implements Filter{
 			chain.doFilter(req, resp);
 			return;
 		}
-		req.getRequestDispatcher("/adminlogin.jsp").forward(req, resp);
+		resp.sendRedirect("http://localhost:8080/ECProject/adminlogin.jsp");
 	}
 	
 

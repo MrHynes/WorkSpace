@@ -68,15 +68,28 @@
   <user>
     <name>Admin5</name>
     <pwd>888888</pwd>
-    <relname>赵六</relname>
+    <relname>小李</relname>
     <sex>男</sex>
     <birthday>1993-12-04</birthday>
     <email>110100@163.com</email>
-    <telphone>13965763628</telphone>
-    <address>福建师范大学桂5</address>
+    <telphone>18065739024</telphone>
+    <address>福建省福州市闽侯县上街镇大学城科技路1号</address>
     <postcode>345680</postcode>
     <identify>普通管理员</identify>
-    <registeTime>2017-06-04</registeTime>
+    <registeTime>2017-06-05</registeTime>
+  </user>
+  <user>
+    <name>Admin6</name>
+    <pwd>888888</pwd>
+    <relname>老九</relname>
+    <sex>女</sex>
+    <birthday>1996-05-28</birthday>
+    <email>110100@163.com</email>
+    <telphone>18065763628</telphone>
+    <address>福建师范大学桂苑5-308</address>
+    <postcode>354300</postcode>
+    <identify>普通管理员</identify>
+    <registeTime>2017-06-05</registeTime>
   </user>
 </users>
 

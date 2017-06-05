@@ -10,14 +10,14 @@ public class LCheeseCover {
 			return;
 		int s = size / 2;
 		int t = ++count;
-		// 右下角
+		// 左上
 		if (dr < tr + s && dc < tc + s) {
 			coverCheese(tr, tc, dr, dc, Matrix, s);
 		} else {
 			Matrix[tr + s - 1][tc + s - 1] = t;
 			coverCheese(tr, tc, tr + s - 1, tc + s - 1, Matrix, s);
 		}
-		// 左上角
+		// 右上角
 		if (dr < tr + s && dc >= tc + s) {
 			coverCheese(tr, tc + s, dr, dc, Matrix, s);
 		} else {
@@ -25,7 +25,7 @@ public class LCheeseCover {
 			coverCheese(tr, tc + s, tr + s - 1, tc + s, Matrix, s);
 		}
 
-		//右上角
+		//左下角
 		if (dr >= tr + s && dc < tc + s) {
 			coverCheese(tr + s, tc, dr, dc, Matrix, s);
 		} else {
@@ -33,7 +33,7 @@ public class LCheeseCover {
 			coverCheese(tr + s, tc, tr + s, tc + s - 1, Matrix, s);
 		}
 
-		// 左上角
+		// 右下角
 		if (dr >= tr + s && dc >= tc + s) {
 			coverCheese(tr + s, tc + s, dr, dc, Matrix, s);
 		} else {
