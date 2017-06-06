@@ -1,0 +1,54 @@
+package pers.qiqcheng.exp05_01;
+
+import java.util.Scanner;
+
+//https://wenku.baidu.com/view/93998bd084254b35eefd349c.html
+public class Cheapest {
+	public static void main(String[] args) {
+		int k;
+		Scanner scanner=new Scanner(System.in);
+		k=scanner.nextInt();
+		while(k>0){
+			int d1=scanner.nextInt();//AB之间的距离
+			int c=scanner.nextInt();//油箱容量
+			int d2=scanner.nextInt();//每升汽油可以行驶的距离
+			int n=scanner.nextInt();//沿途油站数
+			float d[]=new float[n+2];//每个油站离出发点的距离
+			float p[]=new float[n+2];//每个油站汽油的价格
+			float x[]=new float[n+2];//每个油站汽油的价格
+			for(int i=1;i<=n;i++){
+				d[i]=scanner.nextFloat();
+			}
+			for(int i=1;i<=n;i++){
+				p[i]=scanner.nextFloat();
+			}
+			d[n+1]=d1;  
+			p[n+1]=0;  //在终点设一个虚拟油油站
+			float d3=c*d2;//邮箱加满可以行驶的距离
+			int i=1;
+			while(i<=n){
+				if(d[i+1]-d[i]>d3){
+					System.out.println("No Solution");
+				}else {
+					i=i+1;
+				}
+			}
+			int min=0;
+			int r=0;//出发时邮箱为空
+			for(i=1;i<=n;i++){
+				//第i站
+				int j=i+1;
+				while(p[j]>=p[i]){
+					j=j++;//找到油价更便宜的最近一站j
+				}
+				float m1=(d[j]-d[i])*d2;//i~j所需要的油量
+				if(r>=m1){//i到j不加油就可以直接到
+					x[i]=0;
+				}
+			}
+			k--;
+		}
+		
+	}
+
+}
